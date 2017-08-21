@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,7 +54,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9X-A7-ZIw">
                                 <rect key="frame" x="67" y="356" width="240" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4C3-X1-xGP"/>
                                     <constraint firstAttribute="width" constant="240" id="7TZ-5x-NUv"/>
@@ -70,25 +71,33 @@
                                     <segue destination="sUr-Eq-AYw" kind="show" id="ghp-dl-m5b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctu-kg-wji">
-                                <rect key="frame" x="92" y="570" width="193" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctu-kg-wji">
+                                <rect key="frame" x="92" y="563" width="193" height="30"/>
                                 <state key="normal" title="Not a member yet? Sign Up ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOC-XD-2q1">
+                                <rect key="frame" x="170" y="604" width="37" height="30"/>
+                                <state key="normal" title="Skip*">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ctu-kg-wji" secondAttribute="bottom" constant="67" id="7IG-Fv-bdZ"/>
                             <constraint firstItem="4Vl-ab-HoY" firstAttribute="top" secondItem="q9X-A7-ZIw" secondAttribute="bottom" constant="8" id="97K-9C-kdU"/>
                             <constraint firstItem="q9X-A7-ZIw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DnJ-2U-uRG"/>
-                            <constraint firstItem="ctu-kg-wji" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LXV-lo-hea"/>
+                            <constraint firstItem="ctu-kg-wji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="76" id="GEZ-7g-Dme"/>
                             <constraint firstItem="4Vl-ab-HoY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nja-Jt-dFB"/>
                             <constraint firstItem="XN0-fT-HDn" firstAttribute="top" secondItem="tKF-CR-p59" secondAttribute="bottom" constant="8.5" id="WXg-gE-7dj"/>
                             <constraint firstItem="q9X-A7-ZIw" firstAttribute="top" secondItem="XN0-fT-HDn" secondAttribute="bottom" constant="8" id="ena-zS-S9i"/>
+                            <constraint firstAttribute="bottom" secondItem="ctu-kg-wji" secondAttribute="bottom" constant="74" id="fMs-Hc-Zbe"/>
                             <constraint firstItem="XN0-fT-HDn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gKM-QZ-ZrL"/>
+                            <constraint firstItem="hOC-XD-2q1" firstAttribute="top" secondItem="ctu-kg-wji" secondAttribute="bottom" constant="11" id="hUX-ro-rNN"/>
                             <constraint firstItem="tKF-CR-p59" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j3P-xZ-lxZ"/>
                             <constraint firstItem="XN0-fT-HDn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nE5-QC-oLO"/>
+                            <constraint firstItem="ctu-kg-wji" firstAttribute="centerX" secondItem="hOC-XD-2q1" secondAttribute="centerX" id="yxS-O4-fvs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -98,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="-44"/>
+            <point key="canvasLocation" x="240.80000000000001" y="-44.527736131934034"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="UB4-UD-69y">
@@ -136,8 +145,23 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yy-ar-wUU">
+                                <rect key="frame" x="16" y="20" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="uB5-TM-Yl3"/>
+                                </constraints>
+                                <state key="normal" image="icons8-reply_arrow_filled"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="5wL-K2-LhC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y1a-cY-lSV" firstAttribute="top" secondItem="9yy-ar-wUU" secondAttribute="bottom" constant="617" id="CrU-dB-sLt"/>
+                            <constraint firstItem="9yy-ar-wUU" firstAttribute="leading" secondItem="KkF-77-ViE" secondAttribute="leadingMargin" id="VIs-jX-UBy"/>
+                            <constraint firstItem="9yy-ar-wUU" firstAttribute="top" secondItem="9ZJ-a2-ThT" secondAttribute="bottom" id="aGo-Fh-R1F"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailtextfield" destination="JCj-Vf-fxH" id="R5b-aq-s61"/>
@@ -145,11 +169,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKK-Tx-gNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="-45"/>
+            <point key="canvasLocation" x="1133.5999999999999" y="-45.42728635682159"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="375" height="667"/>
         <image name="OTH-logo-lightbkgd-hires" width="261" height="173"/>
+        <image name="icons8-reply_arrow_filled" width="50" height="50"/>
     </resources>
 </document>
