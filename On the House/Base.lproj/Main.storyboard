@@ -62,7 +62,8 @@
                                 <state key="normal" title="LOGIN"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vl-ab-HoY">
-                                <rect key="frame" x="126" y="394" width="123" height="30"/>
+                                <rect key="frame" x="127" y="394" width="121" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Forgot Password?"/>
                                 <connections>
@@ -146,6 +147,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omg-Pt-1yK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1309.5999999999999" y="-45.42728635682159"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UB4-UD-69y">
+            <objects>
+                <viewController id="sUr-Eq-AYw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9ZJ-a2-ThT"/>
+                        <viewControllerLayoutGuide type="bottom" id="y1a-cY-lSV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KkF-77-ViE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="fTC-SP-WZH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCj-Vf-fxH">
+                                <rect key="frame" x="67" y="296" width="240" height="30"/>
+                                <color key="backgroundColor" red="0.77904343610000004" green="0.7072075605" blue="0.64709591870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="BHh-sz-XLf"/>
+                                    <constraint firstAttribute="height" constant="30" id="nLm-81-Iv0"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OTH-logo-lightbkgd-hires" translatesAutoresizingMaskIntoConstraints="NO" id="Ak9-DX-H4o">
+                                <rect key="frame" x="57" y="63" width="261" height="173"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCG-w7-Dsd">
+                                <rect key="frame" x="108" y="383" width="159" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <state key="normal" title="Send Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ak9-DX-H4o" firstAttribute="top" secondItem="9ZJ-a2-ThT" secondAttribute="bottom" constant="43" id="23C-sw-jsv"/>
+                            <constraint firstItem="fTC-SP-WZH" firstAttribute="leading" secondItem="KkF-77-ViE" secondAttribute="leading" id="258-EF-Ly0"/>
+                            <constraint firstItem="fTC-SP-WZH" firstAttribute="centerX" secondItem="Ak9-DX-H4o" secondAttribute="centerX" id="WCR-s6-0Rv"/>
+                            <constraint firstItem="fTC-SP-WZH" firstAttribute="top" secondItem="JCj-Vf-fxH" secondAttribute="bottom" constant="-326" id="oCs-Cf-qgA"/>
+                            <constraint firstItem="fTC-SP-WZH" firstAttribute="centerX" secondItem="JCj-Vf-fxH" secondAttribute="centerX" id="oS0-qq-DhR"/>
+                            <constraint firstItem="fTC-SP-WZH" firstAttribute="bottom" secondItem="y1a-cY-lSV" secondAttribute="top" id="sQn-3O-ReP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKK-Tx-gNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920.79999999999995" y="123.68815592203899"/>
         </scene>
     </scenes>
     <resources>
