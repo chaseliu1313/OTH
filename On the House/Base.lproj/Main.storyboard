@@ -66,16 +66,19 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctu-kg-wji">
-                                <rect key="frame" x="122" y="570" width="131" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Not a member yet?"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctu-kg-wji">
+                                <rect key="frame" x="92" y="570" width="193" height="30"/>
+                                <state key="normal" title="Not a member yet? Sign Up ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ctu-kg-wji" secondAttribute="bottom" constant="67" id="7IG-Fv-bdZ"/>
                             <constraint firstItem="4Vl-ab-HoY" firstAttribute="top" secondItem="q9X-A7-ZIw" secondAttribute="bottom" constant="8" id="97K-9C-kdU"/>
                             <constraint firstItem="q9X-A7-ZIw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DnJ-2U-uRG"/>
+                            <constraint firstItem="ctu-kg-wji" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LXV-lo-hea"/>
                             <constraint firstItem="4Vl-ab-HoY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nja-Jt-dFB"/>
                             <constraint firstItem="XN0-fT-HDn" firstAttribute="top" secondItem="tKF-CR-p59" secondAttribute="bottom" constant="8.5" id="WXg-gE-7dj"/>
                             <constraint firstItem="q9X-A7-ZIw" firstAttribute="top" secondItem="XN0-fT-HDn" secondAttribute="bottom" constant="8" id="ena-zS-S9i"/>
