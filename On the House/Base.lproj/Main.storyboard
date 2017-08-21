@@ -128,8 +128,8 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCj-Vf-fxH">
                                 <rect key="frame" x="67" y="296" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.77904343610000004" green="0.7072075605" blue="0.64709591870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.7803921568627451" green="0.70588235294117641" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -150,7 +150,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="uB5-TM-Yl3"/>
                                 </constraints>
-                                <state key="normal" image="icons8-reply_arrow_filled"/>
+                                <state key="normal" image="icons8-chevron_left_filled-1"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="5wL-K2-LhC"/>
                                 </connections>
@@ -175,6 +175,6 @@
     <resources>
         <image name="Background" width="375" height="667"/>
         <image name="OTH-logo-lightbkgd-hires" width="261" height="173"/>
-        <image name="icons8-reply_arrow_filled" width="50" height="50"/>
+        <image name="icons8-chevron_left_filled-1" width="50" height="50"/>
     </resources>
 </document>
