@@ -10,25 +10,31 @@ import Foundation
 import UIKit
 class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    var placementAnswer = 0
+    @IBOutlet weak var answerlabel: UILabel!
     @IBOutlet weak var pickerview: UIPickerView!
     
-    var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","Website","Please let us know how you heard about our service","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
+    var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerview.delegate = self
         pickerview.dataSource = self
-
+        answerlabel.isHidden = true
+        answertextfield.isHidden = true
+        
         // Do any additional setup after loading the view.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
         answertextfield.resignFirstResponder()
     }
     
     @IBOutlet weak var answertextfield: UITextField!
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -45,4 +51,28 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         {
             return Array[row]
         }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        placementAnswer = row
+        
+        if(placementAnswer == 1)
+        {
+            answerlabel.isHidden = false
+            answertextfield.isHidden = false
+        }
+        else if(placementAnswer == 3)
+        {
+            answerlabel.isHidden = false
+            answertextfield.isHidden = false
+        }
+        else if(placementAnswer == 8)
+        {
+            answerlabel.isHidden = false
+            answertextfield.isHidden = false
+        }
+        else
+        {
+            answerlabel.isHidden = true
+            answertextfield.isHidden = true
+        }
+    }
 }
