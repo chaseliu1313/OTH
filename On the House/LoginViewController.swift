@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
+    
+    let facebookbutton = FBSDKLoginButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(facebookbutton)
+        facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
+        //facebooklogin = FBSDKLoginButton()
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +28,6 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var emailtextfield: UITextField!
-    
     
     @IBOutlet weak var passwordtextfield: UITextField!
     
