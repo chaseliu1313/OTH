@@ -7,18 +7,41 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
     
-    let facebookbutton = FBSDKLoginButton()
+    //let facebookbutton = FBSDKLoginButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(facebookbutton)
+        /*view.addSubview(facebookbutton)
         facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
-        //facebooklogin = FBSDKLoginButton()
+        //facebooklogin = FBSDKLoginButton()*/
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func facebookloginaction(_ sender: UIButton) {
+        let fbloginManager = FBSDKLoginManager()
+        fbloginManager.logIn(withReadPermissions: ["email"], from: self){ (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                }
+            }
+        }
+    }
+    
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +58,8 @@ class LoginViewController: UIViewController {
         emailtextfield.resignFirstResponder()
         passwordtextfield.resignFirstResponder()
     }
+    
+    @IBOutlet weak var facebookloginbutton: UIButton!
 
     /*
     // MARK: - Navigation

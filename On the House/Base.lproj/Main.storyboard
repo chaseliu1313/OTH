@@ -93,6 +93,9 @@
                                 <state key="normal" title="Continue with fackbook">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookloginaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUp-nF-myB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="emailtextfield" destination="tKF-CR-p59" id="956-xg-wSr"/>
+                        <outlet property="facebookloginbutton" destination="SIa-hP-gI8" id="gzp-tn-m7o"/>
                         <outlet property="passwordtextfield" destination="XN0-fT-HDn" id="bdl-gk-iBq"/>
                     </connections>
                 </viewController>
