@@ -27,11 +27,26 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
         let fbloginManager = FBSDKLoginManager()
         fbloginManager.logIn(withReadPermissions: ["email"], from: self){ (result, error) -> Void in
             if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if(fbloginresult.grantedPermissions.contains("email"))
+                //let fbloginresult : FBSDKLoginManagerLoginResult? = result
+                /*if(fbloginresult != nil){
+            if(fbloginresult?.grantedPermissions.contains("email"))!
                 {
+                    self.getFBUserData()
                 }
+            }*/
             }
+        }
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    let result = "successfully loged in"
+                    //everything works print the user data
+                    print(result)
+                }
+            })
         }
     }
     
