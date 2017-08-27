@@ -15,6 +15,7 @@
 		A2A5695F1F4FB5A5005EB8AE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */; };
 		A2A569601F4FB5A5005EB8AE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */; };
 		A2A569611F4FB5A5005EB8AE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */; };
+		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
 		E8CE629E1F4AA19400D9EF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8CE629B1F4AA19400D9EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				A2A569571F4FAC6E005EB8AE /* New Group */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
+				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				E8CE629A1F4AA19400D9EF76 /* Main.storyboard */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
@@ -174,6 +177,7 @@
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
+				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
