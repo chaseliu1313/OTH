@@ -7,13 +7,55 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
+    
+    //let facebookbutton = FBSDKLoginButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /*view.addSubview(facebookbutton)
+        facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
+        //facebooklogin = FBSDKLoginButton()*/
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func facebookloginaction(_ sender: UIButton) {
+        let fbloginManager = FBSDKLoginManager()
+        fbloginManager.logIn(withReadPermissions: ["email"], from: self){ (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions != nil{
+                if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.getFBUserData()
+                    }
+                }
+            }
+        }
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    let result = "successfully loged in"
+                    //everything works print the user data
+                    print(result)
+                }
+            })
+        }
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +66,14 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailtextfield: UITextField!
     
-    
     @IBOutlet weak var passwordtextfield: UITextField!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailtextfield.resignFirstResponder()
         passwordtextfield.resignFirstResponder()
     }
+    
+    @IBOutlet weak var facebookloginbutton: UIButton!
 
     /*
     // MARK: - Navigation

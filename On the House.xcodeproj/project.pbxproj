@@ -10,6 +10,11 @@
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
+		A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */; };
+		A2A5695E1F4FB5A5005EB8AE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695A1F4FB5A5005EB8AE /* Bolts.framework */; };
+		A2A5695F1F4FB5A5005EB8AE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */; };
+		A2A569601F4FB5A5005EB8AE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */; };
+		A2A569611F4FB5A5005EB8AE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
 		E8CE629E1F4AA19400D9EF76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */; };
@@ -20,6 +25,11 @@
 		7101E4F11F4D420F00237211 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
+		A2A5695A1F4FB5A5005EB8AE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8CE629B1F4AA19400D9EF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,15 +43,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2A569611F4FB5A5005EB8AE /* FBSDKShareKit.framework in Frameworks */,
+				A2A5695E1F4FB5A5005EB8AE /* Bolts.framework in Frameworks */,
+				A2A5695F1F4FB5A5005EB8AE /* FBSDKCoreKit.framework in Frameworks */,
+				A2A569601F4FB5A5005EB8AE /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2A569571F4FAC6E005EB8AE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */,
+				E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */,
+				E8CE629F1F4AA19400D9EF76 /* LaunchScreen.storyboard */,
+				E8CE62A21F4AA19400D9EF76 /* Info.plist */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		E8CE628A1F4AA19400D9EF76 = {
 			isa = PBXGroup;
 			children = (
+				A2A5695A1F4FB5A5005EB8AE /* Bolts.framework */,
+				A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */,
+				A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */,
+				A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */,
 				E8CE62951F4AA19400D9EF76 /* On the House */,
 				E8CE62941F4AA19400D9EF76 /* Products */,
 			);
@@ -58,14 +87,12 @@
 		E8CE62951F4AA19400D9EF76 /* On the House */ = {
 			isa = PBXGroup;
 			children = (
-				E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */,
+				A2A569571F4FAC6E005EB8AE /* New Group */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
 				E8CE629A1F4AA19400D9EF76 /* Main.storyboard */,
-				E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */,
-				E8CE629F1F4AA19400D9EF76 /* LaunchScreen.storyboard */,
-				E8CE62A21F4AA19400D9EF76 /* Info.plist */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
+				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 			);
 			path = "On the House";
 			sourceTree = "<group>";
@@ -144,6 +171,7 @@
 			files = (
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
+				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 			);
@@ -270,6 +298,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "On the House/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -283,6 +315,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "On the House/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
