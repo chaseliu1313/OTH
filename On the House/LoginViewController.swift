@@ -27,13 +27,13 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
         let fbloginManager = FBSDKLoginManager()
         fbloginManager.logIn(withReadPermissions: ["email"], from: self){ (result, error) -> Void in
             if (error == nil){
-                //let fbloginresult : FBSDKLoginManagerLoginResult? = result
-                /*if(fbloginresult != nil){
-            if(fbloginresult?.grantedPermissions.contains("email"))!
-                {
-                    self.getFBUserData()
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if fbloginresult.grantedPermissions != nil{
+                if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.getFBUserData()
+                    }
                 }
-            }*/
             }
         }
     }
@@ -49,7 +49,6 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
             })
         }
     }
-    
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
