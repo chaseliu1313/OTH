@@ -11,10 +11,7 @@
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
 		A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */; };
-		A2A5695E1F4FB5A5005EB8AE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695A1F4FB5A5005EB8AE /* Bolts.framework */; };
-		A2A5695F1F4FB5A5005EB8AE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */; };
-		A2A569601F4FB5A5005EB8AE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */; };
-		A2A569611F4FB5A5005EB8AE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */; };
+		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
@@ -23,14 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_the_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7101E4F11F4D420F00237211 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.release.xcconfig"; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
-		A2A5695A1F4FB5A5005EB8AE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,16 +41,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2A569611F4FB5A5005EB8AE /* FBSDKShareKit.framework in Frameworks */,
-				A2A5695E1F4FB5A5005EB8AE /* Bolts.framework in Frameworks */,
-				A2A5695F1F4FB5A5005EB8AE /* FBSDKCoreKit.framework in Frameworks */,
-				A2A569601F4FB5A5005EB8AE /* FBSDKLoginKit.framework in Frameworks */,
+				A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D5DCD65CB94C4B9BCE90FFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2A569571F4FAC6E005EB8AE /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,15 +67,22 @@
 			name = "New Group";
 			sourceTree = "<group>";
 		};
+		D23CCD913574D8C2F9A40D6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */,
+				807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E8CE628A1F4AA19400D9EF76 = {
 			isa = PBXGroup;
 			children = (
-				A2A5695A1F4FB5A5005EB8AE /* Bolts.framework */,
-				A2A5695B1F4FB5A5005EB8AE /* FBSDKCoreKit.framework */,
-				A2A5695C1F4FB5A5005EB8AE /* FBSDKLoginKit.framework */,
-				A2A5695D1F4FB5A5005EB8AE /* FBSDKShareKit.framework */,
 				E8CE62951F4AA19400D9EF76 /* On the House */,
 				E8CE62941F4AA19400D9EF76 /* Products */,
+				D23CCD913574D8C2F9A40D6C /* Pods */,
+				9D5DCD65CB94C4B9BCE90FFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8CE62A51F4AA19400D9EF76 /* Build configuration list for PBXNativeTarget "On the House" */;
 			buildPhases = (
+				DF6C7BE9FD030C447718E3C8 /* [CP] Check Pods Manifest.lock */,
 				E8CE628F1F4AA19400D9EF76 /* Sources */,
 				E8CE62901F4AA19400D9EF76 /* Frameworks */,
 				E8CE62911F4AA19400D9EF76 /* Resources */,
+				8AEA926EB002555B377D885D /* [CP] Embed Pods Frameworks */,
+				4EA230444D60F77354F36C87 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +177,68 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EA230444D60F77354F36C87 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-On the House/Pods-On the House-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AEA926EB002555B377D885D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-On the House/Pods-On the House-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-On the House/Pods-On the House-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF6C7BE9FD030C447718E3C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-On the House-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8CE628F1F4AA19400D9EF76 /* Sources */ = {
@@ -300,8 +373,10 @@
 		};
 		E8CE62A61F4AA19400D9EF76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -317,8 +392,10 @@
 		};
 		E8CE62A71F4AA19400D9EF76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
+import FacebookLogin
+import FacebookCore
 
-class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
+class LoginViewController: UIViewController{
     
     //let facebookbutton = FBSDKLoginButton()
 
@@ -24,39 +24,39 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate{
     
     
     @IBAction func facebookloginaction(_ sender: UIButton) {
-        let fbloginManager = FBSDKLoginManager()
-        fbloginManager.logIn(withReadPermissions: ["email"], from: self){ (result, error) -> Void in
-            if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if fbloginresult.grantedPermissions != nil{
-                if(fbloginresult.grantedPermissions.contains("email"))
-                    {
-                        self.getFBUserData()
+        let loginmanager = LoginManager()
+        loginmanager.logIn( [.publicProfile ,.email ], viewController: self){ result in
+            switch result {
+            case .failed(let error):
+                print(error.localizedDescription)
+            case .cancelled:
+                print("Login cancelled")
+            case .success(_,_,_):
+                self.getUserinfo {userinfo, error in
+                    if let error = error {print(error.localizedDescription)}
+                    if let userinfo = userinfo, let id = userinfo["id"], let name = userinfo["name"], let email = userinfo["email"]{
+                        //self.loginlabel.text = "Successfully login"
                     }
+                    
                 }
+            }
+            
+        }
+    }
+    
+    func getUserinfo(completion : @escaping (_ : [String: Any]? ,_ : Error?) -> Void){
+        let request = GraphRequest(graphPath:"me" , parameters: ["fields":"id, email, picture"])
+        request.start { (response, result) in
+            switch result{
+            case .failed(let error):
+                completion(nil , error)
+            case .success(let graphResponse):
+                completion(graphResponse.dictionaryValue, nil)
             }
         }
     }
     
-    func getFBUserData(){
-        if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-                if (error == nil){
-                    let result = "successfully loged in"
-                    //everything works print the user data
-                    print(result)
-                }
-            })
-        }
-    }
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
