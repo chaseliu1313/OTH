@@ -36,6 +36,11 @@ class LoginViewController: UIViewController{
                 self.getUserinfo {userinfo, error in
                     if let error = error {print(error.localizedDescription)}
                     if let userinfo = userinfo, let id = userinfo["id"], let name = userinfo["name"], let email = userinfo["email"]{
+                        NewMemberData.email = email as! String
+                        let fullname = name as! String
+                        let namearray = fullname.components(separatedBy: " ")
+                        NewMemberData.first_name = namearray[0]
+                        NewMemberData.last_name = namearray[1]
                         //self.loginlabel.text = "Successfully login"
                     }
                     
