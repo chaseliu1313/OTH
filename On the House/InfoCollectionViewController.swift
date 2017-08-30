@@ -11,18 +11,24 @@ import UIKit
 class InfoCollectionViewController: UIViewController {
     
     
-    @IBOutlet weak var nickname: UITextField!
-    @IBOutlet weak var firstname: UITextField!
-    @IBOutlet weak var lastname: UITextField!
-    @IBOutlet weak var state: UITextField!
-    @IBOutlet weak var postcode: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var reenterpassword: UITextField!
+    @IBOutlet weak var nicknametextfield: UITextField!
+    @IBOutlet weak var firstnametextfield: UITextField!
+    @IBOutlet weak var lastnametextfield: UITextField!
+    @IBOutlet weak var statetextfield: UITextField!
+    @IBOutlet weak var postcodetextfield: UITextField!
+    @IBOutlet weak var emailtextfield: UITextField!
+    @IBOutlet weak var passwordtextfield: UITextField!
+    @IBOutlet weak var reenterpasswordtextfield: UITextField!
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         self.view.endEditing(true)
         return false
+    }
+    
+    func datapreparation() {
+        if let nickname = nicknametextfield.text{ NewMemberData.nickname = nickname }
+        if let firstname = firstnametextfield.text{ NewMemberData.first_name = firstname }
+        if let lastname = lastnametextfield.text{ NewMemberData.last_name = lastname }
     }
     
 
@@ -37,14 +43,14 @@ class InfoCollectionViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nickname.resignFirstResponder()
-        firstname.resignFirstResponder()
-        lastname.resignFirstResponder()
-        state.resignFirstResponder()
-        postcode.resignFirstResponder()
-        email.resignFirstResponder()
-        password.resignFirstResponder()
-        reenterpassword.resignFirstResponder()
+        nicknametextfield.resignFirstResponder()
+        firstnametextfield.resignFirstResponder()
+        lastnametextfield.resignFirstResponder()
+        statetextfield.resignFirstResponder()
+        postcodetextfield.resignFirstResponder()
+        emailtextfield.resignFirstResponder()
+        passwordtextfield.resignFirstResponder()
+        reenterpasswordtextfield.resignFirstResponder()
     }
     
 

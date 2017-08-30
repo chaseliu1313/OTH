@@ -11,6 +11,7 @@
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
 		A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */; };
+		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
+		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +58,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A2A569571F4FAC6E005EB8AE /* New Group */ = {
+		A2A569571F4FAC6E005EB8AE /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
 				E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */,
@@ -64,7 +66,27 @@
 				E8CE629F1F4AA19400D9EF76 /* LaunchScreen.storyboard */,
 				E8CE62A21F4AA19400D9EF76 /* Info.plist */,
 			);
-			name = "New Group";
+			name = "Supporting file";
+			sourceTree = "<group>";
+		};
+		A2F3FD201F564D42006E23CA /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7101E4F11F4D420F00237211 /* RegisterView.swift */,
+				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
+				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
+				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
+				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		A2F3FD211F564D5B006E23CA /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A2F3FD221F564D73006E23CA /* NewMemberData.swift */,
+			);
+			name = Module;
 			sourceTree = "<group>";
 		};
 		D23CCD913574D8C2F9A40D6C /* Pods */ = {
@@ -97,13 +119,10 @@
 		E8CE62951F4AA19400D9EF76 /* On the House */ = {
 			isa = PBXGroup;
 			children = (
-				A2A569571F4FAC6E005EB8AE /* New Group */,
-				7101E4F11F4D420F00237211 /* RegisterView.swift */,
-				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
+				A2F3FD201F564D42006E23CA /* View Controller */,
+				A2F3FD211F564D5B006E23CA /* Module */,
+				A2A569571F4FAC6E005EB8AE /* Supporting file */,
 				E8CE629A1F4AA19400D9EF76 /* Main.storyboard */,
-				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
-				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
-				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 			);
 			path = "On the House";
 			sourceTree = "<group>";
@@ -246,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
+				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
