@@ -26,9 +26,14 @@ class InfoCollectionViewController: UIViewController {
     }
     
     func datapreparation() {
-        if let nickname = nicknametextfield.text{ NewMemberData.nickname = nickname }
-        if let firstname = firstnametextfield.text{ NewMemberData.first_name = firstname }
-        if let lastname = lastnametextfield.text{ NewMemberData.last_name = lastname }
+        if let nickname = nicknametextfield.text{ NewMemberData.nickname = nickname.trimmingCharacters(in: CharacterSet.whitespaces) }
+        if let firstname = firstnametextfield.text{ NewMemberData.first_name = firstname.trimmingCharacters(in: CharacterSet.whitespaces) }
+        if let lastname = lastnametextfield.text{ NewMemberData.last_name = lastname.trimmingCharacters(in: CharacterSet.whitespaces) }
+        if let password = passwordtextfield.text { NewMemberData.password = password.trimmingCharacters(in: CharacterSet.whitespaces) }
+        if let passwordconfirm = reenterpasswordtextfield.text {
+            NewMemberData.password_confirm = passwordconfirm.trimmingCharacters(in: CharacterSet.whitespaces)}
+        if let email = emailtextfield.text{
+            NewMemberData.email = email.trimmingCharacters(in: CharacterSet.whitespaces)}
     }
     
 

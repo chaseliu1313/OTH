@@ -1,0 +1,6 @@
+framework module Pods_On_the_House {
+  umbrella header "Pods-On the House-umbrella.h"
+
+  export *
+  module * { export * }
+}
