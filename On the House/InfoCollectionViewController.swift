@@ -11,6 +11,7 @@ import UIKit
 class InfoCollectionViewController: UIViewController {
     
     
+    
     @IBOutlet weak var nicknametextfield: UITextField!
     @IBOutlet weak var firstnametextfield: UITextField!
     @IBOutlet weak var lastnametextfield: UITextField!
