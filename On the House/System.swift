@@ -11,8 +11,10 @@ import Foundation
 
 class System {
 
+    static let timezones:[String : Int] = ["Perth" : 92, "Adelaide" : 100, "Darwin": 101, "Brisbane": 102, "Canberra": 103, "Hobart": 105, "Melbourne": 106, "Sydney": 108]
     
-    
+    static let states:[String : Int] = ["New South Wales" : 211, "Northern Territory": 212, "Queensland" : 213, "South Australia": 214, "Tasmania": 215, "Victoria": 216, "Western Australia": 217, "Australian Capital Territory": 210]
+   
     init(){
     }
     
@@ -42,6 +44,54 @@ class System {
         return  returnValue
     }
     
-
+    
+    static func getTimezone(timezone: String) -> [String : String] {
+    
+        var location: String!
+        var code: Int!
+        
+        for (location) in timezones.keys {
+        
+            if timezone.contains(location) {
+            
+            code = timezones[location]
+                return ["timezone_id" : "\(code!)"]
+            }
+            
+            else{
+                code = 0
+            
+            }
+        }
+    
+        return ["timezone_id" : "\(code!)"]
+    }
+    
+    static func setCountry() -> [String: String] {
+    
+        return ["country_id" : "13"]
+    
+    }
+    static func setState(state: String) -> [String: String] {
+    
+        var location: String!
+        var code: Int!
+        
+        for (location) in states.keys {
+            
+            if state.contains(location) {
+                
+                code = states[location]
+                return ["zone_id" : "\(code!)"]
+            }
+                
+            else{
+                code = 0
+                
+            }
+        }
+        
+        return ["zone_id" : "\(code!)"]
+    }
 
 }
