@@ -14,6 +14,15 @@ class LoginViewController: UIViewController{
 
     
     //let facebookbutton = FBSDKLoginButton()
+    
+    var parameters = [
+        "email": "Chase@example.com",
+        "password": "pass1234"
+    ]
+    
+    
+    
+    let command = "api/v1/member/login"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +79,19 @@ class LoginViewController: UIViewController{
     }
     
     
+    @IBAction func loginButton(_ sender: UIButton) {
+        
+        if emailtextfield.text != ""
+            && passwordtextfield.text != ""
+        {
+        let email = emailtextfield.text!
+        let password = passwordtextfield.text!
+            
+        login(email: email, password: password)
+            
+        }
+        
+    }
     @IBOutlet weak var emailtextfield: UITextField!
     
     @IBOutlet weak var passwordtextfield: UITextField!
@@ -80,6 +102,26 @@ class LoginViewController: UIViewController{
     }
     
     @IBOutlet weak var facebookloginbutton: UIButton!
+    
+    func login(email: String, password: String)
+    {
+     parameters.updateValue(email, forKey: "email")
+     parameters.updateValue(password, forKey: "password")
+     
+        ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
+          
+            if successed {
+            
+            print("log in successful")
+            }
+            else {
+            print("something went wrong")
+            
+            }
+        }
+     
+    
+    }
 
     /*
     // MARK: - Navigation

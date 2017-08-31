@@ -34,6 +34,7 @@ class Member{
 }
 
     struct NewMemberData{
+        
         static var nickname = ""
         static var first_name = ""
         static var last_name = ""
@@ -47,14 +48,18 @@ class Member{
         static var password = ""
         static var password_confirm = ""
         static var term = "1"
+        static var id = ""
+        
+        static var loginStatus: String = "error"
         
         static func getinformation() -> [String: String] {
+            
             return ["nickname": nickname,
                     "first_name": first_name,
                     "last_name": last_name,
                     "zip": zip,
                     "zone_id": zone_id,
-                    "country_id": country_id,
+                    "country_id": "13",
                     "timezone_id": timezone_id,
                     "question_id": question_id,
                     "question_text": question_text,
