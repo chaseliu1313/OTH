@@ -50,7 +50,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -76,6 +76,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N6h-1E-70S"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vl-ab-HoY">
                                 <rect key="frame" x="146.66666666666669" y="429" width="121.00000000000006" height="30"/>
@@ -113,6 +116,7 @@
                                 </state>
                                 <connections>
                                     <action selector="facebookloginaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUp-nF-myB"/>
+                                    <segue destination="Hdo-7s-NWS" kind="show" identifier="facebookreg" id="vbm-ze-twS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -782,6 +786,9 @@ and periodicals</string>
                                 <rect key="frame" x="30" y="50" width="29" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-chevron_left_filled-1"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="6IU-LM-w6o"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z20-tC-bC0">
                                 <rect key="frame" x="172.5" y="607" width="69" height="30"/>
@@ -810,7 +817,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216.8000000000002" y="-729.08545727136436"/>
+            <point key="canvasLocation" x="294" y="-814"/>
         </scene>
         <!--My Membership-->
         <scene sceneID="Qgr-BV-11z">
@@ -890,6 +897,6 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hMv-EJ-WaW"/>
+        <segue reference="6IU-LM-w6o"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,8 @@ import Foundation
 
 
 class System {
+    
+    static var didAuth: Bool = false
 
     static let timezones:[String : Int] = ["Perth" : 92, "Adelaide" : 100, "Darwin": 101, "Brisbane": 102, "Canberra": 103, "Hobart": 105, "Melbourne": 106, "Sydney": 108]
     
@@ -19,6 +21,17 @@ class System {
     }
     
     
+    static func oneTimelogin()->Bool{
+    
+        if (NewMemberData.loginStatus == "success"){
+        
+        self.didAuth = true
+            return self.didAuth
+        }
+        else{
+        return self.didAuth
+        }
+    }
     
     
     static func isValidEmailAddress(emailAddressString: String) -> Bool {
@@ -72,6 +85,8 @@ class System {
         return ["country_id" : "13"]
     
     }
+    
+    
     static func setState(state: String) -> [String: String] {
     
         var location: String!

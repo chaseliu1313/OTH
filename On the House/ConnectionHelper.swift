@@ -16,16 +16,15 @@ struct ConnectionHelper{
     static let baseUrl = "https://ma.on-the-house.org/"
     
     static var status: String = ""
+    static var postStatus: String = ""
     
     
     
     
-    static func getStatus(command: String, parameter : [String: Any], compeletion: @escaping (Bool, Member?) ->Void) {
+    static func userLogin(command: String, parameter : [String: Any], compeletion: @escaping (Bool) ->Void) {
         
         let url = baseUrl + command
         
-        
-        var newMember: Member!
         
         
         Alamofire.request(url, method: .post, parameters: parameter).responseJSON(completionHandler: { (response) in
@@ -38,21 +37,25 @@ struct ConnectionHelper{
                 if json["status"].string! == "success"{
                     
                     self.status = json["status"].string!
-                    let id = json["member"]["id"].string
-                    let firstname = json["member"]["first_name"].string
-                    let lastName = json["member"]["last_name"].string
-                    let password = json["member"]["password"].string
+                    NewMemberData.loginStatus = self.status
+                    NewMemberData.id = json["member"]["id"].string!
+                    NewMemberData.first_name = json["member"]["first_name"].string!
+                    NewMemberData.last_name = json["member"]["last_name"].string!
+                    NewMemberData.zone_id = json["member"]["zone_id"].string!
+                    NewMemberData.timezone_id = json["member"]["timezone_id"].string!
+                    NewMemberData.email = json["member"]["email"].string!
+                    
                     
                     //print("\(id!): \(firstname!).\(lastName!), password: \(password!)")
                     
-                    newMember = Member(id: id!,firstName: firstname!,lastName: lastName!,password: password!)
-                    compeletion(true, newMember)
+                    
+                    compeletion(true)
                     
                 }
                 
                 
             }else {
-                compeletion(false, nil)
+                compeletion(false)
             }
             
             
@@ -62,7 +65,36 @@ struct ConnectionHelper{
     }
     
     
+    static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool) -> Void){
     
+        let url = baseUrl + command
+        
+        
+        
+         Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
+            
+            
+            switch response.result {
+            case .success(_):
+                
+                self.postStatus = JSON(response.data!)["status"].string!
+                
+                compeletion(true)
+                
+                
+                
+              
+            case .failure(_):
+                print("connection faild")
+                compeletion(false)
+            
+            
+            
+            }
+        }
+    
+    
+    }
     
     
 }

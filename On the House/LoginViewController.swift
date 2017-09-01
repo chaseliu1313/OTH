@@ -14,9 +14,19 @@ class LoginViewController: UIViewController{
 
     
     //let facebookbutton = FBSDKLoginButton()
+    
+    var parameters = [
+        "email": "Chase@example.com",
+        "password": "pass1234"
+    ]
+    
+    
+    
+    let command = "api/v1/member/login"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordtextfield.isSecureTextEntry = true
         /*view.addSubview(facebookbutton)
         facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
         //facebooklogin = FBSDKLoginButton()*/
@@ -33,6 +43,7 @@ class LoginViewController: UIViewController{
             case .cancelled:
                 print("Login cancelled")
             case .success(_,_,_):
+                self.performSegue(withIdentifier: "facebookreg", sender: self)
                 self.getUserinfo {userinfo, error in
                     if let error = error {print(error.localizedDescription)}
                     if let userinfo = userinfo, let id = userinfo["id"], let name = userinfo["name"], let email = userinfo["email"]{
@@ -49,6 +60,7 @@ class LoginViewController: UIViewController{
             
         }
     }
+    
     
     func getUserinfo(completion : @escaping (_ : [String: Any]? ,_ : Error?) -> Void){
         let request = GraphRequest(graphPath:"me" , parameters: ["fields":"id, email, picture"])
@@ -70,6 +82,38 @@ class LoginViewController: UIViewController{
     }
     
     
+    @IBAction func loginButton(_ sender: UIButton) {
+        
+        
+        
+        if emailtextfield.text != ""
+            && passwordtextfield.text != ""
+        {
+        
+        let email = emailtextfield.text!
+        let password = passwordtextfield.text!
+            
+        //login(email: email, password: password)
+            parameters.updateValue(email, forKey: "email")
+            parameters.updateValue(password, forKey: "password")
+            
+            ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
+                
+                if successed {
+                    
+                    print("log in successful")
+                   // self.dismiss(animated: false, completion: nil)
+                }
+                else {
+                    print("something went wrong")
+                    
+                }
+            }
+
+            
+        }
+        
+    }
     @IBOutlet weak var emailtextfield: UITextField!
     
     @IBOutlet weak var passwordtextfield: UITextField!
@@ -80,6 +124,27 @@ class LoginViewController: UIViewController{
     }
     
     @IBOutlet weak var facebookloginbutton: UIButton!
+    
+    //login function by Chase
+    func login(email: String, password: String)
+    {
+     parameters.updateValue(email, forKey: "email")
+     parameters.updateValue(password, forKey: "password")
+     
+        ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
+          
+            if successed {
+            
+            print("log in successful")
+            }
+            else {
+            print("something went wrong")
+            
+            }
+        }
+     
+    
+    }
 
     /*
     // MARK: - Navigation
