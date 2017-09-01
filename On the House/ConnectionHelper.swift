@@ -16,6 +16,7 @@ struct ConnectionHelper{
     static let baseUrl = "https://ma.on-the-house.org/"
     
     static var status: String = ""
+    static var postStatus: String = ""
     
     
     
@@ -64,7 +65,36 @@ struct ConnectionHelper{
     }
     
     
+    static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool) -> Void){
     
+        let url = baseUrl + command
+        
+        
+        
+         Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
+            
+            
+            switch response.result {
+            case .success(_):
+                
+                self.postStatus = JSON(response.data!)["status"].string!
+                
+                compeletion(true)
+                
+                
+                
+              
+            case .failure(_):
+                print("connection faild")
+                compeletion(false)
+            
+            
+            
+            }
+        }
+    
+    
+    }
     
     
 }

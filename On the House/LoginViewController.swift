@@ -91,7 +91,23 @@ class LoginViewController: UIViewController{
         let email = emailtextfield.text!
         let password = passwordtextfield.text!
             
-        login(email: email, password: password)
+        //login(email: email, password: password)
+            parameters.updateValue(email, forKey: "email")
+            parameters.updateValue(password, forKey: "password")
+            
+            ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
+                
+                if successed {
+                    
+                    print("log in successful")
+                   // self.dismiss(animated: false, completion: nil)
+                }
+                else {
+                    print("something went wrong")
+                    
+                }
+            }
+
             
         }
         
