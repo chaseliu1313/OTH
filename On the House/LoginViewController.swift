@@ -43,6 +43,7 @@ class LoginViewController: UIViewController{
             case .cancelled:
                 print("Login cancelled")
             case .success(_,_,_):
+                self.performSegue(withIdentifier: "facebookreg", sender: self)
                 self.getUserinfo {userinfo, error in
                     if let error = error {print(error.localizedDescription)}
                     if let userinfo = userinfo, let id = userinfo["id"], let name = userinfo["name"], let email = userinfo["email"]{
@@ -59,6 +60,7 @@ class LoginViewController: UIViewController{
             
         }
     }
+    
     
     func getUserinfo(completion : @escaping (_ : [String: Any]? ,_ : Error?) -> Void){
         let request = GraphRequest(graphPath:"me" , parameters: ["fields":"id, email, picture"])
