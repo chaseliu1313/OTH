@@ -58,8 +58,10 @@ class System {
     }
     
     
-    static func getTimezone(timezone: String) -> [String : String] {
+    static func getTimezone() -> [String : String] {
     
+        let timezone = TimeZone.current.identifier
+        
         var location: String!
         var code: Int!
         
