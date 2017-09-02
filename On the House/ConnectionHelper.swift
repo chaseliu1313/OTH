@@ -17,6 +17,7 @@ struct ConnectionHelper{
     
     static var status: String = ""
     static var postStatus: String = ""
+    static var errorMesg: String = ""
     
     
     
@@ -79,12 +80,17 @@ struct ConnectionHelper{
                 
                 self.postStatus = JSON(response.data!)["status"].string!
                 
-                compeletion(true)
+                if self.postStatus == "success"
+                {
+                    compeletion(true)
+                }
+                else
+                {
+                    self.errorMesg = "The request has failed"
+                    compeletion(false)
+                }
                 
-                
-                
-              
-            case .failure(_):
+           case .failure(_):
                 print("connection faild")
                 compeletion(false)
             
