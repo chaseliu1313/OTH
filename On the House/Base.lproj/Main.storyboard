@@ -224,7 +224,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsA-zD-uxM">
-                                <rect key="frame" x="195.5" y="439.5" width="161.5" height="30"/>
+                                <rect key="frame" x="162" y="440" width="196" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -307,10 +307,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Re-Enter Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-Cl-0aC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Re-enter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-Cl-0aC">
                                 <rect key="frame" x="32" y="440" width="144" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -348,19 +348,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="email" destination="r6O-Ua-hFi" id="mO3-zY-0jg"/>
-                        <outlet property="firstname" destination="MzU-Lh-J0f" id="KXI-X9-ruG"/>
-                        <outlet property="lastname" destination="HlA-9O-Kvt" id="Rgi-W4-0fu"/>
-                        <outlet property="nickname" destination="2xe-Nm-qII" id="vtk-aJ-WqO"/>
-                        <outlet property="password" destination="f0w-0C-1QK" id="RcW-ff-0VX"/>
-                        <outlet property="postcode" destination="QCk-0N-ZDZ" id="OVs-iw-YUv"/>
-                        <outlet property="reenterpassword" destination="nsA-zD-uxM" id="1sM-A1-9f2"/>
-                        <outlet property="state" destination="tTu-h1-0wj" id="Jhy-5M-ICZ"/>
+                        <outlet property="emailtextfield" destination="r6O-Ua-hFi" id="Iv9-3z-38n"/>
+                        <outlet property="firstnametextfield" destination="MzU-Lh-J0f" id="AVd-aX-dBp"/>
+                        <outlet property="lastnametextfield" destination="HlA-9O-Kvt" id="ylX-lD-fZc"/>
+                        <outlet property="nicknametextfield" destination="2xe-Nm-qII" id="U55-vR-jGG"/>
+                        <outlet property="passwordtextfield" destination="f0w-0C-1QK" id="7VK-yt-t59"/>
+                        <outlet property="postcodetextfield" destination="QCk-0N-ZDZ" id="iDt-S1-xox"/>
+                        <outlet property="reenterpasswordtextfield" destination="nsA-zD-uxM" id="Ra8-Tk-5hP"/>
+                        <outlet property="statetextfield" destination="tTu-h1-0wj" id="WAQ-Fb-gQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6o-GU-NN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066.25" y="-47.5"/>
+            <point key="canvasLocation" x="2065.217391304348" y="-48.097826086956523"/>
         </scene>
         <!--Register View-->
         <scene sceneID="9VQ-4l-8U4">
@@ -900,6 +900,6 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5wL-K2-LhC"/>
+        <segue reference="hMv-EJ-WaW"/>
     </inferredMetricsTieBreakers>
 </document>
