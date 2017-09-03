@@ -11,7 +11,7 @@ import UIKit
 class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let command = "api/v1/member/create"
-    let parameter = ["nickname": "",
+    var parameter = ["nickname": "",
                      "firstname": "",
                      "last_name": "",
                       "zip": "",
@@ -19,63 +19,116 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
                       "country_id": "13",
                       "timezone_id": "",
                       "question_id": "",
-                      "question_text":"",
+                      "question_text":"null",
                       "email": "",
                       "password":"",
                       "password_confirm": "",
-                      "terms": ""]
+                      "terms": "1"]
     
-    var nickname = ""
-    var first_name = ""
-    var last_name = ""
-    var zip = ""
-    var zone_id = ""
+    var nickname = String()
+    var first_name = String()
+    var last_name = String()
+    var zip = String()
+    var zone_id = String()
     let country_id = "13"
     var time_zone = System.getTimezone()
-    var email = ""
-    var password = ""
-    var password_confirm = ""
-
+    var email = String()
+    var password = String()
+    var password_confirm = String()
+    
+    var questionid = String()
+    var placementAnswer = 0
+    @IBOutlet weak var answerlabel: UILabel!
+    @IBOutlet weak var pickerview: UIPickerView!
+    @IBOutlet weak var answertextfield: UITextField!
+    var answer = ""
+    
+    @IBOutlet weak var Switch: UISwitch!
+    var term = ""
+    
+    @IBOutlet weak var signup: UIButton!
+   
+    @IBAction func `switch`(_ sender: UISwitch) {
+        
+        if(sender.isOn == true)
+        {
+         term = "1"
+        signup.isHidden = false
+        
+        }
+        else
+        {
+         term = "0"
+            signup.isHidden = true
+        }
+        
+    }
+    
+    var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
+    
     
     @IBAction func SignUP(_ sender: UIButton) {
         
         
-        ConnectionHelper.userLogin(command: command, parameter: parameter) { (successed) in
+        ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
             if(successed) {
+                
+                 self.notifyUser("ON THE HOUSE", "Registration Successfull")
             }
             else{
-            
+                
+            self.notifyUser("ON THE HOUSE", "Something IS Wrong")
+                
             }
         }
         
     }
     
     
-    var placementAnswer = 0
-    @IBOutlet weak var answerlabel: UILabel!
-    @IBOutlet weak var pickerview: UIPickerView!
+   
     
-    var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
-    @IBOutlet weak var answertextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         pickerview.delegate = self
         pickerview.dataSource = self
         answerlabel.isHidden = true
         answertextfield.isHidden = true
+        signup.isHidden = false
+       
+        if(answertextfield.text != "")
+        {
+            answer = answertextfield.text!
+        }
+        else
+        {
         
-        // Do any additional setup after loading the view.
+        answer = "null"
+            
+        }
+        
+        parameter.updateValue(nickname, forKey: "nickname")
+        parameter.updateValue(first_name, forKey: "first_name")
+        parameter.updateValue(last_name, forKey: "last_name")
+        parameter.updateValue(zip, forKey: "zip")
+        parameter.updateValue(zone_id, forKey: "zone_id")
+        parameter.updateValue(time_zone, forKey: "timezone_id")
+        parameter.updateValue(questionid, forKey: "question_id")
+        parameter.updateValue(answer, forKey: "question_text")
+        parameter.updateValue(email, forKey: "email")
+        parameter.updateValue(password, forKey: "password")
+        parameter.updateValue(password_confirm, forKey: "password_confirm")
+        
     }
     
-    //Calls this function when the tap is recognized.
+    
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
         view.endEditing(true)
     }
     
@@ -84,6 +137,8 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         answertextfield.resignFirstResponder()
     }
     
+   
+    
     
     
     override func didReceiveMemoryWarning()
@@ -91,21 +146,35 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    
+    
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
         {
             return Array.count
         }
-        
-        func numberOfComponents(in pickerView: UIPickerView) -> Int
+    
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
         {
             return 1
         }
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
         {
             return Array[row]
         }
+    
+    
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
+        questionid = System.getQuestion(question: Array[placementAnswer])
         
         if(placementAnswer == 1)
         {
@@ -127,5 +196,16 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
             answerlabel.isHidden = true
             answertextfield.isHidden = true
         }
+    
+    }
+    
+    func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+        
     }
 }
