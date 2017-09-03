@@ -82,11 +82,11 @@
 			children = (
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
+				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
-				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";

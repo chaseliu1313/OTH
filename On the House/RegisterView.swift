@@ -25,6 +25,18 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
                       "password_confirm": "",
                       "terms": ""]
     
+    var nickname = ""
+    var first_name = ""
+    var last_name = ""
+    var zip = ""
+    var zone_id = ""
+    let country_id = "13"
+    var time_zone = System.getTimezone()
+    var email = ""
+    var password = ""
+    var password_confirm = ""
+
+    
     @IBAction func SignUP(_ sender: UIButton) {
         
         
@@ -44,6 +56,8 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBOutlet weak var pickerview: UIPickerView!
     
     var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
+    
+    @IBOutlet weak var answertextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +84,7 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         answertextfield.resignFirstResponder()
     }
     
-    @IBOutlet weak var answertextfield: UITextField!
+    
     
     override func didReceiveMemoryWarning()
     {

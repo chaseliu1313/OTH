@@ -12,7 +12,6 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     
     
     @IBOutlet weak var statepickerview: UIPickerView!
-    
     @IBOutlet weak var nicknametextfield: UITextField!
     @IBOutlet weak var firstnametextfield: UITextField!
     @IBOutlet weak var lastnametextfield: UITextField!
@@ -21,6 +20,27 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     @IBOutlet weak var passwordtextfield: UITextField!
     @IBOutlet weak var reenterpasswordtextfield: UITextField!
     
+    var slectedState = ""
+    
+    @IBAction func toNext(_ sender: Any) {
+        
+        if (slectedState != ""
+           && nicknametextfield.text != ""
+           && firstnametextfield.text != ""
+           && lastnametextfield.text != ""
+           && postcodetextfield.text != ""
+           && emailtextfield.text != ""
+           && passwordtextfield.text != ""
+            && reenterpasswordtextfield.text != "")
+        {
+            performSegue(withIdentifier: "registerSegue", sender: self)
+        }
+        
+        else{
+        notifyUser("ON THE HOUSE", "Please Fill In All Fields")
+        }
+        
+    }
     
     
     var Array = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
@@ -66,6 +86,7 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     }
     
     
+    //pickerview functions
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         return Array.count
@@ -94,6 +115,12 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
         
         return pickerLabel!;
     }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        self.slectedState = Array[row]
+        
+    }
+    //ends of pickerview functions
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nicknametextfield.resignFirstResponder()
@@ -106,16 +133,35 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
         reenterpasswordtextfield.resignFirstResponder()
     }
     
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let destController = segue.destination as! RegisterView
+        destController.nickname = nicknametextfield.text!
+        destController.first_name = firstnametextfield.text!
+        destController.last_name = lastnametextfield.text!
+        destController.zip = postcodetextfield.text!
+        destController.zone_id = System.setState(state: self.slectedState)
+        destController.zip = postcodetextfield.text!
+        destController.email = emailtextfield.text!
+        destController.password = passwordtextfield.text!
+        destController.password_confirm = reenterpasswordtextfield.text!
+        
+        
+        
     }
-    */
+    
+    func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+        
+    }
+
 
 }
 
