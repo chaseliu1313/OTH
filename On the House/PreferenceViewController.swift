@@ -18,11 +18,20 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+
         picker.delegate = self
         picker.dataSource = self
         // Do any additional setup after loading the view.
     }
 
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

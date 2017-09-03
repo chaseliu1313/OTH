@@ -47,12 +47,22 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         pickerview.delegate = self
         pickerview.dataSource = self
         answerlabel.isHidden = true
         answertextfield.isHidden = true
         
         // Do any additional setup after loading the view.
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)

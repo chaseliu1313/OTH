@@ -22,7 +22,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var Array = ["Please select option","If Google search, what did you search for?","Friend","If newslettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
-     var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+     var State = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
             pickerLabel!.textAlignment = NSTextAlignment.center
         }
         
-        pickerLabel?.text = Array2[row]
+        pickerLabel?.text = State[row]
         
         return pickerLabel!;
     }
@@ -74,8 +74,12 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         {
             return 1
         }
+    
+  
+
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
         {
+            return State[row]
             return Array[row]
         }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
