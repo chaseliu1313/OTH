@@ -10,6 +10,35 @@ import Foundation
 import UIKit
 class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    let command = "api/v1/member/create"
+    let parameter = ["nickname": "",
+                     "firstname": "",
+                     "last_name": "",
+                      "zip": "",
+                      "zone_id": "",
+                      "country_id": "13",
+                      "timezone_id": "",
+                      "question_id": "",
+                      "question_text":"",
+                      "email": "",
+                      "password":"",
+                      "password_confirm": "",
+                      "terms": ""]
+    
+    @IBAction func SignUP(_ sender: UIButton) {
+        
+        
+        ConnectionHelper.userLogin(command: command, parameter: parameter) { (successed) in
+            if(successed) {
+            }
+            else{
+            
+            }
+        }
+        
+    }
+    
+    
     var placementAnswer = 0
     @IBOutlet weak var answerlabel: UILabel!
     @IBOutlet weak var pickerview: UIPickerView!

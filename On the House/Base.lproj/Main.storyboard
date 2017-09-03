@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -355,19 +355,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="emailtextfield" destination="r6O-Ua-hFi" id="Iv9-3z-38n"/>
-                        <outlet property="firstnametextfield" destination="MzU-Lh-J0f" id="AVd-aX-dBp"/>
-                        <outlet property="lastnametextfield" destination="HlA-9O-Kvt" id="ylX-lD-fZc"/>
-                        <outlet property="nicknametextfield" destination="2xe-Nm-qII" id="U55-vR-jGG"/>
-                        <outlet property="passwordtextfield" destination="f0w-0C-1QK" id="7VK-yt-t59"/>
-                        <outlet property="postcodetextfield" destination="QCk-0N-ZDZ" id="iDt-S1-xox"/>
-                        <outlet property="reenterpasswordtextfield" destination="nsA-zD-uxM" id="Ra8-Tk-5hP"/>
-                        <outlet property="statetextfield" destination="tTu-h1-0wj" id="WAQ-Fb-gQS"/>
+                        <outlet property="emailtextfield" destination="r6O-Ua-hFi" id="UrF-tQ-aAy"/>
+                        <outlet property="firstnametextfield" destination="MzU-Lh-J0f" id="nyS-0v-w9v"/>
+                        <outlet property="lastnametextfield" destination="HlA-9O-Kvt" id="FfH-Ev-3Ah"/>
+                        <outlet property="nicknametextfield" destination="2xe-Nm-qII" id="9gz-0c-6HX"/>
+                        <outlet property="passwordtextfield" destination="f0w-0C-1QK" id="b6X-Gm-QTx"/>
+                        <outlet property="postcodetextfield" destination="QCk-0N-ZDZ" id="XBf-Yt-qPB"/>
+                        <outlet property="reenterpasswordtextfield" destination="nsA-zD-uxM" id="NYZ-nZ-J6M"/>
+                        <outlet property="statepickerview" destination="Kex-Qb-86N" id="LFQ-nD-FGN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6o-GU-NN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2065.217391304348" y="-48.097826086956523"/>
+            <point key="canvasLocation" x="1813.0434782608697" y="-45.652173913043484"/>
         </scene>
         <!--Register View-->
         <scene sceneID="9VQ-4l-8U4">
@@ -424,6 +424,9 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignUP:" destination="8lo-Ax-s2V" eventType="touchUpInside" id="zfR-7Z-ilm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I agree with the T&amp;C." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-oZ-QYQ">
                                 <rect key="frame" x="159" y="575.5" width="160.5" height="28"/>
