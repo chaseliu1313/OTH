@@ -27,12 +27,9 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordtextfield.isSecureTextEntry = true
-        /*view.addSubview(facebookbutton)
-        facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
-        //facebooklogin = FBSDKLoginButton()*/
-        // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var facebookloginbutton: UIButton!
     
     @IBAction func facebookloginaction(_ sender: UIButton) {
         let loginmanager = LoginManager()
@@ -135,7 +132,6 @@ class LoginViewController: UIViewController{
         passwordtextfield.resignFirstResponder()
     }
     
-    @IBOutlet weak var facebookloginbutton: UIButton!
     
     //login function by Chase
     func login(email: String, password: String)

@@ -98,7 +98,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dI7-Yf-Nki" kind="show" id="Aqc-N8-ETB"/>
+                                    <segue destination="dI7-Yf-Nki" kind="show" id="Mmg-1K-4MP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOC-XD-2q1">
@@ -116,7 +116,6 @@
                                 </state>
                                 <connections>
                                     <action selector="facebookloginaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUp-nF-myB"/>
-                                    <segue destination="Hdo-7s-NWS" kind="show" identifier="facebookreg" id="vbm-ze-twS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,7 +133,7 @@
                     </view>
                     <connections>
                         <outlet property="emailtextfield" destination="tKF-CR-p59" id="956-xg-wSr"/>
-                        <outlet property="facebookloginbutton" destination="SIa-hP-gI8" id="gzp-tn-m7o"/>
+                        <outlet property="facebookloginbutton" destination="SIa-hP-gI8" id="Cq8-d5-ap1"/>
                         <outlet property="passwordtextfield" destination="XN0-fT-HDn" id="bdl-gk-iBq"/>
                     </connections>
                 </viewController>
@@ -348,19 +347,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="email" destination="r6O-Ua-hFi" id="mO3-zY-0jg"/>
-                        <outlet property="firstname" destination="MzU-Lh-J0f" id="KXI-X9-ruG"/>
-                        <outlet property="lastname" destination="HlA-9O-Kvt" id="Rgi-W4-0fu"/>
-                        <outlet property="nickname" destination="2xe-Nm-qII" id="vtk-aJ-WqO"/>
-                        <outlet property="password" destination="f0w-0C-1QK" id="RcW-ff-0VX"/>
-                        <outlet property="postcode" destination="QCk-0N-ZDZ" id="OVs-iw-YUv"/>
-                        <outlet property="reenterpassword" destination="nsA-zD-uxM" id="1sM-A1-9f2"/>
-                        <outlet property="state" destination="tTu-h1-0wj" id="Jhy-5M-ICZ"/>
+                        <outlet property="emailtextfield" destination="r6O-Ua-hFi" id="8O5-GK-ahV"/>
+                        <outlet property="firstnametextfield" destination="MzU-Lh-J0f" id="0uE-3Q-i2Y"/>
+                        <outlet property="lastnametextfield" destination="HlA-9O-Kvt" id="O06-ot-6Gm"/>
+                        <outlet property="nicknametextfield" destination="2xe-Nm-qII" id="YBO-cW-Aba"/>
+                        <outlet property="passwordtextfield" destination="f0w-0C-1QK" id="qmL-z3-fis"/>
+                        <outlet property="postcodetextfield" destination="QCk-0N-ZDZ" id="KSY-zl-f9V"/>
+                        <outlet property="reenterpasswordtextfield" destination="nsA-zD-uxM" id="7cF-Cu-tVY"/>
+                        <outlet property="statetextfield" destination="tTu-h1-0wj" id="tSd-4e-iLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6o-GU-NN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2066.25" y="-47.5"/>
+            <point key="canvasLocation" x="986" y="852"/>
         </scene>
         <!--Register View-->
         <scene sceneID="9VQ-4l-8U4">
@@ -900,6 +899,6 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5wL-K2-LhC"/>
+        <segue reference="hMv-EJ-WaW"/>
     </inferredMetricsTieBreakers>
 </document>

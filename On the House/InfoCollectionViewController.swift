@@ -21,10 +21,10 @@ class InfoCollectionViewController: UIViewController {
     @IBOutlet weak var passwordtextfield: UITextField!
     @IBOutlet weak var reenterpasswordtextfield: UITextField!
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+    /*func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         self.view.endEditing(true)
         return false
-    }
+    }*/
     
     func datapreparation() {
         if let nickname = nicknametextfield.text{ NewMemberData.nickname = nickname.trimmingCharacters(in: CharacterSet.whitespaces) }
