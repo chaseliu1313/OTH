@@ -15,8 +15,16 @@ class ForgetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+
 
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +57,8 @@ class ForgetPasswordViewController: UIViewController {
                 }
                 else {
                 
-                    print("reset password faild")
+                    self.notifyUser("ON THE HOUSE", "Invalid Email Address")
+                    
                 }
             }
         
@@ -68,5 +77,15 @@ class ForgetPasswordViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+     func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+        
+    }
 
 }
+

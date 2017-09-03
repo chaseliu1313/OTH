@@ -28,6 +28,9 @@ class LoginViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+
         passwordtextfield.isSecureTextEntry = true
         if isloggedIn() {
             print("you have already logged in")
@@ -35,12 +38,14 @@ class LoginViewController: UIViewController{
             
             
         }
-        /*view.addSubview(facebookbutton)
-        facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
-        //facebooklogin = FBSDKLoginButton()*/
-        // Do any additional setup after loading the view.
+      
     }
     
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     
     @IBAction func facebookloginaction(_ sender: UIButton) {
         let loginmanager = LoginManager()
@@ -114,11 +119,14 @@ class LoginViewController: UIViewController{
                 
                 if successed {
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    
+                    
                     UserDefaults.standard.synchronize()
                 print("login was successful")
                 }
                 else {
-                print("invalid email address/password")
+                self.notifyUser("ON THE HOUSE", "Invalid Email Address/Password")
+                    
                 
                 }
             })
@@ -127,49 +135,12 @@ class LoginViewController: UIViewController{
         }
         
         else {
-            
-        print("enter your email or password")
+         self.notifyUser("ON THE HOUSE", "Enter Your Email or Password")
+        
         
         }
         
-//        if emailtextfield.text != ""
-//            && passwordtextfield.text != ""
-//        {
-//        
-//            let email = emailtextfield.text!
-//            let password = passwordtextfield.text!
-//            
-//        //login(email: email, password: password)
-//            parameters.updateValue(email, forKey: "email")
-//            parameters.updateValue(password, forKey: "password")
-//            
-//            
-//            
-//                //dismiss(animated: true, completion: nil)
-//            
-//            
-//            
-//                ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
-//                    
-//                    if successed {
-////                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
-////                        UserDefaults.standard.synchronize()
-//                        print("log in successful")
-//                        
-//                        // self.dismiss(animated: false, completion: nil)
-//                    }
-//                    else {
-//                        print("something went wrong")
-//                        
-//                    }
-//                }
-//                
-//                
-//            
-//            }
-//            
-//            
-//            
+        
         
         
     }
@@ -203,20 +174,22 @@ class LoginViewController: UIViewController{
     
     }
     
-    
+    //check log in status
     func isloggedIn() -> Bool {
     
     return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //add notification
+    func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+        
     }
-    */
+    
 
 }

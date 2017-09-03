@@ -16,6 +16,8 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var placementAnswer = 0
     
+    @IBOutlet weak var statepickview: UIPickerView!
+    
     @IBOutlet weak var pickview: UIPickerView!
     
     @IBOutlet weak var answerlabel: UILabel!
@@ -27,8 +29,12 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
 
     
+     var State = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        statepickview.delegate = self
+        statepickview.dataSource = self
         pickview.delegate = self
         pickview.dataSource = self
         
@@ -40,6 +46,23 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         // Do any additional setup after loading the view.
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = view as? UILabel;
+        
+        if (pickerLabel == nil)
+        {
+            pickerLabel = UILabel()
+            
+            pickerLabel!.font = UIFont(name: "Montserrat", size: 5)
+            pickerLabel!.textAlignment = NSTextAlignment.center
+        }
+        
+        pickerLabel?.text = State[row]
+        
+        return pickerLabel!;
+    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
@@ -62,6 +85,9 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         {
             return 1
         }
+    
+  
+
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
         {
             if pickview == pickerView {
