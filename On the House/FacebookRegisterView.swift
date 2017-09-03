@@ -12,6 +12,8 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var placementAnswer = 0
     
+    @IBOutlet weak var statepickview: UIPickerView!
+    
     @IBOutlet weak var pickview: UIPickerView!
     
     @IBOutlet weak var answerlabel: UILabel!
@@ -20,8 +22,12 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var Array = ["Please select option","If Google search, what did you search for?","Friend","If newslettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
+     var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        statepickview.delegate = self
+        statepickview.dataSource = self
         pickview.delegate = self
         pickview.dataSource = self
         answerlabel.isHidden = true
@@ -29,6 +35,23 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         // Do any additional setup after loading the view.
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = view as? UILabel;
+        
+        if (pickerLabel == nil)
+        {
+            pickerLabel = UILabel()
+            
+            pickerLabel!.font = UIFont(name: "Montserrat", size: 5)
+            pickerLabel!.textAlignment = NSTextAlignment.center
+        }
+        
+        pickerLabel?.text = Array2[row]
+        
+        return pickerLabel!;
+    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
