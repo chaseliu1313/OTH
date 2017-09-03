@@ -28,6 +28,9 @@ class LoginViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+
         passwordtextfield.isSecureTextEntry = true
         if isloggedIn() {
             print("you have already logged in")
@@ -35,12 +38,14 @@ class LoginViewController: UIViewController{
             
             
         }
-        /*view.addSubview(facebookbutton)
-        facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
-        //facebooklogin = FBSDKLoginButton()*/
-        // Do any additional setup after loading the view.
+      
     }
     
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     
     @IBAction func facebookloginaction(_ sender: UIButton) {
         let loginmanager = LoginManager()
