@@ -8,21 +8,26 @@
 
 import UIKit
 
-class InfoCollectionViewController: UIViewController {
+class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource {
     
     
+    @IBOutlet weak var statepickerview: UIPickerView!
     
     @IBOutlet weak var nicknametextfield: UITextField!
     @IBOutlet weak var firstnametextfield: UITextField!
     @IBOutlet weak var lastnametextfield: UITextField!
-    @IBOutlet weak var statetextfield: UITextField!
     @IBOutlet weak var postcodetextfield: UITextField!
     @IBOutlet weak var emailtextfield: UITextField!
     @IBOutlet weak var passwordtextfield: UITextField!
     @IBOutlet weak var reenterpasswordtextfield: UITextField!
     
+    
+    
+    var Array = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         self.view.endEditing(true)
+        
         return false
     }
     
@@ -40,6 +45,8 @@ class InfoCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        statepickerview.delegate = self
+        statepickerview.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -48,11 +55,26 @@ class InfoCollectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return Array.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        return Array[row]
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nicknametextfield.resignFirstResponder()
         firstnametextfield.resignFirstResponder()
         lastnametextfield.resignFirstResponder()
-        statetextfield.resignFirstResponder()
+        statepickerview.resignFirstResponder()
         postcodetextfield.resignFirstResponder()
         emailtextfield.resignFirstResponder()
         passwordtextfield.resignFirstResponder()
