@@ -46,7 +46,13 @@ struct ConnectionHelper{
                     NewMemberData.timezone_id = json["member"]["timezone_id"].string!
                     NewMemberData.email = json["member"]["email"].string!
                     
-                    
+                    UserDefaults.standard.set(NewMemberData.id, forKey: "member_id")
+                    UserDefaults.standard.set(NewMemberData.first_name, forKey: "first_name")
+                    UserDefaults.standard.set(NewMemberData.last_name, forKey: "last_name")
+                    UserDefaults.standard.set(NewMemberData.zone_id, forKey: "zone_id")
+                    UserDefaults.standard.set(NewMemberData.timezone_id, forKey: "timezone_id")
+                    UserDefaults.standard.set(NewMemberData.email, forKey: "email")
+                    UserDefaults.standard.synchronize()
                     //print("\(id!): \(firstname!).\(lastName!), password: \(password!)")
                     
                     

@@ -114,6 +114,8 @@ class LoginViewController: UIViewController{
                 
                 if successed {
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    
+                    
                     UserDefaults.standard.synchronize()
                 print("login was successful")
                 }
