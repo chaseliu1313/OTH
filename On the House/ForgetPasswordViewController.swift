@@ -49,7 +49,8 @@ class ForgetPasswordViewController: UIViewController {
                 }
                 else {
                 
-                    print("reset password faild")
+                    self.notifyUser("ON THE HOUSE", "Invalid Email Address")
+                    
                 }
             }
         
@@ -68,5 +69,15 @@ class ForgetPasswordViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+     func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+        
+    }
 
 }
+
