@@ -10,6 +10,9 @@ import UIKit
 
 class ForgetPasswordViewController: UIViewController {
 
+    let command = "api/v1/member/forgot-password"
+    var parameter = ["email" : " "]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +32,33 @@ class ForgetPasswordViewController: UIViewController {
     
     
 
+    @IBAction func forgetPassword(_ sender: UIButton) {
+        
+        let email = emailtextfield.text!
+        
+        if emailtextfield.text  != "" {
+        
+          parameter.updateValue(email, forKey: "email")
+            
+            ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
+                
+                if successed {
+                
+                    print("reset password was successful")
+                    self.dismiss(animated: true, completion: nil)
+                }
+                else {
+                
+                    print("reset password faild")
+                }
+            }
+        
+        }
+        
+       
+        
+        
+    }
     /*
     // MARK: - Navigation
 

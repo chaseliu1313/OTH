@@ -84,34 +84,46 @@ class LoginViewController: UIViewController{
     
     @IBAction func loginButton(_ sender: UIButton) {
         
-        
+        let email = emailtextfield.text!
+        let password = passwordtextfield.text!
         
         if emailtextfield.text != ""
             && passwordtextfield.text != ""
         {
         
-        let email = emailtextfield.text!
-        let password = passwordtextfield.text!
             
         //login(email: email, password: password)
             parameters.updateValue(email, forKey: "email")
             parameters.updateValue(password, forKey: "password")
             
-            ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
-                
-                if successed {
-                    
-                    print("log in successful")
-                   // self.dismiss(animated: false, completion: nil)
-                }
-                else {
-                    print("something went wrong")
-                    
-                }
-            }
-
             
-        }
+            
+                //dismiss(animated: true, completion: nil)
+            
+            
+            
+                ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
+                    
+                    if successed {
+//                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+//                        UserDefaults.standard.synchronize()
+                        print("log in successful")
+                        
+                        // self.dismiss(animated: false, completion: nil)
+                    }
+                    else {
+                        print("something went wrong")
+                        
+                    }
+                }
+                
+                
+            
+            }
+            
+            
+            
+        
         
     }
     @IBOutlet weak var emailtextfield: UITextField!
@@ -144,6 +156,12 @@ class LoginViewController: UIViewController{
         }
      
     
+    }
+    
+    
+    func isloggedIn() -> Bool {
+    
+    return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
 
     /*

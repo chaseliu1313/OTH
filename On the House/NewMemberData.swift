@@ -8,30 +8,7 @@
 
 import Foundation
 
-class Member{
-    
-    let id: String
-    let firstName: String
-    let lastName: String
-    let password: String
-    
-    init(id: String, firstName: String, lastName:String, password:String) {
-        
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.password = password
-    }
-    
-    
-    func printMemnber(){
-        
-        
-        print("\(id): \(firstName).\(lastName), password: \(password)")
-    }
-    
-    
-}
+
 
     struct NewMemberData{
         
