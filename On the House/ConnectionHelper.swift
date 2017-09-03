@@ -53,9 +53,15 @@ struct ConnectionHelper{
                     compeletion(true)
                     
                 }
+                else{
+                
+                    print("failed")
+                    compeletion(false)
+                }
                 
                 
             }else {
+                print("failed")
                 compeletion(false)
             }
             
