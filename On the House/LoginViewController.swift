@@ -12,12 +12,14 @@ import FacebookCore
 
 class LoginViewController: UIViewController{
 
+    @IBOutlet weak var emailtextfield: UITextField!
     
+    @IBOutlet weak var passwordtextfield: UITextField!
     //let facebookbutton = FBSDKLoginButton()
     
     var parameters = [
-        "email": "Chase@example.com",
-        "password": "pass1234"
+        "email": " ",
+        "password": " "
     ]
     
     
@@ -27,6 +29,12 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordtextfield.isSecureTextEntry = true
+        if isloggedIn() {
+            print("you have already logged in")
+            self.dismiss(animated: true, completion: nil)
+            
+            
+        }
         /*view.addSubview(facebookbutton)
         facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
         //facebooklogin = FBSDKLoginButton()*/
@@ -83,52 +91,89 @@ class LoginViewController: UIViewController{
     
     
     @IBAction func loginButton(_ sender: UIButton) {
+    
         
+        
+        
+        
+        if ( emailtextfield.text != "" && passwordtextfield.text != "")
+        
+        {
+            
+            
         let email = emailtextfield.text!
         let password = passwordtextfield.text!
-        
-        if emailtextfield.text != ""
-            && passwordtextfield.text != ""
-        {
-        
             
-        //login(email: email, password: password)
+           
             parameters.updateValue(email, forKey: "email")
             parameters.updateValue(password, forKey: "password")
             
             
-            
-                //dismiss(animated: true, completion: nil)
-            
-            
-            
-                ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
-                    
-                    if successed {
-//                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
-//                        UserDefaults.standard.synchronize()
-                        print("log in successful")
-                        
-                        // self.dismiss(animated: false, completion: nil)
-                    }
-                    else {
-                        print("something went wrong")
-                        
-                    }
+            print(parameters)
+            ConnectionHelper.userLogin(command: command, parameter: parameters, compeletion: { (successed) in
+                
+                if successed {
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.synchronize()
+                print("login was successful")
                 }
+                else {
+                print("invalid email address/password")
                 
-                
+                }
+            })
             
-            }
+        
+        }
+        
+        else {
             
-            
-            
+        print("enter your email or password")
+        
+        }
+        
+//        if emailtextfield.text != ""
+//            && passwordtextfield.text != ""
+//        {
+//        
+//            let email = emailtextfield.text!
+//            let password = passwordtextfield.text!
+//            
+//        //login(email: email, password: password)
+//            parameters.updateValue(email, forKey: "email")
+//            parameters.updateValue(password, forKey: "password")
+//            
+//            
+//            
+//                //dismiss(animated: true, completion: nil)
+//            
+//            
+//            
+//                ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
+//                    
+//                    if successed {
+////                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+////                        UserDefaults.standard.synchronize()
+//                        print("log in successful")
+//                        
+//                        // self.dismiss(animated: false, completion: nil)
+//                    }
+//                    else {
+//                        print("something went wrong")
+//                        
+//                    }
+//                }
+//                
+//                
+//            
+//            }
+//            
+//            
+//            
         
         
     }
-    @IBOutlet weak var emailtextfield: UITextField!
-    
-    @IBOutlet weak var passwordtextfield: UITextField!
+   
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailtextfield.resignFirstResponder()
