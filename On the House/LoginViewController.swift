@@ -18,8 +18,8 @@ class LoginViewController: UIViewController{
     //let facebookbutton = FBSDKLoginButton()
     
     var parameters = [
-        "email": "chase@example.com",
-        "password": "pass1234"
+        "email": " ",
+        "password": " "
     ]
     
     
@@ -29,6 +29,12 @@ class LoginViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordtextfield.isSecureTextEntry = true
+        if isloggedIn() {
+            print("you have already logged in")
+            self.dismiss(animated: true, completion: nil)
+            
+            
+        }
         /*view.addSubview(facebookbutton)
         facebookbutton.frame = CGRect(x:67.5, y:525, width:240, height: 30)
         //facebooklogin = FBSDKLoginButton()*/
@@ -87,9 +93,14 @@ class LoginViewController: UIViewController{
     @IBAction func loginButton(_ sender: UIButton) {
     
         
+        
+        
+        
         if ( emailtextfield.text != "" && passwordtextfield.text != "")
         
         {
+            
+            
         let email = emailtextfield.text!
         let password = passwordtextfield.text!
             
@@ -102,6 +113,8 @@ class LoginViewController: UIViewController{
             ConnectionHelper.userLogin(command: command, parameter: parameters, compeletion: { (successed) in
                 
                 if successed {
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.synchronize()
                 print("login was successful")
                 }
                 else {
