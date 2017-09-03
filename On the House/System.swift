@@ -58,7 +58,7 @@ class System {
     }
     
     
-    static func getTimezone() -> [String : String] {
+    static func getTimezone() -> String {
     
         let timezone = TimeZone.current.identifier
         
@@ -70,7 +70,7 @@ class System {
             if timezone.contains(location) {
             
             code = timezones[location]
-                return ["timezone_id" : "\(code!)"]
+                return String(code)
             }
             
             else{
@@ -79,17 +79,17 @@ class System {
             }
         }
     
-        return ["timezone_id" : "\(code!)"]
+        return String(code)
     }
     
-    static func setCountry() -> [String: String] {
+    static func setCountry() -> String {
     
-        return ["country_id" : "13"]
+        return "13"
     
     }
     
     
-    static func setState(state: String) -> [String: String] {
+    static func setState(state: String) -> String {
     
         var location: String!
         var code: Int!
@@ -99,7 +99,7 @@ class System {
             if state.contains(location) {
                 
                 code = states[location]
-                return ["zone_id" : "\(code!)"]
+                return String(code)
             }
                 
             else{
@@ -108,7 +108,7 @@ class System {
             }
         }
         
-        return ["zone_id" : "\(code!)"]
+        return String(code)
     }
 
 }
