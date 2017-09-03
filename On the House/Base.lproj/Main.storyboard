@@ -348,8 +348,12 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-Qb-86N">
-                                <rect key="frame" x="163" y="229" width="195" height="43"/>
+                                <rect key="frame" x="151" y="229" width="222" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dI7-Yf-Nki" id="lA9-Gs-e8F"/>
+                                    <outlet property="delegate" destination="dI7-Yf-Nki" id="WXD-mA-6hd"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

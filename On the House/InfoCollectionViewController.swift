@@ -69,6 +69,21 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     {
         return Array[row]
     }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = view as? UILabel;
+        
+        if (pickerLabel == nil)
+        {
+            pickerLabel = UILabel()
+            
+            pickerLabel!.font = UIFont(name: "Montserrat", size: 5)
+            pickerLabel!.textAlignment = NSTextAlignment.center
+        }
+        
+        pickerLabel?.text = Array[row]
+        
+        return pickerLabel!;
+    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nicknametextfield.resignFirstResponder()
