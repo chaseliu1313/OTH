@@ -76,7 +76,7 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
         {
             pickerLabel = UILabel()
             
-            pickerLabel!.font = UIFont(name: "Montserrat", size: 5)
+            pickerLabel!.font = UIFont(name: "Montserrat", size: 10)
             pickerLabel!.textAlignment = NSTextAlignment.center
         }
         
