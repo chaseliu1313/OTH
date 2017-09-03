@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
-            landmarkName = "pickerView(_:viewForRow:forComponent:reusing:)"
-            landmarkType = "7">
+            landmarkName = "InfoCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,7 +42,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526117607.434679"
+                  timestampString = "526118760.922532"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -57,7 +57,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526117607.437004"
+                  timestampString = "526118760.926962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -72,7 +72,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526117607.438239"
+                  timestampString = "526118760.93007"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -87,7 +87,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526117607.439458"
+                  timestampString = "526118760.932667"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/FacebookRegisterView.swift"
-            timestampString = "526117223.410192"
+            timestampString = "526118791.556312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

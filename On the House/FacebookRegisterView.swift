@@ -29,38 +29,21 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
 
     
-     var State = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        statepickview.delegate = self
-        statepickview.dataSource = self
+        
+       statepickerview.delegate = self
+        statepickerview.dataSource = self
+       
         pickview.delegate = self
         pickview.dataSource = self
         
-        statepickerview.delegate = self
-        statepickerview.dataSource = self
+        
         
         answerlabel.isHidden = true
         answertextfield.isHidden = true
         
         // Do any additional setup after loading the view.
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel = view as? UILabel;
-        
-        if (pickerLabel == nil)
-        {
-            pickerLabel = UILabel()
-            
-            pickerLabel!.font = UIFont(name: "Montserrat", size: 5)
-            pickerLabel!.textAlignment = NSTextAlignment.center
-        }
-        
-        pickerLabel?.text = State[row]
-        
-        return pickerLabel!;
     }
 
     
