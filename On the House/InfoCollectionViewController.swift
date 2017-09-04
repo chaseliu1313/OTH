@@ -22,9 +22,13 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     
     var slectedState = ""
     
+    
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
     @IBAction func toNext(_ sender: Any) {
         
         if (slectedState != ""

@@ -16,7 +16,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     var url = "api/v1/memnber/"
     let member_id = UserDefaults.standard.object(forKey: "member_id")
     let command = ""
-    let command2 = "api/v1/member/change-password"
+    
     
     var parameter1 = ["nickname": "",
                      "title":"",
@@ -38,9 +38,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                      "categories":""]
     
     
-    var parameter2 = ["member_id":"",
-                     "password":"",
-                     "password_confirm": ""]
+    
     
     
     var switch1 = ""

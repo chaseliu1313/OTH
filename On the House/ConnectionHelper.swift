@@ -21,7 +21,7 @@ struct ConnectionHelper{
     
     
     
-    
+    //HTTP post method for login
     static func userLogin(command: String, parameter : [String: Any], compeletion: @escaping (Bool) ->Void) {
         
         let url = baseUrl + command
@@ -77,7 +77,7 @@ struct ConnectionHelper{
         
     }
     
-    
+    //HTTP post method- universal
     static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool) -> Void){
     
         let url = baseUrl + command
@@ -112,6 +112,81 @@ struct ConnectionHelper{
         }
     
     
+    }
+    
+    //HTTP get method updates user detail
+    static func get(command: String, completion: @escaping (Bool) -> Void){
+      
+        let url = baseUrl + command
+        
+        Alamofire.request(url).responseJSON { (response) in
+        
+            
+            
+            switch response.result{
+            
+            case .success(_):
+                
+                self.postStatus = JSON(response.data!)["status"].string!
+                
+                if self.postStatus == "success"
+                {
+                    
+                    completion(true)
+                }
+                else
+                {
+                    self.errorMesg = "The request has failed"
+                    completion(false)
+                }
+                
+            case .failure(_):
+                print("connection faild")
+                completion(false)
+            
+            }
+            
+        }
+    
+    
+    }
+    
+    //HTTP get method returns JSON object
+    static func getJSON(command: String, completion: @escaping (Bool,JSON) -> Void){
+        
+        let url = baseUrl + command
+        
+        Alamofire.request(url).responseJSON { (response) in
+            
+            
+            let json = JSON(response.data!)
+            
+            switch response.result{
+                
+            case .success(_):
+                
+                self.postStatus = JSON(response.data!)["status"].string!
+                
+                if self.postStatus == "success"
+                {
+                    
+                    completion(true, json)
+                }
+                else
+                {
+                    self.errorMesg = "The request has failed"
+                    completion(false, JSON.null)
+                }
+                
+            case .failure(_):
+                print("connection faild")
+                completion(false, JSON.null)
+                
+            }
+            
+        }
+        
+        
     }
     
     
