@@ -48,20 +48,25 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     @IBOutlet weak var signup: UIButton!
    
+   
+    
     @IBAction func `switch`(_ sender: UISwitch) {
-        
         if(sender.isOn == true)
         {
-         term = "1"
-        signup.isHidden = false
-        
+            term = "1"
+            signup.isHidden = false
+            
         }
         else
         {
-         term = "0"
+            term = "0"
             signup.isHidden = true
         }
-        
+    }
+    
+    
+    @IBAction func `return`(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
@@ -73,11 +78,15 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
             if(successed) {
                 
+                
                  self.notifyUser("ON THE HOUSE", "Registration Successfull")
+                
             }
             else{
                 
+                
             self.notifyUser("ON THE HOUSE", "Something IS Wrong")
+                
                 
             }
         }

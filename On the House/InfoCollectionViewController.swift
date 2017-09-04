@@ -22,6 +22,9 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     
     var slectedState = ""
     
+    @IBAction func goBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func toNext(_ sender: Any) {
         
         if (slectedState != ""
@@ -65,7 +68,7 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(InfoCollectionViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
         statepickerview.delegate = self
