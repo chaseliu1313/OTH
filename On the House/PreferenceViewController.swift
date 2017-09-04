@@ -11,8 +11,89 @@ import UIKit
 class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
 
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var updateButton: UIButton!
+    
+    var url = "api/v1/memnber/"
+    let member_id = UserDefaults.standard.object(forKey: "member_id")
+    let command = ""
+    let command2 = "api/v1/member/change-password"
+    
+    var parameter1 = ["nickname": "",
+                     "title":"",
+                     "firstname": "",
+                     "last_name": "",
+                     "age": "",
+                     "email": "",
+                     "phone": "",
+                     "language_id": "16",
+                     "address1": "",
+                     "city": "",
+                     "zone_id": "",
+                     "zip": "",
+                     "country_id": "13",
+                     "timezone_id": "",
+                     "newsletters": "",
+                     "focus_groups": "",
+                     "paid_marketing": "",
+                     "categories":""]
     
     
+    var parameter2 = ["member_id":"",
+                     "password":"",
+                     "password_confirm": ""]
+    
+    
+    var switch1 = ""
+    var switch2 = ""
+    var switch3 = ""
+    
+    
+    @IBAction func Subscribe(_ sender: UISwitch) {
+        
+        if(sender.isOn == true)
+        {
+            switch1 = "1"
+            updateButton.isHidden = false
+            
+        }
+        else
+        {
+            switch1 = "0"
+            updateButton.isHidden = true
+        }
+        
+    }
+    
+    @IBAction func FocusGroup(_ sender: UISwitch) {
+        if(sender.isOn == true)
+        {
+            switch2 = "1"
+            updateButton.isHidden = false
+            
+        }
+        else
+        {
+            switch2 = "0"
+            updateButton.isHidden = true
+        }
+        
+    }
+    
+    
+    @IBAction func Marketing(_ sender: UISwitch) {
+        if(sender.isOn == true)
+        {
+            switch3 = "1"
+            updateButton.isHidden = false
+            
+        }
+        else
+        {
+            switch3 = "0"
+            updateButton.isHidden = true
+        }
+        
+    }
     var Array = ["Please select","Adult Industry","Art & Craft","Ballet","Cabaret","CD","CD (Product)","Children","Circus & Physical Theatre","Comedy","Dance","DVD (Product)","Family","Festival","Film","Health","Health and Fitness","Magic","Miscellaneous","Music","Musical","Natural Health","Networking, Seminars, Workshops","Opera","Operetta","Reiki Course","Soiree","Speaking Engagement","Sport","Studio Audience","Test","Theatre","Vaudeville","Young Adults"]
 
     
