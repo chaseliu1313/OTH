@@ -1276,7 +1276,11 @@ and periodicals</string>
                     <connections>
                         <outlet property="answerlabel" destination="YBc-0n-uXE" id="9ME-Fp-i9g"/>
                         <outlet property="answertextfield" destination="x6g-ea-mOA" id="h0t-S9-sar"/>
+                        <outlet property="nicknametextfield" destination="uJ5-AH-CbL" id="fbd-EA-Dvr"/>
+                        <outlet property="passwordtextfield" destination="pAx-75-cVU" id="Fth-VD-Fcl"/>
                         <outlet property="pickview" destination="yJr-UK-o4F" id="xcS-rd-jaW"/>
+                        <outlet property="postcodetextfield" destination="y5g-IQ-kiQ" id="9cc-ir-hZR"/>
+                        <outlet property="reentertextfield" destination="rct-qF-hqS" id="0rh-jx-nak"/>
                         <outlet property="statepickerview" destination="Eqn-YZ-DvL" id="czb-jJ-ik5"/>
                     </connections>
                 </viewController>
