@@ -43,6 +43,28 @@ class System {
     }
     
     
+    
+    static func getCategories(category : String) -> String
+    {
+        
+        var id : Int!
+        
+        for selected in categories.keys {
+        
+            if category.contains(selected) {
+            
+            id = categories[category]
+                return String(id)
+            
+            }
+            else {id = 0}
+        }
+    
+     return String(id)
+        
+    }
+    
+    
     static func getQuestion(question: String) -> String
     {
         var selected: String!
