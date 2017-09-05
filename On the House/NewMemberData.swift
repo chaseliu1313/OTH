@@ -24,7 +24,7 @@ import Foundation
         static var email = ""
         static var password = ""
         static var password_confirm = ""
-        static var term = "1"
+        static var terms = "1"
         static var id = ""
         
         static var loginStatus: String = "error"

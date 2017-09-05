@@ -61,33 +61,25 @@ class LoginViewController: UIViewController{
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.performSegue(withIdentifier: "facebookreg", sender: self)
                 self.getfbuserinfo()
-                self.setfbuserinfo()
             }
             
         }
     }
-    
-    
-    func setfbuserinfo(){
-        if((FBSDKAccessToken.current()) != nil){
-            let email = LoginViewController.userfbinfo["email"] as? String
-            let fullname = LoginViewController.userfbinfo["name"]as? String
-            NewMemberData.email = email!
-            let namearray = fullname!.components(separatedBy: " ")
-            NewMemberData.first_name = namearray[0]
-            NewMemberData.last_name = namearray[1]
-            print(NewMemberData.first_name)
-        }
-    }
+
     
     func getfbuserinfo(){
-        
         if((FBSDKAccessToken.current()) != nil){
             var dict : [String : AnyObject]!
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     dict = result as! [String : AnyObject]
                     LoginViewController.userfbinfo = dict
+                    let email = LoginViewController.userfbinfo["email"] as! String
+                    let fullname = LoginViewController.userfbinfo["name"]as! String
+                    NewMemberData.email = email
+                    let namearray = fullname.components(separatedBy: " ")
+                    NewMemberData.first_name = namearray[0]
+                    NewMemberData.last_name = namearray[1]
                 }
             })
         }
