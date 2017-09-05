@@ -21,7 +21,7 @@ class TandCViewController: UIViewController {
         
         self.webView.scalesPageToFit = true
         self.webView.contentMode = UIViewContentMode.scaleAspectFit
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

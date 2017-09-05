@@ -18,7 +18,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var emailtextfield: UITextField!
     
     @IBOutlet weak var passwordtextfield: UITextField!
-    //let facebookbutton = FBSDKLoginButton()
+    
     
     var parameters = [
         "email": " ",
