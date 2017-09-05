@@ -18,6 +18,9 @@ class TandCViewController: UIViewController {
         let url = URL(string: "https://www.itsonthehouse.com.au/terms-and-conditions")
         
         webView.loadRequest(URLRequest(url: url!))
+        
+        self.webView.scalesPageToFit = true
+        self.webView.contentMode = UIViewContentMode.scaleAspectFit
         // Do any additional setup after loading the view.
     }
 

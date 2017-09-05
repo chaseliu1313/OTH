@@ -55,6 +55,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         answerlabel.isHidden = true
         answertextfield.isHidden = true
+        signup.isHidden = false
         
         // Do any additional setup after loading the view.
     }
@@ -146,7 +147,22 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         return pickerLabel!;
     }
 
+    @IBOutlet weak var signup: UIButton!
     
+    @IBAction func `switch`(_ sender: UISwitch) {
+            if(sender.isOn == true)
+            {
+                
+                signup.isHidden = false
+                
+            }
+            else
+            {
+                
+                signup.isHidden = true
+            }
+        }
+
     
     
     
