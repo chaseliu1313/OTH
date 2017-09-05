@@ -1048,7 +1048,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17T-a0-fBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3263.7681159420295" y="-937.50000000000011"/>
+            <point key="canvasLocation" x="2954" y="-923"/>
         </scene>
     </scenes>
     <resources>
