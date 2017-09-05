@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController{
     
-    var userfbinfo : [String : AnyObject]!
+    static var userfbinfo : [String : AnyObject]!
 
     @IBOutlet weak var emailtextfield: UITextField!
     
@@ -61,25 +61,10 @@ class LoginViewController: UIViewController{
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.performSegue(withIdentifier: "facebookreg", sender: self)
                 self.getfbuserinfo()
-                //self.setfbuserinfo()
             }
             
         }
     }
-    
-    
-    func setfbuserinfo(){
-        if((FBSDKAccessToken.current()) != nil){
-            let email = userfbinfo["email"] as? String
-            let fullname = userfbinfo["name"]as? String
-            NewMemberData.email = email!
-            let namearray = fullname!.components(separatedBy: " ")
-            NewMemberData.first_name = namearray[0]
-            NewMemberData.last_name = namearray[1]
-            print(NewMemberData.first_name)
-        }
-    }
-    
 
     
     func getfbuserinfo(){
@@ -88,8 +73,13 @@ class LoginViewController: UIViewController{
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     dict = result as! [String : AnyObject]
-                    self.userfbinfo = dict
-                    print(self.userfbinfo["email"]!)
+                    LoginViewController.userfbinfo = dict
+                    let email = LoginViewController.userfbinfo["email"] as! String
+                    let fullname = LoginViewController.userfbinfo["name"]as! String
+                    NewMemberData.email = email
+                    let namearray = fullname.components(separatedBy: " ")
+                    NewMemberData.first_name = namearray[0]
+                    NewMemberData.last_name = namearray[1]
                 }
             })
         }
