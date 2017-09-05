@@ -26,6 +26,19 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
                      "password_confirm": "",
                      "terms": "1"]
    
+    var nickname = String()
+    var first_name = String()
+    var last_name = String()
+    var zip = String()
+    var zone_id = String()
+    let country_id = "13"
+    var time_zone = System.getTimezone()
+    var email = String()
+    var password = String()
+    var password_confirm = String()
+    
+    var questionid = String()
+    
     @IBOutlet weak var statepickerview: UIPickerView!
     
     var placementAnswer = 0
