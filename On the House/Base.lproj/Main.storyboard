@@ -929,6 +929,9 @@ and periodicals</string>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="Signup:" destination="Hdo-7s-NWS" eventType="touchUpInside" id="0pW-2N-iOA"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-UK-o4F">
                                 <rect key="frame" x="20" y="335" width="374" height="158.5"/>

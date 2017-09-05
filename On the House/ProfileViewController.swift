@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         member_id = UserDefaults.standard.string(forKey: "member_id")!
+         //member_id = UserDefaults.standard.string(forKey: "member_id")!
         
         //if member_id is not saved or retrieved, will not have placeholders
         
