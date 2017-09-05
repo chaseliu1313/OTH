@@ -31,8 +31,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-         //member_id = UserDefaults.standard.string(forKey: "member_id")!
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(InfoCollectionViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        // member_id = UserDefaults.standard.string(forKey: "member_id")!
         
         //if member_id is not saved or retrieved, will not have placeholders
         
@@ -48,6 +49,10 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     @IBAction func UpdatePassword(_ sender: UIButton) {
         
         if passwordTextfield.text != ""
