@@ -15,6 +15,7 @@ class MyMembership: UIViewController {
     
     
     @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var selectSwitch: UISwitch!
    
     @IBAction func selectMem(_ sender: UISwitch) {
         
@@ -42,14 +43,12 @@ class MyMembership: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        
-         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyMembership.dismissKeyboard))
          view.addGestureRecognizer(tap)
         
-        
+        self.selectSwitch.onImage = UIImage(named: "checked")
+        self.selectSwitch.offImage = UIImage(named: "check")
     }
     
     
