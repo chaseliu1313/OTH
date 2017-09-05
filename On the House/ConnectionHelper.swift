@@ -114,6 +114,47 @@ struct ConnectionHelper{
     
     }
     
+    static func postJSON(command: String, parameter: [String: Any], compeletion: @escaping(Bool, JSON)-> Void) {
+    
+        
+        let url = baseUrl + command
+        
+        
+        
+        Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
+            
+            let json = JSON(response.data!)
+            switch response.result {
+            case .success(_):
+                
+                self.postStatus = JSON(response.data!)["status"].string!
+                
+                if self.postStatus == "success"
+                {
+                    compeletion(true,json)
+                }
+                else
+                {
+                    self.errorMesg = "The request has failed"
+                    compeletion(false,JSON.null)
+                }
+                
+            case .failure(_):
+                print("connection faild")
+                compeletion(false, JSON.null)
+                
+                
+                
+            }
+        }
+        
+
+        
+        
+
+    
+    }
+    
     //HTTP get method updates user detail
     static func get(command: String, completion: @escaping (Bool) -> Void){
       

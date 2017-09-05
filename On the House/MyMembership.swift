@@ -16,6 +16,10 @@ class MyMembership: UIViewController {
     
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var selectSwitch: UISwitch!
+    @IBOutlet weak var Level: UILabel!
+    @IBOutlet weak var Period: UILabel!
+    @IBOutlet weak var Price: UILabel!
+    
    
     @IBAction func selectMem(_ sender: UISwitch) {
         
@@ -62,6 +66,29 @@ class MyMembership: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getMembership(){
+    
+    let member_id = "39"
+    let command = "api/v1/member/membership"
+    let parameter = ["member_id" : member_id]
+        
+    ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json) in
+        
+        if success {
+        
+        
+        }
+        else {
+        
+        
+        }
+        
+        
+        }
+    
+    }
+    
     
     
     func notifyUser(_ title: String, _ message: String ) -> Void
