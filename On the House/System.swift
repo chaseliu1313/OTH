@@ -21,6 +21,8 @@ class System {
     
     ]
     
+    static let categories:[String: Int] = ["Adult Industry": 28, "Arts & Craft": 22, "Ballet" : 9, "Cabaret" : 17, "CD (product)": 37, "Children": 26, "Cirus and Physical Theatre": 16, "Comedy": 5, "Dance": 6, "DVD (Product)": 35, "Family": 32, "Festival": 15, "Film": 3, "Health and Fitness": 30, "Magic" : 38, "Miscellaneous":7, "Music": 4, "Musical":2, "Networking, Seminars, Workshops": 27, "Opera":8, "Operetta": 18, "Reiki Course": 20, "Speaking Engagement": 34, "Sport": 33, "Studio Audience": 31, "Theatre": 1, "Vaudeville": 19
+    ]
     
     
    
@@ -61,6 +63,7 @@ class System {
     return String(id)
     }
     
+    
     static func isValidEmailAddress(emailAddressString: String) -> Bool {
         
         var returnValue = true
@@ -83,6 +86,8 @@ class System {
         
         return  returnValue
     }
+    
+    
     
     
     static func getTimezone() -> String {
@@ -115,6 +120,8 @@ class System {
         return "13"
     
     }
+    
+    
     
     
     static func setState(state: String) -> String {
