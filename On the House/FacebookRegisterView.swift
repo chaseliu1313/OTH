@@ -3,7 +3,7 @@
 //  On the House
 //
 //  Created by Geng Xu on 8/23/17.
-//  Copyright © 2017 Zhang Zhnag. All rights reserved.
+//  Copyright © 2017 Zhang Zhang. All rights reserved.
 //
 
 import Foundation
@@ -43,13 +43,15 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        statepickerview.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+       statepickerview.delegate = self
         statepickerview.dataSource = self
        
         pickview.delegate = self
         pickview.dataSource = self
-
+        
+        
         
         answerlabel.isHidden = true
         answertextfield.isHidden = true
@@ -88,7 +90,10 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         answertextfield.resignFirstResponder()
     }
     
-    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     override func didReceiveMemoryWarning()
     {

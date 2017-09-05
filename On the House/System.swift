@@ -42,7 +42,27 @@ class System {
         }
     }
     
-    
+    //universal function to get key
+    static func getKey (id: Int, dic: [String: Int]) -> String {
+        
+        var getString = ""
+        
+        
+        for d in dic {
+            
+            if d.value == id {
+                
+                getString = d.key
+                
+                break
+            }
+            
+        }
+        
+        
+        return getString
+    }
+
     
     static func getCategories(category : String) -> String
     {
@@ -53,7 +73,7 @@ class System {
         
             if category.contains(selected) {
             
-            id = categories[category]
+            id = categories[selected]
                 return String(id)
             
             }
@@ -67,14 +87,15 @@ class System {
     
     static func getQuestion(question: String) -> String
     {
-        var selected: String!
+        
         var id: Int!
         
         for(selected) in questions.keys
         {
             if question.contains(selected) {
             
-            id = questions[question]
+            id = questions[selected]
+                
               return String(id)
                 
             }
@@ -116,7 +137,7 @@ class System {
     
         let timezone = TimeZone.current.identifier
         
-        var location: String!
+        
         
         var code: Int!
         
@@ -148,7 +169,7 @@ class System {
     
     static func setState(state: String) -> String {
     
-        var location: String!
+        
         var code: Int!
         
         for (location) in states.keys {
