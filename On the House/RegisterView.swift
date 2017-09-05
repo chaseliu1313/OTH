@@ -44,6 +44,7 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     var answer = ""
     
     @IBOutlet weak var Switch: UISwitch!
+    
     var term = ""
     
     @IBOutlet weak var signup: UIButton!
@@ -94,7 +95,6 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     
-   
     
     
     
@@ -214,7 +214,6 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
-        
         
     }
 }
