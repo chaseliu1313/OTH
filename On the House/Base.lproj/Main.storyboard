@@ -1381,7 +1381,7 @@ and periodicals</string>
                                 <rect key="frame" x="34" y="150" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="select:" destination="HFn-xT-d1E" eventType="valueChanged" id="Fyl-SC-xio"/>
+                                    <action selector="selectMem:" destination="HFn-xT-d1E" eventType="valueChanged" id="5WK-B1-ysc"/>
                                 </connections>
                             </switch>
                         </subviews>
@@ -1389,6 +1389,7 @@ and periodicals</string>
                     </view>
                     <connections>
                         <outlet property="selectButton" destination="qHJ-La-qMe" id="hYy-n1-iTl"/>
+                        <outlet property="selectSwitch" destination="tcB-yv-MUH" id="pRN-e1-yHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17T-a0-fBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
