@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKK-Tx-gNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="-1311"/>
+            <point key="canvasLocation" x="241" y="-1086"/>
         </scene>
         <!--Info Collection View Controller-->
         <scene sceneID="0wk-AD-aQ7">
@@ -372,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6o-GU-NN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813.0434782608697" y="-45.652173913043484"/>
+            <point key="canvasLocation" x="1825" y="-45"/>
         </scene>
         <!--Register View-->
         <scene sceneID="9VQ-4l-8U4">
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m66-YY-ZQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953.6231884057975" y="-45.652173913043484"/>
+            <point key="canvasLocation" x="2954" y="-11"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="FAM-qS-ake">
@@ -961,7 +961,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2av-Ta-JL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4579.7101449275369" y="888.58695652173924"/>
+            <point key="canvasLocation" x="4580" y="1118"/>
         </scene>
         <!--Preference View Controller-->
         <scene sceneID="ZhV-jo-Kyc">
@@ -1266,7 +1266,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478" y="907"/>
+            <point key="canvasLocation" x="241" y="889"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="zYv-S4-th8">
@@ -1308,7 +1308,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWw-UB-Kp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476.81159420289856" y="1692.3913043478262"/>
+            <point key="canvasLocation" x="241" y="1679"/>
         </scene>
         <!--My Membership-->
         <scene sceneID="Qgr-BV-11z">
@@ -1394,7 +1394,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17T-a0-fBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="-923"/>
+            <point key="canvasLocation" x="4580" y="-977"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="BID-QI-J1j">
@@ -1436,7 +1436,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wko-vq-IlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2538" y="1090"/>
+            <point key="canvasLocation" x="2954" y="1087"/>
         </scene>
     </scenes>
     <resources>
@@ -1446,8 +1446,8 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5wL-K2-LhC"/>
+        <segue reference="ajg-o3-cAv"/>
         <segue reference="pJG-90-jFh"/>
-        <segue reference="6IU-LM-w6o"/>
-        <segue reference="M4C-gP-7wU"/>
     </inferredMetricsTieBreakers>
 </document>
