@@ -12,20 +12,6 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     let command = "api/v1/member/create"
     
-    var parameter = ["nickname": "",
-                     "firstname": "",
-                     "last_name": "",
-                     "zip": "",
-                     "zone_id": "",
-                     "country_id": "13",
-                     "timezone_id": "",
-                     "question_id": "",
-                     "question_text":"null",
-                     "email": "",
-                     "password":"",
-                     "password_confirm": "",
-                     "terms": "1"]
-    
     var questionid = String()
     
     @IBOutlet weak var reentertextfield: UITextField!
@@ -47,69 +33,58 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var answertextfield: UITextField!
     
     func dataprepare(){
-        if let nickname = nicknametextfield!.text{
+        if let nickname = nicknametextfield.text{
             NewMemberData.nickname = nickname
         }
-        if let password = passwordtextfield!.text{
+        if let password = passwordtextfield.text{
             NewMemberData.password = password
         }
-        if let reenter = reentertextfield!.text{
+        if let reenter = reentertextfield.text{
             NewMemberData.password_confirm = reenter
         }
-        if let postcode = postcodetextfield!.text{
+        if let postcode = postcodetextfield.text{
             NewMemberData.zip = postcode
         }
         if let state = statepickerview?.selectedRow(inComponent: 0).description{
             NewMemberData.zone_id = state
         }
-        if let questionid = pickview?.selectedRow(inComponent: 0).description{
-            NewMemberData.question_id = questionid
-        }
-        if let answer = answerlabel!.text{
+        
+        NewMemberData.question_id = questionid
+        
+        if let answer = answerlabel.text{
             NewMemberData.question_text = answer
         }
+        
+        NewMemberData.timezone_id = System.getTimezone()
     }
-    
     var Array1 = ["Please select option","If Google search, what did you search for?","Friend","If newslettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
     var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
         view.addGestureRecognizer(tap)
-       statepickerview.delegate = self
+        statepickerview.delegate = self
         statepickerview.dataSource = self
         
         pickview.delegate = self
         pickview.dataSource = self
         
         
+        
         answerlabel.isHidden = true
         answertextfield.isHidden = true
         
-        //dataprepare()
+        dataprepare()
         
-        parameter.updateValue(NewMemberData.nickname, forKey: "nickname")
-        parameter.updateValue(NewMemberData.first_name, forKey: "first_namne")
-        parameter.updateValue(NewMemberData.last_name, forKey: "last_name")
-        parameter.updateValue(NewMemberData.zip, forKey: "zip")
-        parameter.updateValue(NewMemberData.zone_id, forKey: "zone_id")
-        parameter.updateValue(NewMemberData.timezone_id, forKey: "timezone_id")
-        parameter.updateValue(NewMemberData.question_id, forKey: "question_id")
-        parameter.updateValue(NewMemberData.question_text, forKey: "question_text")
-        parameter.updateValue(NewMemberData.email, forKey: "email")
-        parameter.updateValue(NewMemberData.password, forKey: "password")
-        parameter.updateValue(NewMemberData.password_confirm, forKey: "password_confirm")
         // Do any additional setup after loading the view.
     }
     
     @IBAction func Signup(_ sender: UIButton) {
         dataprepare()
-        ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
+        ConnectionHelper.post(command: command, parameter: NewMemberData.getinformation()) { (successed) in
             if(successed) {
-                
                 
                 self.notifyUser("ON THE HOUSE", "Registration Successfull")
                 
@@ -194,6 +169,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
+        questionid =  System.getQuestion(question: Array1[placementAnswer])
         
         if pickview==pickerView{
             if(placementAnswer == 1)
