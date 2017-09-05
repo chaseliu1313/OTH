@@ -14,17 +14,10 @@ import UIKit
 class MyMembershipController: UIViewController {
     
     
-    @IBOutlet weak var goldCheck: UIButton!
-    
-        
-    var checkBox = UIImage(named: "check")
-    var checkedBox = UIImage(named: "checked")
+   
     
     
-    
-    
-    var isgoldboxclicked: Bool!
-    var isbronzeboxclicked: Bool!
+
     
     
     override func viewDidLoad() {
@@ -33,11 +26,10 @@ class MyMembershipController: UIViewController {
         
         
          //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyMembershipController.dismissKeyboard))
          view.addGestureRecognizer(tap)
         
-        isgoldboxclicked = false
-        isbronzeboxclicked = false
+        
     }
     
     
@@ -54,22 +46,5 @@ class MyMembershipController: UIViewController {
     
     
     
-    @IBAction func goldClick(_ sender: Any) {
-        if isgoldboxclicked == true{
-            isgoldboxclicked = false
-        }else{
-            
-            isgoldboxclicked = true
-        
-        }
-        
-        if isgoldboxclicked == true{
-            goldCheck.setImage(checkedBox, for: UIControlState.normal)
-            
-            
-        }else{
-            goldCheck.setImage(checkBox, for: UIControlState.normal)
-            
-        }
-     }
+   
     }
