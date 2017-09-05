@@ -3,7 +3,7 @@
 //  On the House
 //
 //  Created by Geng Xu on 8/23/17.
-//  Copyright © 2017 Zhang Zhnag. All rights reserved.
+//  Copyright © 2017 Zhang Zhang. All rights reserved.
 //
 
 import Foundation
