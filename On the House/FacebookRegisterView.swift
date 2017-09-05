@@ -12,42 +12,62 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     let command = "api/v1/member/create"
     
-    var parameter = ["nickname": "",
-                     "firstname": "",
-                     "last_name": "",
-                     "zip": "",
-                     "zone_id": "",
-                     "country_id": "13",
-                     "timezone_id": "",
-                     "question_id": "",
-                     "question_text":"null",
-                     "email": "",
-                     "password":"",
-                     "password_confirm": "",
-                     "terms": "1"]
-   
+    var questionid = String()
+    
+    @IBOutlet weak var reentertextfield: UITextField!
+    
+    @IBOutlet weak var passwordtextfield: UITextField!
+    
+    @IBOutlet weak var nicknametextfield: UITextField!
+    
     @IBOutlet weak var statepickerview: UIPickerView!
+    
+    @IBOutlet weak var postcodetextfield: UITextField!
     
     var placementAnswer = 0
     
     @IBOutlet weak var pickview: UIPickerView!
     
     @IBOutlet weak var answerlabel: UILabel!
-
+    
     @IBOutlet weak var answertextfield: UITextField!
     
+    func dataprepare(){
+        if let nickname = nicknametextfield.text{
+            NewMemberData.nickname = nickname
+        }
+        if let password = passwordtextfield.text{
+            NewMemberData.password = password
+        }
+        if let reenter = reentertextfield.text{
+            NewMemberData.password_confirm = reenter
+        }
+        if let postcode = postcodetextfield.text{
+            NewMemberData.zip = postcode
+        }
+        if let state = statepickerview?.selectedRow(inComponent: 0).description{
+            NewMemberData.zone_id = state
+        }
+        
+        NewMemberData.question_id = questionid
+        
+        if let answer = answerlabel.text{
+            NewMemberData.question_text = answer
+        }
+        
+        NewMemberData.timezone_id = System.getTimezone()
+    }
     var Array1 = ["Please select option","If Google search, what did you search for?","Friend","If newslettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
     var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
         view.addGestureRecognizer(tap)
-       statepickerview.delegate = self
+        statepickerview.delegate = self
         statepickerview.dataSource = self
-       
+        
         pickview.delegate = self
         pickview.dataSource = self
         
@@ -57,13 +77,15 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         answertextfield.isHidden = true
         signup.isHidden = false
         
+        dataprepare()
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func Signup(_ sender: UIButton) {
-        ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
+        dataprepare()
+        ConnectionHelper.post(command: command, parameter: NewMemberData.getinformation()) { (successed) in
             if(successed) {
-                
                 
                 self.notifyUser("ON THE HOUSE", "Registration Successfull")
                 
@@ -71,7 +93,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
             else{
                 
                 
-                self.notifyUser("ON THE HOUSE", "Something IS Wrong")
+                self.notifyUser("ON THE HOUSE", "Something Is Wrong")
                 
             }
         }
@@ -101,27 +123,27 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-        {
-            return Array2.count
-        }
-        
-        func numberOfComponents(in pickerView: UIPickerView) -> Int
-        {
-            return 1
-        }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return Array2.count
+    }
     
-  
-
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-        {
-            if pickview == pickerView {
-                return Array1[row]
-            } else if statepickerview == pickerView{
-                return Array2[row]
-            }
-            return ""
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        if pickview == pickerView {
+            return Array1[row]
+        } else if statepickerview == pickerView{
+            return Array2[row]
         }
+        return ""
+    }
     
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -136,13 +158,12 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
         if pickview == pickerView{
-        pickerLabel?.text = Array1[row]
+            pickerLabel?.text = Array1[row]
         }
-        
+            
         else if statepickerview == pickerView{
             pickerLabel?.text = Array2[row]
         }
-        
         
         return pickerLabel!;
     }
@@ -168,28 +189,29 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
+        questionid =  System.getQuestion(question: Array1[placementAnswer])
         
         if pickview==pickerView{
-        if(placementAnswer == 1)
-        {
-            answerlabel.isHidden = false
-            answertextfield.isHidden = false
-        }
-        else if(placementAnswer == 3)
-        {
-            answerlabel.isHidden = false
-            answertextfield.isHidden = false
-        }
-        else if(placementAnswer == 8)
-        {
-            answerlabel.isHidden = false
-            answertextfield.isHidden = false
-        }
-        else
-        {
-            answerlabel.isHidden = true
-            answertextfield.isHidden = true
-        }
+            if(placementAnswer == 1)
+            {
+                answerlabel.isHidden = false
+                answertextfield.isHidden = false
+            }
+            else if(placementAnswer == 3)
+            {
+                answerlabel.isHidden = false
+                answertextfield.isHidden = false
+            }
+            else if(placementAnswer == 8)
+            {
+                answerlabel.isHidden = false
+                answertextfield.isHidden = false
+            }
+            else
+            {
+                answerlabel.isHidden = true
+                answertextfield.isHidden = true
+            }
         }
     }
 }
