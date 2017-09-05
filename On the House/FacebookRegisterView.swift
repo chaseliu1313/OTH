@@ -10,13 +10,26 @@ import Foundation
 import UIKit
 class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    let command = "api/v1/member/create"
     
+    var parameter = ["nickname": "",
+                     "firstname": "",
+                     "last_name": "",
+                     "zip": "",
+                     "zone_id": "",
+                     "country_id": "13",
+                     "timezone_id": "",
+                     "question_id": "",
+                     "question_text":"null",
+                     "email": "",
+                     "password":"",
+                     "password_confirm": "",
+                     "terms": "1"]
+
    
     @IBOutlet weak var statepickerview: UIPickerView!
     
     var placementAnswer = 0
-    
-    @IBOutlet weak var statepickview: UIPickerView!
     
     @IBOutlet weak var pickview: UIPickerView!
     
@@ -45,7 +58,33 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func Signup(_ sender: UIButton) {
+        ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
+            if(successed) {
+                
+                
+                self.notifyUser("ON THE HOUSE", "Registration Successfull")
+                
+            }
+            else{
+                
+                
+                self.notifyUser("ON THE HOUSE", "Something IS Wrong")
+                
+                
+            }
+        }
+    }
+    
+    func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
