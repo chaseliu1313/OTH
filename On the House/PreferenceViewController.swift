@@ -18,6 +18,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     let command = ""
     
     
+    
+    
     var parameter1 = ["nickname": "",
                      "title":"",
                      "firstname": "",
