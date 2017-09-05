@@ -9,8 +9,11 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController{
+    
+    static var userfbinfo : [String : AnyObject]!
 
     @IBOutlet weak var emailtextfield: UITextField!
     
@@ -55,37 +58,41 @@ class LoginViewController: UIViewController{
                 print(error.localizedDescription)
             case .cancelled:
                 print("Login cancelled")
-            case .success(_,_,_):
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.performSegue(withIdentifier: "facebookreg", sender: self)
-                self.getUserinfo {userinfo, error in
-                    if let error = error {print(error.localizedDescription)}
-                    if let userinfo = userinfo, let id = userinfo["id"], let name = userinfo["name"], let email = userinfo["email"]{
-                        NewMemberData.email = email as! String
-                        let fullname = name as! String
-                        let namearray = fullname.components(separatedBy: " ")
-                        NewMemberData.first_name = namearray[0]
-                        NewMemberData.last_name = namearray[1]
-                        //self.loginlabel.text = "Successfully login"
-                    }
-                    
-                }
+                self.getfbuserinfo()
+                self.setfbuserinfo()
             }
             
         }
     }
     
     
-    func getUserinfo(completion : @escaping (_ : [String: Any]? ,_ : Error?) -> Void){
-        let request = GraphRequest(graphPath:"me" , parameters: ["fields":"id, email, picture"])
-        request.start { (response, result) in
-            switch result{
-            case .failed(let error):
-                completion(nil , error)
-            case .success(let graphResponse):
-                completion(graphResponse.dictionaryValue, nil)
-            }
+    func setfbuserinfo(){
+        if((FBSDKAccessToken.current()) != nil){
+            let email = LoginViewController.userfbinfo["email"] as? String
+            let fullname = LoginViewController.userfbinfo["name"]as? String
+            NewMemberData.email = email!
+            let namearray = fullname!.components(separatedBy: " ")
+            NewMemberData.first_name = namearray[0]
+            NewMemberData.last_name = namearray[1]
+            print(NewMemberData.first_name)
         }
     }
+    
+    func getfbuserinfo(){
+        
+        if((FBSDKAccessToken.current()) != nil){
+            var dict : [String : AnyObject]!
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    dict = result as! [String : AnyObject]
+                    LoginViewController.userfbinfo = dict
+                }
+            })
+        }
+    }
+
     
     
 
