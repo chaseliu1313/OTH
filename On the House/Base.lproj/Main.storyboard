@@ -459,6 +459,9 @@
                                 <state key="normal" title="T&amp;C.">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bEH-da-58f" kind="show" id="4vF-OS-elN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1296,6 +1299,9 @@ and periodicals</string>
                                 <state key="normal" title="T&amp;C.">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bEH-da-58f" kind="show" id="Yir-se-2Cs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1310,6 +1316,39 @@ and periodicals</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="340.57971014492756" y="875.54347826086962"/>
+        </scene>
+        <!--TandC View Controller-->
+        <scene sceneID="zYv-S4-th8">
+            <objects>
+                <viewController id="bEH-da-58f" customClass="TandCViewController" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TdC-lZ-Ih7"/>
+                        <viewControllerLayoutGuide type="bottom" id="mJo-jV-L04"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r1J-BP-HAf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbN-dl-8gX">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mJo-jV-L04" firstAttribute="top" secondItem="hbN-dl-8gX" secondAttribute="bottom" id="ArZ-RC-7gT"/>
+                            <constraint firstItem="hbN-dl-8gX" firstAttribute="leading" secondItem="r1J-BP-HAf" secondAttribute="leading" id="Clx-So-WKK"/>
+                            <constraint firstItem="hbN-dl-8gX" firstAttribute="top" secondItem="TdC-lZ-Ih7" secondAttribute="bottom" id="RhR-qA-1uX"/>
+                            <constraint firstAttribute="trailing" secondItem="hbN-dl-8gX" secondAttribute="trailing" id="y8Y-b0-Ul7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="hbN-dl-8gX" id="k3k-oB-O6A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YWw-UB-Kp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457.9710144927537" y="886.95652173913049"/>
         </scene>
         <!--My Membership-->
         <scene sceneID="Qgr-BV-11z">
@@ -1404,5 +1443,6 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6IU-LM-w6o"/>
+        <segue reference="4vF-OS-elN"/>
     </inferredMetricsTieBreakers>
 </document>
