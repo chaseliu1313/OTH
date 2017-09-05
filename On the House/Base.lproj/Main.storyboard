@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8lo-Ax-s2V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8lo-Ax-s2V">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -478,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="2953.6231884057975" y="-45.652173913043484"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--View Controller-->
         <scene sceneID="FAM-qS-ake">
             <objects>
-                <viewController id="vBL-ja-wd9" customClass="ProfileViewController" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vBL-ja-wd9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="duy-K7-lDb"/>
                         <viewControllerLayoutGuide type="bottom" id="KYq-jf-fPB"/>
@@ -759,6 +759,7 @@
                                                 <rect key="frame" x="17" y="913" width="51" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <connections>
+                                                    <action selector="Marketing:" destination="f2H-H2-vez" eventType="valueChanged" id="Srx-Tc-3Ic"/>
                                                     <action selector="Marketing:" destination="kAr-4R-lQU" eventType="valueChanged" id="y1E-aX-wvo"/>
                                                 </connections>
                                             </switch>
@@ -793,6 +794,7 @@ and periodicals</string>
                                                 <rect key="frame" x="17" y="765" width="51" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <connections>
+                                                    <action selector="Subscribe:" destination="f2H-H2-vez" eventType="valueChanged" id="6o6-Bt-3BI"/>
                                                     <action selector="Subscribe:" destination="kAr-4R-lQU" eventType="valueChanged" id="oYB-1f-ISj"/>
                                                 </connections>
                                             </switch>
@@ -879,6 +881,7 @@ and periodicals</string>
                                                 <rect key="frame" x="17" y="836" width="51" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <connections>
+                                                    <action selector="FocusGroup:" destination="f2H-H2-vez" eventType="valueChanged" id="MMj-sy-SWj"/>
                                                     <action selector="FocusGroup:" destination="kAr-4R-lQU" eventType="valueChanged" id="SUZ-LE-0K3"/>
                                                 </connections>
                                             </switch>
@@ -964,10 +967,10 @@ and periodicals</string>
             </objects>
             <point key="canvasLocation" x="4579.7101449275369" y="888.58695652173924"/>
         </scene>
-        <!--Preference View Controller-->
+        <!--View Controller-->
         <scene sceneID="ZhV-jo-Kyc">
             <objects>
-                <viewController id="kAr-4R-lQU" customClass="PreferenceViewController" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kAr-4R-lQU" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2u9-6G-bqO"/>
                         <viewControllerLayoutGuide type="bottom" id="Mgn-HO-dib"/>
