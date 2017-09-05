@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8lo-Ax-s2V">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1264,6 +1264,7 @@ and periodicals</string>
                         <outlet property="pickview" destination="yJr-UK-o4F" id="xcS-rd-jaW"/>
                         <outlet property="postcodetextfield" destination="y5g-IQ-kiQ" id="9cc-ir-hZR"/>
                         <outlet property="reentertextfield" destination="rct-qF-hqS" id="0rh-jx-nak"/>
+                        <outlet property="signup" destination="z20-tC-bC0" id="TqJ-Xm-be4"/>
                         <outlet property="statepickerview" destination="Eqn-YZ-DvL" id="czb-jJ-ik5"/>
                     </connections>
                 </viewController>

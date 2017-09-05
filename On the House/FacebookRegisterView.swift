@@ -167,6 +167,25 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         return pickerLabel!;
     }
+
+    @IBOutlet weak var signup: UIButton!
+    
+    @IBAction func `switch`(_ sender: UISwitch) {
+            if(sender.isOn == true)
+            {
+                
+                signup.isHidden = false
+                
+            }
+            else
+            {
+                
+                signup.isHidden = true
+            }
+        }
+
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
