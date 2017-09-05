@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class MyMembership: UIViewController {
+class MyMembershipController: UIViewController {
     
     
     @IBOutlet weak var goldCheck: UIButton!
@@ -26,6 +26,7 @@ class MyMembership: UIViewController {
     var isgoldboxclicked: Bool!
     var isbronzeboxclicked: Bool!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,15 +40,19 @@ class MyMembership: UIViewController {
         isbronzeboxclicked = false
     }
     
+    
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     @IBAction func goldClick(_ sender: Any) {
         if isgoldboxclicked == true{
