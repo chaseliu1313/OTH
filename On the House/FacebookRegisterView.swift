@@ -93,7 +93,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
             else{
                 
                 
-                self.notifyUser("ON THE HOUSE", "Something IS Wrong")
+                self.notifyUser("ON THE HOUSE", "Something Is Wrong")
                 
             }
         }
