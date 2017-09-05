@@ -25,7 +25,6 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
                      "password":"",
                      "password_confirm": "",
                      "terms": "1"]
-
    
     @IBOutlet weak var statepickerview: UIPickerView!
     
@@ -45,13 +44,12 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       statepickerview.delegate = self
+        statepickerview.delegate = self
         statepickerview.dataSource = self
        
         pickview.delegate = self
         pickview.dataSource = self
-        
-        
+
         
         answerlabel.isHidden = true
         answertextfield.isHidden = true
@@ -71,7 +69,6 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
                 
                 
                 self.notifyUser("ON THE HOUSE", "Something IS Wrong")
-                
                 
             }
         }
