@@ -31,7 +31,8 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
+        view.addGestureRecognizer(tap)
        statepickerview.delegate = self
         statepickerview.dataSource = self
        
@@ -52,7 +53,10 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         answertextfield.resignFirstResponder()
     }
     
-    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     override func didReceiveMemoryWarning()
     {
