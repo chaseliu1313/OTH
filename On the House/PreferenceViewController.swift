@@ -13,12 +13,21 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var updateButton: UIButton!
     
-    var url = "api/v1/memnber/"
-    let member_id = UserDefaults.standard.object(forKey: "member_id")
-    let command = ""
+    var command = "api/v1/memnber/"
+    var member_id = "default"
+   
     
+    @IBOutlet weak var nikenameTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var StreetTextField: UITextField!
+    @IBOutlet weak var CityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var postcodeTextField: UITextField!
     
-    
+    var categoryID = ""
     
     var parameter1 = ["nickname": "",
                      "title":"",
@@ -34,32 +43,44 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                      "zip": "",
                      "country_id": "13",
                      "timezone_id": "",
-                     "newsletters": "",
-                     "focus_groups": "",
-                     "paid_marketing": "",
+                     "newsletters": "1",
+                     "focus_groups": "1",
+                     "paid_marketing": "1",
                      "categories":""]
     
     
+    var Array = ["Please select","Adult Industry","Art & Craft","Ballet","Cabaret","CD","CD (Product)","Children","Circus & Physical Theatre","Comedy","Dance","DVD (Product)","Family","Festival","Film","Health","Health and Fitness","Magic","Miscellaneous","Music","Musical","Natural Health","Networking, Seminars, Workshops","Opera","Operetta","Reiki Course","Soiree","Speaking Engagement","Sport","Studio Audience","Test","Theatre","Vaudeville","Young Adults"]
+
     
     
     
-    var switch1 = ""
-    var switch2 = ""
-    var switch3 = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PreferenceViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        picker.delegate = self
+        picker.dataSource = self
+        
+        getPlaceholder()
+        
+        
+    }
     
     
     @IBAction func Subscribe(_ sender: UISwitch) {
         
         if(sender.isOn == true)
         {
-            switch1 = "1"
-            updateButton.isHidden = false
+            
+           parameter1.updateValue("newsletters", forKey: "1")
             
         }
         else
         {
-            switch1 = "0"
-            updateButton.isHidden = true
+            parameter1.updateValue("newsletters", forKey: "0")
+           
         }
         
     }
@@ -67,14 +88,14 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBAction func FocusGroup(_ sender: UISwitch) {
         if(sender.isOn == true)
         {
-            switch2 = "1"
-            updateButton.isHidden = false
+            
+           parameter1.updateValue("focus_groups", forKey: "1")
             
         }
         else
         {
-            switch2 = "0"
-            updateButton.isHidden = true
+            parameter1.updateValue("focus_groups", forKey: "0")
+            
         }
         
     }
@@ -83,63 +104,115 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBAction func Marketing(_ sender: UISwitch) {
         if(sender.isOn == true)
         {
-            switch3 = "1"
-            updateButton.isHidden = false
+            parameter1.updateValue("paid_marketing", forKey: "1")
+           
             
         }
         else
         {
-            switch3 = "0"
-            updateButton.isHidden = true
+            parameter1.updateValue("paid_marketing", forKey: "0")
+           
         }
         
     }
-    var Array = ["Please select","Adult Industry","Art & Craft","Ballet","Cabaret","CD","CD (Product)","Children","Circus & Physical Theatre","Comedy","Dance","DVD (Product)","Family","Festival","Film","Health","Health and Fitness","Magic","Miscellaneous","Music","Musical","Natural Health","Networking, Seminars, Workshops","Opera","Operetta","Reiki Course","Soiree","Speaking Engagement","Sport","Studio Audience","Test","Theatre","Vaudeville","Young Adults"]
-
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PreferenceViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
 
-        picker.delegate = self
-        picker.dataSource = self
-        // Do any additional setup after loading the view.
-    }
-
-    //Calls this function when the tap is recognized.
+   
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+       
         view.endEditing(true)
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         return Array.count
     }
     
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
     }
+    
+    
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         return Array[row]
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        categoryID = System.getCategories(category: Array[row])
+        
+        
+        
     }
-    */
-
+    
+    
+    
+    func notifyUser(_ title: String, _ message: String ) -> Void
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
+   
+    @IBAction func updateProfile(_ sender: UIButton) {
+        
+        member_id = UserDefaults.standard.string(forKey: "member_id")!
+        
+        if nikenameTextField.text != ""
+        && titleTextField.text != ""
+        && firstNameTextField.text != ""
+        && lastNameTextField.text != ""
+        && emailTextField.text != ""
+        && StreetTextField.text != ""
+        && CityTextField.text != ""
+        && stateTextField.text != ""
+            && postcodeTextField.text != ""
+        {
+        
+        
+        }
+        
+        
+        
+        
+    }
+    
+    func getPlaceholder(){
+    
+    
+        if UserDefaults.standard.string(forKey: "member_id") != nil {
+        
+        nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
+        firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
+        lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
+        emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
+        
+        let state = System.getKey(id: Int(UserDefaults.standard.string(forKey: "zone_id")!)!, dic: System.states)
+        stateTextField.placeholder = state
+            
+        
+        }
+        
+    
+    }
+    
+    
+    
 }
