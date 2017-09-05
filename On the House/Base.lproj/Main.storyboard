@@ -987,9 +987,6 @@ and periodicals</string>
                                 <rect key="frame" x="20" y="21" width="29" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-chevron_left_filled-1"/>
-                                <connections>
-                                    <segue destination="vBL-ja-wd9" kind="show" id="RM7-LB-3AS"/>
-                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1y-88-LM6">
                                 <rect key="frame" x="59.5" y="77.5" width="51" height="31"/>
@@ -1074,7 +1071,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODd-OG-9d5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5449" y="-45"/>
+            <point key="canvasLocation" x="5672" y="-46"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Q3j-Qm-xI5">
@@ -1481,8 +1478,8 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pJG-90-jFh"/>
         <segue reference="6IU-LM-w6o"/>
+        <segue reference="vbm-ze-twS"/>
         <segue reference="M4C-gP-7wU"/>
     </inferredMetricsTieBreakers>
 </document>
