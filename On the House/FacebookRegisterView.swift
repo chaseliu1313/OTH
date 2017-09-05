@@ -50,7 +50,8 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
        
         pickview.delegate = self
         pickview.dataSource = self
-
+        
+        
         
         answerlabel.isHidden = true
         answertextfield.isHidden = true
