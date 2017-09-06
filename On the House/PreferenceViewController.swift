@@ -71,7 +71,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         picker.delegate = self
         picker.dataSource = self
         
-        getPlaceholder()
+        //getPlaceholder()
         
         
     }
@@ -143,10 +143,38 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         
+        if picker == pickerView {
+            return Array.count
+        } else if statePickerView == pickerView{
             return Array2.count
+        }
+      return 1
        
     }
     
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel = view as? UILabel;
+        
+        if (pickerLabel == nil)
+        {
+            pickerLabel = UILabel()
+            
+            pickerLabel!.font = UIFont(name: "Montserrat", size: 10)
+            pickerLabel!.textAlignment = NSTextAlignment.center
+        }
+        
+        if picker == pickerView{
+            pickerLabel?.text = Array[row]
+        }
+            
+        else if statePickerView == pickerView{
+            pickerLabel?.text = Array2[row]
+        }
+        
+        return pickerLabel!;
+    }
+
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -177,7 +205,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     
     
-    func notifyUser(_ title: String, _ message: String ) -> Void
+   func notifyUser(_ title: String, _ message: String ) -> Void
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -272,7 +300,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         
         }
         
-    
+
     }
     
     
