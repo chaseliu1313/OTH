@@ -476,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m66-YY-ZQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="-11"/>
+            <point key="canvasLocation" x="2953.6231884057975" y="-11.413043478260871"/>
         </scene>
         <!--Preference View Controller-->
         <scene sceneID="Zuj-ST-Oq3">
@@ -1140,8 +1140,8 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M4C-gP-7wU"/>
+        <segue reference="vbm-ze-twS"/>
         <segue reference="6IU-LM-w6o"/>
-        <segue reference="pJG-90-jFh"/>
+        <segue reference="M4C-gP-7wU"/>
     </inferredMetricsTieBreakers>
 </document>
