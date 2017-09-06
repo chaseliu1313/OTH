@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		528223F81F5D3FF0000110F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528223F71F5D3FF0000110F3 /* ProfileViewController.swift */; };
 		52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E71F56AD8C00411EA0 /* System.swift */; };
 		52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */; };
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
@@ -27,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		528223F71F5D3FF0000110F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52BBB7E71F56AD8C00411EA0 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
 		6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_the_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +84,6 @@
 			children = (
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
-				528223F71F5D3FF0000110F3 /* ProfileViewController.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
@@ -294,7 +291,6 @@
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
-				528223F81F5D3FF0000110F3 /* ProfileViewController.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,

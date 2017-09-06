@@ -26,6 +26,10 @@ import Foundation
         static var password_confirm = ""
         static var terms = "1"
         static var id = ""
+        static var street = ""
+        static var city = ""
+        static var phone = ""
+        
         
         static var loginStatus: String = "error"
         

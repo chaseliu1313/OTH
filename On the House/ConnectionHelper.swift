@@ -45,6 +45,10 @@ struct ConnectionHelper{
                     NewMemberData.zone_id = json["member"]["zone_id"].string!
                     NewMemberData.timezone_id = json["member"]["timezone_id"].string!
                     NewMemberData.email = json["member"]["email"].string!
+                    NewMemberData.nickname = json["member"]["nickname"].string!
+                    NewMemberData.zip = json["member"]["zip"].string!
+                    
+                    
                     
                     UserDefaults.standard.set(NewMemberData.id, forKey: "member_id")
                     UserDefaults.standard.set(NewMemberData.first_name, forKey: "first_name")
@@ -52,6 +56,8 @@ struct ConnectionHelper{
                     UserDefaults.standard.set(NewMemberData.zone_id, forKey: "zone_id")
                     UserDefaults.standard.set(NewMemberData.timezone_id, forKey: "timezone_id")
                     UserDefaults.standard.set(NewMemberData.email, forKey: "email")
+                    UserDefaults.standard.set(NewMemberData.nickname, forKey: "nickname")
+                    UserDefaults.standard.set(NewMemberData.zip, forKey: "zip")
                     UserDefaults.standard.synchronize()
                     //print("\(id!): \(firstname!).\(lastName!), password: \(password!)")
                     
@@ -111,6 +117,47 @@ struct ConnectionHelper{
             }
         }
     
+    
+    }
+    
+    static func postJSON(command: String, parameter: [String: Any], compeletion: @escaping(Bool, JSON)-> Void) {
+    
+        
+        let url = baseUrl + command
+        
+        
+        
+        Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
+            
+            let json = JSON(response.data!)
+            switch response.result {
+            case .success(_):
+                
+                self.postStatus = JSON(response.data!)["status"].string!
+                
+                if self.postStatus == "success"
+                {
+                    compeletion(true,json)
+                }
+                else
+                {
+                    self.errorMesg = "The request has failed"
+                    compeletion(false,JSON.null)
+                }
+                
+            case .failure(_):
+                print("connection faild")
+                compeletion(false, JSON.null)
+                
+                
+                
+            }
+        }
+        
+
+        
+        
+
     
     }
     

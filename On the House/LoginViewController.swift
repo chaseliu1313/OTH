@@ -18,7 +18,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var emailtextfield: UITextField!
     
     @IBOutlet weak var passwordtextfield: UITextField!
-    //let facebookbutton = FBSDKLoginButton()
+    
     
     var parameters = [
         "email": " ",
@@ -122,6 +122,9 @@ class LoginViewController: UIViewController{
                     
                     UserDefaults.standard.synchronize()
                 print("login was successful")
+                
+                    let userID = UserDefaults.standard.string(forKey: "member_id")
+                    print(userID)
                 }
                 else {
                 self.notifyUser("ON THE HOUSE", "Invalid Email Address/Password")
