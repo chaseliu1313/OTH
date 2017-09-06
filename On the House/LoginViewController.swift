@@ -100,7 +100,7 @@ class LoginViewController: UIViewController{
         
         
         
-        if ( emailtextfield.text != "" && passwordtextfield.text != "")
+        if ( emailtextfield.text != "" && passwordtextfield.text != "" && System.isValidEmailAddress(emailAddressString: emailtextfield.text!))
         
         {
             
@@ -123,8 +123,7 @@ class LoginViewController: UIViewController{
                     UserDefaults.standard.synchronize()
                 print("login was successful")
                 
-                    let userID = UserDefaults.standard.string(forKey: "member_id")
-                    print(userID)
+                   
                 }
                 else {
                 self.notifyUser("ON THE HOUSE", "Invalid Email Address/Password")

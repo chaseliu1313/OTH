@@ -38,7 +38,8 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
            && postcodetextfield.text != ""
            && emailtextfield.text != ""
            && passwordtextfield.text != ""
-            && reenterpasswordtextfield.text != "")
+            && reenterpasswordtextfield.text != ""
+            && System.isValidEmailAddress(emailAddressString: emailtextfield.text!))
         {
             performSegue(withIdentifier: "registerSegue", sender: self)
         }

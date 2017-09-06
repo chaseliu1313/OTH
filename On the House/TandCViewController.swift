@@ -30,6 +30,13 @@ class TandCViewController: UIViewController {
     }
     
 
+    @IBAction func Out(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
+    @IBAction func out2(_ sender: UIBarButtonItem) {
+        
+         self.dismiss(animated: true, completion: nil)
+    }
 
 }
