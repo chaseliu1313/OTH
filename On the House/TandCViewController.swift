@@ -29,6 +29,12 @@ class TandCViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func done2(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func done(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     @IBAction func Out(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
