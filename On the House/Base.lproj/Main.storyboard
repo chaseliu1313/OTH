@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f2H-H2-vez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f2H-H2-vez">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="240.57971014492756" y="-44.836956521739133"/>
+            <point key="canvasLocation" x="241" y="-86"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="UB4-UD-69y">
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKK-Tx-gNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="-1086"/>
+            <point key="canvasLocation" x="241" y="-898"/>
         </scene>
         <!--Info Collection View Controller-->
         <scene sceneID="0wk-AD-aQ7">
@@ -262,13 +262,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDj-JK-TUd">
-                                <rect key="frame" x="30.5" y="90.5" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfY-OV-6kF">
                                 <rect key="frame" x="31" y="140" width="85" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -357,6 +350,13 @@
                                     <outlet property="delegate" destination="dI7-Yf-Nki" id="WXD-mA-6hd"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDj-JK-TUd">
+                                <rect key="frame" x="31" y="88" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -373,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6o-GU-NN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="-45"/>
+            <point key="canvasLocation" x="1639" y="-86"/>
         </scene>
         <!--Register View-->
         <scene sceneID="9VQ-4l-8U4">
@@ -476,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m66-YY-ZQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="-11"/>
+            <point key="canvasLocation" x="2954" y="-86"/>
         </scene>
         <!--Preference View Controller-->
         <scene sceneID="Zuj-ST-Oq3">
@@ -751,7 +751,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2av-Ta-JL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4814" y="-139"/>
+            <point key="canvasLocation" x="4430" y="-86"/>
         </scene>
         <!--Facebook Register View-->
         <scene sceneID="tJt-j7-H8Q">
@@ -933,7 +933,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="889"/>
+            <point key="canvasLocation" x="241" y="729"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="zYv-S4-th8">
@@ -975,7 +975,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWw-UB-Kp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="1679"/>
+            <point key="canvasLocation" x="241" y="1561"/>
         </scene>
         <!--My Membership-->
         <scene sceneID="Qgr-BV-11z">
@@ -992,9 +992,12 @@ and periodicals</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-uh-Fpd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQo-Ig-biK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQo-Ig-biK">
                                 <rect key="frame" x="11" y="35" width="29" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="Ki1-Rr-Ywz"/>
+                                    <constraint firstAttribute="width" constant="29" id="bN4-bg-NZE"/>
+                                </constraints>
                                 <state key="normal" image="icons8-chevron_left_filled-1"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHJ-La-qMe">
@@ -1043,31 +1046,37 @@ and periodicals</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Membership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nd-p5-BNq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Membership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nd-p5-BNq">
                                 <rect key="frame" x="145" y="37" width="124" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zbE-OY-rPe">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zbE-OY-rPe">
                                 <rect key="frame" x="146" y="20" width="123" height="20"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tdH-uh-Fpd" firstAttribute="leading" secondItem="tcB-yv-MUH" secondAttribute="trailing" constant="-83" id="0xq-Nu-RXk"/>
+                            <constraint firstItem="QQo-Ig-biK" firstAttribute="leading" secondItem="eih-nY-Dwd" secondAttribute="leadingMargin" constant="-9" id="1UN-Gr-m7C"/>
                             <constraint firstItem="tdH-uh-Fpd" firstAttribute="leading" secondItem="HtI-IK-2U4" secondAttribute="trailing" constant="-74" id="6Kb-OS-DQs"/>
                             <constraint firstItem="tdH-uh-Fpd" firstAttribute="top" secondItem="eih-nY-Dwd" secondAttribute="top" id="6t0-kb-2c5"/>
+                            <constraint firstItem="2Nd-p5-BNq" firstAttribute="bottom" secondItem="QQo-Ig-biK" secondAttribute="bottom" id="7Sc-Aw-y0g"/>
+                            <constraint firstItem="zbE-OY-rPe" firstAttribute="top" secondItem="YaZ-u7-Pxp" secondAttribute="bottom" id="8tj-1S-FB6"/>
                             <constraint firstItem="vSU-QQ-QXD" firstAttribute="top" secondItem="tdH-uh-Fpd" secondAttribute="bottom" id="EA1-lR-Euw"/>
                             <constraint firstItem="HtI-IK-2U4" firstAttribute="baseline" secondItem="c3Q-rX-cvu" secondAttribute="baseline" id="EYQ-6X-7bs"/>
                             <constraint firstItem="qHJ-La-qMe" firstAttribute="top" secondItem="Juh-hh-vAp" secondAttribute="bottom" constant="57" id="Fo9-ZC-dRp"/>
                             <constraint firstItem="tdH-uh-Fpd" firstAttribute="leading" secondItem="HtI-IK-2U4" secondAttribute="trailing" constant="-74" id="GNO-9G-9Ca"/>
                             <constraint firstItem="zbE-OY-rPe" firstAttribute="centerX" secondItem="eih-nY-Dwd" secondAttribute="centerX" id="ILj-Wp-l6g"/>
                             <constraint firstItem="WdL-5g-4ny" firstAttribute="trailing" secondItem="eih-nY-Dwd" secondAttribute="trailingMargin" id="Kdh-Nf-fWf"/>
+                            <constraint firstItem="2Nd-p5-BNq" firstAttribute="top" secondItem="YaZ-u7-Pxp" secondAttribute="bottom" constant="17" id="P0l-fI-FGy"/>
                             <constraint firstItem="Juh-hh-vAp" firstAttribute="centerY" secondItem="tcB-yv-MUH" secondAttribute="centerY" id="TFk-Ia-uLj"/>
                             <constraint firstItem="vSU-QQ-QXD" firstAttribute="top" secondItem="HtI-IK-2U4" secondAttribute="bottom" constant="257" id="U7j-8l-QqH"/>
+                            <constraint firstItem="zbE-OY-rPe" firstAttribute="centerX" secondItem="2Nd-p5-BNq" secondAttribute="centerX" id="ZNO-iX-EFz"/>
+                            <constraint firstItem="zbE-OY-rPe" firstAttribute="trailing" secondItem="2Nd-p5-BNq" secondAttribute="trailing" id="Zta-yq-1ua"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Juh-hh-vAp" secondAttribute="trailing" constant="14" id="baZ-j2-Jdf"/>
+                            <constraint firstAttribute="bottom" secondItem="zbE-OY-rPe" secondAttribute="bottom" constant="696" id="giW-nu-nmc"/>
                             <constraint firstItem="WdL-5g-4ny" firstAttribute="leading" secondItem="c3Q-rX-cvu" secondAttribute="trailing" constant="41" id="hAW-ht-bXz"/>
                             <constraint firstItem="HtI-IK-2U4" firstAttribute="baseline" secondItem="WdL-5g-4ny" secondAttribute="baseline" id="hlO-tF-G3C"/>
                             <constraint firstItem="qHJ-La-qMe" firstAttribute="centerX" secondItem="eih-nY-Dwd" secondAttribute="centerX" id="jPu-oj-VHM"/>
@@ -1088,7 +1097,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17T-a0-fBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953.6231884057975" y="-856.79347826086962"/>
+            <point key="canvasLocation" x="2954" y="-898"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="BID-QI-J1j">
@@ -1130,7 +1139,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wko-vq-IlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="1087"/>
+            <point key="canvasLocation" x="2954" y="729"/>
         </scene>
     </scenes>
     <resources>
@@ -1140,8 +1149,8 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ajg-o3-cAv"/>
         <segue reference="6IU-LM-w6o"/>
         <segue reference="vbm-ze-twS"/>
-        <segue reference="ajg-o3-cAv"/>
     </inferredMetricsTieBreakers>
 </document>
