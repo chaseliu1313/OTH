@@ -180,6 +180,7 @@
 				TargetAttributes = {
 					E8CE62921F4AA19400D9EF76 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KJZ8GTCP4S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -287,7 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */,
-				E8C0ABA91F57102500143885 /* MyMembershipController.swift in Sources */,
+				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
@@ -424,7 +425,7 @@
 			baseConfigurationReference = D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KJZ8GTCP4S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -443,7 +444,7 @@
 			baseConfigurationReference = 807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KJZ8GTCP4S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
