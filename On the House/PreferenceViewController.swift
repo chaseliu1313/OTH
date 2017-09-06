@@ -24,7 +24,11 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var StreetTextField: UITextField!
     @IBOutlet weak var CityTextField: UITextField!
-    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var stateField: UITextField!
+    @IBOutlet weak var statePickerView: UIPickerView!
+   
+    
+    
     @IBOutlet weak var postcodeTextField: UITextField!
     
     var categoryID = ""
@@ -51,7 +55,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     var Array = ["Please select","Adult Industry","Art & Craft","Ballet","Cabaret","CD","CD (Product)","Children","Circus & Physical Theatre","Comedy","Dance","DVD (Product)","Family","Festival","Film","Health","Health and Fitness","Magic","Miscellaneous","Music","Musical","Natural Health","Networking, Seminars, Workshops","Opera","Operetta","Reiki Course","Soiree","Speaking Engagement","Sport","Studio Audience","Test","Theatre","Vaudeville","Young Adults"]
 
-    
+    var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
     
     
     
@@ -60,6 +64,10 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PreferenceViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        
+        statePickerView.delegate = self
+        statePickerView.dataSource = self
+
         picker.delegate = self
         picker.dataSource = self
         
@@ -134,7 +142,9 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return Array.count
+        
+            return Array2.count
+       
     }
     
     
@@ -148,7 +158,12 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return Array[row]
+        if picker == pickerView {
+            return Array[row]
+        } else if statePickerView == pickerView{
+            return Array2[row]
+        }
+        return ""
     }
    
     
