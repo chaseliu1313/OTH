@@ -177,23 +177,49 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         
         if nikenameTextField.text != ""
         && titleTextField.text != ""
-        && firstNameTextField.text != ""
-        && lastNameTextField.text != ""
-        && emailTextField.text != ""
         && StreetTextField.text != ""
         && CityTextField.text != ""
         && stateTextField.text != ""
-            && postcodeTextField.text != ""
         {
         
-        
+            if member_id != ""{
+                
+                let url = command + member_id
+                
+                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success) in
+                    
+                    if success {
+                        self.parameter1.updateValue(self.nikenameTextField.text!, forKey: "nickname")
+                        self.parameter1.updateValue(self.titleTextField.text!, forKey: "title")
+                        self.parameter1.updateValue(self.firstNameTextField.text!, forKey: "first_name")
+                        
+                        
+                    }
+                    else{
+                    }
+                })
+            
+            
+            }
+            else {
+            
+                self.notifyUser("ON THE HOUSE", "ERROR: Invalid Member Information, Please Login Again")
+            }
+            
+            
+            
         }
         
+        else {
         
+        self.notifyUser("ON THE HOUSE", "Please Enter ALL Fields")
+        }
         
         
     }
     
+    
+    //retrieve placeholders from userdefaults
     func getPlaceholder(){
     
     
@@ -203,6 +229,27 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
         lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
         emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
+        postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
+            
+            
+            if UserDefaults.standard.string(forKey: "title") != nil{
+            
+                titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
+            }
+            
+            if UserDefaults.standard.string(forKey: "address1") != nil{
+                
+                StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
+            }
+            
+            if UserDefaults.standard.string(forKey: "city") != nil{
+                
+                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
+                
+            }
+            
+            
+            
         
         let state = System.getKey(id: Int(UserDefaults.standard.string(forKey: "zone_id")!)!, dic: System.states)
         stateTextField.placeholder = state

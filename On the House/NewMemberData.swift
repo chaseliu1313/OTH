@@ -29,6 +29,7 @@ import Foundation
         static var street = ""
         static var city = ""
         static var phone = ""
+        static var title = ""
         
         
         static var loginStatus: String = "error"
