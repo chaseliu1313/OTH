@@ -177,6 +177,7 @@
 				TargetAttributes = {
 					E8CE62921F4AA19400D9EF76 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KJZ8GTCP4S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -420,7 +421,7 @@
 			baseConfigurationReference = D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KJZ8GTCP4S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -439,7 +440,7 @@
 			baseConfigurationReference = 807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KJZ8GTCP4S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
