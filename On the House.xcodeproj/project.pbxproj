@@ -18,6 +18,11 @@
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
+		E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42921F6007B700DE142E /* OfferingHomePage.swift */; };
+		E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42961F60095B00DE142E /* OfferTableCell.swift */; };
+		E88F429B1F600DF800DE142E /* event3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42981F600DF800DE142E /* event3.jpg */; };
+		E88F429C1F600DF800DE142E /* event2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42991F600DF800DE142E /* event2.jpg */; };
+		E88F429D1F600DF800DE142E /* event1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F429A1F600DF800DE142E /* event1.jpg */; };
 		E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C0ABA81F57102500143885 /* MyMembership.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
+		E88F42921F6007B700DE142E /* OfferingHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingHomePage.swift; sourceTree = "<group>"; };
+		E88F42961F60095B00DE142E /* OfferTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableCell.swift; sourceTree = "<group>"; };
+		E88F42981F600DF800DE142E /* event3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event3.jpg; sourceTree = "<group>"; };
+		E88F42991F600DF800DE142E /* event2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event2.jpg; sourceTree = "<group>"; };
+		E88F429A1F600DF800DE142E /* event1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event1.jpg; sourceTree = "<group>"; };
 		E8C0ABA81F57102500143885 /* MyMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMembership.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */,
+				E88F42981F600DF800DE142E /* event3.jpg */,
+				E88F42991F600DF800DE142E /* event2.jpg */,
+				E88F429A1F600DF800DE142E /* event1.jpg */,
 				E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */,
 				E8CE629F1F4AA19400D9EF76 /* LaunchScreen.storyboard */,
 				E8CE62A21F4AA19400D9EF76 /* Info.plist */,
@@ -82,6 +95,7 @@
 		A2F3FD201F564D42006E23CA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
@@ -89,6 +103,7 @@
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
+				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
 			);
 			name = "View Controller";
@@ -177,7 +192,6 @@
 				TargetAttributes = {
 					E8CE62921F4AA19400D9EF76 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = KJZ8GTCP4S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -205,8 +219,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88F429C1F600DF800DE142E /* event2.jpg in Resources */,
 				E8CE62A11F4AA19400D9EF76 /* LaunchScreen.storyboard in Resources */,
+				E88F429D1F600DF800DE142E /* event1.jpg in Resources */,
 				E8CE629E1F4AA19400D9EF76 /* Assets.xcassets in Resources */,
+				E88F429B1F600DF800DE142E /* event3.jpg in Resources */,
 				E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,12 +305,14 @@
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
+				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
+				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
 				52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */,
 				A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */,
 			);
@@ -421,7 +440,7 @@
 			baseConfigurationReference = D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KJZ8GTCP4S;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -440,7 +459,7 @@
 			baseConfigurationReference = 807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KJZ8GTCP4S;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
