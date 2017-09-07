@@ -18,6 +18,9 @@
 		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
+		E825E6E91F61404C00277097 /* event6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E61F61404C00277097 /* event6.jpg */; };
+		E825E6EA1F61404C00277097 /* event5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E71F61404C00277097 /* event5.jpg */; };
+		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42921F6007B700DE142E /* OfferingHomePage.swift */; };
 		E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42961F60095B00DE142E /* OfferTableCell.swift */; };
@@ -45,6 +48,9 @@
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
+		E825E6E61F61404C00277097 /* event6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event6.jpg; sourceTree = "<group>"; };
+		E825E6E71F61404C00277097 /* event5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event5.jpg; sourceTree = "<group>"; };
+		E825E6E81F61404C00277097 /* event4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event4.jpg; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E88F42921F6007B700DE142E /* OfferingHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingHomePage.swift; sourceTree = "<group>"; };
 		E88F42961F60095B00DE142E /* OfferTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableCell.swift; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 				E88F42981F600DF800DE142E /* event3.jpg */,
 				E88F42991F600DF800DE142E /* event2.jpg */,
 				E88F429A1F600DF800DE142E /* event1.jpg */,
+				E825E6E61F61404C00277097 /* event6.jpg */,
+				E825E6E71F61404C00277097 /* event5.jpg */,
+				E825E6E81F61404C00277097 /* event4.jpg */,
 				E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */,
 				E8CE629F1F4AA19400D9EF76 /* LaunchScreen.storyboard */,
 				E8CE62A21F4AA19400D9EF76 /* Info.plist */,
@@ -222,12 +231,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E825E6EA1F61404C00277097 /* event5.jpg in Resources */,
 				E88F429C1F600DF800DE142E /* event2.jpg in Resources */,
 				E8CE62A11F4AA19400D9EF76 /* LaunchScreen.storyboard in Resources */,
 				E88F429D1F600DF800DE142E /* event1.jpg in Resources */,
 				E8CE629E1F4AA19400D9EF76 /* Assets.xcassets in Resources */,
 				E88F429B1F600DF800DE142E /* event3.jpg in Resources */,
 				E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */,
+				E825E6E91F61404C00277097 /* event6.jpg in Resources */,
+				E825E6EB1F61404C00277097 /* event4.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
