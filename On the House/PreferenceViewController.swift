@@ -210,130 +210,104 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     }
     
     
+//    
+//   func notifyUser(_ title: String, _ message: String ) -> Void
+//    {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//        alert.addAction(cancelAction)
+//        self.present(alert, animated: true)
+//        
+//    }
+//   
+//    @IBAction func updateProfile(_ sender: UIButton) {
+//        
+//        member_id = UserDefaults.standard.string(forKey: "member_id")!
+//        
+//        if nikenameTextField.text != ""
+//        && titleTextField.text != ""
+//        && StreetTextField.text != ""
+//        && CityTextField.text != ""
+//        && stateTextField.text != ""
+//        {
+//        
+//            if member_id != ""{
+//                
+//                let url = command + member_id
+//                
+//                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success) in
+//                    
+//                    if success {
+//                        self.parameter1.updateValue(self.nikenameTextField.text!, forKey: "nickname")
+//                        self.parameter1.updateValue(self.titleTextField.text!, forKey: "title")
+//                        self.parameter1.updateValue(self.firstNameTextField.text!, forKey: "first_name")
+//                        
+//                        
+//                    }
+//                    else{
+//                    }
+//                })
+//            
+//            
+//            }
+//            else {
+//            
+//                self.notifyUser("ON THE HOUSE", "ERROR: Invalid Member Information, Please Login Again")
+//            }
+//            
+//            
+//            
+//        }
+//        
+//        else {
+//        
+//        self.notifyUser("ON THE HOUSE", "Please Enter ALL Fields")
+//        }
+//        
+//        
+//    }
+//    
+//    
+//    //retrieve placeholders from userdefaults
+//    func getPlaceholder(){
+//    
+//    
+//        if UserDefaults.standard.string(forKey: "member_id") != nil {
+//        
+//        nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
+//        firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
+//        lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
+//        emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
+//        postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
+//            
+//            
+//            if UserDefaults.standard.string(forKey: "title") != nil{
+//            
+//                titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
+//            }
+//            
+//            if UserDefaults.standard.string(forKey: "address1") != nil{
+//                
+//                StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
+//            }
+//            
+//            if UserDefaults.standard.string(forKey: "city") != nil{
+//                
+//                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
+//                
+//            }
+//            
+//            
+//            
+//        
+//        let state = System.getKey(id: Int(UserDefaults.standard.string(forKey: "zone_id")!)!, dic: System.states)
+//        stateTextField.placeholder = state
+//            
+//        
+//         }
     
-   func notifyUser(_ title: String, _ message: String ) -> Void
-    {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true)
-        
-    }
-   
-    @IBAction func updateProfile(_ sender: UIButton) {
-        
-        
-        self.setNickname()
-        self.setLastName()
-        self.setFirstName()
-        self.setEmail()
-        self.setZip()
-        
-        self.parameter1.updateValue(self.categoryID, forKey: "categories")
-        self.parameter1.updateValue(self.stateID, forKey: "zone_id")
-        
-        UserDefaults.standard.set(stateID, forKey: "zone_id")
-       
-        
-        
-        member_id = UserDefaults.standard.string(forKey: "member_id")!
-        
-        if  titleTextField.text != ""
-        && StreetTextField.text != ""
-        && CityTextField.text != ""
-        && ageTextField.text != ""
-        && phoneTextField.text != ""
-       
-        {
-            
-            self.parameter1.updateValue(self.titleTextField.text!, forKey: "title")
-            self.parameter1.updateValue(self.StreetTextField.text!, forKey: "address1")
-            self.parameter1.updateValue(self.CityTextField.text!, forKey: "city")
-            self.parameter1.updateValue(self.ageTextField.text!, forKey: "age")
-            self.parameter1.updateValue(self.phoneTextField.text!, forKey: "phone")
-        
-            if member_id != ""{
-                
-                let url = command + member_id
-                
-                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success) in
-                    
-                    if success {
-                        
-                        UserDefaults.standard.set(self.titleTextField.text!, forKey: "title")
-                        UserDefaults.standard.set(self.StreetTextField.text!, forKey: "address1")
-                        UserDefaults.standard.set(self.CityTextField.text!, forKey: "city")
-                        UserDefaults.standard.set(self.ageTextField.text!, forKey: "age")
-                        UserDefaults.standard.set(self.phoneTextField.text!, forKey: "phone")
-                        self.notifyUser("ON THE HOUSE", "Update Successful!")
-                        
-                        
-                        
-                    }
-                    else{
-                        self.notifyUser("ON THE HOSUE", "There was error, please chack again.")
-                    }
-                })
-            
-            
-            }
-            else {
-            
-                self.notifyUser("ON THE HOUSE", "ERROR: Invalid Member Information, Please Login Again")
-            }
-            
-            
-            
-        }
-        
-        else {
-        
-        self.notifyUser("ON THE HOUSE", "Please Enter ALL Fields")
-        }
-        
-        
-    }
-    
-    
-    //retrieve placeholders from userdefaults
-    func getPlaceholder(){
-    
-    
-        if UserDefaults.standard.string(forKey: "member_id") != nil {
-        
-        nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
-        firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
-        lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
-        emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
-        postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
-            
-            
-            if UserDefaults.standard.string(forKey: "title") != nil{
-            
-                titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
-            }
-            
-            if UserDefaults.standard.string(forKey: "address1") != nil{
-                
-                StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
-            }
-            
-            if UserDefaults.standard.string(forKey: "city") != nil{
-                
-                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
-                
-            }
-            
-            
-            
-        
-       
-            
-        
-        }
-        
 
-    }
+//    }
     
     func setEmail()
     {
