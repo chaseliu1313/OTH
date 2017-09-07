@@ -73,7 +73,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         picker.delegate = self
         picker.dataSource = self
         
-        getPlaceholder()
+        //getPlaceholder()
         
         
     }

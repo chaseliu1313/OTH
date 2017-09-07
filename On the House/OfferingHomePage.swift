@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,6 +20,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,8 +40,23 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    @IBAction func filterButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "pop", sender: self)
+    }
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pop"
+        {
+            let dest = segue.destination
+            if let pop = dest.popoverPresentationController
+            {
+                pop.delegate = self
+            }
+        }
+    }
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
     public  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath) as! OfferTableCell
