@@ -42,7 +42,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526272673.206711"
+                  timestampString = "526459542.711565"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -57,7 +57,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526272673.20901"
+                  timestampString = "526459542.714054"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -72,7 +72,7 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526272673.210237"
+                  timestampString = "526459542.715393"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -87,12 +87,12 @@
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/s3551368/Desktop/OTH/On%20the%20House/FacebookRegisterView.swift"
-                  timestampString = "526272673.211434"
+                  timestampString = "526459542.716646"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "31">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "38">
                </Location>
             </Locations>
          </BreakpointContent>
