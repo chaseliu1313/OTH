@@ -83,6 +83,8 @@ struct ConnectionHelper{
         
     }
     
+    
+    
     //HTTP post method- universal
     static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool) -> Void){
     
@@ -150,13 +152,8 @@ struct ConnectionHelper{
                 compeletion(false, JSON.null)
                 
                 
-                
             }
         }
-        
-
-        
-        
 
     
     }

@@ -14,21 +14,38 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
     var evntLable = ["Call Me", "Today", "Just Do It"]
+    var refreshControl: UIRefreshControl = UIRefreshControl()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        refreshControl.backgroundColor = UIColor.darkGray
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to load more offer")
+        refreshControl.addTarget(self, action: #selector(OfferingHomePage.refreshOffer), for: UIControlEvents.valueChanged)
+        
+        if #available(iOS 10.0, *){
+            tableView.refreshControl = refreshControl
+        }else{
+            tableView.addSubview(refreshControl)
+        }
         
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
-
+    func refreshOffer(){
+        event.append(#imageLiteral(resourceName: "event4.jpg"))
+        event.append(#imageLiteral(resourceName: "event5.jpg"))
+        event.append(#imageLiteral(resourceName: "event6.jpg"))
+        evntLable.append("Let's dance")
+        evntLable.append("Come")
+        evntLable.append("See you again")
+        
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

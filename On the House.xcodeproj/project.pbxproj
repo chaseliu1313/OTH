@@ -12,12 +12,16 @@
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
 		715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715872BD1F5E66F800A315D8 /* TandCViewController.swift */; };
 		71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB911F611BC80029D3D0 /* Checkbox.swift */; };
+		A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26AA50E1F6143AA00296DA3 /* Offer.swift */; };
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
 		A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */; };
 		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
+		E825E6E91F61404C00277097 /* event6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E61F61404C00277097 /* event6.jpg */; };
+		E825E6EA1F61404C00277097 /* event5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E71F61404C00277097 /* event5.jpg */; };
+		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42921F6007B700DE142E /* OfferingHomePage.swift */; };
 		E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42961F60095B00DE142E /* OfferTableCell.swift */; };
@@ -39,12 +43,16 @@
 		715872BD1F5E66F800A315D8 /* TandCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TandCViewController.swift; sourceTree = "<group>"; };
 		71E1FB911F611BC80029D3D0 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.release.xcconfig"; sourceTree = "<group>"; };
+		A26AA50E1F6143AA00296DA3 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
+		E825E6E61F61404C00277097 /* event6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event6.jpg; sourceTree = "<group>"; };
+		E825E6E71F61404C00277097 /* event5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event5.jpg; sourceTree = "<group>"; };
+		E825E6E81F61404C00277097 /* event4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event4.jpg; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E88F42921F6007B700DE142E /* OfferingHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingHomePage.swift; sourceTree = "<group>"; };
 		E88F42961F60095B00DE142E /* OfferTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableCell.swift; sourceTree = "<group>"; };
@@ -87,6 +95,9 @@
 				E88F42981F600DF800DE142E /* event3.jpg */,
 				E88F42991F600DF800DE142E /* event2.jpg */,
 				E88F429A1F600DF800DE142E /* event1.jpg */,
+				E825E6E61F61404C00277097 /* event6.jpg */,
+				E825E6E71F61404C00277097 /* event5.jpg */,
+				E825E6E81F61404C00277097 /* event4.jpg */,
 				E8CE629D1F4AA19400D9EF76 /* Assets.xcassets */,
 				E8CE629F1F4AA19400D9EF76 /* LaunchScreen.storyboard */,
 				E8CE62A21F4AA19400D9EF76 /* Info.plist */,
@@ -118,6 +129,7 @@
 				A2F3FD221F564D73006E23CA /* NewMemberData.swift */,
 				52BBB7E71F56AD8C00411EA0 /* System.swift */,
 				52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */,
+				A26AA50E1F6143AA00296DA3 /* Offer.swift */,
 			);
 			name = Module;
 			sourceTree = "<group>";
@@ -222,12 +234,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E825E6EA1F61404C00277097 /* event5.jpg in Resources */,
 				E88F429C1F600DF800DE142E /* event2.jpg in Resources */,
 				E8CE62A11F4AA19400D9EF76 /* LaunchScreen.storyboard in Resources */,
 				E88F429D1F600DF800DE142E /* event1.jpg in Resources */,
 				E8CE629E1F4AA19400D9EF76 /* Assets.xcassets in Resources */,
 				E88F429B1F600DF800DE142E /* event3.jpg in Resources */,
 				E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */,
+				E825E6E91F61404C00277097 /* event6.jpg in Resources */,
+				E825E6EB1F61404C00277097 /* event4.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +327,7 @@
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
+				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
