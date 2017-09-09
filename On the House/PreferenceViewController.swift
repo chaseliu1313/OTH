@@ -13,7 +13,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var updateButton: UIButton!
     
-    var command = "api/v1/memnber/"
+    var command = "api/v1/member/"
     var member_id = "default"
    
     
@@ -27,15 +27,12 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var statePickerView: UIPickerView!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
-    
-    
-    
     @IBOutlet weak var postcodeTextField: UITextField!
     
     var categoryID = ""
     var stateID = ""
     
-    var parameter1 = ["nickname": "",
+    var parameter1 :[String: Any] = ["nickname": "",
                      "title":"",
                      "first_name": "",
                      "last_name": "",
@@ -211,9 +208,10 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     
 
-   func notifyUser(_ title: String, _ message: String ) -> Void
+    func notifyUser( _ message: [String] ) -> Void
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
@@ -235,16 +233,17 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                 
                 let url = command + member_id
                 
-                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success) in
+                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success,msg) in
                     
                     if success {
                         self.parameter1.updateValue(self.nikenameTextField.text!, forKey: "nickname")
                         self.parameter1.updateValue(self.titleTextField.text!, forKey: "title")
                         self.parameter1.updateValue(self.firstNameTextField.text!, forKey: "first_name")
-                        
+                        self.notifyUser(msg)
                         
                     }
                     else{
+                       self.notifyUser(msg)
                     }
                 })
             
@@ -252,7 +251,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
             }
             else {
             
-                self.notifyUser("ON THE HOUSE", "ERROR: Invalid Member Information, Please Login Again")
+                self.notifyUser(["ERROR: Invalid Member Information, Please Login Again"])
             }
             
             
@@ -261,7 +260,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         
         else {
         
-        self.notifyUser("ON THE HOUSE", "Please Enter ALL Fields")
+        self.notifyUser(["Please Enter ALL Fields"])
         }
         
         
