@@ -220,14 +220,32 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
    
     @IBAction func updateProfile(_ sender: UIButton) {
         
+        
+        
+        
         member_id = UserDefaults.standard.string(forKey: "member_id")!
         
-        if nikenameTextField.text != ""
-        && titleTextField.text != ""
+        self.setEmail()
+        self.setFirstName()
+        self.setLastName()
+        self.setNickname()
+        self.setZip()
+        
+        if
+         titleTextField.text != ""
         && StreetTextField.text != ""
         && CityTextField.text != ""
+        && ageTextField.text != ""
+        && phoneTextField.text != ""
         
         {
+            self.parameter1.updateValue(titleTextField.text!, forKey: "title")
+            self.parameter1.updateValue(StreetTextField.text!, forKey: "address1")
+            self.parameter1.updateValue(CityTextField.text!, forKey: "city")
+            self.parameter1.updateValue(ageTextField.text!, forKey: "age")
+            self.parameter1.updateValue(phoneTextField.text!, forKey: "phone")
+            self.parameter1.updateValue(self.categoryID, forKey: "categories")
+            self.parameter1.updateValue(self.stateID, forKey: "zone_id")
         
             if member_id != ""{
                 
@@ -236,9 +254,20 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                 ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success,msg) in
                     
                     if success {
-                        self.parameter1.updateValue(self.nikenameTextField.text!, forKey: "nickname")
-                        self.parameter1.updateValue(self.titleTextField.text!, forKey: "title")
-                        self.parameter1.updateValue(self.firstNameTextField.text!, forKey: "first_name")
+                        UserDefaults.standard.set(self.nikenameTextField.text!, forKey: "nickname")
+                    
+                        UserDefaults.standard.set(self.firstNameTextField.text!, forKey: "first_name")
+                       UserDefaults.standard.set(self.lastNameTextField.text!, forKey: "last_name")
+                        
+                        UserDefaults.standard.set(self.emailTextField.text!, forKey: "email")
+                        
+                        UserDefaults.standard.set(self.titleTextField.text!, forKey: "title")
+                        UserDefaults.standard.set(self.ageTextField.text!, forKey: "age")
+                        UserDefaults.standard.set(self.phoneTextField.text!, forKey: "phone")
+                        UserDefaults.standard.set(self.StreetTextField.text!, forKey: "address1")
+                        UserDefaults.standard.set(self.stateID, forKey: "zone_id")
+                        UserDefaults.standard.set(self.CityTextField.text!, forKey: "address1")
+                       UserDefaults.standard.set(self.postcodeTextField.text!, forKey: "zip")
                         self.notifyUser(msg)
                         
                     }
@@ -295,7 +324,16 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                 CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
                 
             }
-            
+            if UserDefaults.standard.string(forKey: "age") != nil{
+                
+                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "age")
+                
+            }
+            if UserDefaults.standard.string(forKey: "phone") != nil{
+                
+                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "phone")
+                
+            }
             
       
         
@@ -317,6 +355,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if emailTextField.text == "" || emailTextField.text == UserDefaults.standard.string(forKey: "email") {
+            self.emailTextField.text = UserDefaults.standard.string(forKey: "email")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "email")!, forKey: "email")
             
         }
@@ -335,6 +374,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if firstNameTextField.text == "" || firstNameTextField.text == UserDefaults.standard.string(forKey: "first_name") {
+            self.firstNameTextField.text = UserDefaults.standard.string(forKey: "first_name")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "first_name")!, forKey: "first_name")
             
         }
@@ -353,6 +393,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
             }
                 
             else if lastNameTextField.text == "" || lastNameTextField.text == UserDefaults.standard.string(forKey: "last_name") {
+                self.lastNameTextField.text = UserDefaults.standard.string(forKey: "last_name")
                 parameter1.updateValue(UserDefaults.standard.string(forKey: "last_name")!, forKey: "last_name")
                 
             }
@@ -372,6 +413,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if postcodeTextField.text == "" || postcodeTextField.text == UserDefaults.standard.string(forKey: "zip") {
+            
+            self.postcodeTextField.text = UserDefaults.standard.string(forKey: "zip")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "zip")!, forKey: "zip")
             
             
@@ -392,6 +435,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if nikenameTextField.text == "" || nikenameTextField.text == UserDefaults.standard.string(forKey: "nickname") {
+            
+            self.nikenameTextField.text = UserDefaults.standard.string(forKey: "nickname")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "nickname")!, forKey: "nickname")
             
             

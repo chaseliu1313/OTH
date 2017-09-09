@@ -85,7 +85,7 @@ struct ConnectionHelper{
     
     
     
-    //HTTP post method- universal
+    //HTTP post method- universal return error messages from the server 
     static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool, [String]) -> Void){
         
         let url = baseUrl + command
