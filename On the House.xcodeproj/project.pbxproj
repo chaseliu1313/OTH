@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */; };
-		52ABF36F1F65607600A5E2B8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ABF36E1F65607600A5E2B8 /* SideMenuViewController.swift */; };
 		52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E71F56AD8C00411EA0 /* System.swift */; };
 		52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */; };
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		52ABF36E1F65607600A5E2B8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		52BBB7E71F56AD8C00411EA0 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
 		6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_the_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +132,6 @@
 				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
 				71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */,
 				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
-				52ABF36E1F65607600A5E2B8 /* SideMenuViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -344,7 +341,6 @@
 				522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
-				52ABF36F1F65607600A5E2B8 /* SideMenuViewController.swift in Sources */,
 				71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
