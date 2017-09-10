@@ -13,8 +13,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var updateButton: UIButton!
     
-    var command = "api/v1/memnber/"
-    var member_id = "default"
+    var command = "api/v1/member/"
+    var member_id = ""
    
     
     @IBOutlet weak var nikenameTextField: UITextField!
@@ -27,15 +27,12 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var statePickerView: UIPickerView!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
-    
-    
-    
     @IBOutlet weak var postcodeTextField: UITextField!
     
     var categoryID = ""
     var stateID = ""
     
-    var parameter1 = ["nickname": "",
+    var parameter1 :[String: Any] = ["nickname": "",
                      "title":"",
                      "first_name": "",
                      "last_name": "",
@@ -73,7 +70,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         picker.delegate = self
         picker.dataSource = self
         
-        //getPlaceholder()
+        getPlaceholder()
         
         
     }
@@ -210,104 +207,144 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     }
     
     
-//    
-//   func notifyUser(_ title: String, _ message: String ) -> Void
-//    {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-//        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(cancelAction)
-//        self.present(alert, animated: true)
-//        
-//    }
-//   
-//    @IBAction func updateProfile(_ sender: UIButton) {
-//        
-//        member_id = UserDefaults.standard.string(forKey: "member_id")!
-//        
-//        if nikenameTextField.text != ""
-//        && titleTextField.text != ""
-//        && StreetTextField.text != ""
-//        && CityTextField.text != ""
-//        && stateTextField.text != ""
-//        {
-//        
-//            if member_id != ""{
-//                
-//                let url = command + member_id
-//                
-//                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success) in
-//                    
-//                    if success {
-//                        self.parameter1.updateValue(self.nikenameTextField.text!, forKey: "nickname")
-//                        self.parameter1.updateValue(self.titleTextField.text!, forKey: "title")
-//                        self.parameter1.updateValue(self.firstNameTextField.text!, forKey: "first_name")
-//                        
-//                        
-//                    }
-//                    else{
-//                    }
-//                })
-//            
-//            
-//            }
-//            else {
-//            
-//                self.notifyUser("ON THE HOUSE", "ERROR: Invalid Member Information, Please Login Again")
-//            }
-//            
-//            
-//            
-//        }
-//        
-//        else {
-//        
-//        self.notifyUser("ON THE HOUSE", "Please Enter ALL Fields")
-//        }
-//        
-//        
-//    }
-//    
-//    
-//    //retrieve placeholders from userdefaults
-//    func getPlaceholder(){
-//    
-//    
-//        if UserDefaults.standard.string(forKey: "member_id") != nil {
-//        
-//        nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
-//        firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
-//        lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
-//        emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
-//        postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
-//            
-//            
-//            if UserDefaults.standard.string(forKey: "title") != nil{
-//            
-//                titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
-//            }
-//            
-//            if UserDefaults.standard.string(forKey: "address1") != nil{
-//                
-//                StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
-//            }
-//            
-//            if UserDefaults.standard.string(forKey: "city") != nil{
-//                
-//                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
-//                
-//            }
-//            
-//            
-//            
-//        
-//        let state = System.getKey(id: Int(UserDefaults.standard.string(forKey: "zone_id")!)!, dic: System.states)
-//        stateTextField.placeholder = state
-//            
-//        
-//         }
+
+    func notifyUser( _ message: [String] ) -> Void
+    {
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
+   
+    @IBAction func updateProfile(_ sender: UIButton) {
+        
+        
+        
+        
+        member_id = UserDefaults.standard.string(forKey: "member_id")!
+        
+        self.setEmail()
+        self.setFirstName()
+        self.setLastName()
+        self.setNickname()
+        self.setZip()
+        
+        if
+         titleTextField.text != ""
+        && StreetTextField.text != ""
+        && CityTextField.text != ""
+        && ageTextField.text != ""
+        && phoneTextField.text != ""
+        
+        {
+            self.parameter1.updateValue(titleTextField.text!, forKey: "title")
+            self.parameter1.updateValue(StreetTextField.text!, forKey: "address1")
+            self.parameter1.updateValue(CityTextField.text!, forKey: "city")
+            self.parameter1.updateValue(ageTextField.text!, forKey: "age")
+            self.parameter1.updateValue(phoneTextField.text!, forKey: "phone")
+            self.parameter1.updateValue(self.categoryID, forKey: "categories")
+            self.parameter1.updateValue(self.stateID, forKey: "zone_id")
+            let timezone_id = System.getTimezone()
+            self.parameter1.updateValue(timezone_id, forKey: "timezone_id")
+        
+            if member_id != ""{
+                
+                let url = command + member_id
+                
+                ConnectionHelper.post(command: url, parameter: parameter1, compeletion: { (success,msg) in
+                    
+                    if success {
+                        UserDefaults.standard.set(self.nikenameTextField.text!, forKey: "nickname")
+                    
+                        UserDefaults.standard.set(self.firstNameTextField.text!, forKey: "first_name")
+                       UserDefaults.standard.set(self.lastNameTextField.text!, forKey: "last_name")
+                        
+                        UserDefaults.standard.set(self.emailTextField.text!, forKey: "email")
+                        
+                        UserDefaults.standard.set(self.titleTextField.text!, forKey: "title")
+                        UserDefaults.standard.set(self.ageTextField.text!, forKey: "age")
+                        UserDefaults.standard.set(self.phoneTextField.text!, forKey: "phone")
+                        UserDefaults.standard.set(self.StreetTextField.text!, forKey: "address1")
+                        UserDefaults.standard.set(self.stateID, forKey: "zone_id")
+                        UserDefaults.standard.set(self.CityTextField.text!, forKey: "address1")
+                       UserDefaults.standard.set(self.postcodeTextField.text!, forKey: "zip")
+                        
+                        UserDefaults.standard.set(timezone_id, forKey: "timezone_id")
+                        self.notifyUser(msg)
+                        
+                    }
+                    else{
+                       self.notifyUser(msg)
+                    }
+                })
+            
+            
+            }
+            else {
+            
+                self.notifyUser(["ERROR: Invalid Member Information, Please Login Again"])
+            }
+            
+            
+            
+        }
+        
+        else {
+        
+        self.notifyUser(["Please Enter ALL Fields"])
+        }
+        
+        
+    }
+    
+    
+    //retrieve placeholders from userdefaults
+    func getPlaceholder(){
+    
+    
+        if UserDefaults.standard.string(forKey: "member_id") != nil {
+        
+        nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
+        firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
+        lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
+        emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
+        postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
+            
+            
+            if UserDefaults.standard.string(forKey: "title") != nil{
+            
+                titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
+            }
+            
+            if UserDefaults.standard.string(forKey: "address1") != nil{
+                
+                StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
+            }
+            
+            if UserDefaults.standard.string(forKey: "city") != nil{
+                
+                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
+                
+            }
+            if UserDefaults.standard.string(forKey: "age") != nil{
+                
+                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "age")
+                
+            }
+            if UserDefaults.standard.string(forKey: "phone") != nil{
+                
+                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "phone")
+                
+            }
+            
+      
+        
+         }
     
 
-//    }
+    }
     
     func setEmail()
     {
@@ -322,6 +359,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if emailTextField.text == "" || emailTextField.text == UserDefaults.standard.string(forKey: "email") {
+            self.emailTextField.text = UserDefaults.standard.string(forKey: "email")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "email")!, forKey: "email")
             
         }
@@ -340,6 +378,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if firstNameTextField.text == "" || firstNameTextField.text == UserDefaults.standard.string(forKey: "first_name") {
+            self.firstNameTextField.text = UserDefaults.standard.string(forKey: "first_name")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "first_name")!, forKey: "first_name")
             
         }
@@ -358,6 +397,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
             }
                 
             else if lastNameTextField.text == "" || lastNameTextField.text == UserDefaults.standard.string(forKey: "last_name") {
+                self.lastNameTextField.text = UserDefaults.standard.string(forKey: "last_name")
                 parameter1.updateValue(UserDefaults.standard.string(forKey: "last_name")!, forKey: "last_name")
                 
             }
@@ -377,6 +417,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if postcodeTextField.text == "" || postcodeTextField.text == UserDefaults.standard.string(forKey: "zip") {
+            
+            self.postcodeTextField.text = UserDefaults.standard.string(forKey: "zip")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "zip")!, forKey: "zip")
             
             
@@ -397,6 +439,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
         }
             
         else if nikenameTextField.text == "" || nikenameTextField.text == UserDefaults.standard.string(forKey: "nickname") {
+            
+            self.nikenameTextField.text = UserDefaults.standard.string(forKey: "nickname")
             parameter1.updateValue(UserDefaults.standard.string(forKey: "nickname")!, forKey: "nickname")
             
             

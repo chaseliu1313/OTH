@@ -14,21 +14,32 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
     var evntLable = ["Call Me", "Today", "Just Do It"]
-    
+    var loadMoreEnable = true
+     var loadMoreView:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+    
+        self.tableView.tableFooterView = self.loadMoreView
+        sideMenus()
         
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    func refreshOffer(){
+        event.append(#imageLiteral(resourceName: "event4.jpg"))
+        event.append(#imageLiteral(resourceName: "event5.jpg"))
+        event.append(#imageLiteral(resourceName: "event6.jpg"))
+        evntLable.append("Let's dance")
+        evntLable.append("Come")
+        evntLable.append("See you again")
+        
+        tableView.reloadData()
+        
+        
+    }
+    
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,10 +50,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return (event.count)
     }
     
-    
     @IBAction func filterButton(_ sender: Any) {
         self.performSegue(withIdentifier: "pop", sender: self)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pop"
@@ -52,6 +63,18 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             {
                 pop.delegate = self
             }
+        }
+    }
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    func sideMenus(){
+        if revealViewController() != nil{
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 200
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -66,6 +89,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
+        
+        if (loadMoreEnable && indexPath.row == event.count-1) {
+            refreshOffer()
+        }
         return (cell)
         
     }

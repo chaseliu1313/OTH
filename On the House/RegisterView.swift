@@ -76,17 +76,17 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBAction func SignUP(_ sender: UIButton) {
         
         
-        ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
+        ConnectionHelper.post(command: command, parameter: parameter) { (successed,msg) in
             if(successed) {
                 
                 
-                 self.notifyUser("ON THE HOUSE", "Registration Successfull")
+                 self.notifyUser(["Registration Successfull"])
                 
             }
             else{
                 
                 
-            self.notifyUser("ON THE HOUSE", "Something IS Wrong")
+            self.notifyUser(msg)
                 
                 
             }
@@ -208,9 +208,10 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     }
     
-    func notifyUser(_ title: String, _ message: String ) -> Void
+    func notifyUser( _ message: [String] ) -> Void
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
