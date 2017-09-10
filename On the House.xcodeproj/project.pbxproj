@@ -13,6 +13,7 @@
 		715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715872BD1F5E66F800A315D8 /* TandCViewController.swift */; };
 		71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB911F611BC80029D3D0 /* Checkbox.swift */; };
 		71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */; };
+		71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */; };
 		A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26AA50E1F6143AA00296DA3 /* Offer.swift */; };
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
@@ -46,6 +47,7 @@
 		71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On the House-Bridging-Header.h"; sourceTree = "<group>"; };
 		71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideMenuTableViewController.swift; sourceTree = "<group>"; };
 		807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.release.xcconfig"; sourceTree = "<group>"; };
 		A26AA50E1F6143AA00296DA3 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
 				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,
 				71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */,
+				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
+				71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
