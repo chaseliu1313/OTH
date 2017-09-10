@@ -12,6 +12,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableView: UITableView!
     
+    var offers : [String : Offer]!
+    
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
     var evntLable = ["Call Me", "Today", "Just Do It"]
     var loadMoreEnable = true

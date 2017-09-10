@@ -915,6 +915,7 @@ and periodicals</string>
                                 </state>
                                 <connections>
                                     <action selector="Signup:" destination="Hdo-7s-NWS" eventType="touchUpInside" id="0pW-2N-iOA"/>
+                                    <segue destination="Syy-PJ-RrG" kind="show" identifier="facebooksignup" id="lFf-Ao-UHw"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-UK-o4F">
@@ -968,7 +969,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-54" y="883"/>
+            <point key="canvasLocation" x="241" y="774"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="zYv-S4-th8">
@@ -1307,7 +1308,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-rT-gjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6396" y="2526"/>
+            <point key="canvasLocation" x="4542" y="1270"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Afz-T7-2FN">
