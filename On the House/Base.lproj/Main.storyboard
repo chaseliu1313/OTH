@@ -1289,10 +1289,10 @@ and periodicals</string>
             </objects>
             <point key="canvasLocation" x="4542" y="1270"/>
         </scene>
-        <!--Side Menu View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="Afz-T7-2FN">
             <objects>
-                <tableViewController id="dcL-bC-IMt" customClass="sideMenuViewController" sceneMemberID="viewController">
+                <tableViewController id="dcL-bC-IMt" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eHW-JP-Qyw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
