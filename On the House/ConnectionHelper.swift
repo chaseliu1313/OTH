@@ -27,7 +27,6 @@ struct ConnectionHelper{
         let url = baseUrl + command
         
         
-        
         Alamofire.request(url, method: .post, parameters: parameter).responseJSON(completionHandler: { (response) in
             
             
