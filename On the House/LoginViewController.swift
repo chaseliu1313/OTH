@@ -19,6 +19,11 @@ class LoginViewController: UIViewController{
     
     @IBOutlet weak var passwordtextfield: UITextField!
     
+    @IBAction func Skip(_ sender: UIButton) {
+        
+        UserDefaults.standard.set(true, forKey: "didSkip")
+        UserDefaults.standard.synchronize()
+    }
     
     var parameters = [
         "email": " ",
@@ -118,7 +123,9 @@ class LoginViewController: UIViewController{
                 
                 if successed {
                     UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.set(false, forKey: "didSkip")
                     
+                    self.performSegue(withIdentifier: "login", sender: self)
                     
                     UserDefaults.standard.synchronize()
                     

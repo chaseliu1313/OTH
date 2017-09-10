@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Syy-PJ-RrG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,6 +84,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N6h-1E-70S"/>
+                                    <segue destination="Syy-PJ-RrG" kind="show" identifier="login" id="DsF-1J-mCT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vl-ab-HoY">
@@ -114,6 +115,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="Skip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qLP-rg-2v6"/>
                                     <segue destination="Syy-PJ-RrG" kind="show" id="0Dv-Q7-q3O"/>
                                 </connections>
                             </button>
@@ -1556,5 +1558,6 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6IU-LM-w6o"/>
+        <segue reference="DsF-1J-mCT"/>
     </inferredMetricsTieBreakers>
 </document>
