@@ -70,7 +70,7 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         self.dismiss(animated: true, completion: nil)
     }
     
-    var Array = ["Please select option","If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
+    var Array = ["If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     
     
     @IBAction func SignUP(_ sender: UIButton) {

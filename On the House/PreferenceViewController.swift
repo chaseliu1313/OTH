@@ -51,10 +51,14 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                      "paid_marketing": "1",
                      "categories":""]
     
+    @IBAction func `return`(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    var Array = ["Please select","Adult Industry","Art & Craft","Ballet","Cabaret","CD","CD (Product)","Children","Circus & Physical Theatre","Comedy","Dance","DVD (Product)","Family","Festival","Film","Health","Health and Fitness","Magic","Miscellaneous","Music","Musical","Natural Health","Networking, Seminars, Workshops","Opera","Operetta","Reiki Course","Soiree","Speaking Engagement","Sport","Studio Audience","Test","Theatre","Vaudeville","Young Adults"]
+    var Array = ["Adult Industry","Art & Craft","Ballet","Cabaret","CD (Product)","Children","Circus & Physical Theatre","Comedy","Dance","DVD (Product)","Family","Festival","Film","Health and Fitness","Magic","Miscellaneous","Music","Musical","Networking, Seminars, Workshops","Opera","Operetta","Reiki Course","Soiree","Speaking Engagement","Sport","Studio Audience","Theatre","Vaudeville"]
 
-    var Array2 = ["Please Select", "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+    var Array2 = ["New South Wales" , "Northern Territory" , "Queensland" , "South Australia", "Tasmania", "Victoria", "Western Australia", "Australian Capital Territory"]
     
     
     
@@ -196,15 +200,29 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.categoryID = System.getCategories(category: Array[row])
         
-        self.stateID = System.setState(state: Array2[row])
+        if picker == pickerView{
+            self.categoryID = System.getCategories(category: Array[row])
+        }
+            
+        else if statePickerView == pickerView{
+            self.stateID = System.setState(state: Array2[row])
+        }
+        
+        
+        
+        
+        
+        
         
         
        
         
         
     }
+    
+    
+    
     
     
 
