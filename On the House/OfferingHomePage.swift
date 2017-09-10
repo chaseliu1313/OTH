@@ -10,6 +10,9 @@ import UIKit
 
 class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
 
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
@@ -31,7 +34,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             tableView.addSubview(refreshControl)
         }
         
-        
+        sideMenus()
         
     }
     func refreshOffer(){
@@ -56,10 +59,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return (event.count)
     }
     
-    
     @IBAction func filterButton(_ sender: Any) {
         self.performSegue(withIdentifier: "pop", sender: self)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pop"
@@ -69,6 +72,16 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             {
                 pop.delegate = self
             }
+        }
+    }
+    
+    func sideMenus(){
+        if revealViewController() != nil{
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 200
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
