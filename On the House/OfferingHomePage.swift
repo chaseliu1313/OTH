@@ -23,7 +23,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.dataSource = self
     
         self.tableView.tableFooterView = self.loadMoreView
-        
+        sideMenus()
         
     }
     func refreshOffer(){
@@ -50,10 +50,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return (event.count)
     }
     
-    
     @IBAction func filterButton(_ sender: Any) {
         self.performSegue(withIdentifier: "pop", sender: self)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pop"
@@ -63,6 +63,18 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             {
                 pop.delegate = self
             }
+        }
+    }
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    func sideMenus(){
+        if revealViewController() != nil{
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 200
+            
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

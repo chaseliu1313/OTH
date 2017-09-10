@@ -12,6 +12,8 @@
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
 		715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715872BD1F5E66F800A315D8 /* TandCViewController.swift */; };
 		71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB911F611BC80029D3D0 /* Checkbox.swift */; };
+		71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */; };
+		71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */; };
 		A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26AA50E1F6143AA00296DA3 /* Offer.swift */; };
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
@@ -42,6 +44,10 @@
 		7101E4F11F4D420F00237211 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		715872BD1F5E66F800A315D8 /* TandCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TandCViewController.swift; sourceTree = "<group>"; };
 		71E1FB911F611BC80029D3D0 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On the House-Bridging-Header.h"; sourceTree = "<group>"; };
+		71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideMenuTableViewController.swift; sourceTree = "<group>"; };
 		807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.release.xcconfig"; sourceTree = "<group>"; };
 		A26AA50E1F6143AA00296DA3 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,10 @@
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
 				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
+				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
+				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,
+				71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */,
+				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -207,6 +217,7 @@
 				TargetAttributes = {
 					E8CE62921F4AA19400D9EF76 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -326,10 +337,12 @@
 				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
+				71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
+				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
 				52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */,
@@ -460,6 +473,7 @@
 			baseConfigurationReference = D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -470,6 +484,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RMIT.On-the-House";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "On the House/On the House-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -479,6 +495,7 @@
 			baseConfigurationReference = 807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,6 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RMIT.On-the-House";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "On the House/On the House-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
