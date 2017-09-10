@@ -17,8 +17,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
     var evntLable = ["Call Me", "Today", "Just Do It"]
-    var refreshControl: UIRefreshControl = UIRefreshControl()
-    
+    var loadMoreEnable = true
+     var loadMoreView:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +46,11 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         evntLable.append("See you again")
         
         tableView.reloadData()
-        refreshControl.endRefreshing()
+        
         
     }
+    
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -96,6 +98,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
+        
+        if (loadMoreEnable && indexPath.row == event.count-1) {
+            refreshOffer()
+        }
         return (cell)
         
     }
