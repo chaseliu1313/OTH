@@ -85,14 +85,14 @@ struct ConnectionHelper{
     
     
     
-    //HTTP post method- universal
-    static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool) -> Void){
-    
+    //HTTP post method- universal return error messages from the server 
+    static func post(command: String, parameter: [String: Any], compeletion: @escaping (Bool, [String]) -> Void){
+        
         let url = baseUrl + command
         
         
         
-         Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
+        Alamofire.request(url, method: .post, parameters: parameter).responseJSON { (response) in
             
             
             switch response.result {
@@ -102,25 +102,35 @@ struct ConnectionHelper{
                 
                 if self.postStatus == "success"
                 {
-                    compeletion(true)
+                    compeletion(true,["Success"])
                 }
                 else
                 {
+                    var message: [String] = []
                     self.errorMesg = "The request has failed"
-                    compeletion(false)
+                    
+                    let mesg = JSON(response.data!)["error"]["messages"].array!
+                    
+                    for m in mesg {
+                        message.append(m.string!)
+                    }
+                    
+                    
+                    compeletion(false,message)
                 }
                 
-           case .failure(_):
+            case .failure(_):
                 print("connection faild")
-                compeletion(false)
-            
-            
-            
+                compeletion(false,["connection faild"])
+                
+                
+                
             }
         }
-    
-    
+        
+        
     }
+
     
     static func postJSON(command: String, parameter: [String: Any], compeletion: @escaping(Bool, JSON)-> Void) {
     

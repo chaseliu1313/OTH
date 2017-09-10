@@ -121,6 +121,7 @@ class LoginViewController: UIViewController{
                     
                     
                     UserDefaults.standard.synchronize()
+                    
                 print("login was successful")
                 
                    

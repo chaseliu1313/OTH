@@ -15,7 +15,7 @@ class ForgetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ForgetPasswordViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
 
@@ -48,7 +48,7 @@ class ForgetPasswordViewController: UIViewController {
         
           parameter.updateValue(email, forKey: "email")
             
-            ConnectionHelper.post(command: command, parameter: parameter) { (successed) in
+            ConnectionHelper.post(command: command, parameter: parameter) { (successed,msg) in
                 
                 if successed {
                 
@@ -57,7 +57,7 @@ class ForgetPasswordViewController: UIViewController {
                 }
                 else {
                 
-                    self.notifyUser("ON THE HOUSE", "Invalid Email Address")
+                    self.notifyUser(msg)
                     
                 }
             }
@@ -77,13 +77,13 @@ class ForgetPasswordViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-     func notifyUser(_ title: String, _ message: String ) -> Void
+    func notifyUser( _ message: [String] ) -> Void
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
-        
         
     }
 
