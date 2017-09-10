@@ -10,9 +10,6 @@ import UIKit
 
 class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
 
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
@@ -24,16 +21,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        refreshControl.backgroundColor = UIColor.darkGray
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to load more offer")
-        refreshControl.addTarget(self, action: #selector(OfferingHomePage.refreshOffer), for: UIControlEvents.valueChanged)
-        
-        if #available(iOS 10.0, *){
-            tableView.refreshControl = refreshControl
-        }else{
-            tableView.addSubview(refreshControl)
-        }
-        
+    
+        self.tableView.tableFooterView = self.loadMoreView
         sideMenus()
         
     }
@@ -76,6 +65,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }
     }
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     func sideMenus(){
         if revealViewController() != nil{

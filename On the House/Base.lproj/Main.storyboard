@@ -1295,7 +1295,7 @@ and periodicals</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="EDw-oV-r8E" id="h5e-cn-H18"/>
+                        <outlet property="menuButton" destination="EDw-oV-r8E" id="fjC-FK-O8J"/>
                         <outlet property="tableView" destination="x6p-f0-dID" id="a9L-2c-Dcv"/>
                         <segue destination="yYL-hF-kV6" kind="popoverPresentation" identifier="pop" popoverAnchorBarButtonItem="ue5-hx-ca5" id="hXT-ZC-i6d">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -1814,6 +1814,6 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6IU-LM-w6o"/>
-        <segue reference="DsF-1J-mCT"/>
+        <segue reference="XTB-hK-J2p"/>
     </inferredMetricsTieBreakers>
 </document>
