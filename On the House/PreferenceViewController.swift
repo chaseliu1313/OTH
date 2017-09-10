@@ -14,7 +14,7 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     @IBOutlet weak var updateButton: UIButton!
     
     var command = "api/v1/member/"
-    var member_id = "default"
+    var member_id = ""
    
     
     @IBOutlet weak var nikenameTextField: UITextField!
@@ -246,6 +246,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
             self.parameter1.updateValue(phoneTextField.text!, forKey: "phone")
             self.parameter1.updateValue(self.categoryID, forKey: "categories")
             self.parameter1.updateValue(self.stateID, forKey: "zone_id")
+            let timezone_id = System.getTimezone()
+            self.parameter1.updateValue(timezone_id, forKey: "timezone_id")
         
             if member_id != ""{
                 
@@ -268,6 +270,8 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
                         UserDefaults.standard.set(self.stateID, forKey: "zone_id")
                         UserDefaults.standard.set(self.CityTextField.text!, forKey: "address1")
                        UserDefaults.standard.set(self.postcodeTextField.text!, forKey: "zip")
+                        
+                        UserDefaults.standard.set(timezone_id, forKey: "timezone_id")
                         self.notifyUser(msg)
                         
                     }
