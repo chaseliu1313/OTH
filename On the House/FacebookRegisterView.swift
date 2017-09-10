@@ -88,7 +88,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
             if(successed) {
                 
                 self.notifyUser(["Registration Successfull"])
-                
+                self.performSegue(withIdentifier: "facebooksignup", sender: self)
             }
             else{
                 
