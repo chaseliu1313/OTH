@@ -10,6 +10,10 @@ import UIKit
 
 class sideMenuTableViewController: UITableViewController {
 
+//    @IBAction func logOut(_ sender: UIButton) {
+//        
+//        UserDefaults.standard.set(false, forKey: "isLoggedI")
+//    UserDefaults.standard.synchronize()}
     override func viewDidLoad() {
         super.viewDidLoad()
         

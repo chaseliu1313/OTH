@@ -42,7 +42,7 @@ class LoginViewController: UIViewController{
         passwordtextfield.isSecureTextEntry = true
         if isloggedIn() {
             print("you have already logged in")
-            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "login", sender: self)
             
             
         }

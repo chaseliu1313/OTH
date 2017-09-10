@@ -13,6 +13,10 @@ import UIKit
 
 class MyMembership: UIViewController {
     
+    @IBAction func `return`(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var selectSwitch: UISwitch!

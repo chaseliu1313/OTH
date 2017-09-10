@@ -84,7 +84,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N6h-1E-70S"/>
-                                    <segue destination="qEO-ey-Sch" kind="show" identifier="login" id="cz6-ba-VYF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vl-ab-HoY">
@@ -147,6 +146,7 @@
                         <outlet property="emailtextfield" destination="tKF-CR-p59" id="956-xg-wSr"/>
                         <outlet property="facebookloginbutton" destination="SIa-hP-gI8" id="gzp-tn-m7o"/>
                         <outlet property="passwordtextfield" destination="XN0-fT-HDn" id="bdl-gk-iBq"/>
+                        <segue destination="qEO-ey-Sch" kind="modal" identifier="login" id="Jgs-rE-Wa0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1032,6 +1032,9 @@ and periodicals</string>
                                 <rect key="frame" x="11" y="35" width="29" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-chevron_left_filled-1"/>
+                                <connections>
+                                    <action selector="return:" destination="HFn-xT-d1E" eventType="touchUpInside" id="7hP-JD-XLM"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-yv-MUH">
                                 <rect key="frame" x="34" y="121" width="51" height="31"/>
@@ -1153,7 +1156,7 @@ and periodicals</string>
             </objects>
             <point key="canvasLocation" x="2852" y="626"/>
         </scene>
-        <!--Offering Home Page-->
+        <!--Offers-->
         <scene sceneID="XdU-2o-o8N">
             <objects>
                 <viewController id="Syy-PJ-RrG" customClass="OfferingHomePage" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
@@ -1263,7 +1266,7 @@ and periodicals</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="L5o-fD-jL6">
+                    <navigationItem key="navigationItem" title="Offers" id="L5o-fD-jL6">
                         <barButtonItem key="leftBarButtonItem" image="menu-ui-interface-collection-set-list-35b60ba986bf3b9b-24x24" id="EDw-oV-r8E">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -1286,10 +1289,10 @@ and periodicals</string>
             </objects>
             <point key="canvasLocation" x="4542" y="1270"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Side Menu View Controller-->
         <scene sceneID="Afz-T7-2FN">
             <objects>
-                <tableViewController id="dcL-bC-IMt" sceneMemberID="viewController">
+                <tableViewController id="dcL-bC-IMt" customClass="sideMenuViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eHW-JP-Qyw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1480,15 +1483,6 @@ and periodicals</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZSU-oj-Ttp" id="NSH-YJ-mmA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-v4-PoD">
-                                                    <rect key="frame" x="33" y="12" width="61" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.73307037350000004" green="0.59956270460000005" blue="0.54158723350000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1499,6 +1493,19 @@ and periodicals</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PSM-mD-pS7" id="auZ-MQ-JRe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYZ-UH-3js">
+                                                    <rect key="frame" x="29" y="8" width="73" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Log out">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="BYZ-38-t0r" kind="show" identifier="logout" id="KG6-aC-bHQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.73307037350000004" green="0.59956270460000005" blue="0.54158723350000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1922,8 +1929,8 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6IU-LM-w6o"/>
-        <segue reference="lFf-Ao-UHw"/>
-        <segue reference="cz6-ba-VYF"/>
+        <segue reference="Jgs-rE-Wa0"/>
+        <segue reference="KG6-aC-bHQ"/>
+        <segue reference="XTB-hK-J2p"/>
     </inferredMetricsTieBreakers>
 </document>
