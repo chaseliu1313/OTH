@@ -14,7 +14,9 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController{
     
     static var userfbinfo : [String : AnyObject]!
-
+    
+    var isauser = false
+    
     @IBOutlet weak var emailtextfield: UITextField!
     
     @IBOutlet weak var passwordtextfield: UITextField!
@@ -33,22 +35,26 @@ class LoginViewController: UIViewController{
     
     
     let command = "api/v1/member/login"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getfbuserinfo()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
+        
         passwordtextfield.isSecureTextEntry = true
-       
-      
+        if isloggedIn() {
+            print("you have already logged in")
+            self.performSegue(withIdentifier: "login", sender: self)
+        }
+        
     }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-
+    
     
     @IBAction func facebookloginaction(_ sender: UIButton) {
         let loginmanager = LoginManager()
@@ -59,13 +65,18 @@ class LoginViewController: UIViewController{
             case .cancelled:
                 print("Login cancelled")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                self.performSegue(withIdentifier: "facebookreg", sender: self)
                 self.getfbuserinfo()
+                if(!self.isauser){
+                    //self.performSegue(withIdentifier: "facebookreg", sender: self)
+                }
+                else{
+                    self.performSegue(withIdentifier: "facebooklogin", sender: self)
+                }
             }
             
         }
     }
-
+    
     
     func getfbuserinfo(){
         if((FBSDKAccessToken.current()) != nil){
@@ -75,6 +86,9 @@ class LoginViewController: UIViewController{
                     dict = result as! [String : AnyObject]
                     LoginViewController.userfbinfo = dict
                     let email = LoginViewController.userfbinfo["email"] as! String
+                    if(email == UserDefaults.standard.string(forKey: "email")!){
+                        self.isauser = true
+                    }
                     let fullname = LoginViewController.userfbinfo["name"]as! String
                     NewMemberData.email = email
                     let namearray = fullname.components(separatedBy: " ")
@@ -84,10 +98,10 @@ class LoginViewController: UIViewController{
             })
         }
     }
-
     
     
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -95,20 +109,20 @@ class LoginViewController: UIViewController{
     
     
     @IBAction func loginButton(_ sender: UIButton) {
-    
+        
         
         
         
         
         if ( emailtextfield.text != "" && passwordtextfield.text != "" && System.isValidEmailAddress(emailAddressString: emailtextfield.text!))
-        
+            
         {
             
             
-        let email = emailtextfield.text!
-        let password = passwordtextfield.text!
+            let email = emailtextfield.text!
+            let password = passwordtextfield.text!
             
-           
+            
             parameters.updateValue(email, forKey: "email")
             parameters.updateValue(password, forKey: "password")
             
@@ -124,31 +138,31 @@ class LoginViewController: UIViewController{
                     
                     UserDefaults.standard.synchronize()
                     
-                print("login was successful")
-                
-                   
+                    print("login was successful")
+                    
+                    
                 }
                 else {
-                self.notifyUser("ON THE HOUSE", "Invalid Email Address/Password")
+                    self.notifyUser("ON THE HOUSE", "Invalid Email Address/Password")
                     
-                
+                    
                 }
             })
             
-        
+            
         }
-        
+            
         else {
-         self.notifyUser("ON THE HOUSE", "Enter Your Email or Password")
-        
-        
+            self.notifyUser("ON THE HOUSE", "Enter Your Email or Password")
+            
+            
         }
         
         
         
         
     }
-   
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailtextfield.resignFirstResponder()
@@ -160,30 +174,30 @@ class LoginViewController: UIViewController{
     //login function by Chase
     func login(email: String, password: String)
     {
-     parameters.updateValue(email, forKey: "email")
-     parameters.updateValue(password, forKey: "password")
-     
+        parameters.updateValue(email, forKey: "email")
+        parameters.updateValue(password, forKey: "password")
+        
         ConnectionHelper.userLogin(command: command, parameter: parameters) { (successed) in
-          
-            if successed {
             
-            print("log in successful")
+            if successed {
+                
+                print("log in successful")
             }
             else {
-            print("something went wrong")
-            
+                print("something went wrong")
+                
             }
         }
-     
-    
+        
+        
     }
     
     //check log in status
     func isloggedIn() -> Bool {
-    
-    return UserDefaults.standard.bool(forKey: "isLoggedIn")
+        
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
-
+    
     //add notification
     func notifyUser(_ title: String, _ message: String ) -> Void
     {
@@ -195,5 +209,5 @@ class LoginViewController: UIViewController{
         
     }
     
-
+    
 }
