@@ -4,7 +4,7 @@
 //
 //  Created by bradlbs on 2017/9/7.
 //  Copyright © 2017年 Geng Xu. All rights reserved.
-//
+// 9.11 change: add let competition, rating changed from String to Int by Chase
 
 import Foundation
 
@@ -13,7 +13,7 @@ class Offer{
     let type : String?
     let name : String?
     let page_title : String?
-    let rating : String?
+    let rating : Int?
     let image_url : String?
     let description : String?
     let price_from : Double?
@@ -27,8 +27,10 @@ class Offer{
     let can_reserve : Bool?
     let has_reservation : Bool?
     let is_competition : Bool?
+    let competition: [String: String]
     
-    init(data: [String: AnyObject]) {
+    init(data: [String: Any]) {
+        
         if let id = data["id"] as? String {
             self.id = id
         }
@@ -53,11 +55,11 @@ class Offer{
         else{
             self.page_title = ""
         }
-        if let rating = data["rating"] as? String {
+        if let rating = data["rating"] as? Int {
             self.rating = rating
         }
         else{
-            self.rating = ""
+            self.rating = 0
         }
         if let image_url = data["image_url"] as? String {
             self.image_url = image_url
@@ -137,9 +139,18 @@ class Offer{
         else{
             self.is_competition = false
         }
+        
+        if let competition = data["competition"] as? [String : String]{
+            
+            self.competition = competition
+            
+        }
+        else{
+            self.competition = [:]
+        }
+        
+        
+        
+        
     }
-    
-    
-    
-    
 }

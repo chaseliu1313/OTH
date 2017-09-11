@@ -131,7 +131,7 @@ struct ConnectionHelper{
     }
 
     
-    static func postJSON(command: String, parameter: [String: Any], compeletion: @escaping(Bool, JSON)-> Void) {
+    static func postJSON(command: String, parameter: [String: Any], compeletion: @escaping(Bool, JSON, [String])-> Void) {
     
         
         let url = baseUrl + command
@@ -148,17 +148,25 @@ struct ConnectionHelper{
                 
                 if self.postStatus == "success"
                 {
-                    compeletion(true,json)
+                    compeletion(true,json,["success"])
                 }
                 else
                 {
-                    self.errorMesg = "The request has failed"
-                    compeletion(false,JSON.null)
+                    let mesg = ["Error: No data"]
+                    compeletion(false,JSON.null,mesg)
                 }
                 
             case .failure(_):
+                var message: [String] = []
+                let mesg = JSON(response.data!)["error"]["messages"].array!
+                for m in mesg {
+                    message.append(m.string!)
+                }
+                
+                
+               
                 print("connection faild")
-                compeletion(false, JSON.null)
+                compeletion(false, JSON.null,message)
                 
                 
             }

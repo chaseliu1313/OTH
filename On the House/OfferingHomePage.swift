@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var offers : [String : Offer]!
@@ -17,17 +18,76 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
     var evntLable = ["Call Me", "Today", "Just Do It"]
     var loadMoreEnable = true
-     var loadMoreView:UIView?
+    var loadMoreView:UIView?
+    var offerLoad : [Offer] = []
+    //request parameter
+    
+    let command = "api/v1/events/current"
+    
+    var parameter : [String: Any] =
+        [
+            "date" : "range",
+            "date_from" : "2015-05-05",
+            "data_to" : "2017-09-11",
+            "category_id" : ["37","5"],
+            "zone_id" : ["216"]
+            
+            
+            
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    
+        
         self.tableView.tableFooterView = self.loadMoreView
         sideMenus()
         
     }
+    
+    
+    //download offers from the server and ini into Offer objects, then add them to offerLoad array
+    func loadOffers()
+        
+    {
+        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json, msg) in
+            
+            if success {
+                
+                let status = json["status"].string!
+                
+                if status == "success"{
+                    
+                    let event  = json["events"].arrayValue
+                    
+                    for e in event {
+                        
+                        
+                        let v = e.dictionaryObject!
+                        let o : Offer = Offer(data: v)
+                        self.offerLoad.append(o)
+                        
+                        
+                    }
+                    
+                }
+                else {
+                    print("loading data faild")
+                }
+                
+                
+            }
+            else {
+                
+                print("post is wrong")
+            }
+        }
+        
+        
+    }
+    
+    
     func refreshOffer(){
         event.append(#imageLiteral(resourceName: "event4.jpg"))
         event.append(#imageLiteral(resourceName: "event5.jpg"))
@@ -41,12 +101,12 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     public  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return (event.count)
@@ -88,7 +148,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.eventImage.image = event[indexPath.row]
         cell.eventTitle.text = evntLable[indexPath.row]
         
-
+        
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
@@ -98,6 +158,17 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return (cell)
         
     }
-
-   
+    
+    
+    
+    func notifyUser( _ message: [String] ) -> Void
+    {
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
+    
 }
