@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
 
@@ -17,7 +18,23 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
     var evntLable = ["Call Me", "Today", "Just Do It"]
     var loadMoreEnable = true
-     var loadMoreView:UIView?
+    var loadMoreView:UIView?
+    var offerLoad : [Offer] = []
+    //request parameter
+    
+    let command = "api/v1/events/current"
+    
+    var parameter : [String: Any] =
+        [
+            "date" : "range",
+            "date_from" : "2015-05-05",
+            "data_to" : "2017-09-11",
+            "category_id" : ["37","5"],
+            "zone_id" : ["216"]
+            
+            
+            
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +45,17 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         sideMenus()
         
     }
+    
+    
+    func loadOffers()
+        
+    {
+        
+      
+        
+    }
+    
+    
     func refreshOffer(){
         event.append(#imageLiteral(resourceName: "event4.jpg"))
         event.append(#imageLiteral(resourceName: "event5.jpg"))
@@ -98,6 +126,17 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return (cell)
         
     }
+    
+    
 
+    func notifyUser( _ message: [String] ) -> Void
+    {
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
    
 }

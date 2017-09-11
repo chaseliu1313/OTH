@@ -77,19 +77,7 @@ class MyMembership: UIViewController {
     let command = "api/v1/member/membership"
     let parameter = ["member_id" : member_id]
         
-    ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json) in
-        
-        if success {
-        
-        
-        }
-        else {
-        
-        
-        }
-        
-        
-        }
+    
     
     }
     
