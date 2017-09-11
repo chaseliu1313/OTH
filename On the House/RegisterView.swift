@@ -185,17 +185,17 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         placementAnswer = row
         questionid = System.getQuestion(question: Array[placementAnswer])
         
-        if(placementAnswer == 1)
+        if(placementAnswer == 0)
         {
             answerlabel.isHidden = false
             answertextfield.isHidden = false
         }
-        else if(placementAnswer == 3)
+        else if(placementAnswer == 2)
         {
             answerlabel.isHidden = false
             answertextfield.isHidden = false
         }
-        else if(placementAnswer == 8)
+        else if(placementAnswer == 7)
         {
             answerlabel.isHidden = false
             answertextfield.isHidden = false
