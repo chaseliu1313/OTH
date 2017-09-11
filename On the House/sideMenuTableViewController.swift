@@ -10,10 +10,10 @@ import UIKit
 
 class sideMenuTableViewController: UITableViewController {
 
-//    @IBAction func logOut(_ sender: UIButton) {
-//        
-//        UserDefaults.standard.set(false, forKey: "isLoggedI")
-//    UserDefaults.standard.synchronize()}
+    @IBAction func logOut(_ sender: UIButton) {
+        
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+    UserDefaults.standard.synchronize()}
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +33,13 @@ class sideMenuTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return 0
+        return 15
     }
    
     /*

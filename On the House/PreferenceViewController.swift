@@ -324,36 +324,36 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     
         if UserDefaults.standard.string(forKey: "member_id") != nil {
         
-        nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
-        firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
-        lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
-        emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
-        postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
+        self.nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
+        self.firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
+        self.lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
+        self.emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
+        self.postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
             
             
             if UserDefaults.standard.string(forKey: "title") != nil{
             
-                titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
+                self.titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
             }
             
             if UserDefaults.standard.string(forKey: "address1") != nil{
                 
-                StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
+                self.StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
             }
             
             if UserDefaults.standard.string(forKey: "city") != nil{
                 
-                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
+                self.CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
                 
             }
             if UserDefaults.standard.string(forKey: "age") != nil{
                 
-                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "age")
+                self.ageTextField.placeholder =  UserDefaults.standard.string(forKey: "age")
                 
             }
             if UserDefaults.standard.string(forKey: "phone") != nil{
                 
-                CityTextField.placeholder =  UserDefaults.standard.string(forKey: "phone")
+                self.phoneTextField.placeholder =  UserDefaults.standard.string(forKey: "phone")
                 
             }
             
