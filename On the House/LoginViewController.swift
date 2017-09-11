@@ -64,10 +64,11 @@ class LoginViewController: UIViewController{
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.getfbuserinfo()
                 if(!self.isauser){
-                    //self.performSegue(withIdentifier: "facebookreg", sender: self)
+                    self.performSegue(withIdentifier: "facebookreg", sender: self)
                 }
                 else{
-                    self.performSegue(withIdentifier: "facebooklogin", sender: self)
+                    //self.performSegue(withIdentifier: "facebooklogin", sender: self)
+                    self.performSegue(withIdentifier: "login", sender: self)
                 }
             }
             
