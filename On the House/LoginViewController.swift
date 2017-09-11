@@ -43,10 +43,7 @@ class LoginViewController: UIViewController{
         view.addGestureRecognizer(tap)
         
         passwordtextfield.isSecureTextEntry = true
-        if isloggedIn() {
-            print("you have already logged in")
-            self.performSegue(withIdentifier: "login", sender: self)
-        }
+        
         
     }
     
@@ -67,10 +64,11 @@ class LoginViewController: UIViewController{
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.getfbuserinfo()
                 if(!self.isauser){
-                    //self.performSegue(withIdentifier: "facebookreg", sender: self)
+                    self.performSegue(withIdentifier: "facebookreg", sender: self)
                 }
                 else{
-                    self.performSegue(withIdentifier: "facebooklogin", sender: self)
+                    //self.performSegue(withIdentifier: "facebooklogin", sender: self)
+                    self.performSegue(withIdentifier: "login", sender: self)
                 }
             }
             
@@ -86,7 +84,10 @@ class LoginViewController: UIViewController{
                     dict = result as! [String : AnyObject]
                     LoginViewController.userfbinfo = dict
                     let email = LoginViewController.userfbinfo["email"] as! String
-                    if(email == UserDefaults.standard.string(forKey: "email")!){
+                    /*if(email == UserDefaults.standard.string(forKey: "email")!){
+                        self.isauser = true
+                    }*/
+                    if (UserDefaults.standard.string(forKey: "email") != nil){
                         self.isauser = true
                     }
                     let fullname = LoginViewController.userfbinfo["name"]as! String

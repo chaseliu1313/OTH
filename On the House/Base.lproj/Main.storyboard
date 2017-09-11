@@ -915,7 +915,7 @@ and periodicals</string>
                                 </state>
                                 <connections>
                                     <action selector="Signup:" destination="Hdo-7s-NWS" eventType="touchUpInside" id="0pW-2N-iOA"/>
-                                    <segue destination="Syy-PJ-RrG" kind="modal" identifier="facebooksignup" id="lFf-Ao-UHw"/>
+                                    <segue destination="qEO-ey-Sch" kind="modal" identifier="facebooksignup" id="N44-1v-OrC"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-UK-o4F">
@@ -1763,7 +1763,7 @@ and periodicals</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-pn-BGO">
-                                                    <rect key="frame" x="-8.5" y="0.0" width="414" height="44"/>
+                                                    <rect key="frame" x="-10.5" y="0.0" width="413.5" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <items>
                                                         <navigationItem id="4kB-oJ-7Vg">
@@ -1930,8 +1930,7 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U1y-g9-LC8"/>
-        <segue reference="Jgs-rE-Wa0"/>
-        <segue reference="XTB-hK-J2p"/>
+        <segue reference="N44-1v-OrC"/>
+        <segue reference="6IU-LM-w6o"/>
     </inferredMetricsTieBreakers>
 </document>
