@@ -74,7 +74,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         
         answerlabel.isHidden = true
-        answertextfield.isHidden = true
+        answertextfield.isHidden = false
         signup.isHidden = false
         
         dataprepare()
@@ -193,17 +193,17 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         questionid =  System.getQuestion(question: Array1[placementAnswer])
         
         if pickview==pickerView{
-            if(placementAnswer == 1)
+            if(placementAnswer == 0)
             {
                 answerlabel.isHidden = false
                 answertextfield.isHidden = false
             }
-            else if(placementAnswer == 3)
+            else if(placementAnswer == 2)
             {
                 answerlabel.isHidden = false
                 answertextfield.isHidden = false
             }
-            else if(placementAnswer == 8)
+            else if(placementAnswer == 7)
             {
                 answerlabel.isHidden = false
                 answertextfield.isHidden = false
