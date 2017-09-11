@@ -43,10 +43,7 @@ class LoginViewController: UIViewController{
         view.addGestureRecognizer(tap)
         
         passwordtextfield.isSecureTextEntry = true
-        if isloggedIn() {
-            print("you have already logged in")
-            self.performSegue(withIdentifier: "login", sender: self)
-        }
+        
         
     }
     
