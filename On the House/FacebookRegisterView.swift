@@ -74,7 +74,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         
         answerlabel.isHidden = true
-        answertextfield.isHidden = true
+        answertextfield.isHidden = false
         signup.isHidden = false
         
         dataprepare()
