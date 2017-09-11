@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var offers : [String : Offer]!
@@ -40,18 +40,50 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-    
+        
         self.tableView.tableFooterView = self.loadMoreView
         sideMenus()
         
     }
     
     
+    //download offers from the server and ini into Offer objects, then add them to offerLoad array
     func loadOffers()
         
     {
+        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json, msg) in
+            
+            if success {
+                
+                let status = json["status"].string!
+                
+                if status == "success"{
+                    
+                    let event  = json["events"].arrayValue
+                    
+                    for e in event {
+                        
+                        
+                        let v = e.dictionaryObject!
+                        let o : Offer = Offer(data: v)
+                        self.offerLoad.append(o)
+                        
+                        
+                    }
+                    
+                }
+                else {
+                    print("loading data faild")
+                }
+                
+                
+            }
+            else {
+                
+                print("post is wrong")
+            }
+        }
         
-      
         
     }
     
@@ -69,12 +101,12 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     public  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return (event.count)
@@ -116,7 +148,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.eventImage.image = event[indexPath.row]
         cell.eventTitle.text = evntLable[indexPath.row]
         
-
+        
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
@@ -128,7 +160,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
-
+    
     func notifyUser( _ message: [String] ) -> Void
     {
         let meg: String = message[0]
@@ -138,5 +170,5 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.present(alert, animated: true)
         
     }
-   
+    
 }
