@@ -107,7 +107,7 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         pickerview.delegate = self
         pickerview.dataSource = self
         answerlabel.isHidden = true
-        answertextfield.isHidden = true
+        answertextfield.isHidden = false
         signup.isHidden = false
        
         if(answertextfield.text != "")
