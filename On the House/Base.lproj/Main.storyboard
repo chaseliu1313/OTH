@@ -969,7 +969,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-548" y="774"/>
+            <point key="canvasLocation" x="-535" y="724"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="zYv-S4-th8">
@@ -1762,7 +1762,7 @@ and periodicals</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-pn-BGO">
-                                                    <rect key="frame" x="-7" y="0.0" width="413" height="44"/>
+                                                    <rect key="frame" x="-8" y="0.0" width="414" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <items>
                                                         <navigationItem id="4kB-oJ-7Vg">
@@ -1932,5 +1932,6 @@ and periodicals</string>
         <segue reference="6IU-LM-w6o"/>
         <segue reference="lFf-Ao-UHw"/>
         <segue reference="Jgs-rE-Wa0"/>
+        <segue reference="XTB-hK-J2p"/>
     </inferredMetricsTieBreakers>
 </document>
