@@ -32,20 +32,20 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     @IBAction func toNext(_ sender: Any) {
         
         if (slectedState != ""
-           && nicknametextfield.text != ""
-           && firstnametextfield.text != ""
-           && lastnametextfield.text != ""
-           && postcodetextfield.text != ""
-           && emailtextfield.text != ""
-           && passwordtextfield.text != ""
+            && nicknametextfield.text != ""
+            && firstnametextfield.text != ""
+            && lastnametextfield.text != ""
+            && postcodetextfield.text != ""
+            && emailtextfield.text != ""
+            && passwordtextfield.text != ""
             && reenterpasswordtextfield.text != ""
             && System.isValidEmailAddress(emailAddressString: emailtextfield.text!))
         {
             performSegue(withIdentifier: "registerSegue", sender: self)
         }
-        
+            
         else{
-        notifyUser("ON THE HOUSE", "Please Fill In All Fields")
+            notifyUser("ON THE HOUSE", "Please Fill In All Fields")
         }
         
     }
@@ -70,12 +70,12 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
             NewMemberData.email = email.trimmingCharacters(in: CharacterSet.whitespaces)}
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(InfoCollectionViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
+        
         statepickerview.delegate = self
         statepickerview.dataSource = self
         // Do any additional setup after loading the view.
@@ -87,7 +87,7 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
         view.endEditing(true)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -129,7 +129,7 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
         
     }
     //ends of pickerview functions
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nicknametextfield.resignFirstResponder()
         firstnametextfield.resignFirstResponder()
@@ -142,7 +142,7 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
     }
     
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let destController = segue.destination as! RegisterView
@@ -169,8 +169,8 @@ class InfoCollectionViewController: UIViewController ,UIPickerViewDelegate, UIPi
         
         
     }
-
-
+    
+    
 }
 
 
