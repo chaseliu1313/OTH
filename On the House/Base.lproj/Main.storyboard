@@ -1769,7 +1769,7 @@ and periodicals</string>
                                                             <barButtonItem key="leftBarButtonItem" title="Clear" id="gMd-Ym-ySy">
                                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </barButtonItem>
-                                                            <barButtonItem key="rightBarButtonItem" title="Aply" id="Xtz-yX-nPa">
+                                                            <barButtonItem key="rightBarButtonItem" title="Apply" id="Xtz-yX-nPa">
                                                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </barButtonItem>
                                                         </navigationItem>
