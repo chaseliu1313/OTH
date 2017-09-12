@@ -54,30 +54,27 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     func loadOffers()
         
     {
-        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json, msg) in
+        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json) in
             
             if success {
                 
                 let status = json["status"].string!
                 
-                if status == "success"{
+                print(status)
+                
+                let event  = json["events"].arrayValue
+                
+                for e in event {
                     
-                    let event  = json["events"].arrayValue
                     
-                    for e in event {
-                        
-                        
-                        let v = e.dictionaryObject!
-                        let o : Offer = Offer(data: v)
-                        self.offerLoad.append(o)
-                        
-                        
-                    }
+                    let v = e.dictionaryObject!
+                    let o : Offer = Offer(data: v)
+                    self.offerLoad.append(o)
+                    
                     
                 }
-                else {
-                    print("loading data faild")
-                }
+                
+                print(event.count)
                 
                 
             }
@@ -86,7 +83,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 print("post is wrong")
             }
         }
-        
         
     }
     
