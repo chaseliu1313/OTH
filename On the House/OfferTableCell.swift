@@ -21,6 +21,18 @@ class OfferTableCell: UITableViewCell {
     
     @IBOutlet weak var shareEvent: UIButton!
     
+    
+    var size = CGSize()
+    
+    func getsize() -> CGRect{
+    
+      self.size  = self.eventImage.intrinsicContentSize
+        
+        
+        
+        return self.eventImage.frame
+    }
+    
     var didSkip: Bool = false
     
 //    var offer : Offer?{

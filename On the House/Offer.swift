@@ -165,7 +165,10 @@ class Offer{
                 
                 if success {
                     
+                 
+                   
                     self.image = img
+                    
                 }
                 
                 
@@ -189,3 +192,5 @@ class Offer{
       self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")
         }}
 }
+
+

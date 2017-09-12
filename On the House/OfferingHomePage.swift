@@ -177,16 +177,20 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         let offer = offerLoad[indexPath.row]
         cell.eventTitle.text = offer.name
          offer.insert()
-       cell.imageView?.image =  offer.getImage()
         
-   
+        //let size = cell.imageView?.intrinsicContentSize
         
+        print(cell.getsize().width)
+        let size = CGSize.init(width: cell.getsize().width, height: cell.getsize().height)
+        
+        let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
+        
+        cell.imageView?.image = cellImage
        
-        
-       
+       // cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
 
         
-        
+        cell.changeButton()
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
@@ -215,4 +219,21 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
+    
+    
+}
+
+extension UIImage {
+    
+    class func scaleImageToSize(img: UIImage, size: CGSize) -> UIImage {
+        
+        UIGraphicsBeginImageContext(size)
+        
+        img.draw(in: CGRect(origin: CGPoint(x: 0, y:0), size: size))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        return scaledImage!
+        
+    }
 }
