@@ -240,6 +240,32 @@ struct ConnectionHelper{
         
         
     }
+    static func getImage(imageURL :String, completion: @escaping (Bool, UIImage) -> Void){
+        
+        Alamofire.request(imageURL).responseData { (response) in
+            
+           
+            
+            switch response.result{
+            
+            case .success(_):
+                 let image = UIImage.init(data: response.data!)
+                completion(true,image!)
+                
+            case .failure(_):
+                 print("error")
+                completion(false, UIImage())
+            
+            }
+            
+        }
+            
+            
+            
+        }
+    
+    
+    
     
     
 }

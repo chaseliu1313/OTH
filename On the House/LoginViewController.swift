@@ -137,6 +137,8 @@ class LoginViewController: UIViewController{
                     
                     self.performSegue(withIdentifier: "login", sender: self)
                     
+                    UserDefaults.standard.set(false, forKey: "didSkip")
+                    
                     UserDefaults.standard.synchronize()
                     
                     print("login was successful")

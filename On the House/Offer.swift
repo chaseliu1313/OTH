@@ -14,7 +14,7 @@ class Offer{
     let name : String?
     let page_title : String?
     let rating : Int?
-    let image_url : String?
+    var image_url : String?
     let description : String?
     let price_from : Double?
     let price_to : Double?
@@ -28,6 +28,8 @@ class Offer{
     let has_reservation : Bool?
     let is_competition : Bool?
     let competition: [String: String]
+    
+    var image = UIImage()
     
     init(data: [String: Any]) {
         
@@ -151,6 +153,39 @@ class Offer{
         
         
         
-        
     }
+    
+    func getImage() -> UIImage {
+        
+        
+        
+        if self.image_url != "" {
+            
+            ConnectionHelper.getImage(imageURL: "\(self.image_url!)") { (success, img) in
+                
+                if success {
+                    
+                    self.image = img
+                }
+                
+                
+                
+            }}
+        else{self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")}
+        
+    return self.image
+    }
+    
+    func insert() {
+        
+        if self.image_url != ""{
+    
+        let range = self.image_url!.range(of: "http")
+            
+        self.image_url!.insert("s", at: range!.upperBound)
+        }
+    else {
+    
+      self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")
+        }}
 }

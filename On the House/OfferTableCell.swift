@@ -21,26 +21,28 @@ class OfferTableCell: UITableViewCell {
     
     @IBOutlet weak var shareEvent: UIButton!
     
-    var offer : Offer?{
-        didSet{
-            updateUI()
-        }
-    }
+    var didSkip: Bool = false
     
-    func updateUI()  {
-        eventTitle.text = offer?.page_title
-        
-        if let profileImageURL = offer?.image_url{
-            if let url = NSURL(string : profileImageURL){
-                if let imagedata = NSData(contentsOf : url as URL) {
-                    eventImage.image = UIImage(data:imagedata as Data)
-                }
-            }
-        }
-        else{
-            eventImage.image = nil
-        }
-    }
+//    var offer : Offer?{
+//        didSet{
+//            updateUI()
+//        }
+//    }
+    
+//    func updateUI()  {
+//        eventTitle.text = offer?.page_title
+//        
+//        if let profileImageURL = offer?.image_url{
+//            if let url = NSURL(string : profileImageURL){
+//                if let imagedata = NSData(contentsOf : url as URL) {
+//                    eventImage.image = UIImage(data:imagedata as Data)
+//                }
+//            }
+//        }
+//        else{
+//            eventImage.image = nil
+//        }
+//    }
     
     
     override func awakeFromNib() {
@@ -54,4 +56,23 @@ class OfferTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func changeButton(){
+        
+        let skip = UserDefaults.standard.bool(forKey: "didSkip")
+        
+        if skip == true{
+            didSkip = true
+            checkoutButton.setTitle("Register/Login", for: .normal)
+            
+        }
+        else {
+            
+            didSkip = false
+            
+            
+            
+        }}
+        
+        
+
 }

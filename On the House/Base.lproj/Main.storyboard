@@ -1222,13 +1222,16 @@ and periodicals</string>
                                                     <state key="normal" title="Share Event" image="share">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="Share:" destination="Syy-PJ-RrG" eventType="touchUpInside" id="aA5-2Y-M1g"/>
+                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwB-8q-hG2">
-                                                    <rect key="frame" x="44" y="8" width="282" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwB-8q-hG2">
+                                                    <rect key="frame" x="32" y="8" width="351" height="27"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="282" id="dsU-hR-VQq"/>
+                                                        <constraint firstAttribute="width" constant="351" id="dsU-hR-VQq"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1237,7 +1240,7 @@ and periodicals</string>
                                             <constraints>
                                                 <constraint firstItem="WgU-Oz-80o" firstAttribute="centerX" secondItem="xyG-Le-U2w" secondAttribute="centerX" constant="0.5" id="2tl-z2-XID"/>
                                                 <constraint firstItem="A2w-vf-v8i" firstAttribute="leading" secondItem="cKa-af-92K" secondAttribute="trailing" constant="24" id="3Pt-bF-7uA"/>
-                                                <constraint firstItem="GwB-8q-hG2" firstAttribute="leading" secondItem="xyG-Le-U2w" secondAttribute="leadingMargin" constant="36" id="8sK-SB-V3M"/>
+                                                <constraint firstItem="GwB-8q-hG2" firstAttribute="leading" secondItem="xyG-Le-U2w" secondAttribute="leadingMargin" constant="24" id="8sK-SB-V3M"/>
                                                 <constraint firstItem="WgU-Oz-80o" firstAttribute="top" secondItem="GwB-8q-hG2" secondAttribute="bottom" constant="9.6666666666666714" id="OZV-HE-tOP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cKa-af-92K" secondAttribute="bottom" constant="14.666666666666686" id="PI0-TX-huP"/>
                                                 <constraint firstItem="WgU-Oz-80o" firstAttribute="leading" secondItem="xyG-Le-U2w" secondAttribute="leadingMargin" constant="24" id="T9S-7b-fD0"/>
@@ -1287,7 +1290,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-rT-gjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5549" y="1148"/>
+            <point key="canvasLocation" x="5547.826086956522" y="1147.8260869565217"/>
         </scene>
         <!--Side Menu Table View Controller-->
         <scene sceneID="Afz-T7-2FN">
@@ -1554,7 +1557,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELL-Kc-ffb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="1148"/>
+            <point key="canvasLocation" x="1857" y="1009"/>
         </scene>
         <!--Filter Table View Controller-->
         <scene sceneID="qNn-eh-yEP">
@@ -1930,7 +1933,7 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N44-1v-OrC"/>
         <segue reference="6IU-LM-w6o"/>
+        <segue reference="sTr-nW-xrY"/>
     </inferredMetricsTieBreakers>
 </document>

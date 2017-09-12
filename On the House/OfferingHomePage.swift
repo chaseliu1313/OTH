@@ -15,12 +15,43 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var offers : [String : Offer]!
     
-    var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
-    var evntLable = ["Call Me", "Today", "Just Do It"]
+//    var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
+//    var evntLable = ["Call Me", "Today", "Just Do It"]
     var loadMoreEnable = true
     var loadMoreView:UIView?
     var offerLoad : [Offer] = []
-    //request parameter
+    //var didSkip: Bool = false
+    
+   
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+        
+        self.tableView.tableFooterView = self.loadMoreView
+        
+        
+        sideMenus()
+        self.loadOffers()
+//        print(offerLoad)
+       
+        
+        
+    }
+    
+    
+
+    
+    @IBAction func Share(_ sender: UIButton) {
+    
+    
+    }
+    
+    
     
     let command = "api/v1/events/current"
     
@@ -36,19 +67,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        self.tableView.tableFooterView = self.loadMoreView
-        sideMenus()
-        loadOffers()
-        print(offerLoad)
-        
-        
-    }
     
+    
+    
+   
     
     //download offers from the server and ini into Offer objects, then add them to offerLoad array
     func loadOffers()
@@ -69,6 +91,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                     let v = e.dictionaryObject!
                     let o : Offer = Offer.init(data: v)
+                   
                     self.offerLoad.append(o)
                     
                     
@@ -76,7 +99,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 
                 print(self.offerLoad.count)
                 print(self.offerLoad[0].description!)
-                print(self.offerLoad[40].image_url!)
+                
+               self.tableView.reloadData()
                 
             }
             else {
@@ -89,12 +113,12 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     func refreshOffer(){
-        event.append(#imageLiteral(resourceName: "event4.jpg"))
-        event.append(#imageLiteral(resourceName: "event5.jpg"))
-        event.append(#imageLiteral(resourceName: "event6.jpg"))
-        evntLable.append("Let's dance")
-        evntLable.append("Come")
-        evntLable.append("See you again")
+//        event.append(#imageLiteral(resourceName: "event4.jpg"))
+//        event.append(#imageLiteral(resourceName: "event5.jpg"))
+//        event.append(#imageLiteral(resourceName: "event6.jpg"))
+//        evntLable.append("Let's dance")
+//        evntLable.append("Come")
+//        evntLable.append("See you again")
         
         loadOffers()
         
@@ -146,30 +170,36 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return .none
     }
     
-    public  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath)
-        //cell.eventImage.image = event[indexPath.row]
-        //cell.eventTitle.text = evntLable[indexPath.row]
-        loadOffers()
+        let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath) as! OfferTableCell
         
-        //print(offerLoad[indexPath.row])
         let offer = offerLoad[indexPath.row]
-        print(offer.page_title)
+        cell.eventTitle.text = offer.name
+         offer.insert()
+       cell.imageView?.image =  offer.getImage()
         
-        if let offercell = cell as? OfferTableCell{
-            offercell.offer = offer
-        }
-        //cell.eventImage.image = UIImage
+   
+        
+       
+        
+       
+
         
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
-        if (loadMoreEnable && indexPath.row == event.count-1) {
+        if (loadMoreEnable && indexPath.row == offerLoad.count-1) {
             refreshOffer()
         }
-        return (cell)
+        return cell
+        
+        
+        //        if let offercell = cell as? OfferTableCell{
+        //            offercell.offer = offer
+        //        }
+        //cell.eventImage.image = UIImage
         
     }
     
