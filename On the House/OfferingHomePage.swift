@@ -68,14 +68,15 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                     
                     let v = e.dictionaryObject!
-                    let o : Offer = Offer(data: v)
+                    let o : Offer = Offer.init(data: v)
                     self.offerLoad.append(o)
                     
                     
                 }
                 
-                print(event.count)
-                
+                print(self.offerLoad.count)
+                print(self.offerLoad[0].description!)
+                print(self.offerLoad[40].image_url!)
                 
             }
             else {
