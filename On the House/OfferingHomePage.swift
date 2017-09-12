@@ -43,6 +43,9 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         self.tableView.tableFooterView = self.loadMoreView
         sideMenus()
+        loadOffers()
+        print(offerLoad)
+        
         
     }
     
@@ -96,6 +99,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         evntLable.append("Come")
         evntLable.append("See you again")
         
+        loadOffers()
+        
         tableView.reloadData()
         
         
@@ -109,7 +114,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     public  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return (event.count)
+        return (offerLoad.count)
     }
     
     @IBAction func filterButton(_ sender: Any) {
@@ -139,14 +144,26 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
+    
     public  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath) as! OfferTableCell
-        cell.eventImage.image = event[indexPath.row]
-        cell.eventTitle.text = evntLable[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath)
+        //cell.eventImage.image = event[indexPath.row]
+        //cell.eventTitle.text = evntLable[indexPath.row]
+        loadOffers()
+        
+        //print(offerLoad[indexPath.row])
+        let offer = offerLoad[indexPath.row]
+        print(offer.page_title)
+        
+        if let offercell = cell as? OfferTableCell{
+            offercell.offer = offer
+        }
+        //cell.eventImage.image = UIImage
         
         
         cell.contentView.backgroundColor = UIColor.clear
