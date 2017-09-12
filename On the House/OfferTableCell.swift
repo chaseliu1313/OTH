@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Foundation
 
 class OfferTableCell: UITableViewCell {
-
+    
     @IBOutlet weak var eventTitle: UILabel!
     
     @IBOutlet weak var eventImage: UIImageView!
@@ -20,16 +21,37 @@ class OfferTableCell: UITableViewCell {
     
     @IBOutlet weak var shareEvent: UIButton!
     
+    var offer : Offer?{
+        didSet{
+            updateUI()
+        }
+    }
+    
+    func updateUI()  {
+        eventTitle.text = offer?.page_title
+        
+        if let profileImageURL = offer?.image_url{
+            if let url = NSURL(string : profileImageURL){
+                if let imagedata = NSData(contentsOf : url as URL) {
+                    eventImage.image = UIImage(data:imagedata as Data)
+                }
+            }
+        }
+        else{
+            eventImage.image = nil
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
