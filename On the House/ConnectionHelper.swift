@@ -46,6 +46,7 @@ struct ConnectionHelper{
                     NewMemberData.email = json["member"]["email"].string!
                     NewMemberData.nickname = json["member"]["nickname"].string!
                     NewMemberData.zip = json["member"]["zip"].string!
+                    NewMemberData.membership_id = json["member"]["membership_level_id"].string!
                     
                     
                     UserDefaults.standard.set(NewMemberData.id, forKey: "member_id")
@@ -56,6 +57,7 @@ struct ConnectionHelper{
                     UserDefaults.standard.set(NewMemberData.email, forKey: "email")
                     UserDefaults.standard.set(NewMemberData.nickname, forKey: "nickname")
                     UserDefaults.standard.set(NewMemberData.zip, forKey: "zip")
+                    UserDefaults.standard.set(NewMemberData.membership_id, forKey: "membership_level_id")
                     UserDefaults.standard.set(json["member"]["password"].string!, forKey: "password")
                     UserDefaults.standard.synchronize()
                     //print("\(id!): \(firstname!).\(lastName!), password: \(password!)")

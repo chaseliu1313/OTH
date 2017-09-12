@@ -21,6 +21,11 @@ class OfferTableCell: UITableViewCell {
     
     @IBOutlet weak var shareEvent: UIButton!
     
+    var offer = Offer()
+    
+    
+    
+    
     
     var size = CGSize()
     
@@ -76,7 +81,17 @@ class OfferTableCell: UITableViewCell {
             didSkip = true
             checkoutButton.setTitle("Register/Login", for: .normal)
             
+            
+        }else if UserDefaults.standard.string(forKey: "membership_level_id") == "3"
+            && !self.offer.membership_levels.contains("Bronze"){
+        
+          checkoutButton.setTitle("Upgrade to gold", for: .normal)
+        
         }
+            
+            
+            
+            
         else {
             
             didSkip = false

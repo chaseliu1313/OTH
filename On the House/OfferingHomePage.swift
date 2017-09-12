@@ -98,7 +98,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 }
                 
                 print(self.offerLoad.count)
-                print(self.offerLoad[0].description!)
+                print(self.offerLoad[0].description)
                 
                self.tableView.reloadData()
                 
@@ -175,6 +175,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath) as! OfferTableCell
         
         let offer = offerLoad[indexPath.row]
+        cell.offer = offer
+        
         cell.eventTitle.text = offer.name
          offer.insert()
         
@@ -191,6 +193,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         
         cell.changeButton()
+        
+        
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
@@ -219,6 +223,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
+  
     
     
 }
@@ -236,4 +241,5 @@ extension UIImage {
         return scaledImage!
         
     }
+    
 }

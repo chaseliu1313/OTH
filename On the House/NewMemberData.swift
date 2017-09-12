@@ -30,7 +30,7 @@ import Foundation
         static var city = ""
         static var phone = ""
         static var title = ""
-        
+        static var membership_id = ""
         
         static var loginStatus: String = "error"
         

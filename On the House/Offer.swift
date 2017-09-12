@@ -9,27 +9,31 @@
 import Foundation
 
 class Offer{
-    let id : String?
-    let type : String?
-    let name : String?
-    let page_title : String?
-    let rating : Int?
-    var image_url : String?
-    let description : String?
-    let price_from : Double?
-    let price_to : Double?
-    let full_price_string : String?
-    let our_price_string : String?
-    let our_price_heading : String?
-    let membership_levels : String?
-    let coming_soon : Bool?
-    let is_product: Bool?
-    let can_reserve : Bool?
-    let has_reservation : Bool?
-    let is_competition : Bool?
-    let competition: [String: String]
+    var id : String = ""
+    var type : String = ""
+    var name : String = ""
+    var page_title = ""
+    var rating = 0
+    var image_url = ""
+    var description = ""
+    var price_from : Double = 0.0
+    var price_to : Double = 0.0
+    var full_price_string : String = ""
+    var our_price_string : String = ""
+    var our_price_heading : String = ""
+    var membership_levels : String = ""
+    var coming_soon : Bool = false
+    var is_product: Bool = false
+    var can_reserve : Bool = false
+    var has_reservation : Bool = false
+    var is_competition : Bool = false
+    var competition: [String: String] = [:]
     
     var image = UIImage()
+    
+    init() {
+        
+    }
     
     init(data: [String: Any]) {
         
@@ -161,7 +165,7 @@ class Offer{
         
         if self.image_url != "" {
             
-            ConnectionHelper.getImage(imageURL: "\(self.image_url!)") { (success, img) in
+            ConnectionHelper.getImage(imageURL: "\(self.image_url)") { (success, img) in
                 
                 if success {
                     
@@ -183,9 +187,9 @@ class Offer{
         
         if self.image_url != ""{
     
-        let range = self.image_url!.range(of: "http")
+        let range = self.image_url.range(of: "http")
             
-        self.image_url!.insert("s", at: range!.upperBound)
+        self.image_url.insert("s", at: range!.upperBound)
         }
     else {
     
