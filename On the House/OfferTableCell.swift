@@ -88,12 +88,12 @@ class OfferTableCell: UITableViewCell {
           checkoutButton.setTitle("Upgrade to gold", for: .normal)
         
         }
-            
-            
-            
+       
             
         else {
             
+            
+            checkoutButton.setTitle("Check Out", for: .normal)
             didSkip = false
             
             
