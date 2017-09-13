@@ -1112,7 +1112,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17T-a0-fBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="3377"/>
+            <point key="canvasLocation" x="3714" y="1438"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="BID-QI-J1j">
@@ -1288,6 +1288,8 @@ and periodicals</string>
                         <segue destination="yYL-hF-kV6" kind="popoverPresentation" identifier="pop" popoverAnchorBarButtonItem="ue5-hx-ca5" id="hXT-ZC-i6d">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
+                        <segue destination="HFn-xT-d1E" kind="modal" identifier="jumpUpgrade" id="tqq-1x-Emi"/>
+                        <segue destination="dI7-Yf-Nki" kind="modal" identifier="jumpReg" id="BY6-uB-GNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-rT-gjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1935,7 +1937,9 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6IU-LM-w6o"/>
         <segue reference="sTr-nW-xrY"/>
+        <segue reference="6IU-LM-w6o"/>
+        <segue reference="tqq-1x-Emi"/>
+        <segue reference="BY6-uB-GNT"/>
     </inferredMetricsTieBreakers>
 </document>

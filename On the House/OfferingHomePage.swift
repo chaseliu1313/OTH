@@ -194,6 +194,19 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         cell.changeButton()
         
+        if UserDefaults.standard.string(forKey: "membership_level_id") == "3"
+            && !cell.offer.membership_levels.contains("Bronze"){
+            
+        cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpUpgrade), for: .touchUpInside)
+            
+        }
+        else if UserDefaults.standard.bool(forKey: "didSkip") == true {
+
+        cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpReg), for: .touchUpInside)
+        }
+        
+        
+        
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
@@ -209,6 +222,15 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         //        }
         //cell.eventImage.image = UIImage
         
+        
+    }
+    
+    func jumpReg(){
+        self.performSegue(withIdentifier: "jumpReg", sender: self)
+    }
+    
+    func jumpUpgrade(){
+        self.performSegue(withIdentifier: "jumpUpgrade", sender: self)
     }
     
     
