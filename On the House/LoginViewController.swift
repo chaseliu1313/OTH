@@ -63,6 +63,8 @@ class LoginViewController: UIViewController{
                 print("Login cancelled")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.getfbuserinfo()
+                UserDefaults.standard.set(false, forKey: "didSkip")
+                UserDefaults.standard.synchronize()
                 if(!self.isauser){
                     self.performSegue(withIdentifier: "facebookreg", sender: self)
                 }
