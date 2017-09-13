@@ -15,12 +15,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var offers : [String : Offer]!
     
-//    var event = [#imageLiteral(resourceName: "event1.jpg"), #imageLiteral(resourceName: "event2.jpg"), #imageLiteral(resourceName: "event3.jpg")]
-//    var evntLable = ["Call Me", "Today", "Just Do It"]
+
     var loadMoreEnable = true
     var loadMoreView:UIView?
     var offerLoad : [Offer] = []
-    //var didSkip: Bool = false
     
    
 
@@ -37,7 +35,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         sideMenus()
         self.loadOffers()
-//        print(offerLoad)
        
         
         
@@ -72,7 +69,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
    
     
-    //download offers from the server and ini into Offer objects, then add them to offerLoad array
+    
     func loadOffers()
         
     {
@@ -113,12 +110,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     func refreshOffer(){
-//        event.append(#imageLiteral(resourceName: "event4.jpg"))
-//        event.append(#imageLiteral(resourceName: "event5.jpg"))
-//        event.append(#imageLiteral(resourceName: "event6.jpg"))
-//        evntLable.append("Let's dance")
-//        evntLable.append("Come")
-//        evntLable.append("See you again")
+
         
         loadOffers()
         
@@ -180,7 +172,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.eventTitle.text = offer.name
          offer.insert()
         
-        //let size = cell.imageView?.intrinsicContentSize
+        
         
         print(cell.getsize().width)
         let size = CGSize.init(width: cell.getsize().width, height: cell.getsize().height)
@@ -189,7 +181,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         cell.imageView?.image = cellImage
        
-       // cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+      
 
         
         cell.changeButton()
@@ -217,10 +209,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
         
         
-        //        if let offercell = cell as? OfferTableCell{
-        //            offercell.offer = offer
-        //        }
-        //cell.eventImage.image = UIImage
+      
         
         
     }
