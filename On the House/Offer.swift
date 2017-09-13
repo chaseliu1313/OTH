@@ -197,4 +197,11 @@ class Offer{
         }}
 }
 
+struct Offers {
+
+    static var offerload : [Offer] = []
+    
+    
+
+}
 

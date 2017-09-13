@@ -18,7 +18,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     var loadMoreEnable = true
     var loadMoreView:UIView?
-    var offerLoad : [Offer] = []
+    
     
    
 
@@ -88,14 +88,17 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                     let v = e.dictionaryObject!
                     let o : Offer = Offer.init(data: v)
+                    o.getImage()
                    
-                    self.offerLoad.append(o)
+                    Offers.offerload.append(o)
+                    
+                    //self.offerLoad.append(o)
                     
                     
                 }
                 
-                print(self.offerLoad.count)
-                print(self.offerLoad[0].description)
+                print(Offers.offerload.count)
+                print(Offers.offerload[0].description)
                 
                self.tableView.reloadData()
                 
@@ -127,7 +130,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     public  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return (offerLoad.count)
+        return (Offers.offerload.count)
     }
     
     @IBAction func filterButton(_ sender: Any) {
@@ -166,7 +169,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"eventCell", for: indexPath) as! OfferTableCell
         
-        let offer = offerLoad[indexPath.row]
+        let offer = Offers.offerload[indexPath.row]
         cell.offer = offer
         
         cell.eventTitle.text = offer.name
@@ -203,7 +206,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
-        if (loadMoreEnable && indexPath.row == offerLoad.count-1) {
+        if (loadMoreEnable && indexPath.row == Offers.offerload.count-1) {
             refreshOffer()
         }
         return cell
