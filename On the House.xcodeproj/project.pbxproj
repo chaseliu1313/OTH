@@ -32,6 +32,7 @@
 		E88F429B1F600DF800DE142E /* event3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42981F600DF800DE142E /* event3.jpg */; };
 		E88F429C1F600DF800DE142E /* event2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42991F600DF800DE142E /* event2.jpg */; };
 		E88F429D1F600DF800DE142E /* event1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F429A1F600DF800DE142E /* event1.jpg */; };
+		E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */; };
 		E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C0ABA81F57102500143885 /* MyMembership.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		E88F42981F600DF800DE142E /* event3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event3.jpg; sourceTree = "<group>"; };
 		E88F42991F600DF800DE142E /* event2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event2.jpg; sourceTree = "<group>"; };
 		E88F429A1F600DF800DE142E /* event1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event1.jpg; sourceTree = "<group>"; };
+		E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferDeatil.swift; sourceTree = "<group>"; };
 		E8C0ABA81F57102500143885 /* MyMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMembership.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		A2F3FD201F564D42006E23CA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
 				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
@@ -417,6 +420,7 @@
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
+				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
 				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
@@ -628,6 +632,7 @@
 				526164071F66222E0028A63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8CE628E1F4AA19400D9EF76 /* Build configuration list for PBXProject "On the House" */ = {
 			isa = XCConfigurationList;
