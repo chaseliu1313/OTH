@@ -149,8 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
-				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
+				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
+				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
@@ -158,7 +159,6 @@
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
-				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
 				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
 				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,

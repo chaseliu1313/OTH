@@ -235,6 +235,8 @@ func showAlert(service:String)
         
         cell.changeButton()
         
+        //change button
+        
         if UserDefaults.standard.string(forKey: "membership_level_id") == "3"
             && !cell.offer.membership_levels.contains("Bronze"){
             
@@ -251,7 +253,7 @@ func showAlert(service:String)
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
-        cell.detailButton.tag = indexPath.row
+        
 //        cell.detailButton.addTarget(self, action: Selector(("showDetail")), for: UIControlEvents.touchUpInside)
         
         

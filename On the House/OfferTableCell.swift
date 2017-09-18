@@ -15,7 +15,6 @@ class OfferTableCell: UITableViewCell {
     
     @IBOutlet weak var eventImage: UIImageView!
     
-    @IBOutlet weak var detailButton: UIButton!
     
     @IBOutlet weak var checkoutButton: UIButton!
     
@@ -26,11 +25,11 @@ class OfferTableCell: UITableViewCell {
     
     
     
-    @IBAction func showDetail(_ sender: UIButton) {
-        let row = sender.tag
-        let id = Offers.offerload[row].id
-        print(id)
-    }
+//    @IBAction func showDetail(_ sender: UIButton) {
+//        let row = sender.tag
+//        let id = Offers.offerload[row].id
+//        print(id)
+//    }
     
     var size = CGSize()
     
@@ -87,10 +86,11 @@ class OfferTableCell: UITableViewCell {
             checkoutButton.setTitle("Register/Login", for: .normal)
             
             
-        }else if UserDefaults.standard.string(forKey: "membership_level_id") == "3"
-            && !self.offer.membership_levels.contains("Bronze"){
+        }else if self.offer.membership_levels.contains("Bronze"){
         
-          checkoutButton.setTitle("Upgrade to gold", for: .normal)
+         // checkoutButton.setTitle("Upgrade to gold", for: .normal)
+            checkoutButton.setTitle("Check Out", for: .normal)
+            didSkip = false
         
         }
        
@@ -105,6 +105,5 @@ class OfferTableCell: UITableViewCell {
             
         }}
         
-        
-
+    
 }
