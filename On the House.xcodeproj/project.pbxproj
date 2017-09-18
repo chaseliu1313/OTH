@@ -16,6 +16,7 @@
 		71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB911F611BC80029D3D0 /* Checkbox.swift */; };
 		71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */; };
 		71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */; };
+		A257A1961F700593008D2DA3 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257A1951F700593008D2DA3 /* FilterTableViewController.swift */; };
 		A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26AA50E1F6143AA00296DA3 /* Offer.swift */; };
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
@@ -66,6 +67,7 @@
 		71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideMenuTableViewController.swift; sourceTree = "<group>"; };
 		807BD2930EB02D0165ED00C8 /* Pods-On the House.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.release.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.release.xcconfig"; sourceTree = "<group>"; };
+		A257A1951F700593008D2DA3 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		A26AA50E1F6143AA00296DA3 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
 				71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */,
 				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
+				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
+				A257A1961F700593008D2DA3 /* FilterTableViewController.swift in Sources */,
 				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
 				522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
