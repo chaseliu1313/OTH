@@ -17,8 +17,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
 
     var loadMoreEnable = true
-    var loadMoreView:UIView?
-    
+    var loadMoreView: UIView?
+    var didSelectRow: Int = 0
     
    
 
@@ -65,6 +65,9 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     ]
     
     
+    @IBAction func showDetail(_ sender: Any) {
+        
+    }
     
     
    
@@ -136,6 +139,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBAction func filterButton(_ sender: Any) {
         self.performSegue(withIdentifier: "pop", sender: self)
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -214,6 +218,15 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
       
         
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        didSelectRow = indexPath.row
+        print(didSelectRow)
+        performSegue(withIdentifier: "showDetail", sender: self)
         
     }
     
