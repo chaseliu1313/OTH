@@ -26,6 +26,11 @@ class OfferTableCell: UITableViewCell {
     
     
     
+    @IBAction func showDetail(_ sender: UIButton) {
+        let row = sender.tag
+        let id = Offers.offerload[row].id
+        print(id)
+    }
     
     var size = CGSize()
     

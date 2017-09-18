@@ -106,12 +106,13 @@ func showAlert(service:String)
     ]
     
     
-    @IBAction func showDetail(_ sender: Any) {
-        
-    }
     
     
    
+    @IBAction func showDetail(_ sender: UIButton) {
+        
+       
+    }
     
     
     func loadOffers()
@@ -250,6 +251,10 @@ func showAlert(service:String)
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
+        cell.detailButton.tag = indexPath.row
+//        cell.detailButton.addTarget(self, action: Selector(("showDetail")), for: UIControlEvents.touchUpInside)
+        
+        
         
         if (loadMoreEnable && indexPath.row == Offers.offerload.count-1) {
             refreshOffer()
@@ -267,7 +272,9 @@ func showAlert(service:String)
         
         didSelectRow = indexPath.row
         print(didSelectRow)
+        
         performSegue(withIdentifier: "showDetail", sender: self)
+        
         
     }
     
