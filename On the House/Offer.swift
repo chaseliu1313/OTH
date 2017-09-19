@@ -28,6 +28,8 @@ class Offer{
     var has_reservation : Bool = false
     var is_competition : Bool = false
     var competition: [String: String] = [:]
+    var showandvenue : [ShowandVenue]?
+    
     
     var image = UIImage()
     
@@ -156,52 +158,381 @@ class Offer{
         }
         
         
-        
-    }
-    
-    func getImage() -> UIImage {
-        
-        
-        
-        if self.image_url != "" {
-            
-            ConnectionHelper.getImage(imageURL: "\(self.image_url)") { (success, img) in
-                
-                if success {
-                    
-                 
-                   
-                    self.image = img
-                    
-                }
-                
-                
-                
-            }}
-        else{self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")}
-        
-    return self.image
-    }
-    
-    func insert() {
-        
-        if self.image_url != ""{
-    
-        let range = self.image_url.range(of: "http")
-            
-        self.image_url.insert("s", at: range!.upperBound)
+        if let showandvenue = data["show_data"] as? [[String : AnyObject]] {
+            self.showandvenue = []
+            for showdata in showandvenue {
+                self.showandvenue?.append(ShowandVenue(data: showdata))
+            }
         }
-    else {
+        else{
+            self.showandvenue = nil
+        }
     
-      self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")
+}
+
+func getImage() -> UIImage {
+    
+    
+    
+    if self.image_url != "" {
+        
+        ConnectionHelper.getImage(imageURL: "\(self.image_url)") { (success, img) in
+            
+            if success {
+                
+                
+                
+                self.image = img
+                
+            }
+            
         }}
+    else{self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")}
+    
+    return self.image
+}
+
+func insert() {
+    
+    if self.image_url != ""{
+        
+        let range = self.image_url.range(of: "http")
+        
+        self.image_url.insert("s", at: range!.upperBound)
+    }
+    else {
+        
+        self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")
+    }}
+}
+
+class Venue {
+    let id: String?
+    let supplier_id: String?
+    let name : String?
+    let address1 : String?
+    let address2 : String?
+    let city : String?
+    let zone_id : String?
+    let zip : String?
+    let country_id : String?
+    let zone_name : String?
+    let country_name : String?
+    
+    init(data : [String : AnyObject]) {
+        if let id = data["id"] as? String {
+            self.id = id
+        }
+        else{
+            self.id = ""
+        }
+        
+        if let supplier_id = data["supplier_id"] as? String {
+            self.supplier_id = supplier_id
+        }
+        else{
+            self.supplier_id = ""
+        }
+        
+        if let name = data["name"] as? String{
+            self.name = name
+        }
+        else{
+            self.name = ""
+        }
+        
+        if let address1 = data["address1"] as? String{
+            self.address1 = address1
+        }
+        else{
+            self.address1 = ""
+        }
+        
+        if let address2 = data["address2"] as? String{
+            self.address2 = address2
+        }
+        else{
+            self.address2 = ""
+        }
+        
+        if let city = data["city"] as? String{
+            self.city = city
+        }
+        else{
+            self.city = ""
+        }
+        
+        if let zone_id = data["zone_id"] as? String{
+            self.zone_id = zone_id
+        }
+        else{
+            self.zone_id = ""
+        }
+        
+        if let zip = data["zip"] as? String{
+            self.zip = zip
+        }
+        else{
+            self.zip = ""
+        }
+        
+        if let country_id = data["country_id"] as? String{
+            self.country_id = country_id
+        }
+        else{
+            self.country_id = ""
+        }
+        
+        if let zone_name = data["zone_name"] as? String{
+            self.zone_name = zone_name
+        }
+        else{
+            self.zone_name = ""
+        }
+        
+        if let country_name = data["country_name"] as? String{
+            self.country_name = country_name
+        }
+        else{
+            self.country_name = ""
+        }
+    }
+}
+
+class Show {
+    let id : String?
+    let event_id : String?
+    let show_date : String?
+    let show_date2 : String?
+    let total_tickets : String?
+    let venue_id : String?
+    let pickup_venue_id : String?
+    let tickets_reserved : String?
+    let cutoff_date : String?
+    let timezone_id : String?
+    let price : String?
+    let max_tickets_per_member : String?
+    let is_admin_fee : Bool?
+    let membership_level_id : String?
+    let member_can_choose : Bool?
+    let date_hide : Bool?
+    let time_hide : Bool?
+    let shipping : Bool?
+    let shipping_price : String?
+    let button_text : String?
+    let sold_out : Bool?
+    let date_formatted : String?
+    let quantities : [Int]?
+    
+    init(data: [String : AnyObject]) {
+        if let id = data["id"] as? String{
+            self.id = id
+        }
+        else{
+            self.id = ""
+        }
+        
+        if let event_id = data["event_id"] as? String{
+            self.event_id = event_id
+        }
+        else{
+            self.event_id = ""
+        }
+        
+        if let show_date = data["show_date"] as? String{
+            self.show_date = show_date
+        }
+        else{
+            self.show_date = ""
+        }
+        
+        if let show_date2 = data["show_date2"] as? String{
+            self.show_date2 = show_date2
+        }
+        else{
+            self.show_date2 = ""
+        }
+        
+        if let total_tickets = data["total_tickets"] as? String{
+            self.total_tickets = total_tickets
+        }
+        else{
+            self.total_tickets = ""
+        }
+        
+        if let venue_id = data["venue_id"] as? String{
+            self.venue_id = venue_id
+        }
+        else{
+            self.venue_id = ""
+        }
+        
+        if let pickup_venue_id = data["pickup_venue_id"] as? String{
+            self.pickup_venue_id = pickup_venue_id
+        }
+        else{
+            self.pickup_venue_id = ""
+        }
+        
+        if let tickets_reserved = data["tickets_reserved"] as? String{
+            self.tickets_reserved = tickets_reserved
+        }
+        else{
+            self.tickets_reserved = ""
+        }
+        
+        if let cutoff_date = data["cutoff_date"] as? String{
+            self.cutoff_date = cutoff_date
+        }
+        else{
+            self.cutoff_date = ""
+        }
+        
+        if let timezone_id = data["timezone_id"] as? String{
+            self.timezone_id = timezone_id
+        }
+        else{
+            self.timezone_id = ""
+        }
+        
+        if let price = data["price"] as? String{
+            self.price = price
+        }
+        else{
+            self.price = ""
+        }
+        
+        if let max_tickets_per_member = data["max_tickets_per_member"] as? String{
+            self.max_tickets_per_member = max_tickets_per_member
+        }
+        else{
+            self.max_tickets_per_member = ""
+        }
+        
+        if let is_admin_fee = data["is_admin_fee"] as? String{
+            self.is_admin_fee = Int(is_admin_fee) == 1 ? true : false
+        }
+        else{
+            self.is_admin_fee = false
+        }
+        
+        if let membership_level_id = data["membership_level_id"] as? String{
+            self.membership_level_id = membership_level_id
+        }
+        else{
+            self.membership_level_id = ""
+        }
+        
+        if let member_can_choose = data["member_can_choose"] as? String{
+            self.member_can_choose = Int(member_can_choose) == 1 ? true : false
+        }
+        else{
+            self.member_can_choose = false
+        }
+        
+        if let date_hide = data["date_hide"] as? String{
+            self.date_hide = Int(date_hide) == 1 ? true : false
+        }
+        else{
+            self.date_hide = false
+        }
+        
+        if let time_hide = data["time_hide"] as? String{
+            self.time_hide = Int(time_hide) == 1 ? true : false
+        }
+        else{
+            self.time_hide = false
+        }
+        
+        if let shipping = data["shipping"] as? String{
+            self.shipping = Int(shipping) == 1 ? true : false
+        }
+        else{
+            self.shipping = false
+        }
+        
+        if let shipping_price = data["shipping_price"] as? String{
+            self.shipping_price = shipping_price
+        }
+        else{
+            self.shipping_price = ""
+        }
+        
+        if let button_text = data["button_text"] as? String{
+            self.button_text = button_text
+        }
+        else{
+            self.button_text = ""
+        }
+        
+        if let date_formatted = data["date_formatted"] as? String{
+            self.date_formatted = date_formatted
+        }
+        else{
+            self.date_formatted = ""
+        }
+        
+        if let sold_out = data["sold_out"] as? String{
+            self.sold_out = Int(sold_out) == 1 ? true : false
+        }
+        else{
+            self.sold_out = false
+        }
+        
+        if let quantities = data["quantities"] as? [Int] {
+            self.quantities = quantities
+        }
+        else{
+            self.quantities = []
+        }
+    }
+}
+
+class ShowandVenue {
+    var venue : Venue?
+    var shows : [Show] = []
+    
+    init(data: [String : AnyObject]) {
+        self.venue = Venue(data: (data["venue"] as? [String : AnyObject])!)
+        let shows = data["shows"] as? [[String : AnyObject]]
+        for show in shows! {
+            let currentshow = Show(data : show)
+            self.shows.append(currentshow)
+        }
+    }
 }
 
 struct Offers {
-
+    
     static var offerload : [Offer] = []
     
     
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
