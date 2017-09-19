@@ -16,13 +16,13 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var offers : [String : Offer]!
     
-
+    
     var loadMoreEnable = true
     var loadMoreView: UIView?
     var didSelectRow: Int = 0
     
-   
-
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,63 +36,63 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         sideMenus()
         self.loadOffers()
-       
+        
         
         
     }
     
     
-
+    
     
     @IBAction func Share(_ sender: Any) {
-    
         
-            //Alert
-            let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
+        
+        //Alert
+        let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
+        
+        //First action
+        let action = UIAlertAction(title: "Share on Facebook", style: .default)
+        {(action) in
             
-            //First action
-            let action = UIAlertAction(title: "Share on Facebook", style: .default)
-            {(action) in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
+            {
+                let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
-                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
-                {
-                    let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                    
-                    post?.setInitialText("Check out this amazing event!")
-                    
-                    self.present(post!, animated: true, completion: nil)
-                }
-                else
-                {
-                    self.showAlert(service: "Facebook")
-                }
+                post?.setInitialText("Check out this amazing event!")
+                
+                self.present(post!, animated: true, completion: nil)
             }
-            //Second action
-            let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            //Add action to action sheet
-            alert.addAction(action)
-            
-            alert.addAction(actionTwo)
-            //Present alert
-            self.present(alert, animated: true, completion:nil)
-            
+            else
+            {
+                self.showAlert(service: "Facebook")
+            }
         }
+        //Second action
+        let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        //Add action to action sheet
+        alert.addAction(action)
+        
+        alert.addAction(actionTwo)
+        //Present alert
+        self.present(alert, animated: true, completion:nil)
+        
+    }
     
     
     
-
-func showAlert(service:String)
-{
-    let alert = UIAlertController(title: "Error", message: "You are not connected to \(service)", preferredStyle: .alert)
-    let action = UIAlertAction(title: "Dismiss", style: .cancel, handler:nil)
     
-    alert.addAction(action)
-    present(alert, animated: true, completion:nil)
-}
-
+    func showAlert(service:String)
+    {
+        let alert = UIAlertController(title: "Error", message: "You are not connected to \(service)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Dismiss", style: .cancel, handler:nil)
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion:nil)
+    }
+    
     let command = "api/v1/events/current"
-
+    
     var parameter : [String: Any] =
         [
             "date" : "range",
@@ -108,10 +108,10 @@ func showAlert(service:String)
     
     
     
-   
+    
     @IBAction func showDetail(_ sender: UIButton) {
         
-       
+        
     }
     
     
@@ -134,7 +134,7 @@ func showAlert(service:String)
                     let v = e.dictionaryObject!
                     let o : Offer = Offer.init(data: v)
                     o.getImage()
-                   
+                    
                     Offers.offerload.append(o)
                     
                     //self.offerLoad.append(o)
@@ -145,7 +145,7 @@ func showAlert(service:String)
                 print(Offers.offerload.count)
                 print(Offers.offerload[0].description)
                 
-               self.tableView.reloadData()
+                self.tableView.reloadData()
                 
             }
             else {
@@ -158,7 +158,7 @@ func showAlert(service:String)
     
     
     func refreshOffer(){
-
+        
         
         loadOffers()
         
@@ -219,7 +219,7 @@ func showAlert(service:String)
         cell.offer = offer
         
         cell.eventTitle.text = offer.name
-         offer.insert()
+        offer.insert()
         
         
         
@@ -229,9 +229,9 @@ func showAlert(service:String)
         let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
         
         cell.imageView?.image = cellImage
-       
-      
-
+        
+        
+        
         
         cell.changeButton()
         
@@ -240,12 +240,12 @@ func showAlert(service:String)
         if UserDefaults.standard.string(forKey: "membership_level_id") == "3"
             && !cell.offer.membership_levels.contains("Bronze"){
             
-        cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpUpgrade), for: .touchUpInside)
+            cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpUpgrade), for: .touchUpInside)
             
         }
         else if UserDefaults.standard.bool(forKey: "didSkip") == true {
-
-        cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpReg), for: .touchUpInside)
+            
+            cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpReg), for: .touchUpInside)
         }
         
         
@@ -254,7 +254,7 @@ func showAlert(service:String)
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
-//        cell.detailButton.addTarget(self, action: Selector(("showDetail")), for: UIControlEvents.touchUpInside)
+        //        cell.detailButton.addTarget(self, action: Selector(("showDetail")), for: UIControlEvents.touchUpInside)
         
         
         
@@ -264,7 +264,7 @@ func showAlert(service:String)
         return cell
         
         
-      
+        
         
         
     }
@@ -300,7 +300,7 @@ func showAlert(service:String)
         
     }
     
-  
+    
     
     
 }

@@ -3189,7 +3189,7 @@ and periodicals</string>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAX-hM-gVv">
                                                             <rect key="frame" x="162" y="0.0" width="138" height="38"/>
-                                                            <color key="backgroundColor" red="0.87212648780000002" green="0.86765404430000004" blue="0.87659893129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.87460035085678101" green="0.86667323112487793" blue="0.87904924154281616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Art &amp; Craft">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -3346,7 +3346,7 @@ and periodicals</string>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4r-Vf-nDJ">
                                                             <rect key="frame" x="162" y="0.0" width="138" height="38"/>
-                                                            <color key="backgroundColor" red="0.87212648780000002" green="0.86765404430000004" blue="0.87659893129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.87450980392156863" green="0.8666666666666667" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Family">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
