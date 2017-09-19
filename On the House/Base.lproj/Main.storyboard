@@ -1249,7 +1249,6 @@ and periodicals</string>
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="Share:" destination="Syy-PJ-RrG" eventType="touchUpInside" id="aA5-2Y-M1g"/>
                                                                 <action selector="share:" destination="xfR-Iu-Ocs" eventType="touchUpInside" id="Ned-mC-gSF"/>
                                                             </connections>
                                                         </button>
@@ -1344,7 +1343,6 @@ and periodicals</string>
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Share:" destination="Syy-PJ-RrG" eventType="touchUpInside" id="Jj5-Dq-vqn"/>
                                                     <action selector="shareEvent:" destination="qvI-Ak-Ljz" eventType="touchUpInside" id="SMB-VI-FO9"/>
                                                 </connections>
                                             </button>
@@ -2858,7 +2856,7 @@ and periodicals</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-pn-BGO">
-                                                    <rect key="frame" x="-14" y="0.0" width="413.5" height="44"/>
+                                                    <rect key="frame" x="-14.5" y="0.0" width="413.5" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <items>
                                                         <navigationItem id="4kB-oJ-7Vg">

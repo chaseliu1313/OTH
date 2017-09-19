@@ -20,7 +20,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var loadMoreEnable = true
     var loadMoreView: UIView?
     var offerID: String = ""
-    
+    var sharingURL = ""
     
    
 
@@ -44,46 +44,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
 
-    
-    @IBAction func Share(_ sender: Any) {
-    
-        if self.offerID == "" {
-        
-        notifyUser(["Please Select a Event"])
-        }
-        
-        else {
-            //Alert
-            let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
-            
-            //First action
-            let action = UIAlertAction(title: "Share on Facebook", style: .default)
-            {(action) in
-                
-                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
-                {
-                    let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                    
-                    post?.setInitialText("Check out this amazing event!")
-                    
-                    self.present(post!, animated: true, completion: nil)
-                }
-                else
-                {
-                    self.showAlert(service: "Facebook")
-                }
-            }
-            //Second action
-            let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            //Add action to action sheet
-            alert.addAction(action)
-            
-            alert.addAction(actionTwo)
-            //Present alert
-            self.present(alert, animated: true, completion:nil)
-        }
-        }
     
     
     
@@ -267,7 +227,7 @@ func showAlert(service:String)
         
         
         
-        
+        cell.sendOfferID = self
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
@@ -336,6 +296,43 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return scaledImage!
         
+    }
+    
+}
+
+extension OfferingHomePage: sendOfferIDDelegate{
+
+    func sendID(offerID: String) {
+        self.sharingURL = offerID
+        print(self.sharingURL)
+        let alert = UIAlertController(title: "Share", message:"Share Event NOW!", preferredStyle: .actionSheet)
+        
+        //First action
+        let action = UIAlertAction(title: "Share on Facebook", style: .default)
+        {(action) in
+            
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
+            {
+                let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                
+                post?.setInitialText("Check out this amazing event!")
+                
+                self.present(post!, animated: true, completion: nil)
+            }
+            else
+            {
+                self.showAlert(service: "Facebook")
+            }
+        }
+        //Second action
+        let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        //Add action to action sheet
+        alert.addAction(action)
+        
+        alert.addAction(actionTwo)
+        //Present alert
+        self.present(alert, animated: true, completion:nil)
     }
     
 }
