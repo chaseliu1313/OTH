@@ -23,6 +23,13 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var offerDes: UITextView!
     @IBOutlet weak var rating: UIImageView!
+    @IBOutlet weak var membershipLevel: UILabel!
+    @IBOutlet weak var fullPrice: UILabel!
+    @IBOutlet weak var address1: UILabel!
+    @IBOutlet weak var address2: UILabel!
+    @IBOutlet weak var City: UILabel!
+    @IBOutlet weak var state: UILabel!
+    
     
     @IBOutlet weak var showStatus: UITableView!
     
@@ -44,10 +51,18 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
+        let title = showandvenue?.shows[indexPath.row].button_text!
+        cell.bookNow.setTitle(title, for: .normal)
+        
+        
+        
+        
+        
+        
         return (cell)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return (showtime.count)
+        return (showandvenue?.shows.count)!
         
     }
     
