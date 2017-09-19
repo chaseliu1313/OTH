@@ -17,8 +17,10 @@ class OfferDeatil: UIViewController {
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var offerDes: UITextView!
+    @IBOutlet weak var rating: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,7 +123,12 @@ class OfferDeatil: UIViewController {
         
         offerDes.text = self.offerDetail!.description
         image.image = self.offerDetail!.image
-    
+        nameLabel.text  = self.offerDetail!.name
+        
+       let fileName = String(self.offerDetail!.rating)
+        rating.image = UIImage(named: fileName)
+        
+        
     }
 
 }
