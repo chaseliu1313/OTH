@@ -469,7 +469,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "filterButton(_:)"
+            landmarkName = "loadOffers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -579,8 +579,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "OfferingHomePage"
-            landmarkType = "3">
+            landmarkName = "Share(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -642,7 +642,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "showDetail(_:)"
+            landmarkName = "Share(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

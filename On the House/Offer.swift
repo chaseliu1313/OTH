@@ -28,7 +28,7 @@ class Offer{
     var has_reservation : Bool = false
     var is_competition : Bool = false
     var competition: [String: String] = [:]
-    var showandvenue : [ShowandVenue]?
+    var showandvenue : [ShowAndVenue]?
     
     
     var image = UIImage()
@@ -161,7 +161,7 @@ class Offer{
         if let showandvenue = data["show_data"] as? [[String : AnyObject]] {
             self.showandvenue = []
             for showdata in showandvenue {
-                self.showandvenue?.append(ShowandVenue(data: showdata))
+                self.showandvenue?.append(ShowAndVenue(data: showdata))
             }
         }
         else{
@@ -488,7 +488,7 @@ class Show {
     }
 }
 
-class ShowandVenue {
+class ShowAndVenue {
     var venue : Venue?
     var shows : [Show] = []
     
@@ -504,13 +504,31 @@ class ShowandVenue {
 
 struct Offers {
     
+   
+    
     static var offerload : [Offer] = []
     
+    static func getOffer(offerID : String) -> Offer{
     
+         var currentOffer: Offer?
+        
+        for o in offerload {
+        
+            
+            if o.id == offerID {
+            
+                currentOffer = o
+                break
+        
+        }
+            
+    
+    }
+        return currentOffer!
 }
 
 
-
+}
 
 
 

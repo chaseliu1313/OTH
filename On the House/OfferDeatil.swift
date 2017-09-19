@@ -11,7 +11,23 @@ import Social
 class OfferDeatil: UIViewController {
 
     
-    var OfferID : String = ""
+     var OfferID : String = ""
+    var offerDetail : Offer?
+     var baseURL = "https://ma.on-the-house.org/events/"
+    var parameter = ["member_id": ""]
+    var command = "api/v1/event/"
+    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var offerDes: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(OfferID)
+        offerDes.backgroundColor = UIColor.clear
+        self.getDetail()
+        
+    }
+
     
     @IBAction func shareEvent(_ sender: Any) {
         //Alert
@@ -59,31 +75,53 @@ class OfferDeatil: UIViewController {
     }
 
 
-    @IBOutlet weak var offerVideo: UIWebView!
+  
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(OfferID)
-        
-        getVideo(videoCode: "pg_zfIDoKSw")
-        // Do any additional setup after loading the view.
-    }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    func getVideo(videoCode: String){
-        let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
-        offerVideo.loadRequest(URLRequest(url:url!))
-        
-    }
+
 
     @IBAction func `return`(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func loadShowDetail(){
+        
+        let url = command + OfferID
+        ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
+            if success {
+                
+                
+            }
+            else{
+            
+            }
+        }
+    
+    
+    }
+    func updateMemberID(){
+    
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+        
+        parameter.updateValue(UserDefaults.standard.string(forKey: "member_id")!, forKey: "member_id")
+            
+        }
+        
+    }
+    
+    func getDetail(){
+    
+    self.offerDetail =  Offers.getOffer(offerID: self.OfferID)
+        
+        offerDes.text = self.offerDetail!.description
+        image.image = self.offerDetail!.image
+    
+    }
 
 }
