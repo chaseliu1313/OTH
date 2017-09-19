@@ -10,6 +10,9 @@ import UIKit
 import Social
 class OfferDeatil: UIViewController {
 
+    
+    var OfferID : String = ""
+    
     @IBAction func shareEvent(_ sender: Any) {
         //Alert
         let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
@@ -60,6 +63,7 @@ class OfferDeatil: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(OfferID)
         
         getVideo(videoCode: "pg_zfIDoKSw")
         // Do any additional setup after loading the view.

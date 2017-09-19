@@ -1250,6 +1250,7 @@ and periodicals</string>
                                                             </state>
                                                             <connections>
                                                                 <action selector="Share:" destination="Syy-PJ-RrG" eventType="touchUpInside" id="aA5-2Y-M1g"/>
+                                                                <action selector="share:" destination="xfR-Iu-Ocs" eventType="touchUpInside" id="Ned-mC-gSF"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

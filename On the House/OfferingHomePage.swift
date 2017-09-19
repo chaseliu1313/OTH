@@ -19,7 +19,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     var loadMoreEnable = true
     var loadMoreView: UIView?
-    var didSelectRow: Int = 0
+    var offerID: String = ""
     
    
 
@@ -46,7 +46,12 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBAction func Share(_ sender: Any) {
     
+        if self.offerID == "" {
         
+        notifyUser(["Please Select a Event"])
+        }
+        
+        else {
             //Alert
             let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
             
@@ -76,7 +81,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             alert.addAction(actionTwo)
             //Present alert
             self.present(alert, animated: true, completion:nil)
-            
+        }
         }
     
     
@@ -193,6 +198,17 @@ func showAlert(service:String)
                 pop.delegate = self
             }
         }
+        
+        else if segue.identifier == "showDetail"
+        {
+        let destController = segue.destination as! OfferDeatil
+        destController.OfferID = self.offerID
+        
+        
+        }
+        
+        
+        
     }
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -231,7 +247,7 @@ func showAlert(service:String)
         cell.imageView?.image = cellImage
        
       
-
+        cell.shareEvent.tag = indexPath.row
         
         cell.changeButton()
         
@@ -272,7 +288,9 @@ func showAlert(service:String)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        didSelectRow = indexPath.row
+        let didSelectRow = indexPath.row
+        self.offerID = Offers.offerload[didSelectRow].id
+        
         print(didSelectRow)
         
         performSegue(withIdentifier: "showDetail", sender: self)

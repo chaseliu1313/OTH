@@ -44,6 +44,10 @@ class OfferTableCell: UITableViewCell {
     
     var didSkip: Bool = false
     
+    @IBAction func share(_ sender: UIButton) {
+        
+        
+    }
 //    var offer : Offer?{
 //        didSet{
 //            updateUI()
