@@ -21,6 +21,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var loadMoreView: UIView?
     var offerID: String = ""
     
+    
    
 
     

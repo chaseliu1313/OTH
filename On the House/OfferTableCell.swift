@@ -22,14 +22,10 @@ class OfferTableCell: UITableViewCell {
     
     var offer = Offer()
     
+    var baseURL = "https://ma.on-the-house.org/events/"
     
     
-    
-//    @IBAction func showDetail(_ sender: UIButton) {
-//        let row = sender.tag
-//        let id = Offers.offerload[row].id
-//        print(id)
-//    }
+
     
     var size = CGSize()
     
@@ -44,30 +40,13 @@ class OfferTableCell: UITableViewCell {
     
     var didSkip: Bool = false
     
+    //sharing button
     @IBAction func share(_ sender: UIButton) {
-        
+        let eventID = Offers.offerload[shareEvent.tag].id
+        let sharingURL = baseURL + eventID
         
     }
-//    var offer : Offer?{
-//        didSet{
-//            updateUI()
-//        }
-//    }
-    
-//    func updateUI()  {
-//        eventTitle.text = offer?.page_title
-//        
-//        if let profileImageURL = offer?.image_url{
-//            if let url = NSURL(string : profileImageURL){
-//                if let imagedata = NSData(contentsOf : url as URL) {
-//                    eventImage.image = UIImage(data:imagedata as Data)
-//                }
-//            }
-//        }
-//        else{
-//            eventImage.image = nil
-//        }
-//    }
+
     
     
     override func awakeFromNib() {
