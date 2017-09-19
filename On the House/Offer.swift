@@ -506,6 +506,8 @@ struct Offers {
     
    
     
+    static var showVenue : ShowAndVenue?
+    
     static var offerload : [Offer] = []
     
     static func getOffer(offerID : String) -> Offer{
