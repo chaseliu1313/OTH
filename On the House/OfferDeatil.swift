@@ -8,7 +8,7 @@
 
 import UIKit
 import Social
-class OfferDeatil: UIViewController {
+class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
      var OfferID : String = ""
@@ -16,17 +16,33 @@ class OfferDeatil: UIViewController {
      var baseURL = "https://ma.on-the-house.org/events/"
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
+    let showtime = ["Show","22/09/2017 6.30pm | Tickets:","23/09/2017 6.30pm | Tickets:",]
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var offerDes: UITextView!
     @IBOutlet weak var rating: UIImageView!
     
+    @IBOutlet weak var showStatus: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(OfferID)
         offerDes.backgroundColor = UIColor.clear
         self.getDetail()
+        showStatus.delegate = self
+        showStatus.dataSource = self
+        
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
+        return
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return (showtime.count)
         
     }
 
@@ -130,5 +146,10 @@ class OfferDeatil: UIViewController {
         
         
     }
+    
 
 }
+
+
+
+  
