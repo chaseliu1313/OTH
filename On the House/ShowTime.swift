@@ -10,8 +10,11 @@ import UIKit
 
 class ShowTime: UITableViewCell {
 
-    @IBOutlet weak var Show: UILabel!
+
+    @IBOutlet weak var time: UILabel!
     
+    @IBOutlet weak var ticketNumber: UITextField!
+    @IBOutlet weak var bookNow: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

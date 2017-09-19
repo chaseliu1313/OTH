@@ -16,7 +16,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
      var baseURL = "https://ma.on-the-house.org/events/"
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
-    let showtime = ["Show","22/09/2017 6.30pm | Tickets:","23/09/2017 6.30pm | Tickets:",]
+    let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -39,7 +39,11 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
-        return
+        cell.time.text = showtime[indexPath.row]
+        
+        cell.contentView.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear
+        return (cell)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (showtime.count)
