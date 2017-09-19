@@ -19,7 +19,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var loadMoreEnable = true
     var loadMoreView: UIView?
-    var didSelectRow: Int = 0
+    var offerID: String = ""
+    
     
     
     
@@ -193,6 +194,17 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 pop.delegate = self
             }
         }
+        
+        else if segue.identifier == "showDetail"
+        {
+        let destController = segue.destination as! OfferDeatil
+        destController.OfferID = self.offerID
+        
+        
+        }
+        
+        
+        
     }
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -272,7 +284,9 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        didSelectRow = indexPath.row
+        let didSelectRow = indexPath.row
+        self.offerID = Offers.offerload[didSelectRow].id
+        
         print(didSelectRow)
         
         performSegue(withIdentifier: "showDetail", sender: self)
