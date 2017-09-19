@@ -17,6 +17,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
+    var showandvenue : ShowAndVenue?  = nil
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -47,6 +48,10 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (showtime.count)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
 
@@ -114,13 +119,24 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func loadShowDetail(){
         
+        var snv :[[String: Any]] = []
+        
         let url = command + OfferID
         ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
             if success {
                 
+                snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
+                
+                let data : [String: Any] = snv[0]
+                
+                self.showandvenue  = ShowAndVenue.init(data: data)
+                
+                self.showStatus.reloadData()
                 
             }
             else{
+                
+                
             
             }
         }

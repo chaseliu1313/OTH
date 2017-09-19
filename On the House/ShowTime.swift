@@ -15,6 +15,7 @@ class ShowTime: UITableViewCell {
     
     @IBOutlet weak var ticketNumber: UITextField!
     @IBOutlet weak var bookNow: UIButton!
+    @IBOutlet weak var adminFee: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
