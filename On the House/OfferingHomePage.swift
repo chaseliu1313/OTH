@@ -107,9 +107,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                 }
                 
-                print(Offers.offerload.count)
-                print(Offers.offerload[0].description)
-                
+                 
                 self.tableView.reloadData()
                 
             }
