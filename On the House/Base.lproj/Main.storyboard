@@ -1420,10 +1420,10 @@ and periodicals</string>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wU2-4q-jrT">
-                                                                    <rect key="frame" x="312" y="7.5" width="70" height="30"/>
+                                                                    <rect key="frame" x="312" y="8" width="86" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                     <state key="normal" title="Book Now">
                                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
@@ -1437,15 +1437,8 @@ and periodicals</string>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03/10/2017 8.00pm|  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMq-R6-OpM">
-                                                                    <rect key="frame" x="8" y="13" width="140" height="21"/>
+                                                                    <rect key="frame" x="8" y="13" width="225" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Admin Fee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-lc-b1s">
-                                                                    <rect key="frame" x="156" y="13" width="86" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1453,7 +1446,6 @@ and periodicals</string>
                                                             </subviews>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="adminFee" destination="oOw-lc-b1s" id="Gz9-vi-Xic"/>
                                                             <outlet property="bookNow" destination="wU2-4q-jrT" id="Lm5-Yb-Zj0"/>
                                                             <outlet property="ticketNumber" destination="ZRx-Xp-ug0" id="ozD-cJ-i8q"/>
                                                             <outlet property="time" destination="AMq-R6-OpM" id="7mK-Fl-X9h"/>
@@ -1520,15 +1512,8 @@ and periodicals</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold &amp; Bronze Member Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-Mb-S4D">
-                                                <rect key="frame" x="78" y="547" width="256" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold &amp; Bronze Member Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebg-XC-DC6">
-                                                <rect key="frame" x="78" y="547" width="256" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold &amp; Bronze Member Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-Mb-S4D">
+                                                <rect key="frame" x="37" y="547" width="340" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -1536,6 +1521,13 @@ and periodicals</string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRC-HV-uCc">
                                                 <rect key="frame" x="59" y="1055" width="227" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5L-We-oTH">
+                                                <rect key="frame" x="141" y="576" width="122" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -1584,9 +1576,10 @@ and periodicals</string>
                         <outlet property="City" destination="TIE-4N-n0C" id="yjX-Mz-17W"/>
                         <outlet property="address1" destination="oIC-Ne-DeY" id="M6X-Fa-hNn"/>
                         <outlet property="address2" destination="mW0-oL-Rsb" id="95h-YI-NOp"/>
+                        <outlet property="adminFee" destination="h5L-We-oTH" id="Agm-5h-f1L"/>
                         <outlet property="fullPrice" destination="zzb-RZ-xJh" id="zZq-Gx-1oN"/>
                         <outlet property="image" destination="IHs-co-Uu5" id="peK-mN-tiv"/>
-                        <outlet property="membershipLevel" destination="Ebg-XC-DC6" id="oQj-Aj-jWo"/>
+                        <outlet property="membershipLevel" destination="ygW-Mb-S4D" id="3mp-rl-DsZ"/>
                         <outlet property="nameLabel" destination="qPA-nL-Wnf" id="4sV-Dp-b1h"/>
                         <outlet property="offerDes" destination="9lA-jN-dF1" id="Gev-0c-GFj"/>
                         <outlet property="rating" destination="eC5-fj-vxV" id="oHn-Qj-sWx"/>

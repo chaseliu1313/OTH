@@ -19,6 +19,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var command = "api/v1/event/"
     let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
    
+    @IBOutlet weak var adminFee: UILabel!
     
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -58,25 +59,26 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
             if (cell.show?.is_admin_fee)!  {
             
-                cell.adminFee.text = "Admin Fee: 10"
+                self.adminFee.text = "Admin Fee: 10"
             
             }
             else {
             
-            cell.adminFee.text = "Admin Fee: 0"
+            self.adminFee.text = "Admin Fee: 0"
                 
             }
             
-            let title = cell.show?.button_text!
-            cell.bookNow.setTitle(title, for: .normal)
+            let title = String(describing: cell.show!.button_text!)
+            print(title)
             
-            cell.time.text = cell.show?.date_formatted!
-        
+            cell.bookNow.setTitle(title, for: .normal)
+            let time = String(describing: cell.show!.date_formatted!)
+            cell.time.text = time
         }
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
-        self.showStatus.reloadData()
+        
        
         
         
@@ -179,7 +181,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 Offers.showandvenue  = ShowAndVenue(data: data)
                 
-                print(Offers.showandvenue.shows.count)
+                
                 
                 self.address1.text = Offers.showandvenue.venue?.address1
                 self.address2.text = Offers.showandvenue.venue?.address2
@@ -194,7 +196,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 self.showStatus.reloadData()
                 
-                
+                print(Offers.showandvenue.shows.count)
             }
             else{
                 
