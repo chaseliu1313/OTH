@@ -18,7 +18,8 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
-    var showandvenue : ShowAndVenue?
+   
+    
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -30,7 +31,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var address2: UILabel!
     @IBOutlet weak var City: UILabel!
     @IBOutlet weak var state: UILabel!
-    
+    var loadMoreView: UIView?
     
     @IBOutlet weak var showStatus: UITableView!
     
@@ -43,7 +44,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         showStatus.dataSource = self
         self.loadShowDetail()
         self.showStatus.reloadData()
-        
+        self.showStatus.tableFooterView = self.loadMoreView
         
     }
     
@@ -51,7 +52,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
         
         
-        cell.show = self.showandvenue?.shows[indexPath.row]
+        cell.show = Offers.showandvenue.shows[indexPath.row]
         
         if cell.show != nil {
         
@@ -87,8 +88,8 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         
-       self.showandvenue?.shows.count
-        return 8
+      
+        return  Offers.showandvenue.shows.count
         
     }
     
@@ -176,15 +177,15 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 let data : [String: Any] = snv[0]
                 
-                self.showandvenue  = ShowAndVenue(data: data)
+                Offers.showandvenue  = ShowAndVenue(data: data)
                 
+                print(Offers.showandvenue.shows.count)
                 
+                self.address1.text = Offers.showandvenue.venue?.address1
+                self.address2.text = Offers.showandvenue.venue?.address2
+                self.City.text = Offers.showandvenue.venue?.city
                 
-                self.address1.text = self.showandvenue?.venue?.address1
-                self.address2.text = self.showandvenue?.venue?.address2
-                self.City.text = self.showandvenue?.venue?.city
-                
-                let zone = System.getKey(id: Int((self.showandvenue?.venue?.zone_id)!)!, dic: System.states)
+                let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
                 
                 self.state.text = zone
                 

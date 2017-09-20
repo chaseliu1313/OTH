@@ -47,40 +47,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-    @IBAction func Share(_ sender: Any) {
-        
-        
-        //Alert
-        let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
-        
-        //First action
-        let action = UIAlertAction(title: "Share on Facebook", style: .default)
-        {(action) in
-            
-            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)
-            {
-                let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                
-                post?.setInitialText("Check out this amazing event!")
-                
-                self.present(post!, animated: true, completion: nil)
-            }
-            else
-            {
-                self.showAlert(service: "Facebook")
-            }
-        }
-        //Second action
-        let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        //Add action to action sheet
-        alert.addAction(action)
-        
-        alert.addAction(actionTwo)
-        //Present alert
-        self.present(alert, animated: true, completion:nil)
-        
-    }
+  
     
     
     
@@ -111,12 +78,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-    
-    @IBAction func showDetail(_ sender: UIButton) {
-        
-        
-    }
-    
+   
     
     func loadOffers()
         
