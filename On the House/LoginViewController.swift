@@ -85,7 +85,9 @@ class LoginViewController: UIViewController{
                 if (error == nil){
                     dict = result as! [String : AnyObject]
                     LoginViewController.userfbinfo = dict
-                    let email = LoginViewController.userfbinfo["email"] as! String
+                    if let email = LoginViewController.userfbinfo["email"] as? String{
+                        
+                    
                     /*if(email == UserDefaults.standard.string(forKey: "email")!){
                         self.isauser = true
                     }*/
@@ -97,6 +99,7 @@ class LoginViewController: UIViewController{
                     let namearray = fullname.components(separatedBy: " ")
                     NewMemberData.first_name = namearray[0]
                     NewMemberData.last_name = namearray[1]
+                    }
                 }
             })
         }
