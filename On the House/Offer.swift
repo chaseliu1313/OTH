@@ -427,7 +427,7 @@ class Show {
         }
         
         if let is_admin_fee = data["is_admin_fee"] as? String{
-            self.is_admin_fee = Int(is_admin_fee) == 1 ? true : false
+            self.is_admin_fee = String(is_admin_fee) == "1" ? true : false
         }
         else{
             self.is_admin_fee = false
@@ -441,28 +441,28 @@ class Show {
         }
         
         if let member_can_choose = data["member_can_choose"] as? String{
-            self.member_can_choose = Int(member_can_choose) == 1 ? true : false
+            self.member_can_choose = String(member_can_choose) == "1" ? true : false
         }
         else{
             self.member_can_choose = false
         }
         
         if let date_hide = data["date_hide"] as? String{
-            self.date_hide = Int(date_hide) == 1 ? true : false
+            self.date_hide = String(date_hide) == "1" ? true : false
         }
         else{
             self.date_hide = false
         }
         
         if let time_hide = data["time_hide"] as? String{
-            self.time_hide = Int(time_hide) == 1 ? true : false
+            self.time_hide = String(time_hide) == "1" ? true : false
         }
         else{
             self.time_hide = false
         }
         
         if let shipping = data["shipping"] as? String{
-            self.shipping = Int(shipping) == 1 ? true : false
+            self.shipping = String(shipping) == "1" ? true : false
         }
         else{
             self.shipping = false
@@ -490,7 +490,7 @@ class Show {
         }
         
         if let sold_out = data["sold_out"] as? String{
-            self.sold_out = Int(sold_out) == 1 ? true : false
+            self.sold_out = String(sold_out) == "1" ? true : false
         }
         else{
             self.sold_out = false
@@ -524,6 +524,7 @@ struct Offers {
    
     
     static var offerload : [Offer] = []
+    
     
     static func getOffer(offerID : String) -> Offer{
     

@@ -17,6 +17,8 @@ class ShowTime: UITableViewCell {
     @IBOutlet weak var bookNow: UIButton!
     @IBOutlet weak var adminFee: UILabel!
     
+    var show: Show?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,4 +30,14 @@ class ShowTime: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func bookNow(_ sender: Any) {
+        let qty = ticketNumber.text!
+        
+        
+        print("somtthing")
+    }
+}
+
+protocol sendBookingInfoProtocol {
+    func sendInfo(qty: Int)
 }

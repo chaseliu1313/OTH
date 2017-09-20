@@ -1432,6 +1432,9 @@ and periodicals</string>
                                                                             <integer key="value" value="12"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="bookNow:" destination="DtB-xJ-ffX" eventType="touchUpInside" id="7Or-tM-9p4"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03/10/2017 8.00pm|  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMq-R6-OpM">
                                                                     <rect key="frame" x="8" y="13" width="140" height="21"/>

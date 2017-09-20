@@ -14,10 +14,11 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
      var OfferID : String = ""
     var offerDetail : Offer?
      var baseURL = "https://ma.on-the-house.org/events/"
+    var testURL = "https://ma.on-the-house.org/events/1834"
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
-    var showandvenue : ShowAndVenue?  = nil
+    var showandvenue : ShowAndVenue?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -40,20 +41,41 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.getDetail()
         showStatus.delegate = self
         showStatus.dataSource = self
-        
+        self.loadShowDetail()
+        self.showStatus.reloadData()
         
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
-        cell.time.text = showtime[indexPath.row]
+        
+        
+        cell.show = self.showandvenue?.shows[indexPath.row]
+        if cell.show != nil {
+        
+            if (cell.show?.is_admin_fee)!  {
+            
+                cell.adminFee.text = "Admin Fee: 10"
+            
+            }
+            else {
+            
+            cell.adminFee.text = "Admin Fee: 0"
+                
+            }
+            
+            let title = cell.show?.button_text!
+            cell.bookNow.setTitle(title, for: .normal)
+            
+            cell.time.text = cell.show?.date_formatted!
+        
+        }
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
-        let title = showandvenue?.shows[indexPath.row].button_text!
-        cell.bookNow.setTitle(title, for: .normal)
-        
+        self.showStatus.reloadData()
+       
         
         
         
@@ -62,7 +84,16 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return (cell)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return (showandvenue?.shows.count)!
+        
+        var count = 0
+        
+        if self.showandvenue != nil{
+            
+           count = (self.showandvenue?.shows.count)!
+           self.showStatus.reloadData()
+        }
+        
+        return count
         
     }
     
@@ -136,23 +167,26 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         var snv :[[String: Any]] = []
         
-        let url = command + OfferID
-        ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
+        //let url = command + OfferID
+        ConnectionHelper.postJSON(command: testURL, parameter: parameter) { (success, json) in
             if success {
                 
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
                 
                 let data : [String: Any] = snv[0]
                 
-                self.showandvenue  = ShowAndVenue.init(data: data)
+                self.showandvenue  = ShowAndVenue(data: data)
+                
                 
                 self.showStatus.reloadData()
                 
             }
             else{
                 
-                
-            
+//                self.notifyUser(["Loading Error"])
+//                self.dismiss(animated: true, completion: nil)
+//             
+                print("did not reload")
             }
         }
     
@@ -179,6 +213,16 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
        let fileName = String(self.offerDetail!.rating)
         rating.image = UIImage(named: fileName)
         
+        
+    }
+    
+    func notifyUser( _ message: [String] ) -> Void
+    {
+        let meg: String = message[0]
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
         
     }
     
