@@ -103,6 +103,11 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     
     @IBAction func shareEvent(_ sender: Any) {
+        
+        let url = self.baseURL+OfferID
+        
+        let image = self.offerDetail?.image
+        
         //Alert
         let alert = UIAlertController(title: "Share", message:"Share Event today!", preferredStyle: .actionSheet)
         
@@ -114,7 +119,8 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
             {
                 let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
-                post?.setInitialText("Check out this amazing event!")
+                post?.setInitialText("Check out this amazing event!" + url)
+                post?.add(image)
                 
                 self.present(post!, animated: true, completion: nil)
             }

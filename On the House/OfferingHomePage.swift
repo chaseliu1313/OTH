@@ -21,7 +21,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var loadMoreView: UIView?
     var offerID: String = ""
     var sharingURL = ""
-    
+    var baseURL = "https://ma.on-the-house.org/events/"
    
 
     
@@ -342,7 +342,10 @@ extension OfferingHomePage: sendOfferIDDelegate{
 
     func sendID(offerID: String) {
         
-        self.sharingURL = offerID
+        let currentOffer = Offers.getOffer(offerID: offerID)
+        let image = currentOffer.image
+        
+        self.sharingURL = self.baseURL + offerID
         print(self.sharingURL)
         let alert = UIAlertController(title: "Share", message:"Share Event NOW!", preferredStyle: .actionSheet)
         
@@ -355,6 +358,7 @@ extension OfferingHomePage: sendOfferIDDelegate{
                 let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
                 post?.setInitialText("Check out this amazing event!" + self.sharingURL)
+                post?.add(image)
                 
                 self.present(post!, animated: true, completion: nil)
             }
