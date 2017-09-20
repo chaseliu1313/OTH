@@ -58,16 +58,16 @@ class FilterTableViewController: UITableViewController {
             if istouched{
                 buttonisclicked[sender.currentTitle!] = false
                 FilterTableViewController.filterarray.remove(at: FilterTableViewController.filterarray.index(of: sender.currentTitle!)!)
-                //sender.backgroundColor = color
+                sender.backgroundColor = UIColor.lightGray
             }
             else{
                 buttonisclicked[sender.currentTitle!] = true
-                sender.backgroundColor = UIColor.lightGray
+                sender.backgroundColor = UIColor.black
             }
         }
         else{
             buttonisclicked[sender.currentTitle!] = true
-            sender.backgroundColor = UIColor.lightGray
+            sender.backgroundColor = UIColor.black
         }
         print(FilterTableViewController.filterarray)
         //buttonisclicked
