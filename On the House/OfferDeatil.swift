@@ -14,7 +14,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
      var OfferID : String = ""
     var offerDetail : Offer?
      var baseURL = "https://ma.on-the-house.org/events/"
-    var testURL = "https://ma.on-the-house.org/events/1834"
+    var testURL = "api/v1/event/1834"
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
@@ -52,6 +52,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         
         cell.show = self.showandvenue?.shows[indexPath.row]
+        
         if cell.show != nil {
         
             if (cell.show?.is_admin_fee)!  {
@@ -81,19 +82,13 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         
         
-        return (cell)
+        return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        var count = 0
         
-        if self.showandvenue != nil{
-            
-           count = (self.showandvenue?.shows.count)!
-           self.showStatus.reloadData()
-        }
-        
-        return count
+       self.showandvenue?.shows.count
+        return 8
         
     }
     
@@ -178,7 +173,20 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 self.showandvenue  = ShowAndVenue(data: data)
                 
                 
+                
+                self.address1.text = self.showandvenue?.venue?.address1
+                self.address2.text = self.showandvenue?.venue?.address2
+                self.City.text = self.showandvenue?.venue?.city
+                
+                let zone = System.getKey(id: Int((self.showandvenue?.venue?.zone_id)!)!, dic: System.states)
+                
+                self.state.text = zone
+                
+                
+                
+                
                 self.showStatus.reloadData()
+                
                 
             }
             else{
