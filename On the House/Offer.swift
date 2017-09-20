@@ -28,7 +28,7 @@ class Offer{
     var has_reservation : Bool = false
     var is_competition : Bool = false
     var competition: [String: String] = [:]
-    var showandvenue : [ShowandVenue]?
+    var showandvenue : [ShowAndVenue]?
     
     
     var image = UIImage()
@@ -161,11 +161,28 @@ class Offer{
         if let showandvenue = data["show_data"] as? [[String : AnyObject]] {
             self.showandvenue = []
             for showdata in showandvenue {
-                self.showandvenue?.append(ShowandVenue(data: showdata))
+                self.showandvenue?.append(ShowAndVenue(data: showdata))
             }
         }
         else{
             self.showandvenue = nil
+        }
+        
+        func getMembershipLevel() -> Int {
+        
+            var level = 0
+            
+            if self.membership_levels == "Gold & Bronze Member Event" {
+            
+            level = 3
+            }
+            else if self.membership_levels == "Gold Member Event" {
+            
+            level = 9
+            }
+        
+            return level
+        
         }
     
 }
@@ -219,7 +236,7 @@ class Venue {
     let zone_name : String?
     let country_name : String?
     
-    init(data : [String : AnyObject]) {
+    init(data : [String : Any]) {
         if let id = data["id"] as? String {
             self.id = id
         }
@@ -324,7 +341,7 @@ class Show {
     let date_formatted : String?
     let quantities : [Int]?
     
-    init(data: [String : AnyObject]) {
+    init(data: [String : Any]) {
         if let id = data["id"] as? String{
             self.id = id
         }
@@ -488,13 +505,13 @@ class Show {
     }
 }
 
-class ShowandVenue {
+class ShowAndVenue {
     var venue : Venue?
     var shows : [Show] = []
     
-    init(data: [String : AnyObject]) {
-        self.venue = Venue(data: (data["venue"] as? [String : AnyObject])!)
-        let shows = data["shows"] as? [[String : AnyObject]]
+    init(data: [String : Any]) {
+        self.venue = Venue(data: (data["venue"] as? [String : Any])!)
+        let shows = data["shows"] as? [[String : Any]]
         for show in shows! {
             let currentshow = Show(data : show)
             self.shows.append(currentshow)
@@ -504,13 +521,31 @@ class ShowandVenue {
 
 struct Offers {
     
+   
+    
     static var offerload : [Offer] = []
     
+    static func getOffer(offerID : String) -> Offer{
     
+         var currentOffer: Offer?
+        
+        for o in offerload {
+        
+            
+            if o.id == offerID {
+            
+                currentOffer = o
+                break
+        
+        }
+            
+    
+    }
+        return currentOffer!
 }
 
 
-
+}
 
 
 

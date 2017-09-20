@@ -24,7 +24,8 @@ class OfferTableCell: UITableViewCell {
     
     var baseURL = "https://ma.on-the-house.org/events/"
     
-    
+    //delegate
+    var sendOfferID : sendOfferIDDelegate!
 
     
     var size = CGSize()
@@ -44,6 +45,8 @@ class OfferTableCell: UITableViewCell {
     @IBAction func share(_ sender: UIButton) {
         let eventID = Offers.offerload[shareEvent.tag].id
         let sharingURL = baseURL + eventID
+        sendOfferID.sendID(offerID: sharingURL)
+        
         
     }
 
@@ -89,4 +92,8 @@ class OfferTableCell: UITableViewCell {
         }}
         
     
+}
+
+protocol sendOfferIDDelegate {
+    func sendID (offerID: String)
 }

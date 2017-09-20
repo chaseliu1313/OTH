@@ -8,10 +8,68 @@
 
 import UIKit
 import Social
-class OfferDeatil: UIViewController {
+class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
-    var OfferID : String = ""
+     var OfferID : String = ""
+    var offerDetail : Offer?
+     var baseURL = "https://ma.on-the-house.org/events/"
+    var parameter = ["member_id": ""]
+    var command = "api/v1/event/"
+    let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
+    var showandvenue : ShowAndVenue?  = nil
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var offerDes: UITextView!
+    @IBOutlet weak var rating: UIImageView!
+    @IBOutlet weak var membershipLevel: UILabel!
+    @IBOutlet weak var fullPrice: UILabel!
+    @IBOutlet weak var address1: UILabel!
+    @IBOutlet weak var address2: UILabel!
+    @IBOutlet weak var City: UILabel!
+    @IBOutlet weak var state: UILabel!
+    
+    
+    @IBOutlet weak var showStatus: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(OfferID)
+        offerDes.backgroundColor = UIColor.clear
+        self.getDetail()
+        showStatus.delegate = self
+        showStatus.dataSource = self
+        
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
+        cell.time.text = showtime[indexPath.row]
+        
+        cell.contentView.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.clear
+        let title = showandvenue?.shows[indexPath.row].button_text!
+        cell.bookNow.setTitle(title, for: .normal)
+        
+        
+        
+        
+        
+        
+        return (cell)
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return (showandvenue?.shows.count)!
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+
     
     @IBAction func shareEvent(_ sender: Any) {
         //Alert
@@ -59,31 +117,74 @@ class OfferDeatil: UIViewController {
     }
 
 
-    @IBOutlet weak var offerVideo: UIWebView!
+  
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(OfferID)
-        
-        getVideo(videoCode: "pg_zfIDoKSw")
-        // Do any additional setup after loading the view.
-    }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    func getVideo(videoCode: String){
-        let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
-        offerVideo.loadRequest(URLRequest(url:url!))
-        
-    }
+
 
     @IBAction func `return`(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func loadShowDetail(){
+        
+        var snv :[[String: Any]] = []
+        
+        let url = command + OfferID
+        ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
+            if success {
+                
+                snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
+                
+                let data : [String: Any] = snv[0]
+                
+                self.showandvenue  = ShowAndVenue.init(data: data)
+                
+                self.showStatus.reloadData()
+                
+            }
+            else{
+                
+                
+            
+            }
+        }
+    
+    
+    }
+    func updateMemberID(){
+    
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+        
+        parameter.updateValue(UserDefaults.standard.string(forKey: "member_id")!, forKey: "member_id")
+            
+        }
+        
+    }
+    
+    func getDetail(){
+    
+    self.offerDetail =  Offers.getOffer(offerID: self.OfferID)
+        
+        offerDes.text = self.offerDetail!.description
+        image.image = self.offerDetail!.image
+        nameLabel.text  = self.offerDetail!.name
+        
+       let fileName = String(self.offerDetail!.rating)
+        rating.image = UIImage(named: fileName)
+        
+        
+    }
+    
 
 }
+
+
+
+  
