@@ -169,58 +169,58 @@ class Offer{
         }
         
         func getMembershipLevel() -> Int {
-        
+            
             var level = 0
             
             if self.membership_levels == "Gold & Bronze Member Event" {
-            
-            level = 3
+                
+                level = 3
             }
             else if self.membership_levels == "Gold Member Event" {
-            
-            level = 9
+                
+                level = 9
             }
-        
+            
             return level
-        
+            
         }
-    
-}
-
-func getImage() -> UIImage {
-    
-    
-    
-    if self.image_url != "" {
         
-        ConnectionHelper.getImage(imageURL: "\(self.image_url)") { (success, img) in
-            
-            if success {
-                
-                
-                
-                self.image = img
-                
-            }
-            
-        }}
-    else{self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")}
-    
-    return self.image
-}
-
-func insert() {
-    
-    if self.image_url != ""{
-        
-        let range = self.image_url.range(of: "http")
-        
-        self.image_url.insert("s", at: range!.upperBound)
     }
-    else {
+    
+    func getImage() -> UIImage {
         
-        self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")
-    }}
+        
+        
+        if self.image_url != "" {
+            
+            ConnectionHelper.getImage(imageURL: "\(self.image_url)") { (success, img) in
+                
+                if success {
+                    
+                    
+                    
+                    self.image = img
+                    
+                }
+                
+            }}
+        else{self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")}
+        
+        return self.image
+    }
+    
+    func insert() {
+        
+        if self.image_url != ""{
+            
+            let range = self.image_url.range(of: "http")
+            
+            self.image_url.insert("s", at: range!.upperBound)
+        }
+        else {
+            
+            self.image = #imageLiteral(resourceName: "OTH-logo-lightbkgd-hires")
+        }}
 }
 
 class Venue {
@@ -524,7 +524,7 @@ class ShowAndVenue {
 
 struct Offers {
     
-   
+    
     
     static var offerload : [Offer] = []
     
@@ -534,25 +534,25 @@ struct Offers {
     
     
     static func getOffer(offerID : String) -> Offer{
-    
-         var currentOffer: Offer?
+        
+        var currentOffer: Offer?
         
         for o in offerload {
-        
+            
             
             if o.id == offerID {
-            
+                
                 currentOffer = o
                 break
-        
-        }
+                
+            }
             
-    
-    }
+            
+        }
         return currentOffer!
-}
-
-
+    }
+    
+    
 }
 
 

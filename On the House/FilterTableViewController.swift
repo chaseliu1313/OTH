@@ -81,9 +81,11 @@ class FilterTableViewController: UITableViewController {
     @IBAction func applyfilter(_ sender: UIBarButtonItem) {
         System.category = System.pickcategory(array: FilterTableViewController.filterarray)
         System.state = System.pickstate(array: FilterTableViewController.filterarray)
+        OfferingHomePage.parameter["category_id"] = System.category
+        OfferingHomePage.parameter["zone_id"] = System.state
         dismiss(animated: false, completion: nil)
-        print(System.category)
-        print(System.state)
+        //print(System.category)
+        //print(System.state)
     }
     
     

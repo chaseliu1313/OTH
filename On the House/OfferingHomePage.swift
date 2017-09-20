@@ -63,7 +63,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     let command = "api/v1/events/current"
     
-    var parameter : [String: Any] =
+    static var parameter : [String: Any] =
         [
             "date" : "range",
             "date_from" : "2015-05-05",
@@ -77,13 +77,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-    
-    
-    
     func loadOffers()
         
     {
-        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json) in
+        ConnectionHelper.postJSON(command: command, parameter: OfferingHomePage.parameter) { (success, json) in
             
             if success {
                 
@@ -107,7 +104,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                 }
                 
-                 
+                
                 self.tableView.reloadData()
                 
             }
