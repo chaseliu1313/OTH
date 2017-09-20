@@ -517,6 +517,9 @@ class ShowAndVenue {
             self.shows.append(currentshow)
         }
     }
+    
+    init(){
+    }
 }
 
 struct Offers {
@@ -524,6 +527,10 @@ struct Offers {
    
     
     static var offerload : [Offer] = []
+    
+    static let initializer = ["venue" : "empty", "shows": []] as [String : Any]
+    
+    static var showandvenue = ShowAndVenue()
     
     
     static func getOffer(offerID : String) -> Offer{
