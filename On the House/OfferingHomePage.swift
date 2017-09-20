@@ -22,8 +22,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var offerID: String = ""
     var sharingURL = ""
     var baseURL = "https://ma.on-the-house.org/events/"
-   
-
+    
+    
     
     
     
@@ -47,7 +47,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-  
+    
     
     
     
@@ -78,7 +78,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-   
+    
     
     func loadOffers()
         
@@ -144,6 +144,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @IBAction func filterButton(_ sender: Any) {
+        FilterTableViewController.filterarray = []
         self.performSegue(withIdentifier: "pop", sender: self)
     }
     
@@ -158,13 +159,13 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 pop.delegate = self
             }
         }
-        
+            
         else if segue.identifier == "showDetail"
         {
-        let destController = segue.destination as! OfferDeatil
-        destController.OfferID = self.offerID
-        
-        
+            let destController = segue.destination as! OfferDeatil
+            destController.OfferID = self.offerID
+            
+            
         }
         
         
@@ -206,7 +207,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
         
         cell.imageView?.image = cellImage
-        
         
         
         
@@ -301,7 +301,7 @@ extension UIImage {
 }
 
 extension OfferingHomePage: sendOfferIDDelegate{
-
+    
     func sendID(offerID: String) {
         
         let currentOffer = Offers.getOffer(offerID: offerID)

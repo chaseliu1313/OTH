@@ -25,6 +25,8 @@ class System {
     ]
     
     
+    static var state : [String] = []
+    static var category : [String] = []
     
     init(){
     }
@@ -85,6 +87,7 @@ class System {
     }
     
     
+    
     static func getQuestion(question: String) -> String
     {
         
@@ -106,6 +109,29 @@ class System {
         return String(id)
     }
     
+    //classify all those attributes into zone or category
+    static func pickcategory(array : [String]) -> [String]{
+        //var category : [String] = []
+        var categoryid : [String] = []
+        for element in array{
+            if categories[element] != nil{
+                categoryid.append(getCategories(category: element))
+            }
+        }
+        return categoryid
+    }
+    
+    static func pickstate(array : [String]) -> [String]{
+        var stateid : [String] = []
+        for element in array{
+            if states[element] != nil{
+                stateid.append(setState(state: element))
+            }
+            
+        }
+        return stateid
+    }
+
     
     static func isValidEmailAddress(emailAddressString: String) -> Bool {
         

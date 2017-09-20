@@ -2990,22 +2990,6 @@ and periodicals</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GUj-gO-p2i" id="zlP-X4-TkN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-pn-BGO">
-                                                    <rect key="frame" x="-14.5" y="0.0" width="413.5" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                    <items>
-                                                        <navigationItem id="4kB-oJ-7Vg">
-                                                            <barButtonItem key="leftBarButtonItem" title="Clear" id="gMd-Ym-ySy">
-                                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </barButtonItem>
-                                                            <barButtonItem key="rightBarButtonItem" title="Apply" id="Xtz-yX-nPa">
-                                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </barButtonItem>
-                                                        </navigationItem>
-                                                    </items>
-                                                </navigationBar>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -3898,6 +3882,36 @@ and periodicals</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rmw-v5-ME2">
+                                        <rect key="frame" x="0.0" y="1096" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rmw-v5-ME2" id="n3u-V7-fBQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-pn-BGO">
+                                                    <rect key="frame" x="0.0" y="-1" width="413.5" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <items>
+                                                        <navigationItem id="4kB-oJ-7Vg">
+                                                            <barButtonItem key="leftBarButtonItem" title="Clear" id="gMd-Ym-ySy">
+                                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <connections>
+                                                                    <action selector="clearaction:" destination="Wp8-jt-cfs" id="cwa-x5-ZjJ"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem key="rightBarButtonItem" title="Apply" id="Xtz-yX-nPa">
+                                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <connections>
+                                                                    <action selector="applyfilter:" destination="Wp8-jt-cfs" id="VnU-Nm-syx"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                        </navigationItem>
+                                                    </items>
+                                                </navigationBar>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -3906,6 +3920,9 @@ and periodicals</string>
                             <outlet property="delegate" destination="Wp8-jt-cfs" id="tKp-EK-b4x"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableview" destination="2Hu-Sz-dOc" id="1CO-gb-NWe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSY-MX-HfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
