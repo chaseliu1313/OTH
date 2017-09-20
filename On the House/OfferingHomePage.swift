@@ -235,6 +235,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.eventTitle.text = offer.name
         offer.insert()
         
+        cell.shareEvent.tag = indexPath.row
         
         
         print(cell.getsize().width)
@@ -340,6 +341,7 @@ extension UIImage {
 extension OfferingHomePage: sendOfferIDDelegate{
 
     func sendID(offerID: String) {
+        
         self.sharingURL = offerID
         print(self.sharingURL)
         let alert = UIAlertController(title: "Share", message:"Share Event NOW!", preferredStyle: .actionSheet)
@@ -352,7 +354,7 @@ extension OfferingHomePage: sendOfferIDDelegate{
             {
                 let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
-                post?.setInitialText("Check out this amazing event!")
+                post?.setInitialText("Check out this amazing event!" + self.sharingURL)
                 
                 self.present(post!, animated: true, completion: nil)
             }
