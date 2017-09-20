@@ -44,7 +44,7 @@ class OfferTableCell: UITableViewCell {
     //sharing button
     @IBAction func share(_ sender: UIButton) {
         let eventID = Offers.offerload[shareEvent.tag].id
-        let sharingURL = baseURL + eventID
+        let sharingURL =  eventID
         sendOfferID.sendID(offerID: sharingURL)
         
         
