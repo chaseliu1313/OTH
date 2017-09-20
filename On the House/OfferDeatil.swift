@@ -31,7 +31,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var address2: UILabel!
     @IBOutlet weak var City: UILabel!
     @IBOutlet weak var state: UILabel!
-    
+    var loadMoreView: UIView?
     
     @IBOutlet weak var showStatus: UITableView!
     
@@ -44,7 +44,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         showStatus.dataSource = self
         self.loadShowDetail()
         self.showStatus.reloadData()
-        
+        self.showStatus.tableFooterView = self.loadMoreView
         
     }
     
@@ -179,7 +179,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 Offers.showandvenue  = ShowAndVenue(data: data)
                 
-                
+                print(Offers.showandvenue.shows.count)
                 
                 self.address1.text = Offers.showandvenue.venue?.address1
                 self.address2.text = Offers.showandvenue.venue?.address2
