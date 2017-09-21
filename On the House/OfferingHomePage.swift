@@ -327,7 +327,28 @@ extension OfferingHomePage: sendOfferIDDelegate{
         //Second action
         let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
+        //Third action
+        let actionThree = UIAlertAction(title: "Share on Twitter", style: .default)
+        {(action) in
+            
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)
+            {
+                let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                
+                post?.setInitialText("Check out this amazing event!" + self.sharingURL)
+                post?.add(image)
+                
+                self.present(post!, animated: true, completion: nil)
+            }
+            else
+            {
+                self.showAlert(service: "Twitter")
+            }
+        }
+
         //Add action to action sheet
+        alert.addAction(actionThree)
+        
         alert.addAction(action)
         
         alert.addAction(actionTwo)
