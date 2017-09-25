@@ -24,14 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-//        if isLoggedIn {
-//            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "offer")
-//        
-//        }
-//        else{
-//           self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "login")
-//        }
-//        
+        if isLoggedIn {
+            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "offer")
+        
+        }
+        else{
+           self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "login")
+        }
+        
         return true
     }
     
