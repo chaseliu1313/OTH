@@ -21,8 +21,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var loadMoreView: UIView?
     var offerID: String = ""
     var sharingURL = ""
-    var baseURL = "https://ma.on-the-house.org/events/"
-    
+    var baseURL = "https://ma.on-the-house.org/events/current"
+   let command = "api/v1/events/current"
     
     
     
@@ -61,19 +61,21 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         present(alert, animated: true, completion:nil)
     }
     
-    let command = "api/v1/events/current"
+   
     
     static var parameter : [String: Any] =
         [
-            "date" : "range",
-            "date_from" : "2015-05-05",
+            "date" : "",
+            "date_from" : "",
             "data_to" : "",
-            "category_id" : ["37","5"],
-            "zone_id" : ["216"]
+            "category_id" : [],
+            "zone_id" : []
             
             
             
     ]
+    
+    let para:  [String: Any] = [:]
     
     
     
@@ -81,7 +83,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     {
         
-      //OfferingHomePage.parameter["date_from"] = System.getCurrentDate()
+      //OfferingHomePage.parameter.updateValue(System.getCurrentDate(), forKey: "date")
 
         
         ConnectionHelper.postJSON(command: command, parameter: OfferingHomePage.parameter) { (success, json) in
@@ -96,7 +98,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 
                 print(status)
                 
-                let event  = json["events"].arrayValue
+                let event = json["events"].arrayValue
                 
                 for e in event {
                     
@@ -117,7 +119,9 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 
             }
             else {
-                 print(OfferingHomePage.parameter["date_from"] as! String)
+                
+                
+                 print(OfferingHomePage.parameter["date"] as! String)
                 print("post is wrong")
             }
         }

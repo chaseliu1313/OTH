@@ -14,7 +14,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
      var OfferID : String = ""
     var offerDetail : Offer?
      var baseURL = "https://ma.on-the-house.org/events/"
-    var testURL = "api/v1/event/1834"
+   // var testURL = "api/v1/event/1834"
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
@@ -191,9 +191,11 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func loadShowDetail(){
         
         var snv :[[String: Any]] = []
+        let url = command + OfferID
+        
         
         //let url = command + OfferID
-        ConnectionHelper.postJSON(command: testURL, parameter: parameter) { (success, json) in
+        ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
             if success {
                 
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
