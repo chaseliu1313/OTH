@@ -11,7 +11,10 @@ import UIKit
 class FilterTableViewController: UITableViewController {
     
     static var filterarray : [String] = []
+    
     var buttonisclicked : [String : Bool] = [:]
+    
+    var clickedbuttons : [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +48,7 @@ class FilterTableViewController: UITableViewController {
             rowcount = 4
         }
         if section == 2 {
-            rowcount = 15
+            rowcount = 16
         }
         return rowcount
     }
@@ -53,11 +56,13 @@ class FilterTableViewController: UITableViewController {
     @IBAction func filteraction(_ sender: UIButton) {
         if !FilterTableViewController.filterarray.contains(sender.currentTitle!){
             FilterTableViewController.filterarray.append(sender.currentTitle!)
+            clickedbuttons.append(sender)
         }
         if let istouched = buttonisclicked[sender.currentTitle!]{
             if istouched{
                 buttonisclicked[sender.currentTitle!] = false
                 FilterTableViewController.filterarray.remove(at: FilterTableViewController.filterarray.index(of: sender.currentTitle!)!)
+                clickedbuttons.remove(at: clickedbuttons.index(of: sender)!)
                 sender.backgroundColor = UIColor(rgb: 0xDFDDE0)
             }
             else{
@@ -72,6 +77,32 @@ class FilterTableViewController: UITableViewController {
         print(FilterTableViewController.filterarray)
         //buttonisclicked
     }
+    
+    @IBAction func applyfilter(_ sender: UIBarButtonItem) {
+        System.category = System.pickcategory(array: FilterTableViewController.filterarray)
+        System.state = System.pickstate(array: FilterTableViewController.filterarray)
+        OfferingHomePage.parameter["category_id"] = System.category
+        OfferingHomePage.parameter["zone_id"] = System.state
+        dismiss(animated: false, completion: nil)
+        //print(System.category)
+        //print(System.state)
+    }
+    
+    
+    
+    @IBOutlet var tableview: UITableView!
+
+    
+  
+    @IBAction func clearaction(_ sender: UIBarButtonItem) {
+        FilterTableViewController.filterarray = []
+        for button in self.clickedbuttons {
+            button.backgroundColor = UIColor(rgb: 0xDFDDE0)
+        }
+        self.clickedbuttons = []
+    }
+    
+    
     
     
     /*

@@ -22,8 +22,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var offerID: String = ""
     var sharingURL = ""
     var baseURL = "https://ma.on-the-house.org/events/"
-   
-
+    
+    
     
     
     
@@ -47,7 +47,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-  
+    
     
     
     
@@ -63,7 +63,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     let command = "api/v1/events/current"
     
-    var parameter : [String: Any] =
+    static var parameter : [String: Any] =
         [
             "date" : "range",
             "date_from" : "2015-05-05",
@@ -77,13 +77,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     
-    
-   
-    
     func loadOffers()
         
     {
-        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json) in
+        ConnectionHelper.postJSON(command: command, parameter: OfferingHomePage.parameter) { (success, json) in
             
             if success {
                 
@@ -107,7 +104,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                 }
                 
-                 
+                
                 self.tableView.reloadData()
                 
             }
@@ -142,6 +139,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @IBAction func filterButton(_ sender: Any) {
+        FilterTableViewController.filterarray = []
         self.performSegue(withIdentifier: "pop", sender: self)
     }
     
@@ -156,13 +154,13 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 pop.delegate = self
             }
         }
-        
+            
         else if segue.identifier == "showDetail"
         {
-        let destController = segue.destination as! OfferDeatil
-        destController.OfferID = self.offerID
-        
-        
+            let destController = segue.destination as! OfferDeatil
+            destController.OfferID = self.offerID
+            
+            
         }
         
         
@@ -204,7 +202,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
         
         cell.imageView?.image = cellImage
-        
         
         
         
@@ -299,7 +296,7 @@ extension UIImage {
 }
 
 extension OfferingHomePage: sendOfferIDDelegate{
-
+    
     func sendID(offerID: String) {
         
         let currentOffer = Offers.getOffer(offerID: offerID)
@@ -330,7 +327,28 @@ extension OfferingHomePage: sendOfferIDDelegate{
         //Second action
         let actionTwo = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
+        //Third action
+        let actionThree = UIAlertAction(title: "Share on Twitter", style: .default)
+        {(action) in
+            
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)
+            {
+                let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                
+                post?.setInitialText("Check out this amazing event!" + self.sharingURL)
+                post?.add(image)
+                
+                self.present(post!, animated: true, completion: nil)
+            }
+            else
+            {
+                self.showAlert(service: "Twitter")
+            }
+        }
+
         //Add action to action sheet
+        alert.addAction(actionThree)
+        
         alert.addAction(action)
         
         alert.addAction(actionTwo)
