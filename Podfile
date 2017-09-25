@@ -8,7 +8,7 @@ target 'On the House' do
   pod 'FacebookLogin'
   pod ‘Alamofire’, ‘~> 4.4’
   pod ‘SwiftyJSON’
-  pod 'ExpandableCell'
+  
 
   # Pods for On the House
 

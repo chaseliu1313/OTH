@@ -67,7 +67,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         [
             "date" : "range",
             "date_from" : "2015-05-05",
-            "data_to" : "2017-09-11",
+            "data_to" : "",
             "category_id" : ["37","5"],
             "zone_id" : ["216"]
             
@@ -80,6 +80,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     func loadOffers()
         
     {
+        
+//       OfferingHomePage.parameter["date_from"] = System.getCurrentDate()
+//        print("date_from")
+        
         ConnectionHelper.postJSON(command: command, parameter: OfferingHomePage.parameter) { (success, json) in
             
             if success {

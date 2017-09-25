@@ -12,6 +12,10 @@ import Foundation
 class System {
     
     static var didAuth: Bool = false
+    static var date_from = ""
+    static var date_to = ""
+    static let df = DateFormatter()
+    static let currentDate = Date()
     
     static let timezones:[String : Int] = ["Perth" : 92, "Adelaide" : 100, "Darwin": 101, "Brisbane": 102, "Canberra": 103, "Hobart": 105, "Melbourne": 106, "Sydney": 108]
     
@@ -217,6 +221,26 @@ class System {
         }
         
         return String(code)
+    }
+    
+    static func getCurrentDate() -> String
+    {
+        
+        
+        df.dateFormat = "yyyy"
+        let year = df.string(from: currentDate)
+        df.dateFormat = "MM"
+        let month = df.string(from: currentDate)
+        df.dateFormat = "dd"
+        let day = df.string(from: currentDate)
+        
+        date_from = "\(year)-\(month)-\(day)"
+        
+        return date_from
+        
+        
+        
+    
     }
     
 }
