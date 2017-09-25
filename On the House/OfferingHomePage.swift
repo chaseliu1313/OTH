@@ -81,13 +81,17 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     {
         
-//       OfferingHomePage.parameter["date_from"] = System.getCurrentDate()
-//        print("date_from")
+      //OfferingHomePage.parameter["date_from"] = System.getCurrentDate()
+
         
         ConnectionHelper.postJSON(command: command, parameter: OfferingHomePage.parameter) { (success, json) in
             
+           
+
+            
             if success {
                 
+                 print(OfferingHomePage.parameter["date_from"] as! String)
                 let status = json["status"].string!
                 
                 print(status)
@@ -113,7 +117,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 
             }
             else {
-                
+                 print(OfferingHomePage.parameter["date_from"] as! String)
                 print("post is wrong")
             }
         }
@@ -200,7 +204,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.shareEvent.tag = indexPath.row
         
         
-        print(cell.getsize().width)
+     
         let size = CGSize.init(width: cell.getsize().width, height: cell.getsize().height)
         
         let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
@@ -251,7 +255,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         let didSelectRow = indexPath.row
         self.offerID = Offers.offerload[didSelectRow].id
         
-        print(didSelectRow)
+       
         
         performSegue(withIdentifier: "showDetail", sender: self)
         
@@ -307,7 +311,7 @@ extension OfferingHomePage: sendOfferIDDelegate{
         let image = currentOffer.image
         
         self.sharingURL = self.baseURL + offerID
-        print(self.sharingURL)
+        
         let alert = UIAlertController(title: "Share", message:"Share Event NOW!", preferredStyle: .actionSheet)
         
         //First action

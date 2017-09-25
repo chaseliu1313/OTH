@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -238,14 +238,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsA-zD-uxM">
                                 <rect key="frame" x="162" y="440" width="196" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HlA-9O-Kvt">
                                 <rect key="frame" x="161.5" y="186" width="195.5" height="30"/>
@@ -3276,7 +3276,7 @@ and periodicals</string>
                             <tableViewSection headerTitle="Caregory" id="aJZ-vt-RZz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eWJ-lj-phk">
-                                        <rect key="frame" x="0.0" y="392" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="436" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eWJ-lj-phk" id="9dw-Bg-6iK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3319,7 +3319,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yhx-LH-tMx">
-                                        <rect key="frame" x="0.0" y="436" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="480" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yhx-LH-tMx" id="1rQ-aT-quN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3362,7 +3362,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iG4-yQ-54q">
-                                        <rect key="frame" x="0.0" y="480" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="524" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iG4-yQ-54q" id="xSn-SK-mQd">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3405,7 +3405,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z1M-AV-RAN">
-                                        <rect key="frame" x="0.0" y="524" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="568" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z1M-AV-RAN" id="o82-O9-dN3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3433,7 +3433,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z6M-VB-yWe">
-                                        <rect key="frame" x="0.0" y="568" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="612" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z6M-VB-yWe" id="LLH-v4-wjf">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3476,7 +3476,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zbS-m6-FSJ">
-                                        <rect key="frame" x="0.0" y="612" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="656" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbS-m6-FSJ" id="Gy0-KB-QmC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3519,7 +3519,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Gyo-II-3vi">
-                                        <rect key="frame" x="0.0" y="656" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="700" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gyo-II-3vi" id="4fM-ht-eiv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3562,7 +3562,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zMv-DX-3gK">
-                                        <rect key="frame" x="0.0" y="700" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="744" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zMv-DX-3gK" id="zU4-0Y-Npd">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3605,7 +3605,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tiT-ER-i2L">
-                                        <rect key="frame" x="0.0" y="744" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="788" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tiT-ER-i2L" id="LVp-SE-tJx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3648,7 +3648,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ybz-1R-45F">
-                                        <rect key="frame" x="0.0" y="788" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="832" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybz-1R-45F" id="Gh8-Ch-1yo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3676,7 +3676,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9U2-Y7-nbC">
-                                        <rect key="frame" x="0.0" y="832" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="876" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9U2-Y7-nbC" id="F3u-gu-VhX">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3719,7 +3719,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dxU-JZ-fjL">
-                                        <rect key="frame" x="0.0" y="876" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="920" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxU-JZ-fjL" id="qIy-Qk-gMb">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3762,7 +3762,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3pj-aB-xTS">
-                                        <rect key="frame" x="0.0" y="920" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="964" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3pj-aB-xTS" id="VF5-9x-mSh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3790,7 +3790,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="md5-Qu-bMD">
-                                        <rect key="frame" x="0.0" y="964" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1008" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="md5-Qu-bMD" id="7Hw-fp-5ld">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3833,7 +3833,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vD5-v8-w9a">
-                                        <rect key="frame" x="0.0" y="1008" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1052" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vD5-v8-w9a" id="c9P-ih-yko">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -3876,7 +3876,7 @@ and periodicals</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rmw-v5-ME2">
-                                        <rect key="frame" x="0.0" y="1052" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1096" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rmw-v5-ME2" id="n3u-V7-fBQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>

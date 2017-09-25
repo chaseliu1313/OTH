@@ -255,7 +255,7 @@ struct ConnectionHelper{
                 completion(true,image!)
                 
             case .failure(_):
-                 print("error")
+                 
                 completion(false, UIImage())
             
             }
