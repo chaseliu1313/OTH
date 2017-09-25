@@ -669,11 +669,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferDeatil.swift"
-            timestampString = "527578693.005799"
+            timestampString = "528010191.193785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

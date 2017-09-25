@@ -22,6 +22,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var adminFee: UILabel!
     
     
+    @IBOutlet weak var ourPrice: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var offerDes: UITextView!
@@ -199,6 +200,18 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
             if success {
                 
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
+                let fp = json["event"]["full_price_string"].string
+                let op = json["event"]["our_price_string"].string
+                
+
+                if fp != "" {
+                
+                    self.fullPrice.text = fp!
+                    self.ourPrice.text = op!
+                  
+                    
+                
+                }
                 
                 let data : [String: Any] = snv[0]
                 
@@ -209,7 +222,11 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 self.address1.text = Offers.showandvenue.venue?.address1
                 self.address2.text = Offers.showandvenue.venue?.address2
                 self.City.text = Offers.showandvenue.venue?.city
-                
+//                self.fullPrice.text = json["event"]["full_price_string"].string
+//                self.ourPrice.text = json["event"]["our_price_string"].string
+//                
+//                self.membershipLevel.text = json["event"]["membership_levels"].string
+//                
                 let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
                 
                 self.state.text = zone
