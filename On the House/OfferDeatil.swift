@@ -10,7 +10,8 @@ import UIKit
 import Social
 class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
+    var shows: [Show] = []
+    var isProduct: Bool = false
     var OfferID : String = ""
     var offerDetail : Offer?
     var baseURL = "https://ma.on-the-house.org/events/"
@@ -61,8 +62,12 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
         
+        if self.isProduct {
+        cell.show = self.shows[indexPath.row]
         
-        cell.show = Offers.showandvenue.shows[indexPath.row]
+        }
+        else {
+            cell.show = Offers.showandvenue.shows[indexPath.row]}
         
         if cell.show != nil {
         
@@ -206,8 +211,29 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         //let url = command + OfferID
         ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
             if success {
-                
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
+                
+                if json["event"]["is_product"].bool! {
+                    
+                    self.isProduct = true
+                
+                    let data:[[String:Any]] = json["event"]["show_data"][0]["shows"].arrayObject as! [[String : Any]]
+                    
+                    
+                    
+                    
+                    for d in data {
+                    
+                    let show = Show(data: d)
+                        self.shows.append(show)
+                        
+                    
+                    }
+
+                
+                }
+                
+                else {
                 let fp = json["event"]["full_price_string"].string
                 let op = json["event"]["our_price_string"].string
                 
@@ -237,7 +263,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
 //                
                 let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
                 
-                self.state.text = zone
+                self.state.text = zone}
                 
                 
                 
