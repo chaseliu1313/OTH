@@ -81,7 +81,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
         questionid = System.getQuestion(question: Array[placementAnswer])
-        
+         if pickView==pickerView{
         if(placementAnswer == 0)
         {
             surveryAnswerLab.isHidden = false
@@ -102,7 +102,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
             surveryAnswerLab.isHidden = true
             surveyAnswertextfield.isHidden = true
         }
-        
+        }
     }
 
     /*
