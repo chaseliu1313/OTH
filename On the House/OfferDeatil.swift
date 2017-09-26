@@ -64,7 +64,28 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         if self.isProduct {
         cell.show = self.shows[indexPath.row]
-        
+            
+            
+                
+                if (cell.show?.is_admin_fee)!  {
+                    
+                    self.adminFee.text = "Admin Fee: 10"
+                    
+                }
+                else {
+                    
+                    self.adminFee.text = "Admin Fee: 0"
+                    
+                }
+                
+                let title = String(describing: cell.show!.button_text!)
+                print(title)
+                
+                cell.bookNow.setTitle(title, for: .normal)
+                let time = String(describing: cell.show!.date_formatted!)
+                cell.time.text = time
+            
+
         }
         else {
             cell.show = Offers.showandvenue.shows[indexPath.row]}
@@ -103,10 +124,13 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
+        if self.isProduct {
         
-      
+        return self.shows.count
+        }
+        else{
         return  Offers.showandvenue.shows.count
-        
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -227,7 +251,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     let show = Show(data: d)
                         self.shows.append(show)
                         
-                    
+                      print(show.button_text!)
                     }
 
                 
