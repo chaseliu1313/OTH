@@ -25,7 +25,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
    let command = "api/v1/events/current"
     
     
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -276,9 +276,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let didSelectRow = indexPath.row
         self.offerID = Offers.offerload[didSelectRow].id
-        
-       
-        
+         
         performSegue(withIdentifier: "showDetail", sender: self)
         
         
@@ -387,3 +385,6 @@ extension OfferingHomePage: sendOfferIDDelegate{
     }
     
 }
+
+
+

@@ -88,7 +88,9 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         }
         else {
+            
             cell.show = Offers.showandvenue.shows[indexPath.row]}
+            cell.isCompetition = self.offerDetail!.is_competition
         
         if cell.show != nil {
         
@@ -113,7 +115,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
-        
+        cell.sendInfo = self
        
         
         
@@ -341,6 +343,14 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
     }
     
+
+}
+
+extension OfferDeatil: sendBookingInfoProtocol {
+
+    func sendInfo(qty: String, error: String, isCom: Bool, show_id: String, shipping: Bool) {
+        print("\(qty) + \(error) + \(isCom) +\(show_id) +\(shipping) ")
+    }
 
 }
 

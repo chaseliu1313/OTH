@@ -19,8 +19,10 @@ class ShowTime: UITableViewCell {
     var userMembership: Int!
     var showMembership: Int!
     
-    
+    var isCompetition = false
     var show: Show?
+    
+    var sendInfo : sendBookingInfoProtocol!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,43 +37,38 @@ class ShowTime: UITableViewCell {
 
     @IBAction func bookNow(_ sender: Any) {
         let qty = ticketNumber.text!
+        var error = ""
+        let shipping = self.show!.shipping
         
         self.showMembership = Int(self.show!.membership_level_id!)
         self.userMembership = Int(UserDefaults.standard.string(forKey: "membership_level_id")!)
-        self.notifyUser(["This is a Gold Membership Event, Please Upgrade First"])
         
         if self.showMembership > userMembership
         {
-        self.notifyUser(["This is a Gold Membership Event, Please Upgrade First"])
+        error = "This is a Gold Membership Event, Please Upgrade First"
+            
         }
         
-        else
-        {
-        
-        }
+        let show_id = self.show!.id
         
         
+        sendInfo.sendInfo(qty: qty, error: error, isCom: self.isCompetition, show_id: show_id!, shipping: shipping!)
         
-        print("somtthing")
+        
+        
+        
     }
     
     
     
-    func notifyUser( _ message: [String] ) -> Void
-    {
-        let meg: String = message[0]
-        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        
-    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-        
-    }
+   
 }
 
 
 
 protocol sendBookingInfoProtocol {
-    func sendInfo(qty: Int)
+    func sendInfo(qty: String, error: String, isCom: Bool, show_id: String, shipping: Bool)
 }
+
+
 

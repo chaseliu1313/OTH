@@ -16,24 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var storyboard : UIStoryboard?
 
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-//        
-//        
-//        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-//        
-//        self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        
-//        if isLoggedIn {
-//            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "offer")
-//        
-//        }
-//        else{
-//           self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "login")
-//        }
-//        
-//        return true
-//    }
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
+        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        
+        self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        if isLoggedIn {
+            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "offer")
+        
+        }
+        else{
+           self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "login")
+        }
+        
+        return true
+    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return SDKApplicationDelegate.shared.application(app, open: url, options: options)
