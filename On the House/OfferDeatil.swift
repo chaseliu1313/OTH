@@ -11,14 +11,22 @@ import Social
 class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
-     var OfferID : String = ""
+    var OfferID : String = ""
     var offerDetail : Offer?
-     var baseURL = "https://ma.on-the-house.org/events/"
-   // var testURL = "api/v1/event/1834"
+    var baseURL = "https://ma.on-the-house.org/events/"
+    
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
-    let showtime = ["03/10/2017 8.00pm| Admin Fee $10.00","23/10/2017 6.00pm| Admin Fee $10.00",]
+    
    
+    
+    //verification vars
+    var is_competition = false
+    var sold_out = false
+    
+    
+    
+    
     @IBOutlet weak var adminFee: UILabel!
     
     

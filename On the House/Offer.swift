@@ -168,24 +168,29 @@ class Offer{
             self.showandvenue = nil
         }
         
-        func getMembershipLevel() -> Int {
-            
-            var level = 0
-            
-            if self.membership_levels == "Gold & Bronze Member Event" {
-                
-                level = 3
-            }
-            else if self.membership_levels == "Gold Member Event" {
-                
-                level = 9
-            }
-            
-            return level
-            
-        }
+        
+        
         
     }
+    
+    
+    func getMembershipLevel() -> Int {
+        
+        var level = 0
+        
+        if self.membership_levels == "Gold & Bronze Member Event" {
+            
+            level = 3
+        }
+        else if self.membership_levels == "Gold Member Event" {
+            
+            level = 9
+        }
+        
+        return level
+        
+    }
+
     
     func getImage() -> UIImage {
         
