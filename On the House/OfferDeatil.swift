@@ -19,7 +19,8 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     
-   
+    var sendToShipping : sendToShippingDelegate!
+    var sendToCompetition: sendToCompetitionDelegate!
     
     //verification vars
     var is_competition = false
@@ -329,6 +330,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
        let fileName = String(self.offerDetail!.rating)
         rating.image = UIImage(named: fileName)
+        self.membershipLevel.text = self.offerDetail!.membership_levels
         
         
     }
@@ -349,11 +351,50 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
 extension OfferDeatil: sendBookingInfoProtocol {
 
     func sendInfo(qty: String, error: String, isCom: Bool, show_id: String, shipping: Bool) {
-        print("\(qty) + \(error) + \(isCom) +\(show_id) +\(shipping) ")
+       
+        if error != "" {
+        
+        self.notifyUser([error])
+            
+        }
+        else{
+            
+            if isCom {
+            
+            self.performSegue(withIdentifier: "competition", sender: self)
+                
+                sendToCompetition.sendInfo(event_id: self.OfferID, member_id: UserDefaults.standard.string(forKey: "member_id")!)
+            }
+        
+            else{
+            
+                if shipping{
+                
+                    self.performSegue(withIdentifier: "withShipping", sender: self)
+                
+                }
+                
+                else{
+                
+                 self.performSegue(withIdentifier: "survey", sender: self)
+                    
+                }
+                
+            
+            }
+        
+        }
+        
     }
 
 }
 
+protocol sendToShippingDelegate {
+    func sendInfo(member_id: String, qty: String, show_id: String)
+}
 
+protocol sendToCompetitionDelegate {
+    func sendInfo(event_id: String, member_id: String)
+}
 
   
