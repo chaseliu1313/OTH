@@ -10,7 +10,8 @@ import UIKit
 import Social
 class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
+    var shows: [Show] = []
+    var isProduct: Bool = false
     var OfferID : String = ""
     var offerDetail : Offer?
     var baseURL = "https://ma.on-the-house.org/events/"
@@ -61,8 +62,33 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
         
-        
-        cell.show = Offers.showandvenue.shows[indexPath.row]
+        if self.isProduct {
+        cell.show = self.shows[indexPath.row]
+            
+            
+                
+                if (cell.show?.is_admin_fee)!  {
+                    
+                    self.adminFee.text = "Admin Fee: 10"
+                    
+                }
+                else {
+                    
+                    self.adminFee.text = "Admin Fee: 0"
+                    
+                }
+                
+                let title = String(describing: cell.show!.button_text!)
+                print(title)
+                
+                cell.bookNow.setTitle(title, for: .normal)
+                let time = String(describing: cell.show!.date_formatted!)
+                cell.time.text = time
+            
+
+        }
+        else {
+            cell.show = Offers.showandvenue.shows[indexPath.row]}
         
         if cell.show != nil {
         
@@ -98,10 +124,13 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
+        if self.isProduct {
         
-      
+        return self.shows.count
+        }
+        else{
         return  Offers.showandvenue.shows.count
-        
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -206,8 +235,29 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         //let url = command + OfferID
         ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
             if success {
-                
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
+                
+                if json["event"]["is_product"].bool! {
+                    
+                    self.isProduct = true
+                
+                    let data:[[String:Any]] = json["event"]["show_data"][0]["shows"].arrayObject as! [[String : Any]]
+                    
+                    
+                    
+                    
+                    for d in data {
+                    
+                    let show = Show(data: d)
+                        self.shows.append(show)
+                        
+                      print(show.button_text!)
+                    }
+
+                
+                }
+                
+                else {
                 let fp = json["event"]["full_price_string"].string
                 let op = json["event"]["our_price_string"].string
                 
@@ -237,7 +287,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
 //                
                 let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
                 
-                self.state.text = zone
+                self.state.text = zone}
                 
                 
                 
