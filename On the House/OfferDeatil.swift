@@ -363,7 +363,7 @@ extension OfferDeatil: sendBookingInfoProtocol {
             
             self.performSegue(withIdentifier: "competition", sender: self)
                 
-                sendToCompetition.sendInfo(event_id: self.OfferID, member_id: UserDefaults.standard.string(forKey: "member_id")!)
+                self.sendToCompetition.sendInfo(event_id: self.OfferID, member_id: UserDefaults.standard.string(forKey: "member_id")!)
             }
         
             else{

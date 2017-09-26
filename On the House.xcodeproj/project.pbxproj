@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		260CCC4A1F7118A6006FE65E /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260CCC491F7118A6006FE65E /* ShowTime.swift */; };
+		5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */; };
 		522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */; };
 		526164021F66222E0028A63F /* On_the_HouseUITestsweek7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */; };
 		52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E71F56AD8C00411EA0 /* System.swift */; };
@@ -31,7 +32,6 @@
 		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E859D9971F7A257600293955 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E859D9961F7A257600293955 /* Survey.swift */; };
-		E859D9991F7A2F0D00293955 /* CompetitionTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E859D9981F7A2F0D00293955 /* CompetitionTickets.swift */; };
 		E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42921F6007B700DE142E /* OfferingHomePage.swift */; };
 		E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42961F60095B00DE142E /* OfferTableCell.swift */; };
 		E88F429B1F600DF800DE142E /* event3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42981F600DF800DE142E /* event3.jpg */; };
@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		260CCC491F7118A6006FE65E /* ShowTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
+		5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionTickets.swift; sourceTree = "<group>"; };
 		522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		526163FF1F66222E0028A63F /* On the HouseUITestsweek7.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the HouseUITestsweek7.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_the_HouseUITestsweek7.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		E825E6E81F61404C00277097 /* event4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event4.jpg; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E859D9961F7A257600293955 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
-		E859D9981F7A2F0D00293955 /* CompetitionTickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionTickets.swift; sourceTree = "<group>"; };
 		E88F42921F6007B700DE142E /* OfferingHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingHomePage.swift; sourceTree = "<group>"; };
 		E88F42961F60095B00DE142E /* OfferTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableCell.swift; sourceTree = "<group>"; };
 		E88F42981F600DF800DE142E /* event3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event3.jpg; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
-				E859D9981F7A2F0D00293955 /* CompetitionTickets.swift */,
+				5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
@@ -445,8 +445,8 @@
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
 				52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */,
 				E859D9971F7A257600293955 /* Survey.swift in Sources */,
-				E859D9991F7A2F0D00293955 /* CompetitionTickets.swift in Sources */,
 				A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */,
+				5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */,
 				71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -4356,7 +4356,7 @@ and periodicals</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
-                                    <action selector="return:" destination="Qsq-qb-4y9" eventType="touchUpInside" id="ac0-uR-cc0"/>
+                                    <action selector="return:" destination="Qsq-qb-4y9" eventType="touchUpInside" id="ZPh-PH-S4Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNK-Zh-QE4">
@@ -4366,6 +4366,9 @@ and periodicals</string>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submit:" destination="Qsq-qb-4y9" eventType="touchUpInside" id="3Lw-59-7nS"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-MK-1A4">
                                 <rect key="frame" x="64" y="295" width="309" height="30"/>
@@ -4385,8 +4388,7 @@ and periodicals</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="competitionAnswer" destination="dUV-MK-1A4" id="sIO-5a-NcP"/>
-                        <outlet property="competitionQuestion" destination="tMO-6a-Vw4" id="FRf-iV-Oek"/>
+                        <outlet property="answer" destination="dUV-MK-1A4" id="bPV-dr-d6L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2G-vm-JrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
