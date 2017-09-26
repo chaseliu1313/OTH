@@ -30,6 +30,8 @@
 		E825E6EA1F61404C00277097 /* event5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E71F61404C00277097 /* event5.jpg */; };
 		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
+		E859D9971F7A257600293955 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E859D9961F7A257600293955 /* Survey.swift */; };
+		E859D9991F7A2F0D00293955 /* CompetitionTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E859D9981F7A2F0D00293955 /* CompetitionTickets.swift */; };
 		E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42921F6007B700DE142E /* OfferingHomePage.swift */; };
 		E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42961F60095B00DE142E /* OfferTableCell.swift */; };
 		E88F429B1F600DF800DE142E /* event3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42981F600DF800DE142E /* event3.jpg */; };
@@ -83,6 +85,8 @@
 		E825E6E71F61404C00277097 /* event5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event5.jpg; sourceTree = "<group>"; };
 		E825E6E81F61404C00277097 /* event4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event4.jpg; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
+		E859D9961F7A257600293955 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		E859D9981F7A2F0D00293955 /* CompetitionTickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionTickets.swift; sourceTree = "<group>"; };
 		E88F42921F6007B700DE142E /* OfferingHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingHomePage.swift; sourceTree = "<group>"; };
 		E88F42961F60095B00DE142E /* OfferTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableCell.swift; sourceTree = "<group>"; };
 		E88F42981F600DF800DE142E /* event3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event3.jpg; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
+				E859D9981F7A2F0D00293955 /* CompetitionTickets.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
@@ -174,6 +179,7 @@
 				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
+				E859D9961F7A257600293955 /* Survey.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -438,6 +444,8 @@
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
 				52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */,
+				E859D9971F7A257600293955 /* Survey.swift in Sources */,
+				E859D9991F7A2F0D00293955 /* CompetitionTickets.swift in Sources */,
 				A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */,
 				71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */,
 			);

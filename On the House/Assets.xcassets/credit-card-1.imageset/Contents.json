@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "share.png",
+      "filename" : "credit-card.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "share-2.png",
+      "filename" : "credit-card-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "share3.png",
+      "filename" : "credit-card-3.png",
       "scale" : "3x"
     }
   ],
