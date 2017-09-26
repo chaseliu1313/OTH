@@ -63,33 +63,7 @@ class OfferTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func changeButton(){
-        
-        let skip = UserDefaults.standard.bool(forKey: "didSkip")
-        
-        if skip == true{
-            didSkip = true
-            checkoutButton.setTitle("Register/Login", for: .normal)
-            
-            
-        }else if self.offer.membership_levels.contains("Bronze"){
-        
-         // checkoutButton.setTitle("Upgrade to gold", for: .normal)
-            checkoutButton.setTitle("Check Out", for: .normal)
-            didSkip = false
-        
-        }
-       
-            
-        else {
-            
-            
-            checkoutButton.setTitle("Check Out", for: .normal)
-            didSkip = false
-            
-            
-            
-        }}
+   
         
     
 }
