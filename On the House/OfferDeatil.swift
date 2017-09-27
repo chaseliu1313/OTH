@@ -268,7 +268,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 if fp != "" {
                 
                     self.fullPrice.text = fp!
-                    self.ourPrice.text = op!
+                    self.ourPrice.text = "Our Price: " + op!
                   
                     
                 

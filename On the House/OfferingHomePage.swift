@@ -134,7 +134,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         loadOffers()
         
-        tableView.reloadData()
+        //tableView.reloadData()
         
         
     }

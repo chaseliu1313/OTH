@@ -18,8 +18,8 @@ class CompetitionTickets: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-  let detailVC = storyboard?.instantiateViewController(withIdentifier: "OfferDetail") as! OfferDeatil
+       let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+  let detailVC = storyboard.instantiateViewController(withIdentifier: "OfferDetail") as! OfferDeatil
     detailVC.sendToCompetition = self
         // Do any additional setup after loading the view.
     }
