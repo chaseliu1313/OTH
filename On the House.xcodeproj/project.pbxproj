@@ -15,6 +15,7 @@
 		52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */; };
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
 		715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715872BD1F5E66F800A315D8 /* TandCViewController.swift */; };
+		71ACD9EF1F7B48C00070CC61 /* paymentWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */; };
 		71C7DC811F78BF2A005BF028 /* shipInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */; };
 		71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB911F611BC80029D3D0 /* Checkbox.swift */; };
 		71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */; };
@@ -67,6 +68,7 @@
 		6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_the_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7101E4F11F4D420F00237211 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		715872BD1F5E66F800A315D8 /* TandCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TandCViewController.swift; sourceTree = "<group>"; };
+		71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentWebViewViewController.swift; sourceTree = "<group>"; };
 		71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shipInfoViewController.swift; sourceTree = "<group>"; };
 		71E1FB911F611BC80029D3D0 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On the House-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				E859D9961F7A257600293955 /* Survey.swift */,
+				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
 				71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
+				71ACD9EF1F7B48C00070CC61 /* paymentWebViewViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
