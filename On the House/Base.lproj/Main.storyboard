@@ -1113,7 +1113,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17T-a0-fBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3714" y="1438"/>
+            <point key="canvasLocation" x="5548" y="325"/>
         </scene>
         <!--TandC View Controller-->
         <scene sceneID="BID-QI-J1j">
@@ -1299,12 +1299,12 @@ and periodicals</string>
                         <segue destination="yYL-hF-kV6" kind="popoverPresentation" identifier="popover" popoverAnchorBarButtonItem="ue5-hx-ca5" id="hXT-ZC-i6d">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
-                        <segue destination="HFn-xT-d1E" kind="modal" identifier="jumpUpgrade" id="tqq-1x-Emi"/>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="jumpReg" id="OlO-BT-Hwe"/>
                         <segue destination="qvI-Ak-Ljz" kind="presentation" identifier="showDetail" id="zQV-sm-Kn7"/>
                         <segue destination="Wp8-jt-cfs" kind="popoverPresentation" identifier="pop" popoverAnchorBarButtonItem="ue5-hx-ca5" id="X8T-YL-Gpg">
                             <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                         </segue>
+                        <segue destination="jd6-iR-hjk" kind="modal" identifier="jumpUpgrade" id="D43-3y-M5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-rT-gjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4688,6 +4688,7 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N44-1v-OrC"/>
-        <segue reference="6IU-LM-w6o"/>
+        <segue reference="OlO-BT-Hwe"/>
+        <segue reference="D43-3y-M5k"/>
     </inferredMetricsTieBreakers>
 </document>
