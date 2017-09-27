@@ -220,14 +220,18 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let skip = UserDefaults.standard.bool(forKey: "didSkip")
         let level: Int = cell.offer.getMembershipLevel()
-        let memberLevel = Int(UserDefaults.standard.string(forKey: "membership_level_id")!)
         
-        print(level)
-        print(memberLevel!)
+        var memberLevel = 0
+        
+        if let Mlevel =  UserDefaults.standard.string(forKey: "membership_level_id")
+        {
+        memberLevel = Int(Mlevel)!
+        }
+        
         
         //change button
         
-        if skip == true{
+        if skip == true && memberLevel != 0{
             
             cell.checkoutButton.setTitle("Register/Login", for: .normal)
             cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpReg), for: .touchUpInside)
@@ -237,7 +241,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         else{
         
-        if (level > memberLevel!) {
+        if (level > memberLevel) {
             
             cell.checkoutButton.addTarget(self, action: #selector(OfferingHomePage.jumpUpgrade), for: .touchUpInside)
             cell.checkoutButton.setTitle("Upgrad to Gold", for: .normal)
