@@ -21,17 +21,19 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var member_id = ""
     var show_id = ""
     
-    let key = Notification.Name(rawValue: shippingNotificationKey)
+    let key = Notification.Name(rawValue: competitionNotificationKey)
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
     
     @IBOutlet weak var answerlabel: UILabel!
     
     @IBOutlet weak var answertextfield: UITextField!
     
     var Array = ["Ticketek/TicketMaster/Moshtix", "Flyer", "Cafe", "Word of Mouth", "If Google Search, What did you search for?", "Wich website?", "Twitter", "Facebook", "Provide details of how you heard of this show?", "www.itsonthehouse.com.au", "ON THE HOUSE Newsletter", "Another Newsletter"]
+    
+    var data: [String: String] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +114,15 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     @IBAction func `return`(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    @IBAction func submit(_ sender: Any) {
+        
+        print(self.data["member_id"])
+    }
+    
+    
     
     func updateValue(notification: NSNotification){
         

@@ -19,6 +19,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     
+    var passData: [String: String] = [:]
     
     
     //verification vars
@@ -48,7 +49,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(OfferID)
+        //print(OfferID)
         offerDes.backgroundColor = UIColor.clear
         self.getDetail()
         showStatus.delegate = self
@@ -79,7 +80,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 }
                 
                 let title = String(describing: cell.show!.button_text!)
-                print(title)
+               // print(title)
                 
                 cell.bookNow.setTitle(title, for: .normal)
                 let time = String(describing: cell.show!.date_formatted!)
@@ -106,7 +107,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
             }
             
             let title = String(describing: cell.show!.button_text!)
-            print(title)
+            //print(title)
             
             cell.bookNow.setTitle(title, for: .normal)
             let time = String(describing: cell.show!.date_formatted!)
@@ -253,7 +254,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     let show = Show(data: d)
                         self.shows.append(show)
                         
-                      print(show.button_text!)
+                      //print(show.button_text!)
                     }
 
                 
@@ -296,7 +297,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 self.showStatus.reloadData()
                 
-                print(Offers.showandvenue.shows.count)
+                //print(Offers.showandvenue.shows.count)
             }
             else{
                 
@@ -344,6 +345,20 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is Survey    {
+        
+            let vc = segue.destination as? Survey
+            vc?.data = self.passData
+        }
+        
+        else if segue.destination is shipInfoViewController {
+        
+            let vc = segue.destination as? shipInfoViewController
+            vc?.data = self.passData
+        }
+    }
+    
 
 }
 
@@ -353,15 +368,15 @@ extension OfferDeatil: sendBookingInfoProtocol {
        
         let member_id = UserDefaults.standard.string(forKey: "member_id")!
         let event_id = self.OfferID
-        let quantity = qty
-        let showID = show_id
+        
         
         let name = Notification.Name(rawValue: competitionNotificationKey)
         
         
-        let data: [String: String] = ["member_id": member_id, "event_id": event_id]
+        let data: [String: String] = ["member_id": member_id, "event_id": event_id,"show_id": show_id, "qty": qty]
+        self.passData = data
         
-        
+        NotificationCenter.default.post(name: name, object: nil, userInfo: data)
         if error != "" {
         
         self.notifyUser([error])
@@ -389,20 +404,14 @@ extension OfferDeatil: sendBookingInfoProtocol {
                 
                     self.performSegue(withIdentifier: "withShipping", sender: self)
                     
-                     let name = Notification.Name(rawValue: shippingNotificationKey)
-                    let data :[String: String] = ["show_id": show_id, "member_id": member_id, "qty": qty]
-                    
-                    NotificationCenter.default.post(name: name, object: nil, userInfo: data)
-                    
+                       NotificationCenter.default.post(name: name, object: nil, userInfo: data)
                 
                 }
                 
                 else{
                 
                  self.performSegue(withIdentifier: "survey", sender: self)
-                    let name = Notification.Name(rawValue: surveyNotificationKey)
-                    let data :[String: String] = ["show_id": showID, "member_id": member_id, "qty": quantity]
-                    NotificationCenter.default.post(name: name, object: nil, userInfo: data)
+                     NotificationCenter.default.post(name: name, object: nil, userInfo: data)
                     
                     
                 }

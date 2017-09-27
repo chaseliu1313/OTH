@@ -51,6 +51,8 @@ class CompetitionTickets: UIViewController {
     
         guard let memberID = notification.userInfo?["member_id"] as? String
         , let eventID = notification.userInfo?["event_id"] as? String
+        , let qty = notification.userInfo?["qty"] as? String
+        , let showID = notification.userInfo?["show_id"] as? String
             else
         {
         return
@@ -58,8 +60,10 @@ class CompetitionTickets: UIViewController {
     
         self.member_id = memberID
         self.event_id = eventID
-        print(self.member_id )
+        print(self.member_id)
         print(self.event_id)
+        print(qty)
+        print(showID)
     }
     
     func createObserver(){

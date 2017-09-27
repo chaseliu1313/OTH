@@ -23,12 +23,12 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     var qty = ""
     var member_id = ""
     var show_id = ""
+    var data: [String: String] = [:]
+    let key = Notification.Name(rawValue: competitionNotificationKey)
     
-    let key = Notification.Name(rawValue: surveyNotificationKey)
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
     
     var Array = ["If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     var questionid = String()
@@ -89,6 +89,9 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
+    @IBAction func submit(_ sender: Any) {
+        
+    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
@@ -121,17 +124,25 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func updateValue(notification: NSNotification){
+    
+    
+    func updateValue(notification: NSNotification) {
         
-        guard let memberID = notification.userInfo?["member_id"] as? String, let showID = notification.userInfo?["show_id"] as? String, let qty = notification.userInfo?["qty"] as? String else {
+        guard let memberID = notification.userInfo?["member_id"] as? String
+            , let eventID = notification.userInfo?["event_id"] as? String
+            , let qty = notification.userInfo?["qty"] as? String
+            , let showID = notification.userInfo?["show_id"] as? String
+            else
+        {
             return
         }
         
-        self.member_id = memberID
-        self.show_id = showID
-        self.qty = qty
-        print("\(self.member_id)+ \(self.show_id) + \(self.qty)")
-        
+//        self.member_id = memberID
+//        self.event_id = eventID
+//        print(self.member_id)
+//        print(self.event_id)
+        print(qty)
+        print(showID)
     }
     
     func createObserver(){

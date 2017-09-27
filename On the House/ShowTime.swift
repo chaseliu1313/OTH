@@ -41,12 +41,26 @@ class ShowTime: UITableViewCell {
         let shipping = self.show!.shipping!
         
         self.showMembership = Int(self.show!.membership_level_id!)
-        self.userMembership = Int(UserDefaults.standard.string(forKey: "membership_level_id")!)
+       
+        
+        var memberLevel = 0
+        
+        if let Mlevel =  UserDefaults.standard.string(forKey: "membership_level_id")
+        {
+            memberLevel = Int(Mlevel)!
+        }
+        
+         self.userMembership = memberLevel
         
         if self.showMembership > userMembership
         {
         error = "This is a Gold Membership Event, Please Upgrade First"
             
+        }
+        if qty == "" {
+            
+        error = "Please Enter the Quantity"
+        
         }
         
         let show_id = self.show!.id
