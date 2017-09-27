@@ -8,6 +8,8 @@
 
 import UIKit
 
+let shippingNotificationKey = "key.shippingInfo"
+
 class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
     
     @IBOutlet weak var pickview: UIPickerView!
@@ -15,6 +17,8 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var placementAnswer = 0
     
     var questionid = String()
+    
+    
     
     @IBOutlet weak var answerlabel: UILabel!
     

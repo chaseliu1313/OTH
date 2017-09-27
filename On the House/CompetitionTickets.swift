@@ -8,19 +8,25 @@
 
 import UIKit
 
+let competitionNotificationKey = "key.competition"
+
 class CompetitionTickets: UIViewController {
 
     @IBOutlet weak var answer: UITextField!
     var event_id = ""
     var member_id = ""
- 
-  
+    
+    let key = Notification.Name(rawValue: competitionNotificationKey)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-  let detailVC = storyboard.instantiateViewController(withIdentifier: "OfferDetail") as! OfferDeatil
-    detailVC.sendToCompetition = self
+      self.createObserver()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -37,19 +43,29 @@ class CompetitionTickets: UIViewController {
   
     @IBAction func submit(_ sender: Any) {
         
-       
+      
         
-        print(member_id)
         
+    }
+    func updateValue(notification: NSNotification) {
+    
+        guard let memberID = notification.userInfo?["member_id"] as? String
+        , let eventID = notification.userInfo?["event_id"] as? String
+            else
+        {
+        return
+        }
+    
+        self.member_id = memberID
+        self.event_id = eventID
+        print(self.member_id )
+        print(self.event_id)
+    }
+    
+    func createObserver(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateValue(notification:)), name: key, object: nil)
+    
     }
 
 }
 
-extension CompetitionTickets: sendToCompetitionDelegate {
-
-    func sendInfo(event_id: String, member_id: String) {
-        self.member_id = member_id
-        self.event_id = event_id
-    }
-
-}

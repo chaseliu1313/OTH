@@ -19,8 +19,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var parameter = ["member_id": ""]
     var command = "api/v1/event/"
     
-    var sendToShipping : sendToShippingDelegate!
-    var sendToCompetition: sendToCompetitionDelegate!
+    
     
     //verification vars
     var is_competition = false
@@ -359,11 +358,21 @@ extension OfferDeatil: sendBookingInfoProtocol {
         }
         else{
             
+            
+            
             if isCom {
             
             self.performSegue(withIdentifier: "competition", sender: self)
+                let name = Notification.Name(rawValue: competitionNotificationKey)
+                let member_id = UserDefaults.standard.string(forKey: "member_id")!
+                let event_id = self.OfferID
                 
-                self.sendToCompetition.sendInfo(event_id: self.OfferID, member_id: UserDefaults.standard.string(forKey: "member_id")!)
+                let data: [String: String] = ["member_id": member_id, "event_id": event_id]
+                
+                
+                NotificationCenter.default.post(name: name, object: nil, userInfo: data)
+               
+                
             }
         
             else{
@@ -371,6 +380,7 @@ extension OfferDeatil: sendBookingInfoProtocol {
                 if shipping{
                 
                     self.performSegue(withIdentifier: "withShipping", sender: self)
+                    
                 
                 }
                 
@@ -389,12 +399,6 @@ extension OfferDeatil: sendBookingInfoProtocol {
 
 }
 
-protocol sendToShippingDelegate {
-    func sendInfo(member_id: String, qty: String, show_id: String)
-}
 
-protocol sendToCompetitionDelegate {
-    func sendInfo(event_id: String, member_id: String)
-}
 
   

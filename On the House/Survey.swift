@@ -8,6 +8,8 @@
 
 import UIKit
 
+let surveyNotificationKey = "key.survey"
+
 class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
 
     
