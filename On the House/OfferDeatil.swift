@@ -404,14 +404,14 @@ extension OfferDeatil: sendBookingInfoProtocol {
                 
                     self.performSegue(withIdentifier: "withShipping", sender: self)
                     
-                       NotificationCenter.default.post(name: name, object: nil, userInfo: data)
+                    
                 
                 }
                 
                 else{
                 
                  self.performSegue(withIdentifier: "survey", sender: self)
-                     NotificationCenter.default.post(name: name, object: nil, userInfo: data)
+                     
                     
                     
                 }

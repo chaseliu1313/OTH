@@ -8,7 +8,7 @@
 
 import UIKit
 
-let shippingNotificationKey = "key.shippingInfo"
+
 
 class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
     
@@ -21,11 +21,8 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var member_id = ""
     var show_id = ""
     
-    let key = Notification.Name(rawValue: competitionNotificationKey)
     
-//    deinit {
-//        NotificationCenter.default.removeObserver(self)
-//    }
+
     
     @IBOutlet weak var answerlabel: UILabel!
     
@@ -119,26 +116,10 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     @IBAction func submit(_ sender: Any) {
         
-        print(self.data["member_id"])
-    }
-    
-    
-    
-    func updateValue(notification: NSNotification){
-        
-        guard let memberID = notification.userInfo?["member_id"] as? String, let showID = notification.userInfo?["show_id"] as? String, let qty = notification.userInfo?["qty"] as? String else {
-            return
-        }
-        
-        self.member_id = memberID
-        self.show_id = showID
-        self.qty = qty
-        print("\(self.member_id) + \(self.show_id) + \(self.qty)")
-       
-    }
-    
-    func createObserver(){
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateValue(notification:)), name: key, object: nil)
         
     }
+    
+    
+    
+   
 }
