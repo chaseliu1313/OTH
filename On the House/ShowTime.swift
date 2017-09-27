@@ -38,7 +38,7 @@ class ShowTime: UITableViewCell {
     @IBAction func bookNow(_ sender: Any) {
         let qty = ticketNumber.text!
         var error = ""
-        let shipping = self.show!.shipping
+        let shipping = self.show!.shipping!
         
         self.showMembership = Int(self.show!.membership_level_id!)
         self.userMembership = Int(UserDefaults.standard.string(forKey: "membership_level_id")!)
@@ -52,7 +52,7 @@ class ShowTime: UITableViewCell {
         let show_id = self.show!.id
         
         
-        sendInfo.sendInfo(qty: qty, error: error, isCom: self.isCompetition, show_id: show_id!, shipping: shipping!)
+        sendInfo.sendInfo(qty: qty, error: error, isCom: self.isCompetition, show_id: show_id!, shipping: shipping)
         
         
         

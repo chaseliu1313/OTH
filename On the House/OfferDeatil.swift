@@ -351,6 +351,17 @@ extension OfferDeatil: sendBookingInfoProtocol {
 
     func sendInfo(qty: String, error: String, isCom: Bool, show_id: String, shipping: Bool) {
        
+        let member_id = UserDefaults.standard.string(forKey: "member_id")!
+        let event_id = self.OfferID
+        let quantity = qty
+        let showID = show_id
+        
+        let name = Notification.Name(rawValue: competitionNotificationKey)
+        
+        
+        let data: [String: String] = ["member_id": member_id, "event_id": event_id]
+        
+        
         if error != "" {
         
         self.notifyUser([error])
@@ -358,16 +369,13 @@ extension OfferDeatil: sendBookingInfoProtocol {
         }
         else{
             
+           
             
             
             if isCom {
             
             self.performSegue(withIdentifier: "competition", sender: self)
-                let name = Notification.Name(rawValue: competitionNotificationKey)
-                let member_id = UserDefaults.standard.string(forKey: "member_id")!
-                let event_id = self.OfferID
                 
-                let data: [String: String] = ["member_id": member_id, "event_id": event_id]
                 
                 
                 NotificationCenter.default.post(name: name, object: nil, userInfo: data)
@@ -381,12 +389,21 @@ extension OfferDeatil: sendBookingInfoProtocol {
                 
                     self.performSegue(withIdentifier: "withShipping", sender: self)
                     
+                     let name = Notification.Name(rawValue: shippingNotificationKey)
+                    let data :[String: String] = ["show_id": show_id, "member_id": member_id, "qty": qty]
+                    
+                    NotificationCenter.default.post(name: name, object: nil, userInfo: data)
+                    
                 
                 }
                 
                 else{
                 
                  self.performSegue(withIdentifier: "survey", sender: self)
+                    let name = Notification.Name(rawValue: surveyNotificationKey)
+                    let data :[String: String] = ["show_id": showID, "member_id": member_id, "qty": quantity]
+                    NotificationCenter.default.post(name: name, object: nil, userInfo: data)
+                    
                     
                 }
                 
