@@ -28,6 +28,10 @@
 		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
+		B7F829361F7B97B000CF5A46 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F829351F7B97B000CF5A46 /* DateUtility.swift */; };
+		B7F829381F7B97D100CF5A46 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F829371F7B97D100CF5A46 /* APIHandler.swift */; };
+		B7F8293B1F7B97E700CF5A46 /* MHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F829391F7B97E700CF5A46 /* MHTableViewCell.swift */; };
+		B7F8293C1F7B97E700CF5A46 /* MHUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F8293A1F7B97E700CF5A46 /* MHUIViewController.swift */; };
 		E825E6E91F61404C00277097 /* event6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E61F61404C00277097 /* event6.jpg */; };
 		E825E6EA1F61404C00277097 /* event5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E71F61404C00277097 /* event5.jpg */; };
 		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
@@ -83,6 +87,10 @@
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		B7F829351F7B97B000CF5A46 /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		B7F829371F7B97D100CF5A46 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		B7F829391F7B97E700CF5A46 /* MHTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHTableViewCell.swift; sourceTree = "<group>"; };
+		B7F8293A1F7B97E700CF5A46 /* MHUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHUIViewController.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
 		E825E6E61F61404C00277097 /* event6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event6.jpg; sourceTree = "<group>"; };
 		E825E6E71F61404C00277097 /* event5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event5.jpg; sourceTree = "<group>"; };
@@ -183,6 +191,8 @@
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				E859D9961F7A257600293955 /* Survey.swift */,
 				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
+				B7F829391F7B97E700CF5A46 /* MHTableViewCell.swift */,
+				B7F8293A1F7B97E700CF5A46 /* MHUIViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -193,6 +203,8 @@
 				A2F3FD221F564D73006E23CA /* NewMemberData.swift */,
 				52BBB7E71F56AD8C00411EA0 /* System.swift */,
 				52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */,
+				B7F829351F7B97B000CF5A46 /* DateUtility.swift */,
+				B7F829371F7B97D100CF5A46 /* APIHandler.swift */,
 				A26AA50E1F6143AA00296DA3 /* Offer.swift */,
 			);
 			name = Module;
@@ -430,11 +442,14 @@
 			files = (
 				715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */,
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
+				B7F8293B1F7B97E700CF5A46 /* MHTableViewCell.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
 				A257A1961F700593008D2DA3 /* FilterTableViewController.swift in Sources */,
 				71C7DC811F78BF2A005BF028 /* shipInfoViewController.swift in Sources */,
 				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
+				B7F829381F7B97D100CF5A46 /* APIHandler.swift in Sources */,
+				B7F829361F7B97B000CF5A46 /* DateUtility.swift in Sources */,
 				522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */,
 				260CCC4A1F7118A6006FE65E /* ShowTime.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
@@ -444,6 +459,7 @@
 				71ACD9EF1F7B48C00070CC61 /* paymentWebViewViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
+				B7F8293C1F7B97E700CF5A46 /* MHUIViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
 				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
