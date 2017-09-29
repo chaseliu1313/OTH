@@ -13,7 +13,11 @@ class sideMenuTableViewController: UITableViewController {
     @IBAction func logOut(_ sender: UIButton) {
         
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
-    UserDefaults.standard.synchronize()}
+        UserDefaults.standard.synchronize()
+        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -86,7 +86,7 @@ class LoginViewController: UIViewController{
                     dict = result as! [String : AnyObject]
                     LoginViewController.userfbinfo = dict
                     if let email = LoginViewController.userfbinfo["email"] as? String{
-                        
+  
                     
                     /*if(email == UserDefaults.standard.string(forKey: "email")!){
                         self.isauser = true
@@ -202,7 +202,7 @@ class LoginViewController: UIViewController{
     
     //check log in status
     func isloggedIn() -> Bool {
-        
+
         return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
     
@@ -214,7 +214,7 @@ class LoginViewController: UIViewController{
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
         
-        
+    
     }
     
     

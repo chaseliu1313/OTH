@@ -54,9 +54,6 @@ class ShowTime: UITableViewCell {
         
         sendInfo.sendInfo(qty: qty, error: error, isCom: self.isCompetition, show_id: show_id!, shipping: shipping)
         
-        
-        
-        
     }
     
     

@@ -4164,7 +4164,7 @@ and periodicals</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-pn-BGO">
-                                                    <rect key="frame" x="-1" y="-1" width="410.5" height="44"/>
+                                                    <rect key="frame" x="-2" y="-1" width="410" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <items>
                                                         <navigationItem id="4kB-oJ-7Vg">
@@ -4687,8 +4687,8 @@ and periodicals</string>
         <image name="webwxgetmsgimg" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N44-1v-OrC"/>
-        <segue reference="OlO-BT-Hwe"/>
+        <segue reference="5wL-K2-LhC"/>
+        <segue reference="sTr-nW-xrY"/>
         <segue reference="D43-3y-M5k"/>
     </inferredMetricsTieBreakers>
 </document>
