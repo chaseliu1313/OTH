@@ -29,7 +29,7 @@
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
 		B799F91D1F7E564F00A08A79 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799F91C1F7E564F00A08A79 /* LoginViewControllerTests.swift */; };
-		B799F9251F7E98B300A08A79 /* On_the_HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799F9241F7E98B300A08A79 /* On_the_HouseTests.swift */; };
+		B799F92E1F7FF11C00A08A79 /* NewMemberDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799F92D1F7FF11C00A08A79 /* NewMemberDataTests.swift */; };
 		B7F829361F7B97B000CF5A46 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F829351F7B97B000CF5A46 /* DateUtility.swift */; };
 		B7F829381F7B97D100CF5A46 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F829371F7B97D100CF5A46 /* APIHandler.swift */; };
 		B7F8293B1F7B97E700CF5A46 /* MHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F829391F7B97E700CF5A46 /* MHTableViewCell.swift */; };
@@ -44,7 +44,7 @@
 		E88F429B1F600DF800DE142E /* event3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42981F600DF800DE142E /* event3.jpg */; };
 		E88F429C1F600DF800DE142E /* event2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42991F600DF800DE142E /* event2.jpg */; };
 		E88F429D1F600DF800DE142E /* event1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F429A1F600DF800DE142E /* event1.jpg */; };
-		E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */; };
+		E897877D1F68F6D700E0B3F9 /* OfferDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897877C1F68F6D700E0B3F9 /* OfferDetail.swift */; };
 		E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C0ABA81F57102500143885 /* MyMembership.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
@@ -98,8 +98,9 @@
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		B799F91C1F7E564F00A08A79 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		B799F9221F7E98B300A08A79 /* On the HouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the HouseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B799F9241F7E98B300A08A79 /* On_the_HouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_the_HouseTests.swift; sourceTree = "<group>"; };
 		B799F9261F7E98B300A08A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B799F92C1F7FF11B00A08A79 /* On the HouseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On the HouseTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B799F92D1F7FF11C00A08A79 /* NewMemberDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberDataTests.swift; sourceTree = "<group>"; };
 		B7F829351F7B97B000CF5A46 /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		B7F829371F7B97D100CF5A46 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		B7F829391F7B97E700CF5A46 /* MHTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,7 +116,7 @@
 		E88F42981F600DF800DE142E /* event3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event3.jpg; sourceTree = "<group>"; };
 		E88F42991F600DF800DE142E /* event2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event2.jpg; sourceTree = "<group>"; };
 		E88F429A1F600DF800DE142E /* event1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event1.jpg; sourceTree = "<group>"; };
-		E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferDeatil.swift; sourceTree = "<group>"; };
+		E897877C1F68F6D700E0B3F9 /* OfferDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferDetail.swift; sourceTree = "<group>"; };
 		E8C0ABA81F57102500143885 /* MyMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMembership.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,7 +190,7 @@
 		A2F3FD201F564D42006E23CA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
+				E897877C1F68F6D700E0B3F9 /* OfferDetail.swift */,
 				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
 				260CCC491F7118A6006FE65E /* ShowTime.swift */,
 				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
@@ -234,10 +235,19 @@
 		B799F9231F7E98B300A08A79 /* On the HouseTests */ = {
 			isa = PBXGroup;
 			children = (
-				B799F9241F7E98B300A08A79 /* On_the_HouseTests.swift */,
+				B799F92F1F8000F800A08A79 /* ModelUnitTests */,
 				B799F9261F7E98B300A08A79 /* Info.plist */,
+				B799F92C1F7FF11B00A08A79 /* On the HouseTests-Bridging-Header.h */,
 			);
 			path = "On the HouseTests";
+			sourceTree = "<group>";
+		};
+		B799F92F1F8000F800A08A79 /* ModelUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B799F92D1F7FF11C00A08A79 /* NewMemberDataTests.swift */,
+			);
+			name = ModelUnitTests;
 			sourceTree = "<group>";
 		};
 		D23CCD913574D8C2F9A40D6C /* Pods */ = {
@@ -359,6 +369,7 @@
 					B799F9211F7E98B300A08A79 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = QQL2HVN3GW;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E8CE62921F4AA19400D9EF76;
 					};
@@ -505,7 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B799F9251F7E98B300A08A79 /* On_the_HouseTests.swift in Sources */,
+				B799F92E1F7FF11C00A08A79 /* NewMemberDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +545,7 @@
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				B7F8293C1F7B97E700CF5A46 /* MHUIViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
-				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
+				E897877D1F68F6D700E0B3F9 /* OfferDetail.swift in Sources */,
 				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
@@ -609,11 +620,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QQL2HVN3GW;
 				INFOPLIST_FILE = "On the HouseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mypractice.On-the-HouseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "On the HouseTests/On the HouseTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/On the House.app/On the House";
 			};
@@ -623,11 +637,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QQL2HVN3GW;
 				INFOPLIST_FILE = "On the HouseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mypractice.On-the-HouseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "On the HouseTests/On the HouseTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/On the House.app/On the House";
 			};
@@ -790,6 +806,7 @@
 				B799F92B1F7E98B300A08A79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E8CE628E1F4AA19400D9EF76 /* Build configuration list for PBXProject "On the House" */ = {
 			isa = XCConfigurationList;
