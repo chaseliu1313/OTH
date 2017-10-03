@@ -15,6 +15,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var pickview: UIPickerView!
     
     @IBOutlet weak var state: UIPickerView!
+    
     var placementAnswer = 0
     
     var questionid = String()
@@ -37,6 +38,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var Array = ["Ticketek/TicketMaster/Moshtix", "Flyer", "Cafe", "Word of Mouth", "If Google Search, What did you search for?", "Wich website?", "Twitter", "Facebook", "Provide details of how you heard of this show?", "www.itsonthehouse.com.au", "ON THE HOUSE Newsletter", "Another Newsletter"]
     
     var Array2 = ["Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
+    
     var data: [String: String] = [:]
 
     override func viewDidLoad() {
@@ -47,7 +49,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         answertextfield.isHidden = true
         state.delegate = self
         state.dataSource = self
-        // Do any additional setup after loading the view.
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +59,18 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return Array.count
+        var rows = 0
+        
+        if pickview == pickerView{
+            rows =  Array.count
+        }
+            
+        else if state == pickerView {
+            
+            rows = Array2.count
+        }
+        return rows
+        
     }
     
     
@@ -80,6 +93,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
         var pickerLabel = view as? UILabel;
         
         if (pickerLabel == nil)
@@ -94,8 +108,11 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
             pickerLabel?.text = Array[row]
         }
             
-        else if state == pickerView{
+        else if state == pickerView {
+            
             pickerLabel?.text = Array2[row]
+            
+            print("\(row)+\(String(describing: pickerLabel?.text!))")
         }
         
         return pickerLabel!;
@@ -105,7 +122,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
         questionid = System.getQuestion(question: Array[placementAnswer])
-        if pickview==pickerView{
+        if pickview == pickerView {
         if(placementAnswer == 4)
         {
             answerlabel.isHidden = false

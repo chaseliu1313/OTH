@@ -126,7 +126,17 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return Array2.count
+        var rows = 0
+        
+        if pickview == pickerView {
+        rows = Array1.count
+        }
+        else  {
+        
+        rows = Array2.count
+        }
+        
+        return rows
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
