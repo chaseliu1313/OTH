@@ -155,12 +155,12 @@ struct ConnectionHelper{
                 else
                 {
                     self.errorMesg = "The request has failed"
-                    compeletion(false,JSON.null)
+                    compeletion(false,json)
                 }
                 
             case .failure(_):
                 print("connection faild")
-                compeletion(false, JSON.null)
+                compeletion(false, json)
                 
                 
             }

@@ -377,8 +377,9 @@ extension OfferDeatil: sendBookingInfoProtocol {
         
         let name = Notification.Name(rawValue: competitionNotificationKey)
         
+       
         
-        let data: [String: String] = ["member_id": member_id, "event_id": event_id,"show_id": self.competitionQuestion, "qty": qty]
+        var data: [String: String] = ["member_id": member_id, "event_id": event_id,"show_id": show_id, "qty": qty]
         self.passData = data
         
         NotificationCenter.default.post(name: name, object: nil, userInfo: data)
@@ -393,6 +394,8 @@ extension OfferDeatil: sendBookingInfoProtocol {
             
             
             if isCom {
+                
+                data.updateValue(self.competitionQuestion, forKey: "show_id")
             
             self.performSegue(withIdentifier: "competition", sender: self)
                 

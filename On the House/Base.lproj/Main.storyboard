@@ -1773,6 +1773,9 @@ and periodicals</string>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yel-wH-Vh7">
                                 <rect key="frame" x="310" y="386" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="saveSwitch:" destination="LTb-vJ-Z3x" eventType="valueChanged" id="dxu-Vm-ALR"/>
+                                </connections>
                             </switch>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3k-zq-m6e">
                                 <rect key="frame" x="168" y="249" width="238" height="43"/>
@@ -1786,11 +1789,15 @@ and periodicals</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="address" destination="qPy-QO-DjI" id="sHQ-KM-inr"/>
                         <outlet property="answerlabel" destination="2zF-ar-xuZ" id="00L-SA-mU4"/>
                         <outlet property="answertextfield" destination="Snd-yH-Ksf" id="3lX-jI-xFn"/>
+                        <outlet property="city" destination="QVc-Su-zMd" id="0jB-zh-Ple"/>
                         <outlet property="firstName" destination="ZNh-Lc-WN3" id="Qyz-Aa-aZk"/>
                         <outlet property="lastname" destination="MyW-3v-fpu" id="ib0-1s-JXX"/>
+                        <outlet property="phoneNumber" destination="yUY-zQ-tBd" id="elk-XG-E3W"/>
                         <outlet property="pickview" destination="eZ7-iQ-ilY" id="78y-wP-N4g"/>
+                        <outlet property="postcode" destination="P52-lM-2JB" id="MR7-js-LFe"/>
                         <outlet property="state" destination="r3k-zq-m6e" id="BdZ-t6-Dk6"/>
                     </connections>
                 </viewController>

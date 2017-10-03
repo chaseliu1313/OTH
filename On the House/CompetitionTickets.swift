@@ -75,7 +75,8 @@ class CompetitionTickets: UIViewController {
         else {
            
         
-            self.notifyUser(["You have already entered this competition"])
+            let error = json["error"]["messages"].arrayObject as! [String]
+            self.notifyUser(error)
         }
         }
         
@@ -106,9 +107,19 @@ class CompetitionTickets: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateValue(notification:)), name: key, object: nil)
     
     }
+    
     func notifyUser( _ message: [String] ) -> Void
     {
-        let meg: String = message[0]
+        
+        var meg = ""
+        
+        for error in message {
+            
+            meg.append("\n \(error)")
+            
+        }
+        
+        
         let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
