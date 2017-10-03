@@ -351,6 +351,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.destination is Survey    {
         
             let vc = segue.destination as? Survey

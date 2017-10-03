@@ -12,29 +12,48 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var currentoffer = ["a","b","c","d","e"]
     var pastoffer = ["a","b","c"]
+    var type = true
+    
+    let command1 = "api/v1/member/reservations"
+    let command2 = "api/v1/member/reservations/past"
+    var parameter = ["member_id": ""]
+    
+    
+    var reservations :[[String: Any]] = [[:]]
+    var reservations2 : [[String: Any]] = [[:]]
+    
+    
+    
+    var eventID = ""
+    
     @IBOutlet weak var currentOfferTableView: UITableView!
     
     @IBOutlet weak var pastOfferTableView: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        super.viewDidLoad()
+        let member_id = UserDefaults.standard.string(forKey: "member_id")
+        self.parameter.updateValue(member_id!, forKey: "member_id")
+        self.loadReservs()
+        
     
+        
+           }
+
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        if (tableView == currentOfferTableView){
-               return(currentoffer.count)
+        if ( currentOfferTableView == tableView){
+            
+            print(reservations.count)
+               return(reservations.count)
+            
         }else {
-                return(pastoffer.count)
+            
+            
+                return(reservations2.count)
             
         }
       
@@ -42,26 +61,89 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         if tableView == currentOfferTableView{
+            
+            
        let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! MyOfferTableViewCell
+            cell.showShortcut.text = reservations[indexPath.row]["event_name"] as? String
+            cell.dateTime.text = reservations[indexPath.row]["date"] as? String
+            cell.qty.text = reservations[indexPath.row]["num_tickets"] as? String
+            cell.venue.text = reservations[indexPath.row]["venue_name"] as? String
+            //cell.eventID = reservations[indexPath.row]["event_id"]! as? String
+//
+            
+            
         return cell
+            
+            
         }else{
+            
             let cell2 = tableView.dequeueReusableCell(withIdentifier:"pastcell", for: indexPath) as! MyPastOfferTableViewCell
             
+            cell2.showShortcut.text = reservations2[indexPath.row]["event_name"] as? String
+            cell2.dateTime.text = reservations2[indexPath.row]["date"] as? String
+            cell2.qty.text = reservations2[indexPath.row]["num_tickets"] as? String
+            cell2.venue.text = reservations[indexPath.row]["venue_name"] as? String
+          // cell2.eventID = reservations2[indexPath.row]["event_id"] as! String
+        
            
             return cell2
 
         }
         
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
      }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.destination is RatingDetailViewController    {
+            
+            let vc = segue.destination as? RatingDetailViewController
+            
+            vc?.type = self.type
+            vc?.event_id = self.eventID
+            
+        }
+        
+    }
+    
+    func loadReservs(){
+    
+        
+        ConnectionHelper.postJSON(command: command1, parameter: parameter) { (success, json) in
+            
+            if success {
+            
+                self.reservations = json["reservations"].arrayObject as![[String: Any]]
+                print(self.reservations.count)
+                self.currentOfferTableView.reloadData()
+            
+            }
+            
+            else {
+            print(json)
+            
+            }
+        }
+        
+        ConnectionHelper.postJSON(command: command2, parameter: parameter) { (success, json) in
+            if success {
+                
+                self.reservations2 = json["reservations"].arrayObject as![[String: Any]]
+                self.pastOfferTableView.reloadData()
+                
+            }
+                
+            else {
+                print(json)
+                
+            }
+        }
+        
+        
+        
+        
+    }
+    
+    
 }
