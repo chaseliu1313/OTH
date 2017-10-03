@@ -19,7 +19,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var surveyAnswertextfield: UITextField!
     
-    
+     let command = "api/v1/reserve"
     var qty = ""
     var member_id = ""
     var show_id = ""
@@ -30,6 +30,23 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     var questionid = String()
     var placementAnswer = 0
     var answer = ""
+    
+    
+    var parameter : [String: String] = ["show_id":"",
+                                        "member_id": "",
+                                        "tickets": "",
+                                        "shipping_first_name":"",
+                                        "shipping_last_name":"",
+                                        "shipping_address1": "",
+                                        "shipping_city":"",
+                                        "shipping_zone_id":"",
+                                        "shipping_zip":"",
+                                        "shipping_phone":"",
+                                        "shipping_save_info": "",
+                                        "question_id": "13",
+                                        "question_text": "",
+                                        "Answer": " "]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +68,13 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
             answer = "null"
             
         }
+        
+        self.show_id =  self.data["show_id"]!
+        self.member_id = self.data["member_id"]!
+        self.qty = self.data["qty"]!
+        self.parameter.updateValue(self.show_id, forKey: "show_id")
+        self.parameter.updateValue(self.member_id, forKey: "member_id")
+        self.parameter.updateValue(self.qty, forKey: "tickets")
 
 
         // Do any additional setup after loading the view.
@@ -87,11 +111,50 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBAction func submit(_ sender: Any) {
         
+       
+        
+        
+            if self.surveyAnswertextfield.text == nil
+            {
+               
+                self.notifyUser(["Please answer the question"])
+            
+            }
+            
+            else{
+            
+                ConnectionHelper.postJSON(command: command, parameter: parameter, compeletion: { (success, json) in
+                    
+                    if success
+                    {
+                        print(json)
+                    }
+                    else {
+                        
+                        let error = json["error"]["messages"].arrayObject as! [String]
+                        self.notifyUser(error)
+                    }
+                    
+                })
+                
+            
+            }
+            
+            
+        
+        
+        
+        
+        self.parameter.updateValue(surveyAnswertextfield.text!, forKey: "Answer")
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
         questionid = System.getQuestion(question: Array[placementAnswer])
+        self.parameter.updateValue(questionid, forKey: "question_id")
+        self.parameter.updateValue(Array[row], forKey: "question_text")
+        
          if pickView==pickerView{
         if(placementAnswer == 0)
         {
@@ -122,5 +185,24 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     
+    func notifyUser( _ message: [String] ) -> Void
+    {
+        
+        var meg = ""
+        
+        for error in message {
+            
+            meg.append("\n \(error)")
+            
+        }
+        
+        
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
+
    
 }

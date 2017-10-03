@@ -90,7 +90,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         self.member_id = self.data["member_id"]!
         self.qty = self.data["qty"]!
         
-        print("\(show_id)  \(member_id)")
+
         
         self.parameter.updateValue(self.show_id, forKey: "show_id")
         self.parameter.updateValue(self.member_id, forKey: "member_id")
@@ -218,7 +218,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         
         
             
-            self.parameter.updateValue(answertextfield.text!, forKey: "answer")
+            self.parameter.updateValue(answertextfield.text!, forKey: "Answer")
         
         if self.firstName.text != nil
             && self.lastname.text != nil
