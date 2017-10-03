@@ -19,12 +19,14 @@ class RatingDetailViewController: UIViewController {
     var event_id = ""
     
     var Userrating = ""
+    
     var type = true
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("detail page: \(event_id)")
 
     }
 

@@ -68,8 +68,15 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.dateTime.text = reservations[indexPath.row]["date"] as? String
             cell.qty.text = reservations[indexPath.row]["num_tickets"] as? String
             cell.venue.text = reservations[indexPath.row]["venue_name"] as? String
-            //cell.eventID = reservations[indexPath.row]["event_id"]! as? String
-//
+            
+            if let id = reservations[indexPath.row]["event_id"] as? String {
+               
+                cell.eventID = id
+            
+            }
+            
+            
+            cell.sendInfo = self
             
             
         return cell
@@ -83,9 +90,16 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell2.dateTime.text = reservations2[indexPath.row]["date"] as? String
             cell2.qty.text = reservations2[indexPath.row]["num_tickets"] as? String
             cell2.venue.text = reservations[indexPath.row]["venue_name"] as? String
-          // cell2.eventID = reservations2[indexPath.row]["event_id"] as! String
+            
+            if let id = reservations2[indexPath.row]["event_id"] as? String {
+            
+                
+                 cell2.eventID = id
+            }
+            
+          
         
-           
+           cell2.sendInfo = self
             return cell2
 
         }
@@ -145,5 +159,20 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    @IBAction func `return`(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
+}
+
+extension MyOffers: sendInfoDelegate {
+
+    func sendInfo(eventID: String, type: Bool) {
+        self.eventID = eventID
+        self.type = type
+        print(self.eventID)
+        self.performSegue(withIdentifier: "rate", sender: self)
+    }
+
+
 }

@@ -22,9 +22,10 @@ class MyOfferTableViewCell: UITableViewCell {
     
     @IBOutlet weak var venue: UILabel!
     
-    var eventID = ""
+    var eventID :String?
     var type = true
     
+    var sendInfo : sendInfoDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +44,8 @@ class MyOfferTableViewCell: UITableViewCell {
     
     @IBAction func moreInfo(_ sender: UIButton) {
         
+       sendInfo.sendInfo(eventID: self.eventID!, type: type)
+        
     }
 
 }
@@ -58,8 +61,10 @@ class MyPastOfferTableViewCell:UITableViewCell {
     @IBOutlet weak var dateTime: UILabel!
     @IBOutlet weak var venue: UILabel!
     
-    var eventID = ""
+    var eventID : String?
     var type = false
+    
+     var sendInfo : sendInfoDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,6 +79,7 @@ class MyPastOfferTableViewCell:UITableViewCell {
     
     @IBAction func moreInfo(_ sender: UIButton) {
         
+        sendInfo.sendInfo(eventID: self.eventID!, type: type)
     }
     
     
