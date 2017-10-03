@@ -26,7 +26,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var is_competition = false
     var sold_out = false
     
-    
+    var competitionQuestion = ""
     
     
     @IBOutlet weak var adminFee: UILabel!
@@ -112,6 +112,11 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
             cell.bookNow.setTitle(title, for: .normal)
             let time = String(describing: cell.show!.date_formatted!)
             cell.time.text = time
+        }
+        
+        if self.competitionQuestion != "" {
+        
+        cell.ticketNumber.isHidden = true
         }
         
         cell.contentView.backgroundColor = UIColor.clear
@@ -261,6 +266,14 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 }
                 
                 else {
+                    
+                    if json["event"]["is_competition"].bool! {
+                        
+                        self.competitionQuestion = json["event"]["competition"]["question"].string!
+                    
+                         print(self.competitionQuestion)
+                    }
+                    
                 let fp = json["event"]["full_price_string"].string
                 let op = json["event"]["our_price_string"].string
                 
@@ -283,11 +296,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 self.address1.text = Offers.showandvenue.venue?.address1
                 self.address2.text = Offers.showandvenue.venue?.address2
                 self.City.text = Offers.showandvenue.venue?.city
-//                self.fullPrice.text = json["event"]["full_price_string"].string
-//                self.ourPrice.text = json["event"]["our_price_string"].string
-//                
-//                self.membershipLevel.text = json["event"]["membership_levels"].string
-//                
+                
                 let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
                 
                 self.state.text = zone}
@@ -297,14 +306,10 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 self.showStatus.reloadData()
                 
-                //print(Offers.showandvenue.shows.count)
             }
             else{
                 
-//                self.notifyUser(["Loading Error"])
-//                self.dismiss(animated: true, completion: nil)
-//             
-                print("did not reload")
+              print("did not reload")
             }
         }
     
@@ -373,7 +378,7 @@ extension OfferDeatil: sendBookingInfoProtocol {
         let name = Notification.Name(rawValue: competitionNotificationKey)
         
         
-        let data: [String: String] = ["member_id": member_id, "event_id": event_id,"show_id": show_id, "qty": qty]
+        let data: [String: String] = ["member_id": member_id, "event_id": event_id,"show_id": self.competitionQuestion, "qty": qty]
         self.passData = data
         
         NotificationCenter.default.post(name: name, object: nil, userInfo: data)

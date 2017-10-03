@@ -45,7 +45,7 @@ class CompetitionTickets: UIViewController {
     }
   
     @IBAction func submit(_ sender: Any) {
-        
+       
       
         
         
@@ -63,10 +63,12 @@ class CompetitionTickets: UIViewController {
     
         self.member_id = memberID
         self.event_id = eventID
+        self.questonTest.text = showID
         print(self.member_id)
         print(self.event_id)
         print(qty)
         print(showID)
+        
     }
     
     func createObserver(){

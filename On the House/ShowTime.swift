@@ -57,7 +57,7 @@ class ShowTime: UITableViewCell {
         error = "This is a Gold Membership Event, Please Upgrade First"
             
         }
-        if qty == "" {
+        if qty == "" && !self.ticketNumber.isHidden {
             
         error = "Please Enter the Quantity"
         
