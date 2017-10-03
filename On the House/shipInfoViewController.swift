@@ -21,7 +21,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var member_id = ""
     var show_id = ""
     
-    
+    var parameter : [String: String] = []
 
     
     @IBOutlet weak var answerlabel: UILabel!
