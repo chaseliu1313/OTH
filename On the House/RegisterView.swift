@@ -146,9 +146,6 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         answertextfield.resignFirstResponder()
     }
     
-   
-    
-    
     
     override func didReceiveMemoryWarning()
     {

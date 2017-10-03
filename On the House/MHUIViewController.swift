@@ -169,21 +169,19 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cancelAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.justified
+        let paragraphStyling = NSMutableParagraphStyle()
+        paragraphStyling.alignment = NSTextAlignment.justified
         
         let messageText = NSMutableAttributedString(
             string: message,
             attributes: [
-                NSParagraphStyleAttributeName: paragraphStyle,
+                NSParagraphStyleAttributeName: paragraphStyling,
                 NSFontAttributeName: UIFont.systemFont(ofSize: 13.0)
             ]
         )
         
         alert.setValue(messageText, forKey: "attributedMessage")
         self.present(alert, animated: true)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -45,7 +45,7 @@ class APIHandler {
         
     }
     
-    public func postRequest(apiParameters: String, postParameters: Parameters, completionHandler:@escaping (Dictionary<String,JSON>) -> Void){
+    private func postRequest(apiParameters: String, postParameters: Parameters, completionHandler:@escaping (Dictionary<String,JSON>) -> Void){
         
         let url = APIHandler.baseURL + apiParameters
         

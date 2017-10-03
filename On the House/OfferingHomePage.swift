@@ -22,7 +22,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     var offerID: String = ""
     var sharingURL = ""
     var baseURL = "https://ma.on-the-house.org/events/current"
-   let command = "api/v1/events/current"
+    let command = "api/v1/events/current"
     
     
    
