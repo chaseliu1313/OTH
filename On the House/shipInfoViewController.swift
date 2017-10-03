@@ -21,7 +21,11 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var member_id = ""
     var show_id = ""
     
-    var parameter : [String: String] = []
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastname: UITextField!
+    
+    
+    var parameter : [String: String] = [:]
 
     
     @IBOutlet weak var answerlabel: UILabel!

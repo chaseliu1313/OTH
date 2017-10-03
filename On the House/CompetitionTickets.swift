@@ -16,6 +16,9 @@ class CompetitionTickets: UIViewController {
     var event_id = ""
     var member_id = ""
     
+    @IBOutlet weak var questonTest: UILabel!
+    @IBOutlet weak var quetionAnswer: UITextField!
+    
     let key = Notification.Name(rawValue: competitionNotificationKey)
     
     deinit {
