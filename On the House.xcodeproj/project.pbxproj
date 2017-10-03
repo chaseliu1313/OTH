@@ -33,6 +33,8 @@
 		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
 		E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */; };
 		E859D9971F7A257600293955 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E859D9961F7A257600293955 /* Survey.swift */; };
+		E88119F31F823D87008F4FE0 /* MyOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */; };
+		E88119F51F823DF5008F4FE0 /* MyOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88119F41F823DF5008F4FE0 /* MyOffers.swift */; };
 		E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42921F6007B700DE142E /* OfferingHomePage.swift */; };
 		E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F42961F60095B00DE142E /* OfferTableCell.swift */; };
 		E88F429B1F600DF800DE142E /* event3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42981F600DF800DE142E /* event3.jpg */; };
@@ -89,6 +91,8 @@
 		E825E6E81F61404C00277097 /* event4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event4.jpg; sourceTree = "<group>"; };
 		E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookRegisterView.swift; sourceTree = "<group>"; };
 		E859D9961F7A257600293955 /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOfferTableViewCell.swift; sourceTree = "<group>"; };
+		E88119F41F823DF5008F4FE0 /* MyOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOffers.swift; sourceTree = "<group>"; };
 		E88F42921F6007B700DE142E /* OfferingHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingHomePage.swift; sourceTree = "<group>"; };
 		E88F42961F60095B00DE142E /* OfferTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableCell.swift; sourceTree = "<group>"; };
 		E88F42981F600DF800DE142E /* event3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event3.jpg; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				E859D9961F7A257600293955 /* Survey.swift */,
 				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
+				E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */,
+				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
+				E88119F51F823DF5008F4FE0 /* MyOffers.swift in Sources */,
 				A257A1961F700593008D2DA3 /* FilterTableViewController.swift in Sources */,
 				71C7DC811F78BF2A005BF028 /* shipInfoViewController.swift in Sources */,
 				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
@@ -451,6 +458,7 @@
 				E859D9971F7A257600293955 /* Survey.swift in Sources */,
 				A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */,
 				5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */,
+				E88119F31F823D87008F4FE0 /* MyOfferTableViewCell.swift in Sources */,
 				71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
