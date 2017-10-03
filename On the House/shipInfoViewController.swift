@@ -14,6 +14,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var pickview: UIPickerView!
     
+    @IBOutlet weak var state: UIPickerView!
     var placementAnswer = 0
     
     var questionid = String()
@@ -22,6 +23,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var show_id = ""
     
     @IBOutlet weak var firstName: UITextField!
+    
     @IBOutlet weak var lastname: UITextField!
     
     
@@ -34,6 +36,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     var Array = ["Ticketek/TicketMaster/Moshtix", "Flyer", "Cafe", "Word of Mouth", "If Google Search, What did you search for?", "Wich website?", "Twitter", "Facebook", "Provide details of how you heard of this show?", "www.itsonthehouse.com.au", "ON THE HOUSE Newsletter", "Another Newsletter"]
     
+    var Array2 = ["Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"]
     var data: [String: String] = [:]
 
     override func viewDidLoad() {
@@ -42,6 +45,8 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         pickview.dataSource = self
         answerlabel.isHidden = true
         answertextfield.isHidden = true
+        state.delegate = self
+        state.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -66,7 +71,12 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return Array[row]
+        if pickview == pickerView {
+            return Array[row]
+        } else if state == pickerView{
+            return Array2[row]
+        }
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -80,7 +90,13 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
             pickerLabel!.textAlignment = NSTextAlignment.center
         }
         
-        pickerLabel?.text = Array[row]
+        if pickview == pickerView{
+            pickerLabel?.text = Array[row]
+        }
+            
+        else if state == pickerView{
+            pickerLabel?.text = Array2[row]
+        }
         
         return pickerLabel!;
     }
@@ -89,7 +105,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placementAnswer = row
         questionid = System.getQuestion(question: Array[placementAnswer])
-        
+        if pickview==pickerView{
         if(placementAnswer == 4)
         {
             answerlabel.isHidden = false
@@ -109,6 +125,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         {
             answerlabel.isHidden = true
             answertextfield.isHidden = true
+        }
         }
     }
 
