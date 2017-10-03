@@ -14,6 +14,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBOutlet weak var tableView: UITableView!
     
+  
     var offers : [String : Offer]!
     
     
@@ -39,7 +40,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         sideMenus()
         self.loadOffers()
-        
+        self.checkRating()
         
         
     }
@@ -306,6 +307,48 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
+    
+    func checkRating(){
+    let member_id = UserDefaults.standard.string(forKey: "member_id")!
+    let command2 = "api/v1/member/reservations-raw/past"
+    let parameter2 = ["member_id": member_id]
+   
+    
+    
+        
+    ConnectionHelper.postJSON(command: command2, parameter: parameter2) { (success, json) in
+        
+        if success {
+        
+            let reservations = json["reservations"].arrayObject as! [[String:String]]
+        
+            
+            for reserv in reservations{
+                
+                if reserv["rated"] == "0" {
+                    
+                
+                    self.notifyUser(["Before booking any upcoming offers you must first rate the offers you previously reserved and attended. "])
+                    
+                   break
+                    
+                    
+                }
+                
+                
+            
+            }
+        }
+        else
+        {
+        print("review wrong")
+        
+        }
+        
+        }
+        
+    
+    }
     
     
     
