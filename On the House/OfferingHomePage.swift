@@ -94,7 +94,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             if success {
                 
-                 print(OfferingHomePage.parameter["date_from"] as! String)
+                
                 let status = json["status"].string!
                 
                 print(status)
@@ -309,12 +309,19 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     func checkRating(){
-    let member_id = UserDefaults.standard.string(forKey: "member_id")!
-    let command2 = "api/v1/member/reservations-raw/past"
-    let parameter2 = ["member_id": member_id]
-   
-    
-    
+        
+          let command2 = "api/v1/member/reservations-raw/past"
+        
+         var parameter2 = ["member_id": ""]
+        
+        guard let member_id = UserDefaults.standard.string(forKey: "member_id")
+        
+            else{
+        return
+        }
+        
+        parameter2.updateValue(member_id, forKey: "member_id")
+        
         
     ConnectionHelper.postJSON(command: command2, parameter: parameter2) { (success, json) in
         

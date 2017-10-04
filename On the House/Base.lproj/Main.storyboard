@@ -1931,6 +1931,7 @@ and periodicals</string>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="0OV-lX-91t"/>
+                                    <action selector="return:" destination="8y9-Ty-LeJ" eventType="touchUpInside" id="QiY-TL-U9S"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHa-KM-Hcj">
@@ -1949,7 +1950,6 @@ and periodicals</string>
                                 <rect key="frame" x="50" y="509" width="324" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1960,6 +1960,9 @@ and periodicals</string>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submit:" destination="8y9-Ty-LeJ" eventType="touchUpInside" id="Wf4-Ns-iVr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQn-eH-PSG">
                                 <rect key="frame" x="45" y="395" width="116" height="28"/>
@@ -2022,9 +2025,18 @@ and periodicals</string>
                     <connections>
                         <outlet property="Offerdescription" destination="6aJ-yC-1bR" id="haI-Jw-rRw"/>
                         <outlet property="comments" destination="wWf-HV-Zaz" id="WLi-mz-lIr"/>
+                        <outlet property="commentsLabel" destination="8uD-Qh-fWj" id="VWK-7A-ywh"/>
                         <outlet property="name" destination="sTe-3b-E8U" id="Ujy-LX-IWW"/>
                         <outlet property="offerImage" destination="wHa-KM-Hcj" id="v0e-p5-BEf"/>
+                        <outlet property="rate1" destination="zZ5-1o-g9q" id="Em3-PK-Qov"/>
+                        <outlet property="rate2" destination="9vb-Q4-UmT" id="csR-2E-7xW"/>
+                        <outlet property="rate3" destination="3L8-Yv-7CE" id="5y5-aY-MB3"/>
+                        <outlet property="rate4" destination="Y3Y-Uv-fN7" id="d0K-h0-bde"/>
+                        <outlet property="rate5" destination="lVR-Zr-rUy" id="4cp-q1-amq"/>
                         <outlet property="rating" destination="3me-I1-Ogo" id="i2f-ie-IVz"/>
+                        <outlet property="slider" destination="dLp-0B-2t5" id="1J3-fq-393"/>
+                        <outlet property="sumitButton" destination="ESa-zL-FLF" id="0FQ-XV-Kpl"/>
+                        <outlet property="yourRating" destination="aVY-9t-IS9" id="Fdr-Vb-8BH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-bg-2Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
