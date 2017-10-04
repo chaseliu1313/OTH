@@ -558,11 +558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "528712957.791229"
+            timestampString = "528781298.761722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -653,11 +653,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferDeatil.swift"
-            timestampString = "528210580.436181"
+            timestampString = "528780033.016044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -669,11 +669,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "528712957.791229"
+            timestampString = "528781298.761722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "loadOffers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -685,11 +685,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "528712957.791229"
+            timestampString = "528781298.761722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -701,11 +701,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "528712957.791229"
+            timestampString = "528781298.761722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -717,11 +717,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "528768752.112746"
+            timestampString = "528781298.761722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "checkRating()"
             landmarkType = "7">
          </BreakpointContent>
@@ -733,11 +733,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/RatingDetailViewController.swift"
-            timestampString = "528770691.11095"
+            timestampString = "528780033.016044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "loadInfomation()"
             landmarkType = "7">
          </BreakpointContent>

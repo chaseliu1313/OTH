@@ -106,17 +106,37 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                     let v = e.dictionaryObject!
                     let o : Offer = Offer.init(data: v)
-                    o.getImage()
+                   
+                    o.insert()
                     
-                    Offers.offerload.append(o)
                     
-                    //self.offerLoad.append(o)
+                    let url = o.image_url
+
+                    
+                    ConnectionHelper.getImage(imageURL: url, completion: { (success, image) in
+                        
+                        if success
+                        {
+                            
+                            o.image = image
+                             Offers.offerload.append(o)
+                            self.tableView.reloadData()
+                        }
+                        else
+                        {
+                        
+                        }
+                    })
+                    
+                    
+                    
+                 
                     
                     
                 }
                 
                 
-                self.tableView.reloadData()
+               
                 
             }
             else {
@@ -212,7 +232,9 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
      
         let size = CGSize.init(width: cell.getsize().width, height: cell.getsize().height)
         
-        let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
+        let cellImage = offer.image
+            cell.eventImage.contentMode = .center
+            //UIImage.scaleImageToSize(img: offer.getImage(), size: size)
         
         cell.imageView?.image = cellImage
         

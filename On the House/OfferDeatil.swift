@@ -58,6 +58,8 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.showStatus.reloadData()
         self.showStatus.tableFooterView = self.loadMoreView
         
+       
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
