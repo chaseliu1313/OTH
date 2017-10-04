@@ -1299,12 +1299,12 @@ and periodicals</string>
                         <segue destination="yYL-hF-kV6" kind="popoverPresentation" identifier="popover" popoverAnchorBarButtonItem="ue5-hx-ca5" id="hXT-ZC-i6d">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
                         </segue>
-                        <segue destination="HFn-xT-d1E" kind="modal" identifier="jumpUpgrade" id="tqq-1x-Emi"/>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="jumpReg" id="OlO-BT-Hwe"/>
                         <segue destination="qvI-Ak-Ljz" kind="presentation" identifier="showDetail" id="zQV-sm-Kn7"/>
                         <segue destination="Wp8-jt-cfs" kind="popoverPresentation" identifier="pop" popoverAnchorBarButtonItem="ue5-hx-ca5" id="X8T-YL-Gpg">
                             <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                         </segue>
+                        <segue destination="GJS-eo-XIt" kind="modal" identifier="jumpUpgrade" id="n2t-AZ-ZVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-rT-gjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2247,7 +2247,7 @@ and periodicals</string>
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="HFn-xT-d1E" kind="show" id="P9W-dW-eKN"/>
+                                                        <segue destination="GJS-eo-XIt" kind="show" id="6w0-sF-xGs"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -4741,6 +4741,15 @@ and periodicals</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d3-Yj-09k">
+                                <rect key="frame" x="11" y="35" width="29" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="left-arrow"/>
+                                <connections>
+                                    <action selector="return:" destination="HFn-xT-d1E" eventType="touchUpInside" id="0jJ-Ia-Jko"/>
+                                    <action selector="return:" destination="GJS-eo-XIt" eventType="touchUpInside" id="FqS-75-Gk0"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vy5-Xf-AIV">
                                 <rect key="frame" x="36" y="376" width="343" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4965,7 +4974,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vr7-bS-Q05" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2643" y="1008"/>
+            <point key="canvasLocation" x="2954" y="1163"/>
         </scene>
     </scenes>
     <resources>
@@ -4987,6 +4996,6 @@ and periodicals</string>
     <inferredMetricsTieBreakers>
         <segue reference="sTr-nW-xrY"/>
         <segue reference="OlO-BT-Hwe"/>
-        <segue reference="tqq-1x-Emi"/>
+        <segue reference="n2t-AZ-ZVb"/>
     </inferredMetricsTieBreakers>
 </document>

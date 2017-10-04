@@ -190,6 +190,10 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
 
     }
+    
+    @IBAction func `return`(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }
 
