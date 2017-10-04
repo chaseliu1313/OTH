@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GJS-eo-XIt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -4985,8 +4985,8 @@ and periodicals</string>
         <image name="share" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sTr-nW-xrY"/>
         <segue reference="OlO-BT-Hwe"/>
-        <segue reference="N44-1v-OrC"/>
         <segue reference="tqq-1x-Emi"/>
     </inferredMetricsTieBreakers>
 </document>
