@@ -16,6 +16,10 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var pastOfferTableView: UITableView!
     
+    @IBAction func `return`(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
