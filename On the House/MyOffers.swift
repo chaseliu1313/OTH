@@ -33,8 +33,11 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let member_id = UserDefaults.standard.string(forKey: "member_id")
-        self.parameter.updateValue(member_id!, forKey: "member_id")
+        if let member_id = UserDefaults.standard.string(forKey: "member_id")
+        {self.parameter.updateValue(member_id, forKey: "member_id")}
+        
+        
+        
         self.loadReservs()
         
     
