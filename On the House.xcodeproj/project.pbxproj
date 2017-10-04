@@ -42,6 +42,8 @@
 		E88F429C1F600DF800DE142E /* event2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F42991F600DF800DE142E /* event2.jpg */; };
 		E88F429D1F600DF800DE142E /* event1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E88F429A1F600DF800DE142E /* event1.jpg */; };
 		E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */; };
+		E8A079821F84A67E006A0496 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A079811F84A67E006A0496 /* ViewController.swift */; };
+		E8A079841F84A691006A0496 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A079831F84A691006A0496 /* TableViewCell.swift */; };
 		E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C0ABA81F57102500143885 /* MyMembership.swift */; };
 		E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */; };
 		E8CE629C1F4AA19400D9EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8CE629A1F4AA19400D9EF76 /* Main.storyboard */; };
@@ -101,6 +103,8 @@
 		E88F42991F600DF800DE142E /* event2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event2.jpg; sourceTree = "<group>"; };
 		E88F429A1F600DF800DE142E /* event1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event1.jpg; sourceTree = "<group>"; };
 		E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferDeatil.swift; sourceTree = "<group>"; };
+		E8A079811F84A67E006A0496 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8A079831F84A691006A0496 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E8C0ABA81F57102500143885 /* MyMembership.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMembership.swift; sourceTree = "<group>"; };
 		E8CE62931F4AA19400D9EF76 /* On the House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */,
 				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
 				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
+				E8A079811F84A67E006A0496 /* ViewController.swift */,
+				E8A079831F84A691006A0496 /* TableViewCell.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -305,7 +311,6 @@
 					};
 					E8CE62921F4AA19400D9EF76 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = KJZ8GTCP4S;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -435,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A079821F84A67E006A0496 /* ViewController.swift in Sources */,
 				715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */,
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
@@ -456,6 +462,7 @@
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
 				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
+				E8A079841F84A691006A0496 /* TableViewCell.swift in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
 				52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */,
@@ -622,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = KJZ8GTCP4S;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -644,7 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = KJZ8GTCP4S;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -10,8 +10,7 @@ import UIKit
 
 class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    var currentoffer = ["a","b","c","d","e"]
-    var pastoffer = ["a","b","c"]
+   
     var type = true
     
     let command1 = "api/v1/member/reservations"
@@ -27,6 +26,8 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var eventID = ""
     
     @IBOutlet weak var currentOfferTableView: UITableView!
+
+    
     
     @IBOutlet weak var pastOfferTableView: UITableView!
     
@@ -66,11 +67,11 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if tableView == currentOfferTableView{
             
             
-       let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! MyOfferTableViewCell
-            cell.showShortcut.text = reservations[indexPath.row]["event_name"] as? String
-            cell.dateTime.text = reservations[indexPath.row]["date"] as? String
+       let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! TableViewCell
+            cell.show.text = reservations[indexPath.row]["event_name"] as? String
+            cell.date.text = reservations[indexPath.row]["date"] as? String
             cell.qty.text = reservations[indexPath.row]["num_tickets"] as? String
-            cell.venue.text = reservations[indexPath.row]["venue_name"] as? String
+            cell.location.text = reservations[indexPath.row]["venue_name"] as? String
             
             if let id = reservations[indexPath.row]["event_id"] as? String {
                
@@ -87,12 +88,12 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
         }else{
             
-            let cell2 = tableView.dequeueReusableCell(withIdentifier:"pastcell", for: indexPath) as! MyPastOfferTableViewCell
+            let cell2 = tableView.dequeueReusableCell(withIdentifier:"pastcell", for: indexPath) as! TableViewCell2
             
-            cell2.showShortcut.text = reservations2[indexPath.row]["event_name"] as? String
-            cell2.dateTime.text = reservations2[indexPath.row]["date"] as? String
-            cell2.qty.text = reservations2[indexPath.row]["num_tickets"] as? String
-            cell2.venue.text = reservations[indexPath.row]["venue_name"] as? String
+            cell2.showPast.text = reservations2[indexPath.row]["event_name"] as? String
+            cell2.datePast.text = reservations2[indexPath.row]["date"] as? String
+            cell2.qtyPast.text = reservations2[indexPath.row]["num_tickets"] as? String
+            cell2.locationPast.text = reservations[indexPath.row]["venue_name"] as? String
             
             if let id = reservations2[indexPath.row]["event_id"] as? String {
             
