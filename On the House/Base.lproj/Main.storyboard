@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GJS-eo-XIt">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -4725,10 +4725,10 @@ and periodicals</string>
             </objects>
             <point key="canvasLocation" x="11270" y="1437"/>
         </scene>
-        <!--View Controller-->
+        <!--Membership History VC-->
         <scene sceneID="e6T-Yu-ahd">
             <objects>
-                <viewController id="GJS-eo-XIt" customClass="ViewController" customModule="AlamofireSwiftyJSONTest2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MembershipHistoryVC" title="Membership History VC" id="GJS-eo-XIt" customClass="MHUIViewController" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cix-cK-Uy3"/>
                         <viewControllerLayoutGuide type="bottom" id="pAb-kT-HBD"/>
@@ -4884,7 +4884,7 @@ and periodicals</string>
                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="membershipHistoryCell" id="K8a-Hi-fOP" customClass="MHTableViewCell" customModule="AlamofireSwiftyJSONTest2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="membershipHistoryCell" id="K8a-Hi-fOP" customClass="MHTableViewCell" customModule="On_the_House" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="45" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K8a-Hi-fOP" id="hFT-Pt-KD8">
@@ -4965,7 +4965,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vr7-bS-Q05" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2626" y="926"/>
+            <point key="canvasLocation" x="2643" y="1008"/>
         </scene>
     </scenes>
     <resources>
