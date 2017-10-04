@@ -94,7 +94,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             if success {
                 
-                 print(OfferingHomePage.parameter["date_from"] as! String)
+                
                 let status = json["status"].string!
                 
                 print(status)
@@ -106,17 +106,37 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                     
                     let v = e.dictionaryObject!
                     let o : Offer = Offer.init(data: v)
-                    o.getImage()
+                   
+                    o.insert()
                     
-                    Offers.offerload.append(o)
                     
-                    //self.offerLoad.append(o)
+                    let url = o.image_url
+
+                    
+                    ConnectionHelper.getImage(imageURL: url, completion: { (success, image) in
+                        
+                        if success
+                        {
+                            
+                            o.image = image
+                             Offers.offerload.append(o)
+                            self.tableView.reloadData()
+                        }
+                        else
+                        {
+                        
+                        }
+                    })
+                    
+                    
+                    
+                 
                     
                     
                 }
                 
                 
-                self.tableView.reloadData()
+               
                 
             }
             else {
@@ -212,7 +232,9 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
      
         let size = CGSize.init(width: cell.getsize().width, height: cell.getsize().height)
         
-        let cellImage =  UIImage.scaleImageToSize(img: offer.getImage(), size: size)
+        let cellImage = offer.image
+            cell.eventImage.contentMode = .center
+            //UIImage.scaleImageToSize(img: offer.getImage(), size: size)
         
         cell.imageView?.image = cellImage
         
@@ -309,12 +331,19 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     func checkRating(){
-    let member_id = UserDefaults.standard.string(forKey: "member_id")!
-    let command2 = "api/v1/member/reservations-raw/past"
-    let parameter2 = ["member_id": member_id]
-   
-    
-    
+        
+          let command2 = "api/v1/member/reservations-raw/past"
+        
+         var parameter2 = ["member_id": ""]
+        
+        guard let member_id = UserDefaults.standard.string(forKey: "member_id")
+        
+            else{
+        return
+        }
+        
+        parameter2.updateValue(member_id, forKey: "member_id")
+        
         
     ConnectionHelper.postJSON(command: command2, parameter: parameter2) { (success, json) in
         

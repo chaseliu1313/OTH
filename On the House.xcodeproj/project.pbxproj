@@ -13,6 +13,7 @@
 		526164021F66222E0028A63F /* On_the_HouseUITestsweek7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */; };
 		52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E71F56AD8C00411EA0 /* System.swift */; };
 		52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */; };
+		52C392701F83B9710020D9D6 /* RatingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */; };
 		7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7101E4F11F4D420F00237211 /* RegisterView.swift */; };
 		715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715872BD1F5E66F800A315D8 /* TandCViewController.swift */; };
 		71ACD9EF1F7B48C00070CC61 /* paymentWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */; };
@@ -69,6 +70,7 @@
 		526164031F66222E0028A63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BBB7E71F56AD8C00411EA0 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
+		52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailViewController.swift; sourceTree = "<group>"; };
 		6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_On_the_House.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7101E4F11F4D420F00237211 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		715872BD1F5E66F800A315D8 /* TandCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TandCViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,8 @@
 		A2A569571F4FAC6E005EB8AE /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
+				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
+				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,
 				E8CE62961F4AA19400D9EF76 /* AppDelegate.swift */,
 				E88F42981F600DF800DE142E /* event3.jpg */,
 				E88F42991F600DF800DE142E /* event2.jpg */,
@@ -168,6 +172,8 @@
 		A2F3FD201F564D42006E23CA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
+				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
 				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
 				260CCC491F7118A6006FE65E /* ShowTime.swift */,
@@ -177,13 +183,9 @@
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
 				5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
-				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
-				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
-				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
-				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,
 				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
 				71E1FB951F651AC00029D3D0 /* On the House-Bridging-Header.h */,
 				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
@@ -192,6 +194,7 @@
 				E859D9961F7A257600293955 /* Survey.swift */,
 				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
 				E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */,
+				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
 				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
 				B71B35711F8491100043504B /* MHTableViewCell.swift */,
 				B71B35731F8491180043504B /* MHUIViewController.swift */,
@@ -458,6 +461,7 @@
 				71ACD9EF1F7B48C00070CC61 /* paymentWebViewViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
+				52C392701F83B9710020D9D6 /* RatingDetailViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
 				B71B35741F8491180043504B /* MHUIViewController.swift in Sources */,
 				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
