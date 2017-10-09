@@ -236,7 +236,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.eventImage.contentMode = .center
             //UIImage.scaleImageToSize(img: offer.getImage(), size: size)
         
-        cell.imageView?.image = cellImage
+        cell.eventImage.image = cellImage
         
         
         
