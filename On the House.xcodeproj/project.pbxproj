@@ -29,6 +29,8 @@
 		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
+		B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B35711F8491100043504B /* MHTableViewCell.swift */; };
+		B71B35741F8491180043504B /* MHUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B35731F8491180043504B /* MHUIViewController.swift */; };
 		E825E6E91F61404C00277097 /* event6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E61F61404C00277097 /* event6.jpg */; };
 		E825E6EA1F61404C00277097 /* event5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E71F61404C00277097 /* event5.jpg */; };
 		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
@@ -87,6 +89,8 @@
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		B71B35711F8491100043504B /* MHTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHTableViewCell.swift; sourceTree = "<group>"; };
+		B71B35731F8491180043504B /* MHUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHUIViewController.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
 		E825E6E61F61404C00277097 /* event6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event6.jpg; sourceTree = "<group>"; };
 		E825E6E71F61404C00277097 /* event5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event5.jpg; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */,
 				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
 				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
+				B71B35711F8491100043504B /* MHTableViewCell.swift */,
+				B71B35731F8491180043504B /* MHUIViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-On the House/Pods-On the House-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -390,6 +397,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -437,6 +445,7 @@
 			files = (
 				715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */,
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
+				B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
 				E88119F51F823DF5008F4FE0 /* MyOffers.swift in Sources */,
@@ -454,6 +463,7 @@
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				52C392701F83B9710020D9D6 /* RatingDetailViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
+				B71B35741F8491180043504B /* MHUIViewController.swift in Sources */,
 				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
 				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,

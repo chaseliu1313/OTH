@@ -7,9 +7,8 @@ target 'On the House' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod ‘Alamofire’, ‘~> 4.4’
-  pod ‘SwiftyJSON’
-  
-
+  pod ‘SwiftyJSON’  
+  pod 'BEMCheckBox'
   # Pods for On the House
 
 end
