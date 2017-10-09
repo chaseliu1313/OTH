@@ -39,10 +39,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var rating: UIImageView!
     @IBOutlet weak var membershipLevel: UILabel!
     @IBOutlet weak var fullPrice: UILabel!
-    @IBOutlet weak var address1: UILabel!
-    @IBOutlet weak var address2: UILabel!
-    @IBOutlet weak var City: UILabel!
-    @IBOutlet weak var state: UILabel!
+    
     var loadMoreView: UIView?
     
     @IBOutlet weak var showStatus: UITableView!
@@ -295,13 +292,14 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
                 
                 
-                self.address1.text = Offers.showandvenue.venue?.address1
-                self.address2.text = Offers.showandvenue.venue?.address2
-                self.City.text = Offers.showandvenue.venue?.city
-                
-                let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
-                
-                self.state.text = zone}
+//                self.address1.text = Offers.showandvenue.venue?.address1
+//                self.address2.text = Offers.showandvenue.venue?.address2
+//                self.City.text = Offers.showandvenue.venue?.city
+//                
+//                let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
+//                
+//                self.state.text = zone
+                }
                 
                 
                 
