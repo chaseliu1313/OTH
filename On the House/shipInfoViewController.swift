@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Braintree
 
 
-
-class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
+class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource, BTViewControllerPresentingDelegate, BTAppSwitchDelegate{
+    
+    var braintreeClient: BTAPIClient!
+    
+    let tokenizationkey = "sandbox_b7kvdchs_9py4y9wtg3mjcv8g"
     
     @IBOutlet weak var pickview: UIPickerView!
     
@@ -79,6 +83,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.braintreeClient = BTAPIClient(authorization : self.tokenizationkey)
         pickview.delegate = self
         pickview.dataSource = self
         answerlabel.isHidden = true
@@ -209,6 +214,8 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     @IBAction func submit(_ sender: Any) {
         
+        self.customPayPalButtonTapped(amount: 5)
+        
         if !self.answertextfield.isHidden
             && self.answertextfield.text == nil {
             
@@ -261,9 +268,6 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         
         }
         
-        
-       
-        
     }
     
     func notifyUser( _ message: [String] ) -> Void
@@ -283,6 +287,64 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
         
+    }
+    
+    func customPayPalButtonTapped(amount : Double) {
+        let payPalDriver = BTPayPalDriver(apiClient: self.braintreeClient)
+        payPalDriver.viewControllerPresentingDelegate = self
+        payPalDriver.appSwitchDelegate = self
+        
+        // Start the Vault flow, or...
+        payPalDriver.authorizeAccount() { (tokenizedPayPalAccount, error) -> Void in
+            
+        }
+        
+        // ...start the Checkout flow
+        let payPalRequest = BTPayPalRequest(amount: String(amount))
+        payPalDriver.requestOneTimePayment(payPalRequest) { (tokenizedPayPalAccount, error) -> Void in
+            
+        }
+    }
+    
+    // MARK: - BTViewControllerPresentingDelegate
+    
+    func paymentDriver(_ driver: Any, requestsPresentationOf viewController: UIViewController) {
+        present(viewController, animated: true, completion: nil)
+    }
+    
+    func paymentDriver(_ driver: Any, requestsDismissalOf viewController: UIViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - BTAppSwitchDelegate
+    
+    
+    // Optional - display and hide loading indicator UI
+    func appSwitcherWillPerformAppSwitch(_ appSwitcher: Any) {
+        showLoadingUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(hideLoadingUI), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+    }
+    
+    func appSwitcherWillProcessPaymentInfo(_ appSwitcher: Any) {
+        hideLoadingUI()
+    }
+    
+    func appSwitcher(_ appSwitcher: Any, didPerformSwitchTo target: BTAppSwitchTarget) {
+        
+    }
+    
+    // MARK: - Private methods
+    
+    func showLoadingUI() {
+        // ...
+    }
+    
+    func hideLoadingUI() {
+        NotificationCenter
+            .default
+            .removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        // ...
     }
     
    
