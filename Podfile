@@ -9,9 +9,7 @@ target 'On the House' do
   pod ‘Alamofire’, ‘~> 4.4’
   pod ‘SwiftyJSON’  
   pod 'BEMCheckBox'
-  pod 'BraintreeDropIn'
-  pod 'Braintree/PayPal'
-
+  pod ‘Braintree’
   # Pods for On the House
 
 end
