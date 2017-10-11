@@ -78,6 +78,16 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             }
             
+            if let cancel = reservations[indexPath.row]["can_cancel"] as? Bool {
+                
+                if !cancel {
+                    
+                    cell.Cancel.isHidden = true
+                    
+                }
+                
+            }
+            
             
             cell.sendInfo = self
             
@@ -99,6 +109,8 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 
                  cell2.eventID = id
             }
+            
+            
             
           
         

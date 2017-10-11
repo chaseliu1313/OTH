@@ -14,7 +14,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBOutlet weak var tableView: UITableView!
     
-  
+    @IBOutlet weak var reviewWarning: UILabel!
+    
     var offers : [String : Offer]!
     
     
@@ -370,7 +371,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         parameter2.updateValue(member_id, forKey: "member_id")
         
-        
+       
     ConnectionHelper.postJSON(command: command2, parameter: parameter2) { (success, json) in
         
         if success {
@@ -383,9 +384,18 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 if reserv["rated"] == "0" {
                     
                 
-                    self.notifyUser(["Before booking any upcoming offers you must first rate the offers you previously reserved and attended. "])
+                     self.reviewWarning.text = "Before booking any upcoming offers you must first rate the offers you previously reserved and attended. "
                     
+                    self.reviewWarning.textColor = UIColor.red
+                   
                    break
+                    
+                    
+                }
+                else {
+                    
+                     self.reviewWarning.text = " "
+                    self.reviewWarning.isHidden = true
                     
                     
                 }

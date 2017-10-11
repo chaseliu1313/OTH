@@ -491,6 +491,35 @@
             </objects>
             <point key="canvasLocation" x="2954" y="-86"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="PTP-OU-f4j">
+            <objects>
+                <viewController id="Fjf-sY-oDL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ln5-0i-V5c"/>
+                        <viewControllerLayoutGuide type="bottom" id="YCh-Y7-ujw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b7R-ko-BCm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SFn-QC-y13">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SFn-QC-y13" secondAttribute="trailing" id="4uI-PF-84Y"/>
+                            <constraint firstItem="SFn-QC-y13" firstAttribute="top" secondItem="b7R-ko-BCm" secondAttribute="top" id="Dmi-o9-8ih"/>
+                            <constraint firstItem="YCh-Y7-ujw" firstAttribute="top" secondItem="SFn-QC-y13" secondAttribute="bottom" id="I14-uu-X2a"/>
+                            <constraint firstItem="SFn-QC-y13" firstAttribute="leading" secondItem="b7R-ko-BCm" secondAttribute="leading" id="XWK-I6-5Nf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Jy-35-jsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="3288"/>
+        </scene>
         <!--Preference View Controller-->
         <scene sceneID="Zuj-ST-Oq3">
             <objects>
@@ -1087,12 +1116,19 @@ and periodicals</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="296" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6p-f0-dID">
                                 <rect key="frame" x="4" y="64" width="406" height="672"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g8a-ND-lgv">
+                                    <rect key="frame" x="0.0" y="0.0" width="406" height="92"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="296" id="xfR-Iu-Ocs" customClass="OfferTableCell" customModule="On_the_House" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="406" height="296"/>
+                                        <rect key="frame" x="0.0" y="120" width="406" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="406" height="296"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="406" height="295.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -1215,6 +1251,7 @@ and periodicals</string>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="EDw-oV-r8E" id="fjC-FK-O8J"/>
+                        <outlet property="reviewWarning" destination="g8a-ND-lgv" id="vjW-XG-UVe"/>
                         <outlet property="tableView" destination="x6p-f0-dID" id="a9L-2c-Dcv"/>
                         <segue destination="yYL-hF-kV6" kind="popoverPresentation" identifier="popover" popoverAnchorBarButtonItem="ue5-hx-ca5" id="hXT-ZC-i6d">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
@@ -1229,7 +1266,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-rT-gjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5546.3999999999996" y="1173.4632683658172"/>
+            <point key="canvasLocation" x="5546.376811594203" y="1173.0978260869565"/>
         </scene>
         <!--Offer Deatil-->
         <scene sceneID="aBp-ey-0ZG">
@@ -1812,7 +1849,7 @@ and periodicals</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wWf-HV-Zaz">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Leave your comments here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wWf-HV-Zaz">
                                 <rect key="frame" x="50" y="509" width="324" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2136,6 +2173,7 @@ and periodicals</string>
                         <outlet property="currentOfferTableView" destination="7pO-P5-WPG" id="r5F-I7-ROL"/>
                         <outlet property="pastOfferTableView" destination="Q39-EI-e4W" id="dya-wX-aYf"/>
                         <segue destination="8y9-Ty-LeJ" kind="showDetail" identifier="rate" id="hEt-Ha-yfc"/>
+                        <segue destination="Fjf-sY-oDL" kind="show" identifier="currentOffer" id="VGH-6S-77C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki7-vc-tGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
