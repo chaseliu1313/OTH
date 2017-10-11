@@ -70,7 +70,13 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                                         "question_text": "",
                                         "Answer": " "]
 
-    
+    var complet : [String: String] = ["nonce": "",
+                                      "reservatiion_id": "",
+                                      "show_id": "",
+                                      "member_id": "",
+                                      "price": "",
+                                      "tickets": "3"
+                                      ]
     @IBOutlet weak var answerlabel: UILabel!
     
     @IBOutlet weak var answertextfield: UITextField!
@@ -246,8 +252,35 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
             
         ConnectionHelper.postJSON(command: command, parameter: parameter, compeletion: { (success, json) in
             if success {
+                
+                if let paypal  =  json["paypal"].string {
+                    
+                    if json["paypal"].string == "1" {
+                        
+                        
+                        print("go to paypal")
+                    }
+                    else
+                    {
+                        
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                if let redirectLink = json["affiliate_url"].string {
+                    
+                    print("go to the redirect link")
+                    
+                    
+                }
+                
+                
             
-                print(json)
+                
+                
             
             }
             
