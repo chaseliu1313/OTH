@@ -72,6 +72,8 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.qty.text = reservations[indexPath.row]["num_tickets"] as? String
             cell.venue.text = reservations[indexPath.row]["venue_name"] as? String
             
+            
+            
             if let id = reservations[indexPath.row]["event_id"] as? String {
                
                 cell.eventID = id

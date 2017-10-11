@@ -11,6 +11,7 @@
 		5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */; };
 		522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */; };
 		526164021F66222E0028A63F /* On_the_HouseUITestsweek7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */; };
+		526835241F8E4C26004D6341 /* CurrentOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */; };
 		52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E71F56AD8C00411EA0 /* System.swift */; };
 		52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */; };
 		52C392701F83B9710020D9D6 /* RatingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */; };
@@ -68,6 +69,7 @@
 		526163FF1F66222E0028A63F /* On the HouseUITestsweek7.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the HouseUITestsweek7.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_the_HouseUITestsweek7.swift; sourceTree = "<group>"; };
 		526164031F66222E0028A63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentOfferViewController.swift; sourceTree = "<group>"; };
 		52BBB7E71F56AD8C00411EA0 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		52BBB7E91F56ADB600411EA0 /* ConnectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
 		52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDetailViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,17 @@
 			path = "On the HouseUITestsweek7";
 			sourceTree = "<group>";
 		};
+		526835221F8E4B68004D6341 /* tableCell */ = {
+			isa = PBXGroup;
+			children = (
+				260CCC491F7118A6006FE65E /* ShowTime.swift */,
+				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
+				E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */,
+				B71B35711F8491100043504B /* MHTableViewCell.swift */,
+			);
+			path = tableCell;
+			sourceTree = "<group>";
+		};
 		9D5DCD65CB94C4B9BCE90FFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +166,7 @@
 		A2A569571F4FAC6E005EB8AE /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
+				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
 				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,
@@ -177,8 +191,7 @@
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
 				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
-				E88F42961F60095B00DE142E /* OfferTableCell.swift */,
-				260CCC491F7118A6006FE65E /* ShowTime.swift */,
+				526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
 				B71B35731F8491180043504B /* MHUIViewController.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
@@ -188,15 +201,13 @@
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
 				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
-				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				E859D9961F7A257600293955 /* Survey.swift */,
 				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
-				E88119F21F823D87008F4FE0 /* MyOfferTableViewCell.swift */,
 				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
 				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
-				B71B35711F8491100043504B /* MHTableViewCell.swift */,
+				526835221F8E4B68004D6341 /* tableCell */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -475,6 +486,7 @@
 				A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */,
 				5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */,
 				E88119F31F823D87008F4FE0 /* MyOfferTableViewCell.swift in Sources */,
+				526835241F8E4C26004D6341 /* CurrentOfferViewController.swift in Sources */,
 				71E1FB921F611BC80029D3D0 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
