@@ -30,7 +30,7 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
     let apiHandler = APIHandler()
     
     let memberID:Parameters = [
-        "member_id":"56"
+        "member_id": UserDefaults.standard.string(forKey: "member_id")!
     ]
     
     @IBAction func moreInfoOnGold(_ sender: Any) {
@@ -80,11 +80,13 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
                 stringBlocks.append(stringBlock["name"].stringValue)
                 stringBlocks.append(": ")
                 stringBlocks.append(stringBlock["duration_amount"].stringValue)
+                
                 if(stringBlock["duration_type"] == "3") {
                     stringBlocks.append(" months")
                 } else {
                     stringBlocks.append(" years")
                 }
+                
                 if(stringBlock["price"].stringValue == "0.00") {
                     stringBlocks.append("          : FREE")
                 } else {
@@ -92,6 +94,7 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
                     stringBlocks.append(stringBlock["price"].stringValue)
                     stringBlocks.append("AUD")
                 }
+                
                 stringBlockForLabel.append(stringBlocks)
                 stringBlocks.removeAll()
             }
@@ -103,6 +106,13 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //extracting current membership information.
         apiHandler.extractPostResponse(apiParameters: "member/membership", postParameters: memberID) { (responseObject) in
+
+            guard responseObject["status"]?.stringValue != "error" else {
+                print(responseObject["status"])
+                // will something later on.
+                return
+            }
+
             if responseObject["membership"]!["membership_level_name"] == "Gold" {
                 self.configureCheckBoxGroup(checkBoxSelected: self.GoldOptions)
                 self.currentMembership = "Gold"
@@ -158,7 +168,7 @@ class MHUIViewController: UIViewController, UITableViewDelegate, UITableViewData
         let endDate:String = formatDate.getFormattedDate(dateToConvert: listData["memberships"][indexPath.row]["date_expires"].doubleValue, format: "dd/MM/YYYY")
         
         cell?.membershipPeriod.text = startDate + " - " + endDate
-        
+        cell?.layer.backgroundColor = UIColor.clear.cgColor
         return cell!
     }
     
