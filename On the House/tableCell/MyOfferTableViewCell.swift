@@ -23,6 +23,7 @@ class MyOfferTableViewCell: UITableViewCell {
     @IBOutlet weak var venue: UILabel!
     
     var eventID :String?
+    var showID : String?
     var type = true
     
     var sendInfo : sendInfoDelegate!
@@ -44,7 +45,7 @@ class MyOfferTableViewCell: UITableViewCell {
     
     @IBAction func moreInfo(_ sender: UIButton) {
         
-       sendInfo.sendInfo(eventID: self.eventID!, type: type)
+       sendInfo.sendInfo(eventID: self.eventID!, type: type,showID:self.showID!)
         
     }
 
@@ -61,7 +62,9 @@ class MyPastOfferTableViewCell:UITableViewCell {
     @IBOutlet weak var dateTime: UILabel!
     @IBOutlet weak var venue: UILabel!
     
+    
     var eventID : String?
+    var showID: String?
     var type = false
     
      var sendInfo : sendInfoDelegate!
@@ -79,12 +82,12 @@ class MyPastOfferTableViewCell:UITableViewCell {
     
     @IBAction func moreInfo(_ sender: UIButton) {
         
-        sendInfo.sendInfo(eventID: self.eventID!, type: type)
+        sendInfo.sendInfo(eventID: self.eventID!, type: type, showID:self.showID!)
     }
     
     
 }
 
 protocol sendInfoDelegate {
-    func sendInfo(eventID:String, type: Bool)
+    func sendInfo(eventID:String, type: Bool, showID: String)
 }

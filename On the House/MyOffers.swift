@@ -23,8 +23,13 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var reservations2 : [[String: Any]] = [[:]]
     
     
-    
+    //values fro paasing between view controllers
     var eventID = ""
+    var showID = ""
+    var eventName = ""
+    var tickets = ""
+    var date = ""
+    var venueID = ""
     
     @IBOutlet weak var currentOfferTableView: UITableView!
     
@@ -72,6 +77,12 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.qty.text = reservations[indexPath.row]["num_tickets"] as? String
             cell.venue.text = reservations[indexPath.row]["venue_name"] as? String
             
+            if let sid = reservations[indexPath.row]["show_id"] as? String {
+                
+                cell.showID = sid
+                
+                
+            }
             
             
             if let id = reservations[indexPath.row]["event_id"] as? String {
@@ -90,8 +101,21 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 
             }
             
+            if let en = reservations[indexPath.row]["event_name"] as? String,let d = reservations[indexPath.row]["date"] as? String, let r = reservations[indexPath.row]["num_tickets"] as? String, let v = reservations[indexPath.row]["venue_id"] as? String {
+                self.eventName = en
+                self.date = d
+                self.tickets = r
+                self.venueID = v
+            }
+            
+            
+            
+          
+            
+            cell.moreInfo.addTarget(self, action: #selector(showCurrentDetail), for: .touchUpInside)
             
             cell.sendInfo = self
+            cell.moreInfo.layer.cornerRadius = 8
             
             
         return cell
@@ -106,6 +130,22 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell2.qty.text = reservations2[indexPath.row]["num_tickets"] as? String
             cell2.venue.text = reservations[indexPath.row]["venue_name"] as? String
             
+            cell2.moreInfo.layer.cornerRadius = 8
+            
+            if let sid = reservations[indexPath.row]["show_id"] as? String, let has_rated = reservations[indexPath.row]["has_rated"] as? Bool {
+                
+                cell2.showID = sid
+                
+                if has_rated {
+                    
+                    cell2.moreInfo.setTitle("More Info", for: .normal)
+                    cell2.type = true
+                    
+                }
+                
+                
+            }
+            
             if let id = reservations2[indexPath.row]["event_id"] as? String {
             
                 
@@ -114,7 +154,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             
             
-          
+          cell2.moreInfo.addTarget(self, action: #selector(PastOfferDetail), for: .touchUpInside)
         
            cell2.sendInfo = self
             return cell2
@@ -133,9 +173,34 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             vc?.type = self.type
             vc?.event_id = self.eventID
+          
+
+            
             
         }
+        else if segue.destination is CurrentOfferViewController {
+            let vc = segue.destination as? CurrentOfferViewController
+            
+            vc?.showID = self.showID
+            vc?.eventID = self.eventID
+            vc?.eventName = self.eventName
+            vc?.ticketsNum = self.tickets
+            vc?.date = self.date
+            vc?.venueID = self.venueID
+        }
         
+    }
+    
+    
+    func showCurrentDetail(){
+        
+        self.performSegue(withIdentifier: "currentOffer", sender: self)
+        
+    }
+    
+    func PastOfferDetail() {
+        
+         self.performSegue(withIdentifier: "rate", sender: self)
     }
     
     func loadReservs(){
@@ -184,11 +249,12 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
 extension MyOffers: sendInfoDelegate {
 
-    func sendInfo(eventID: String, type: Bool) {
+    func sendInfo(eventID: String, type: Bool, showID: String) {
         self.eventID = eventID
         self.type = type
-        print(self.eventID)
-        self.performSegue(withIdentifier: "rate", sender: self)
+        self.showID = showID
+        
+       
     }
 
 
