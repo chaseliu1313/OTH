@@ -25,6 +25,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     var show_id = ""
     var data: [String: String] = [:]
 
+    var address = ""
     
     var Array = ["If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
     var questionid = String()
@@ -48,6 +49,12 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
                                         "Answer": " "]
     
     
+    //passing to the finish screen
+    
+    var reservation_id = " "
+    var price = " "
+    var itemName = " "
+    var sky = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
@@ -128,6 +135,43 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
                     if success
                     {
                         print(json)
+                        if let paypal  =  json["paypal"].string {
+                            
+                            if json["paypal"].string == "1" {
+                                
+                                
+                                if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].string, let sku = json["item_sku"].string {
+                                    
+                                    //information for passing to the finish page
+                                    self.reservation_id = id
+                                    self.price = p
+                                    self.itemName = name
+                                    // end of information for passing to the finish page
+                                    
+                                }
+                                
+                                
+                            }
+                            else
+                            {
+                                
+                                
+                                
+                                
+                            }
+                            
+                        }
+                        
+                        if let redirectLink = json["affiliate_url"].string {
+                            
+                          
+                            self.address  = redirectLink
+                            self.performSegue(withIdentifier: "redirect2", sender: self)
+                            
+                            
+                        }
+                        
+                        
                     }
                     else {
                         
@@ -204,5 +248,28 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is FinishReservViewController {
+            
+            let vc = segue.destination as? FinishReservViewController
+            vc?.reservation_id = self.reservation_id
+            vc?.show_id  = self.show_id
+            vc?.member_id = self.member_id
+            vc?.price = self.price
+            vc?.tickets = self.qty
+            
+        }
+        else if segue.destination is RedirectViewController {
+            
+            let vc = segue.destination as? RedirectViewController
+                
+                vc?.address = self.address
+                
+            
+            
+        }
+        
+    }
    
 }

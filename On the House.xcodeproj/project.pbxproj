@@ -10,6 +10,8 @@
 		260CCC4A1F7118A6006FE65E /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260CCC491F7118A6006FE65E /* ShowTime.swift */; };
 		5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */; };
 		522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */; };
+		522FEB9B1F90AF3300A7AA80 /* RedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */; };
+		522FEB9D1F90B0DF00A7AA80 /* FinishReservViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522FEB9C1F90B0DF00A7AA80 /* FinishReservViewController.swift */; };
 		526164021F66222E0028A63F /* On_the_HouseUITestsweek7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */; };
 		526835241F8E4C26004D6341 /* CurrentOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */; };
 		529E0D901F8F956C00DF8D2B /* AllRatingTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E0D8F1F8F956C00DF8D2B /* AllRatingTabTableViewCell.swift */; };
@@ -67,6 +69,8 @@
 		260CCC491F7118A6006FE65E /* ShowTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
 		5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionTickets.swift; sourceTree = "<group>"; };
 		522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedirectViewController.swift; sourceTree = "<group>"; };
+		522FEB9C1F90B0DF00A7AA80 /* FinishReservViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishReservViewController.swift; sourceTree = "<group>"; };
 		526163FF1F66222E0028A63F /* On the HouseUITestsweek7.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On the HouseUITestsweek7.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_the_HouseUITestsweek7.swift; sourceTree = "<group>"; };
 		526164031F66222E0028A63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
 				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
 				526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */,
+				522FEB9C1F90B0DF00A7AA80 /* FinishReservViewController.swift */,
+				522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */,
 				526835221F8E4B68004D6341 /* tableCell */,
 			);
 			name = "View Controller";
@@ -473,8 +479,10 @@
 				260CCC4A1F7118A6006FE65E /* ShowTime.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
+				522FEB9B1F90AF3300A7AA80 /* RedirectViewController.swift in Sources */,
 				71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
+				522FEB9D1F90B0DF00A7AA80 /* FinishReservViewController.swift in Sources */,
 				71ACD9EF1F7B48C00070CC61 /* paymentWebViewViewController.swift in Sources */,
 				A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */,
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,

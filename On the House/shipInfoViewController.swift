@@ -28,6 +28,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     var show_id = ""
     let command = "api/v1/reserve"
     
+    var urladdress  = ""
     
     @IBOutlet weak var firstName: UITextField!
     
@@ -38,6 +39,12 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var phoneNumber: UITextField!
     var save = ""
     var zoneID = ""
+    
+       //passing to the finish screen
+    var reservation_id = " "
+    var price = " "
+    var itemName = " "
+    var sku = " "
     
     @IBAction func saveSwitch(_ sender: UISwitch) {
         
@@ -253,12 +260,24 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         ConnectionHelper.postJSON(command: command, parameter: parameter, compeletion: { (success, json) in
             if success {
                 
+                print(json)
                 if let paypal  =  json["paypal"].string {
                     
                     if json["paypal"].string == "1" {
                         
+                        //information for paypal checkout
+                        if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].string, let sku = json["item_sku"].string {
+                            
+                            //information for passing to the finish page
+                            self.reservation_id = id
+                            self.price = p
+                            self.itemName = name
+                            // end of information for passing to the finish page
+                            
+                        }
                         
-                        print("go to paypal")
+                        
+                        
                     }
                     else
                     {
@@ -380,5 +399,28 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         // ...
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is FinishReservViewController {
+            
+            let vc = segue.destination as? FinishReservViewController
+            vc?.reservation_id = self.reservation_id
+            vc?.show_id  = self.show_id
+            vc?.member_id = self.member_id
+            vc?.price = self.price
+            vc?.tickets = self.qty
+            
+        }
+        else if segue.destination is RedirectViewController {
+            
+            let vc = segue.destination as? RedirectViewController
+            
+            vc?.address = self.urladdress
+            
+            
+            
+        }
+        
+    }
    
 }

@@ -1228,7 +1228,7 @@ and periodicals</string>
                                         <rect key="frame" x="0.0" y="120" width="406" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="406" height="296"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="406" height="295.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -1799,11 +1799,75 @@ and periodicals</string>
                         <outlet property="pickview" destination="eZ7-iQ-ilY" id="78y-wP-N4g"/>
                         <outlet property="postcode" destination="P52-lM-2JB" id="MR7-js-LFe"/>
                         <outlet property="state" destination="r3k-zq-m6e" id="BdZ-t6-Dk6"/>
+                        <segue destination="1YZ-sf-wEn" kind="show" identifier="redirect1" id="iIv-cl-401"/>
+                        <segue destination="Gqk-oy-nnu" kind="show" identifier="finish1" id="Hak-60-eMb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxm-FS-no9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8361" y="568"/>
+        </scene>
+        <!--Redirect View Controller-->
+        <scene sceneID="mI1-zy-xc6">
+            <objects>
+                <viewController id="1YZ-sf-wEn" customClass="RedirectViewController" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3UU-id-w8d"/>
+                        <viewControllerLayoutGuide type="bottom" id="GVm-s0-RRW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zlg-Uc-M6u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-CG-vlL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rVp-CG-vlL" secondAttribute="trailing" id="GX9-qN-2Ya"/>
+                            <constraint firstItem="GVm-s0-RRW" firstAttribute="top" secondItem="rVp-CG-vlL" secondAttribute="bottom" id="bLZ-gE-g2a"/>
+                            <constraint firstItem="rVp-CG-vlL" firstAttribute="leading" secondItem="zlg-Uc-M6u" secondAttribute="leading" id="f1f-ax-vzK"/>
+                            <constraint firstItem="rVp-CG-vlL" firstAttribute="top" secondItem="zlg-Uc-M6u" secondAttribute="top" id="uV9-Fg-oL8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="rVp-CG-vlL" id="1md-Oe-xrX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Q8-Bf-ty3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10509" y="638"/>
+        </scene>
+        <!--Finish Reserv View Controller-->
+        <scene sceneID="Ixe-6W-f97">
+            <objects>
+                <viewController id="Gqk-oy-nnu" customClass="FinishReservViewController" customModule="On_the_House" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xal-bo-Nc8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nx3-vq-CDK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CiR-cR-5v6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-h0-UdQ" customClass="com">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nx3-vq-CDK" firstAttribute="top" secondItem="hVf-h0-UdQ" secondAttribute="bottom" id="2fU-JS-vj8"/>
+                            <constraint firstItem="hVf-h0-UdQ" firstAttribute="leading" secondItem="CiR-cR-5v6" secondAttribute="leading" id="ACT-ye-Ule"/>
+                            <constraint firstAttribute="trailing" secondItem="hVf-h0-UdQ" secondAttribute="trailing" id="Guc-Oo-zUH"/>
+                            <constraint firstItem="hVf-h0-UdQ" firstAttribute="top" secondItem="CiR-cR-5v6" secondAttribute="top" id="JN7-e9-d8n"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fo-hJ-5JW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10509" y="1560"/>
         </scene>
         <!--Survey-->
         <scene sceneID="zYe-zv-lt8">
@@ -1883,6 +1947,8 @@ and periodicals</string>
                         <outlet property="pickView" destination="CU1-NV-2is" id="iHK-dh-ZE8"/>
                         <outlet property="surveryAnswerLab" destination="VeK-3U-95L" id="5kl-sn-yTj"/>
                         <outlet property="surveyAnswertextfield" destination="LUo-gJ-Uaw" id="7sQ-IN-hB2"/>
+                        <segue destination="1YZ-sf-wEn" kind="show" identifier="redirect2" id="ft6-QP-OAO"/>
+                        <segue destination="Gqk-oy-nnu" kind="show" identifier="finish2" id="9gL-vs-53k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Mn-f8-TCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5096,6 +5162,8 @@ and periodicals</string>
     <inferredMetricsTieBreakers>
         <segue reference="n2t-AZ-ZVb"/>
         <segue reference="sTr-nW-xrY"/>
+        <segue reference="Hak-60-eMb"/>
+        <segue reference="ft6-QP-OAO"/>
         <segue reference="OlO-BT-Hwe"/>
     </inferredMetricsTieBreakers>
 </document>

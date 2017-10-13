@@ -31,6 +31,8 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     var date = ""
     var venueID = ""
     
+    var reservationID = ""
+    
     @IBOutlet weak var currentOfferTableView: UITableView!
     
     @IBOutlet weak var pastOfferTableView: UITableView!
@@ -96,16 +98,22 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 if !cancel {
                     
                     cell.Cancel.isHidden = true
+                }
+                else {
                     
+                    
+                    cell.Cancel.addTarget(self, action: #selector(cancelReservation), for: .touchUpInside)
                 }
                 
             }
             
-            if let en = reservations[indexPath.row]["event_name"] as? String,let d = reservations[indexPath.row]["date"] as? String, let r = reservations[indexPath.row]["num_tickets"] as? String, let v = reservations[indexPath.row]["venue_id"] as? String {
+            
+            if let en = reservations[indexPath.row]["event_name"] as? String,let d = reservations[indexPath.row]["date"] as? String, let r = reservations[indexPath.row]["num_tickets"] as? String, let v = reservations[indexPath.row]["venue_id"] as? String, let reserv = reservations[indexPath.row]["reservation_id"] as? String {
                 self.eventName = en
                 self.date = d
                 self.tickets = r
                 self.venueID = v
+                self.reservationID = reserv
             }
             
             
@@ -132,11 +140,13 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             cell2.moreInfo.layer.cornerRadius = 8
             
-            if let sid = reservations[indexPath.row]["show_id"] as? String, let has_rated = reservations[indexPath.row]["has_rated"] as? Bool {
+            if let sid = reservations[indexPath.row]["show_id"] as? String, let has_rated = reservations[indexPath.row]["has_rated"] as? Int {
                 
+               
+               
                 cell2.showID = sid
-                
-                if has_rated {
+               
+                if has_rated == 0 {
                     
                     cell2.moreInfo.setTitle("More Info", for: .normal)
                     cell2.type = true
@@ -243,6 +253,53 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBAction func `return`(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    //cancel reservation
+    func cancelReservation(){
+        
+        let command = "api/v1/reservation/cancel"
+        guard let id = UserDefaults.standard.string(forKey: "member_id")
+            else {return}
+        let parameter = ["reservation_id": self.reservationID, "member_id": id]
+        
+        ConnectionHelper.postJSON(command: command, parameter: parameter) { (success, json) in
+            
+            if success {
+                
+                self.notifyUser(["Your reservation is canceled"])
+            }
+            
+            else {
+                if let error = json["error"]["messages"].arrayObject as? [String]
+                {
+                       self.notifyUser(error)
+                }
+             
+                
+                
+            }
+            
+        }
+        
+    }
+    
+   
+    
+    func notifyUser( _ message: [String] ) -> Void
+    {
+        
+         var meg = " "
+        for m in message {
+            
+            meg.append("\(m) \n")
+        }
+       
+        let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
     }
     
 }
