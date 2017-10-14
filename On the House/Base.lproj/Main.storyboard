@@ -1232,7 +1232,7 @@ and periodicals</string>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
-                                                    <rect key="frame" x="35.333333333333343" y="51" width="335.33333333333337" height="175"/>
+                                                    <rect key="frame" x="35.666666666666657" y="51" width="335" height="175"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="175" id="Vxt-t1-4iV"/>
                                                         <constraint firstAttribute="width" constant="335" id="lgn-FH-HPv"/>
@@ -1416,8 +1416,8 @@ and periodicals</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dbm-Qa-Uoh">
-                                                <rect key="frame" x="8" y="657" width="398" height="270"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dbm-Qa-Uoh">
+                                                <rect key="frame" x="8" y="657" width="398" height="344"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Agy-sn-Ool">
@@ -1428,22 +1428,22 @@ and periodicals</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="time" rowHeight="112" id="DtB-xJ-ffX" customClass="ShowTime" customModule="On_the_House" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="49" width="398" height="112"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="time" rowHeight="133" id="DtB-xJ-ffX" customClass="ShowTime" customModule="On_the_House" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="49" width="398" height="133"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DtB-xJ-ffX" id="2M4-xn-3QK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="112"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="133"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Qty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-Xp-ug0">
-                                                                    <rect key="frame" x="246" y="8" width="48" height="30"/>
+                                                                    <rect key="frame" x="246" y="10" width="48" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wU2-4q-jrT">
-                                                                    <rect key="frame" x="304" y="9" width="86" height="30"/>
+                                                                    <rect key="frame" x="304" y="11" width="86" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -1460,7 +1460,7 @@ and periodicals</string>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMq-R6-OpM">
-                                                                    <rect key="frame" x="8" y="9" width="225" height="36"/>
+                                                                    <rect key="frame" x="8" y="11" width="225" height="36"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
@@ -1469,7 +1469,14 @@ and periodicals</string>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEq-6s-0lc">
                                                                     <rect key="frame" x="8" y="53" width="382" height="51"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGe-tx-nIl">
+                                                                    <rect key="frame" x="8" y="104" width="382" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1478,8 +1485,10 @@ and periodicals</string>
                                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
                                                             <outlet property="bookNow" destination="wU2-4q-jrT" id="Lm5-Yb-Zj0"/>
+                                                            <outlet property="limit" destination="UGe-tx-nIl" id="tLs-IB-gBR"/>
                                                             <outlet property="ticketNumber" destination="ZRx-Xp-ug0" id="ozD-cJ-i8q"/>
                                                             <outlet property="time" destination="AMq-R6-OpM" id="7mK-Fl-X9h"/>
+                                                            <outlet property="venue" destination="hEq-6s-0lc" id="igw-Yn-oIj"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -1516,26 +1525,6 @@ and periodicals</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFN-vL-en2">
-                                                <rect key="frame" x="225" y="1016" width="124" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Enter Competition">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnS-Ex-St9">
-                                                <rect key="frame" x="48" y="1016" width="111" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                <inset key="titleEdgeInsets" minX="-27" minY="0.0" maxX="0.0" maxY="-29"/>
-                                                <inset key="imageEdgeInsets" minX="41" minY="5" maxX="0.0" maxY="17"/>
-                                                <state key="normal" title="Share Event" image="share">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="shareEvent:" destination="qvI-Ak-Ljz" eventType="touchUpInside" id="SMB-VI-FO9"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1554,6 +1543,19 @@ and periodicals</string>
                                         <rect key="frame" x="102" y="58" width="149" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnS-Ex-St9">
+                                        <rect key="frame" x="152" y="1095" width="111" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <inset key="titleEdgeInsets" minX="-27" minY="0.0" maxX="0.0" maxY="-29"/>
+                                        <inset key="imageEdgeInsets" minX="41" minY="5" maxX="0.0" maxY="17"/>
+                                        <state key="normal" title="Share Event" image="share">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareEvent:" destination="qvI-Ak-Ljz" eventType="touchUpInside" id="SMB-VI-FO9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MOZ-m5-TfD" firstAttribute="top" secondItem="X9q-se-Cud" secondAttribute="top" id="OLa-EM-CdJ"/>

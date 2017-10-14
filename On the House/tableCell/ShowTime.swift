@@ -15,12 +15,17 @@ class ShowTime: UITableViewCell {
     
     @IBOutlet weak var ticketNumber: UITextField!
     @IBOutlet weak var bookNow: UIButton!
-
+    @IBOutlet weak var venue: UILabel!
+    @IBOutlet weak var limit: UILabel!
+    
     var userMembership: Int!
     var showMembership: Int!
+    var isSoldOut = false
     
     var isCompetition = false
     var show: Show?
+    var uplimit = 0
+    var bottomlimit = 0
     
     var sendInfo : sendBookingInfoProtocol!
     
@@ -36,9 +41,12 @@ class ShowTime: UITableViewCell {
     }
 
     @IBAction func bookNow(_ sender: Any) {
-        let qty = ticketNumber.text!
+        
+       
         var error = ""
         let shipping = self.show!.shipping!
+        
+       
         
         self.showMembership = Int(self.show!.membership_level_id!)
        
@@ -57,22 +65,56 @@ class ShowTime: UITableViewCell {
         error = "This is a Gold Membership Event, Please Upgrade First"
             
         }
-        if qty == "" && !self.ticketNumber.isHidden {
+        
+        if ticketNumber.text!.isEmpty  && !self.ticketNumber.isHidden {
             
-        error = "Please Enter the Quantity"
+            error = "Please Enter the Quantity"
+            
+        }
+        
+        if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            
+            error = "Please log in first"
+        }
+        
+        if isSoldOut {
+
+            error = "This show has been sold out"
+        }
+        
+        
+        
+        
+        
+        if let qty = ticketNumber.text, let show_id = self.show?.id {
+            
+            let qtyNum = Int(qty)!
+            if bottomlimit == 0 {
+                
+                
+                if qtyNum <= bottomlimit || qtyNum > uplimit {
+                    
+                    error = "Please Enter the corret quantity"
+                }
+                
+            }
+            else {
+                
+                if qtyNum != uplimit {
+                    
+                    error = "You can only reserve \(uplimit) tickets"
+                }
+                
+            }
+            
+        
+        sendInfo.sendInfo(qty: qty, error: error, isCom: self.isCompetition, show_id: show_id, shipping: shipping)
         
         }
         
-        let show_id = self.show!.id
-        
-        
-        sendInfo.sendInfo(qty: qty, error: error, isCom: self.isCompetition, show_id: show_id!, shipping: shipping)
-        
-        
-        
-        
     }
     
+
     
     
    

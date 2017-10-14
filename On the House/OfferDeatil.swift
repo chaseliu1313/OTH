@@ -39,6 +39,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var rating: UIImageView!
     @IBOutlet weak var membershipLevel: UILabel!
     @IBOutlet weak var fullPrice: UILabel!
+
     
     var loadMoreView: UIView?
     
@@ -55,14 +56,17 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.showStatus.reloadData()
         self.showStatus.tableFooterView = self.loadMoreView
         
+        
        
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "time", for: indexPath) as! ShowTime
+        cell.sendInfo = self
         
         if self.isProduct {
+            
         cell.show = self.shows[indexPath.row]
             
             
@@ -79,7 +83,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 }
                 
                 let title = String(describing: cell.show!.button_text!)
-               // print(title)
+            
                 
                 cell.bookNow.setTitle(title, for: .normal)
                 let time = String(describing: cell.show!.date_formatted!)
@@ -87,40 +91,100 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
 
         }
+            
         else {
             
-            cell.show = Offers.showandvenue.shows[indexPath.row]}
+           cell.show = Offers.showandvenue.shows[indexPath.row]
+            
+        
             cell.isCompetition = self.offerDetail!.is_competition
         
+            
         if cell.show != nil {
         
+            
             if (cell.show?.is_admin_fee)!  {
             
-                self.adminFee.text = "Admin Fee: 10"
+                self.adminFee.text = "Admin Fee: $10"
             
             }
             else {
             
-            self.adminFee.text = "Admin Fee: 0"
+            self.adminFee.text = "Admin Fee: $0"
                 
             }
             
             let title = String(describing: cell.show!.button_text!)
-            //print(title)
             
             cell.bookNow.setTitle(title, for: .normal)
             let time = String(describing: cell.show!.date_formatted!)
             cell.time.text = time
+            
+            if let venueID = cell.show?.venue_id {
+                
+                let command = "api/v1/venue/\(venueID)"
+                
+                ConnectionHelper.getJSON(command: command, completion: { (success, json) in
+                    
+                    if success {
+                        
+                        if let name = json["venue"]["name"].string,
+                        let address1 = json["venue"]["address1"].string,
+                        let address2 = json["venue"]["address2"].string,
+                        let city = json["venue"]["city"].string,
+                            let state = json["venue"]["zone_name"].string, let zip = json["venue"]["zip"].string{
+                            
+                            cell.venue.text = "Venue: \(name) \(address1), \(address2), \(city), \(state) \(zip)"
+                            
+                        }
+                        
+                        
+                    }
+                })
+  
+            }
+           
+            if let max = cell.show?.max_tickets_per_member, let canChoose = cell.show?.member_can_choose {
+                cell.limit.textColor = UIColor.red
+                
+                if canChoose {
+                    cell.bottomlimit = 0
+                    cell.uplimit = Int(max)!
+                    cell.limit.text = "* Choose UP TO \(max) tickets"
+                }
+                else {
+                    
+                    cell.uplimit = Int(max)!
+                    cell.bottomlimit = cell.uplimit+1
+                    cell.limit.text = "* Reserve \(max) tickets"
+                    
+                }
+                
+            }
+            if let soldOut = cell.show?.sold_out {
+                cell.isSoldOut = soldOut
+               
+                if soldOut {
+                    
+                    
+                    cell.bookNow.setTitle("Sold Out", for: .normal)
+                }
+                
+            }
         }
-        
+        }
         if self.competitionQuestion != "" {
         
         cell.ticketNumber.isHidden = true
+         cell.bookNow.setTitle("Enter Now", for: .normal)
+            
         }
         
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
-        cell.sendInfo = self
+        
+       
+        
        
         
         
@@ -142,6 +206,9 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 133.0
     }
 
     
@@ -239,11 +306,13 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let url = command + OfferID
         
         
-        //let url = command + OfferID
+      
         ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
             if success {
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
                 
+                
+               
                 if json["event"]["is_product"].bool! {
                     
                     self.isProduct = true
@@ -291,14 +360,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 Offers.showandvenue  = ShowAndVenue(data: data)
                 
                 
-                
-//                self.address1.text = Offers.showandvenue.venue?.address1
-//                self.address2.text = Offers.showandvenue.venue?.address2
-//                self.City.text = Offers.showandvenue.venue?.city
-//                
-//                let zone = System.getKey(id: Int((Offers.showandvenue.venue?.zone_id)!)!, dic: System.states)
-//                
-//                self.state.text = zone
+
                 }
                 
                 
