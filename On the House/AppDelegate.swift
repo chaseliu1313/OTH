@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         BTAppSwitch.setReturnURLScheme("RMIT.On-the-House.payments")
         
+        PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AeuS6TRGQEaNPK6YwSMsTH_SAq_XMc255pYIvBy4yMv--sD2hVk2OtC-LgqBH8i0oAPo2Tv4KIF4kIXx",
+                                                                PayPalEnvironmentSandbox: "cugbliuboshi-facilitator@gmail.com"])
+        
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         
         self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
