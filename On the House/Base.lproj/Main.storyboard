@@ -1231,7 +1231,7 @@ and periodicals</string>
                                         <rect key="frame" x="0.0" y="120" width="406" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="406" height="295.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="406" height="296"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -1919,9 +1919,8 @@ and periodicals</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Ll-Ztv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Ll-Ztv">
                                 <rect key="frame" x="33" y="24" width="21" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <action selector="return:" destination="gEj-8t-foi" eventType="touchUpInside" id="Dio-wB-3bk"/>
@@ -1947,6 +1946,10 @@ and periodicals</string>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k1y-Ll-Ztv" firstAttribute="leading" secondItem="DNJ-v2-t72" secondAttribute="leadingMargin" constant="13" id="3dq-Tv-eQi"/>
+                            <constraint firstItem="k1y-Ll-Ztv" firstAttribute="top" secondItem="JNg-sc-oMn" secondAttribute="bottom" constant="4" id="EAc-8a-yi6"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pickView" destination="CU1-NV-2is" id="iHK-dh-ZE8"/>
@@ -5168,7 +5171,7 @@ and periodicals</string>
     <inferredMetricsTieBreakers>
         <segue reference="n2t-AZ-ZVb"/>
         <segue reference="N44-1v-OrC"/>
-        <segue reference="Hak-60-eMb"/>
+        <segue reference="9gL-vs-53k"/>
         <segue reference="ft6-QP-OAO"/>
         <segue reference="OlO-BT-Hwe"/>
     </inferredMetricsTieBreakers>
