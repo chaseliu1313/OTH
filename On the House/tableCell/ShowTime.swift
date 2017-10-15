@@ -86,9 +86,9 @@ class ShowTime: UITableViewCell {
         
         
         
-        if let qty = ticketNumber.text, let show_id = self.show?.id {
+        if let qty = ticketNumber.text, let show_id = self.show?.id,  let qtyNum = Int(qty) {
             
-            let qtyNum = Int(qty)!
+           
             if bottomlimit == 0 {
                 
                 

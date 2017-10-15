@@ -35,7 +35,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.dataSource = self
         
         
-        
+       
         self.tableView.tableFooterView = self.loadMoreView
         
         
@@ -383,7 +383,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 
                 if reserv["rated"] == "0" {
                     
-                
+                    self.reviewWarning.isHidden = false
+                    
                      self.reviewWarning.text = "Before booking any upcoming offers you must first rate the offers you previously reserved and attended. "
                     
                     self.reviewWarning.textColor = UIColor.red
@@ -394,9 +395,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 }
                 else {
                     
-                     self.reviewWarning.text = " "
                     self.reviewWarning.isHidden = true
-                    
+                    self.reviewWarning.text = " "
                     
                 }
                 

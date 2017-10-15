@@ -47,6 +47,17 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         self.loadReservs()
         
+        if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            
+            self.notifyUser(["Please Log in to access"])
+            
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
+        
     
         
            }
@@ -57,12 +68,12 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         if ( currentOfferTableView == tableView){
             
-            print(reservations.count)
+            print("table1 \(reservations.count)")
                return(reservations.count)
             
         }else {
             
-            
+            print("table2 \(reservations2.count)")
                 return(reservations2.count)
             
         }
@@ -70,8 +81,9 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
         if tableView == currentOfferTableView{
-            
+           print("table1 \(indexPath.row)")
             
        let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! MyOfferTableViewCell
             cell.showShortcut.text = reservations[indexPath.row]["event_name"] as? String
@@ -130,6 +142,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             
         }else{
+            print("table1 \(indexPath.row)")
             
             let cell2 = tableView.dequeueReusableCell(withIdentifier:"pastcell", for: indexPath) as! MyPastOfferTableViewCell
             
