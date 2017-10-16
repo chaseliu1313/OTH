@@ -135,6 +135,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
                     if success
                     {
                         print(json)
+                        
                         if let paypal  =  json["paypal"].string {
                             
                             if json["paypal"].string == "1" {
