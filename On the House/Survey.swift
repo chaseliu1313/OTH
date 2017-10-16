@@ -192,7 +192,6 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
                                     // end of information for passing to the finish page
                                 }
                                 
-                                
                             }
                             else
                             {
@@ -223,11 +222,6 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
                 
             
             }
-            
-            
-        
-        
-        
         
         self.parameter.updateValue(surveyAnswertextfield.text!, forKey: "Answer")
         
