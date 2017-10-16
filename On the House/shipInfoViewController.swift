@@ -284,12 +284,15 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
             if success {
                 
                 print(json)
-                if let paypal  =  json["paypal"].string {
+                if let paypal  =  json["paypal"].int{
+                    print("paypal\(paypal)")
                     
-                    if json["paypal"].string == "1" {
-                        
+                    if paypal == 1 {
+                        print("paypal\(paypal)")
                         //information for paypal checkout
-                        if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].string, let sku = json["item_sku"].string {
+                        if let name = json["item_name"].string, let p = json["item_price"].double, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
+                            
+                            print("price\(p)")
                             
                             let shipping = NSDecimalNumber(string: "5.99")
                             let tax = NSDecimalNumber(string: "2.50")
@@ -316,8 +319,8 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                             
                             
                             //information for passing to the finish page
-                            self.reservation_id = id
-                            self.price = p
+                            self.reservation_id = String(id)
+                            self.price = String(p)
                             self.itemName = name
                             // end of information for passing to the finish page
                             
@@ -338,7 +341,8 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                 
                 if let redirectLink = json["affiliate_url"].string {
                     
-                    print("go to the redirect link")
+                    self.performSegue(withIdentifier: "redirect1", sender: self)
+                    
                     
                     
                 }

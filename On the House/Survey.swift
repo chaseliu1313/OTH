@@ -179,15 +179,17 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
                         
                         print(json)
                         
-                        if let paypal  =  json["paypal"].string {
-                            
-                            if json["paypal"].string == "1" {
+                        if let paypal  =  json["paypal"].int {
+                            print("paypal\(paypal)")
+                            if paypal == 1 {
                                 
-                                if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].string, let sku = json["item_sku"].string {
+                                print("paypal\(paypal)")
+                                  if let name = json["item_name"].string, let p = json["item_price"].double, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
                                     
                                     //information for passing to the finish page
-                                    self.reservation_id = id
-                                    self.price = p
+                                     print("price\(p)")
+                                    self.reservation_id = String(id)
+                                    self.price = String(p)
                                     self.itemName = name
                                     // end of information for passing to the finish page
                                 }
@@ -205,7 +207,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
                             
                           
                             self.address  = redirectLink
-                            //self.performSegue(withIdentifier: "redirect2", sender: self)
+                            self.performSegue(withIdentifier: "redirect2", sender: self)
                             
                             
                         }
