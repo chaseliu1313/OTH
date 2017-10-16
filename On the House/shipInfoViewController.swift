@@ -10,11 +10,21 @@ import UIKit
 import Braintree
 
 
-class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource, BTViewControllerPresentingDelegate, BTAppSwitchDelegate{
+class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource, BTViewControllerPresentingDelegate, BTAppSwitchDelegate, PayPalPaymentDelegate{
     
     var braintreeClient: BTAPIClient!
     
     let tokenizationkey = "sandbox_b7kvdchs_9py4y9wtg3mjcv8g"
+    
+    var environment:String = PayPalEnvironmentNoNetwork {
+        willSet(newEnvironment) {
+            if (newEnvironment != environment) {
+                PayPalMobile.preconnect(withEnvironment: newEnvironment)
+            }
+        }
+    }
+    
+    var payPalConfig = PayPalConfiguration()
     
     @IBOutlet weak var pickview: UIPickerView!
     
@@ -114,10 +124,23 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         self.parameter.updateValue(self.member_id, forKey: "member_id")
         self.parameter.updateValue(self.qty, forKey: "tickets")
         
+        payPalConfig.acceptCreditCards = false
+        payPalConfig.merchantName = "On-The-House, Inc."
+        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+        // Do any additional setup after loading the view, typically from a nib.
         
+        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
+        
+        payPalConfig.payPalShippingAddressOption = .both
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PayPalMobile.preconnect(withEnvironment: environment)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -227,7 +250,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
     
     @IBAction func submit(_ sender: Any) {
         
-        self.customPayPalButtonTapped(amount: 5)
+        //self.customPayPalButtonTapped(amount: 5)
         
         if !self.answertextfield.isHidden
             && self.answertextfield.text == nil {
@@ -267,6 +290,30 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                         
                         //information for paypal checkout
                         if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].string, let sku = json["item_sku"].string {
+                            
+                            let shipping = NSDecimalNumber(string: "5.99")
+                            let tax = NSDecimalNumber(string: "2.50")
+                            
+                            let subtotal : NSDecimalNumber = 15.00
+                            
+                            let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+                            let total = subtotal.adding(shipping).adding(tax)
+                            
+                            let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: "On The House", intent: .sale)
+                            payment.paymentDetails = paymentDetails
+                            
+                            if (payment.processable) {
+                                let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+                                self.present(paymentViewController!, animated: true, completion: nil)
+                            }
+                            else {
+                                // This particular payment will always be processable. If, for
+                                // example, the amount was negative or the shortDescription was
+                                // empty, this payment wouldn't be processable, and you'd want
+                                // to handle that here.
+                                print("Payment not processalbe: \(payment)")
+                            }
+                            
                             
                             //information for passing to the finish page
                             self.reservation_id = id
@@ -399,6 +446,24 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         // ...
     }
     
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+        print("PayPal Payment Cancelled")
+        //resultText = ""
+        //successView.isHidden = true
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        print("PayPal Payment Success !")
+        paymentViewController.dismiss(animated: true, completion: { () -> Void in
+            // send completed confirmaion to your server
+            print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
+            
+            //self.resultText = completedPayment.description
+            //self.showSuccess()
+        })
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.destination is FinishReservViewController {
@@ -416,8 +481,6 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
             let vc = segue.destination as? RedirectViewController
             
             vc?.address = self.urladdress
-            
-            
             
         }
         

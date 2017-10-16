@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
+class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, PayPalPaymentDelegate {
 
     
     @IBOutlet weak var pickView: UIPickerView!
@@ -18,6 +18,16 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var surveryAnswerLab: UILabel!
     
     @IBOutlet weak var surveyAnswertextfield: UITextField!
+    
+    var environment:String = PayPalEnvironmentNoNetwork {
+        willSet(newEnvironment) {
+            if (newEnvironment != environment) {
+                PayPalMobile.preconnect(withEnvironment: newEnvironment)
+            }
+        }
+    }
+    
+    var payPalConfig = PayPalConfiguration()
     
      let command = "api/v1/reserve"
     var qty = ""
@@ -64,6 +74,17 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
         pickView.dataSource = self
         surveryAnswerLab.isHidden = true
         surveyAnswertextfield.isHidden = false
+        
+        var environment:String = PayPalEnvironmentNoNetwork {
+            willSet(newEnvironment) {
+                if (newEnvironment != environment) {
+                    PayPalMobile.preconnect(withEnvironment: newEnvironment)
+                }
+            }
+        }
+        
+        var payPalConfig = PayPalConfiguration()
+
         
         if(surveyAnswertextfield.text != "")
         {
@@ -116,9 +137,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     
-    @IBAction func submit(_ sender: Any) {
-        
-       
+    @IBAction func submit(_ sender: UIButton) {
         
         
             if self.surveyAnswertextfield.text == nil
@@ -134,12 +153,35 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
                     
                     if success
                     {
+                        let shipping = NSDecimalNumber(string: "5.99")
+                        let tax = NSDecimalNumber(string: "2.50")
+                        
+                        let subtotal : NSDecimalNumber = 15.00
+                        
+                        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+                        let total = subtotal.adding(shipping).adding(tax)
+                        
+                        let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: "On The House", intent: .sale)
+                        payment.paymentDetails = paymentDetails
+                        
+                        if (payment.processable) {
+                            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+                            self.present(paymentViewController!, animated: true, completion: nil)
+                        }
+                        else {
+                            // This particular payment will always be processable. If, for
+                            // example, the amount was negative or the shortDescription was
+                            // empty, this payment wouldn't be processable, and you'd want
+                            // to handle that here.
+                            print("Payment not processalbe: \(payment)")
+                        }
+                        
+                        
                         print(json)
                         
                         if let paypal  =  json["paypal"].string {
                             
                             if json["paypal"].string == "1" {
-                                
                                 
                                 if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].string, let sku = json["item_sku"].string {
                                     
@@ -148,15 +190,12 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
                                     self.price = p
                                     self.itemName = name
                                     // end of information for passing to the finish page
-                                    
                                 }
                                 
                                 
                             }
                             else
                             {
-                                
-                                
                                 
                                 
                             }
@@ -167,7 +206,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
                             
                           
                             self.address  = redirectLink
-                            self.performSegue(withIdentifier: "redirect2", sender: self)
+                            //self.performSegue(withIdentifier: "redirect2", sender: self)
                             
                             
                         }
@@ -247,6 +286,24 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
         
+    }
+    
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+        print("PayPal Payment Cancelled")
+        //resultText = ""
+        //successView.isHidden = true
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        print("PayPal Payment Success !")
+        paymentViewController.dismiss(animated: true, completion: { () -> Void in
+            // send completed confirmaion to your server
+            print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
+            
+            //self.resultText = completedPayment.description
+            //self.showSuccess()
+        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
