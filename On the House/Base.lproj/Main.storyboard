@@ -1060,7 +1060,6 @@ and periodicals</string>
                                 </state>
                                 <connections>
                                     <action selector="Signup:" destination="Hdo-7s-NWS" eventType="touchUpInside" id="0pW-2N-iOA"/>
-                                    <segue destination="qEO-ey-Sch" kind="modal" identifier="facebooksignup" id="N44-1v-OrC"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-UK-o4F">
@@ -1110,6 +1109,7 @@ and periodicals</string>
                         <outlet property="reentertextfield" destination="rct-qF-hqS" id="0rh-jx-nak"/>
                         <outlet property="signup" destination="z20-tC-bC0" id="TqJ-Xm-be4"/>
                         <outlet property="statepickerview" destination="Eqn-YZ-DvL" id="czb-jJ-ik5"/>
+                        <segue destination="qEO-ey-Sch" kind="show" identifier="facebooksignup" id="vbL-dY-RuX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j70-Ij-GGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5170,7 +5170,7 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n2t-AZ-ZVb"/>
-        <segue reference="N44-1v-OrC"/>
+        <segue reference="sTr-nW-xrY"/>
         <segue reference="9gL-vs-53k"/>
         <segue reference="ft6-QP-OAO"/>
         <segue reference="OlO-BT-Hwe"/>
