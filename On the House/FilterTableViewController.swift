@@ -15,6 +15,8 @@ class FilterTableViewController: UITableViewController {
     var buttonisclicked : [String : Bool] = [:]
     let formatter = DateFormatter()
     var clickedbuttons : [UIButton] = []
+    var datebuttonisclicked = false
+    var clickeddatebutton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,6 @@ class FilterTableViewController: UITableViewController {
         }
         if let istouched = buttonisclicked[sender.currentTitle!]{
             if istouched{
-                
                 buttonisclicked[sender.currentTitle!] = false
                 FilterTableViewController.filterarray.remove(at: FilterTableViewController.filterarray.index(of: sender.currentTitle!)!)
                 clickedbuttons.remove(at: clickedbuttons.index(of: sender)!)
@@ -78,6 +79,31 @@ class FilterTableViewController: UITableViewController {
         print(FilterTableViewController.filterarray)
         //buttonisclicked
     }
+    
+    @IBAction func dateaction(_ sender: UIButton) {
+        if !datebuttonisclicked {
+            FilterTableViewController.filterarray.append(sender.currentTitle!)
+            clickeddatebutton = sender
+            datebuttonisclicked = true
+            sender.backgroundColor = UIColor(rgb: 0xAF9A90)
+        }
+        else{
+            FilterTableViewController.filterarray.remove(at: FilterTableViewController.filterarray.index(of: clickeddatebutton.currentTitle!)!)
+            if sender == clickeddatebutton{
+                sender.backgroundColor = UIColor(rgb: 0xDFDDE0)
+                clickeddatebutton = UIButton()
+                datebuttonisclicked = false
+            }
+            else{
+                FilterTableViewController.filterarray.append(sender.currentTitle!)
+                clickeddatebutton.backgroundColor = UIColor(rgb: 0xDFDDE0)
+                print(clickeddatebutton.currentTitle)
+                sender.backgroundColor = UIColor(rgb: 0xAF9A90)
+                clickeddatebutton = sender
+            }
+        }
+    }
+    
     
     @IBAction func applyfilter(_ sender: UIBarButtonItem) {
         System.category = System.pickcategory(array: FilterTableViewController.filterarray)
