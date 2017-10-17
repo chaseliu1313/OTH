@@ -47,6 +47,13 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("tada!")
+        self.loadOffers()
+        tableView.reloadData()
+    }
+    
     
     
     
