@@ -13,13 +13,15 @@ class FilterTableViewController: UITableViewController {
     static var filterarray : [String] = []
     
     var buttonisclicked : [String : Bool] = [:]
-    
+    let formatter = DateFormatter()
     var clickedbuttons : [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        print(getCurrentDate())
+        print(getCurrentWeekend())
+        print(nextSevenDays())
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,17 +58,20 @@ class FilterTableViewController: UITableViewController {
         }
         if let istouched = buttonisclicked[sender.currentTitle!]{
             if istouched{
+                
                 buttonisclicked[sender.currentTitle!] = false
                 FilterTableViewController.filterarray.remove(at: FilterTableViewController.filterarray.index(of: sender.currentTitle!)!)
                 clickedbuttons.remove(at: clickedbuttons.index(of: sender)!)
                 sender.backgroundColor = UIColor(rgb: 0xDFDDE0)
             }
             else{
+                
                 buttonisclicked[sender.currentTitle!] = true
                 sender.backgroundColor = UIColor(rgb: 0xAF9A90)
             }
         }
         else{
+            
             buttonisclicked[sender.currentTitle!] = true
             sender.backgroundColor = UIColor(rgb: 0xAF9A90)
         }
@@ -77,11 +82,12 @@ class FilterTableViewController: UITableViewController {
     @IBAction func applyfilter(_ sender: UIBarButtonItem) {
         System.category = System.pickcategory(array: FilterTableViewController.filterarray)
         System.state = System.pickstate(array: FilterTableViewController.filterarray)
+        print(System.category)
+        print(System.state)
         OfferingHomePage.parameter["category_id"] = System.category
         OfferingHomePage.parameter["zone_id"] = System.state
         dismiss(animated: false, completion: nil)
-        //print(System.category)
-        //print(System.state)
+        print(clickedbuttons)
     }
     
     
@@ -100,61 +106,86 @@ class FilterTableViewController: UITableViewController {
     
     
     
+    func getCurrentDate() -> String{
+        
+        let date = Date()
+        formatter.dateFormat = "yyyy"
+        let year = formatter.string(from: date)
+        formatter.dateFormat = "MM"
+        let month = formatter.string(from: date)
+        formatter.dateFormat = "dd"
+        let day = formatter.string(from: date)
+        
+        let currentDate = "\(year)-\(month)-\(day)"
+        
+        return currentDate
+        
+    }
     
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
+    func getCurrentWeekend() -> [String] {
+        
+        var weekend:[String] = []
+        let date = Date()
+        let component = Calendar.Component.weekday
+        let cal = Calendar.current
+        let currentWeekday = cal.component(component, from: date)
+        
+        let saturday = cal.date(byAdding: component, value: 6 - currentWeekday + 1, to: date)
+        let sunday = cal.date(byAdding: component, value: 7 - currentWeekday + 1, to: date)
+        
+        
+        formatter.dateFormat = "yyyy"
+        let Syear = formatter.string(from: saturday!)
+        let Sunyear = formatter.string(from: sunday!)
+        formatter.dateFormat = "MM"
+        let Smonth = formatter.string(from: saturday!)
+        let Sunmonth = formatter.string(from: sunday!)
+        formatter.dateFormat = "dd"
+        let Sday = formatter.string(from: saturday!)
+        let SuDay = formatter.string(from: sunday!)
+        
+        let sate = "\(Syear)-\(Smonth)-\(Sday)"
+        let sun = "\(Sunyear)-\(Sunmonth)-\(SuDay)"
+        weekend.append(sate)
+        weekend.append(sun)
+        
+        return weekend
+        
+        
+    }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func nextSevenDays() -> [String] {
+        
+        var sevenDays:[String] = []
+        let date = Date()
+        let component = Calendar.Component.weekday
+        let cal = Calendar.current
+        let currentWeekday = cal.component(component, from: date)
+        
+        let startday = cal.date(byAdding: component, value: 8 - currentWeekday + 1, to: date)
+        let endday = cal.date(byAdding: component, value: 14 - currentWeekday + 1, to: date)
+        
+        
+        formatter.dateFormat = "yyyy"
+        let startyear = formatter.string(from: startday!)
+        let endyear = formatter.string(from: endday!)
+        formatter.dateFormat = "MM"
+        let startMonth = formatter.string(from: startday!)
+        let endmonth = formatter.string(from: endday!)
+        formatter.dateFormat = "dd"
+        let startDay = formatter.string(from: startday!)
+        let endDay = formatter.string(from: endday!)
+        
+        let s = "\(startyear)-\(startMonth)-\(startDay)"
+        let e = "\(endyear)-\(endmonth)-\(endDay)"
+        sevenDays.append(s)
+        sevenDays.append(e)
+        
+        return sevenDays
+        
+        
+    }
+
     
 }
 
