@@ -207,16 +207,16 @@
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
 				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
-				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
-				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				E859D9961F7A257600293955 /* Survey.swift */,
+				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
+				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
+				526835221F8E4B68004D6341 /* tableCell */,
 				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
 				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
 				E88119F41F823DF5008F4FE0 /* MyOffers.swift */,
 				526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */,
 				522FEB9C1F90B0DF00A7AA80 /* FinishReservViewController.swift */,
 				522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */,
-				526835221F8E4B68004D6341 /* tableCell */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
