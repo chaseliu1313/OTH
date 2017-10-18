@@ -50,9 +50,13 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.loadOffers()
         self.checkRating()
         
+        
+       
+        
     }
     
     
+  
     
     func showAlert(service:String)
     {
@@ -147,6 +151,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func refreshOffer(){
         
+        let filterVC = storyboard?.instantiateViewController(withIdentifier: "filter") as! FilterTableViewController
+        
+        filterVC.filterPro = self
+        
         loadOffers()
         
         //tableView.reloadData()
@@ -189,11 +197,27 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
         }
         
+        else if segue.identifier == "pop"
+        {
+            let destController = segue.destination as! FilterTableViewController
+            print("pass the current \(destController.getCurrentWeekend())")
+            destController.filterPro = self
+            
+            
+        }
+        
         
         
     }
     
+    
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    @IBAction func Filter(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "pop", sender: UIBarButtonItem.self)
+    }
+    
     
     func sideMenus(){
         if revealViewController() != nil{
@@ -487,6 +511,19 @@ extension OfferingHomePage: sendOfferIDDelegate{
         //Present alert
         self.present(alert, animated: true, completion:nil)
     }
+    
+}
+
+extension OfferingHomePage: filterProtocol {
+    
+    func updateInfo(date: [String], state: [String], category: [String]) {
+        
+        print("received value : \(date)")
+        
+    }
+    
+    
+    
     
 }
 
