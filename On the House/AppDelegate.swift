@@ -9,7 +9,6 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
-import Braintree
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        BTAppSwitch.setReturnURLScheme("RMIT.On-the-House.payments")
         
         PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AeuS6TRGQEaNPK6YwSMsTH_SAq_XMc255pYIvBy4yMv--sD2hVk2OtC-LgqBH8i0oAPo2Tv4KIF4kIXx",
                                                                 PayPalEnvironmentSandbox: "cugbliuboshi-facilitator@gmail.com"])

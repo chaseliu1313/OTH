@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Braintree
 
 
-class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource, BTViewControllerPresentingDelegate, BTAppSwitchDelegate, PayPalPaymentDelegate{
+class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource, PayPalPaymentDelegate{
     
     var braintreeClient: BTAPIClient!
     
@@ -294,15 +293,15 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                             
                             print("price\(p)")
                             
-                            let shipping = NSDecimalNumber(string: "5.99")
-                            let tax = NSDecimalNumber(string: "2.50")
+                            let shipping = NSDecimalNumber(string: "0.00")
+                            let tax = NSDecimalNumber(string:"0.00")
                             
-                            let subtotal : NSDecimalNumber = 15.00
+                            let subtotal = NSDecimalNumber(string : String(p))
                             
                             let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
                             let total = subtotal.adding(shipping).adding(tax)
                             
-                            let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: "On The House", intent: .sale)
+                            let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name, intent: .sale)
                             payment.paymentDetails = paymentDetails
                             
                             if (payment.processable) {
@@ -392,63 +391,6 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         
     }
     
-    func customPayPalButtonTapped(amount : Double) {
-        let payPalDriver = BTPayPalDriver(apiClient: self.braintreeClient)
-        payPalDriver.viewControllerPresentingDelegate = self
-        payPalDriver.appSwitchDelegate = self
-        
-        // Start the Vault flow, or...
-        payPalDriver.authorizeAccount() { (tokenizedPayPalAccount, error) -> Void in
-            
-        }
-        
-        // ...start the Checkout flow
-        let payPalRequest = BTPayPalRequest(amount: String(amount))
-        payPalDriver.requestOneTimePayment(payPalRequest) { (tokenizedPayPalAccount, error) -> Void in
-            
-        }
-    }
-    
-    // MARK: - BTViewControllerPresentingDelegate
-    
-    func paymentDriver(_ driver: Any, requestsPresentationOf viewController: UIViewController) {
-        present(viewController, animated: true, completion: nil)
-    }
-    
-    func paymentDriver(_ driver: Any, requestsDismissalOf viewController: UIViewController) {
-        viewController.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: - BTAppSwitchDelegate
-    
-    
-    // Optional - display and hide loading indicator UI
-    func appSwitcherWillPerformAppSwitch(_ appSwitcher: Any) {
-        showLoadingUI()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(hideLoadingUI), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-    }
-    
-    func appSwitcherWillProcessPaymentInfo(_ appSwitcher: Any) {
-        hideLoadingUI()
-    }
-    
-    func appSwitcher(_ appSwitcher: Any, didPerformSwitchTo target: BTAppSwitchTarget) {
-        
-    }
-    
-    // MARK: - Private methods
-    
-    func showLoadingUI() {
-        // ...
-    }
-    
-    func hideLoadingUI() {
-        NotificationCenter
-            .default
-            .removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        // ...
-    }
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
         print("PayPal Payment Cancelled")
@@ -462,7 +404,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         paymentViewController.dismiss(animated: true, completion: { () -> Void in
             // send completed confirmaion to your server
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
-            
+            self.performSegue(withIdentifier: "finish1", sender: self)
             //self.resultText = completedPayment.description
             //self.showSuccess()
         })

@@ -97,7 +97,6 @@ class FilterTableViewController: UITableViewController {
             else{
                 FilterTableViewController.filterarray.append(sender.currentTitle!)
                 clickeddatebutton.backgroundColor = UIColor(rgb: 0xDFDDE0)
-                print(clickeddatebutton.currentTitle)
                 sender.backgroundColor = UIColor(rgb: 0xAF9A90)
                 clickeddatebutton = sender
             }
@@ -108,15 +107,13 @@ class FilterTableViewController: UITableViewController {
     @IBAction func applyfilter(_ sender: UIBarButtonItem) {
         System.category = System.pickcategory(array: FilterTableViewController.filterarray)
         System.state = System.pickstate(array: FilterTableViewController.filterarray)
-        print(System.category)
-        print(System.state)
+        //print(System.category)
+        //print(System.state)
         OfferingHomePage.parameter["category_id"] = System.category
         OfferingHomePage.parameter["zone_id"] = System.state
         dismiss(animated: false, completion: nil)
-        print(clickedbuttons)
+        //print(clickedbuttons)
     }
-    
-    
     
     @IBOutlet var tableview: UITableView!
 
