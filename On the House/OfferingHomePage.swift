@@ -27,7 +27,14 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     let command = "api/v1/events/current"
     
     
-   
+    var filterparameter : [String : Any]{
+        get{
+            return OfferingHomePage.parameter
+        }
+        set{
+            loadOffers()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +58,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
   
     
-    
-    
-    
-    
-    
-    
     func showAlert(service:String)
     {
         let alert = UIAlertController(title: "Error", message: "You are not connected to \(service)", preferredStyle: .alert)
@@ -76,8 +77,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             "category_id" : [],
             "zone_id" : []
             
-            
-            
     ]
     
     let para:  [String: Any] = [:]
@@ -92,9 +91,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         
         ConnectionHelper.postJSON(command: command, parameter: OfferingHomePage.parameter) { (success, json) in
-            
-           
-
             
             if success {
                 
@@ -121,7 +117,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                         
                         if success
                         {
-                            
                             o.image = image
                              Offers.offerload.append(o)
                             self.tableView.reloadData()
@@ -199,7 +194,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         {
             let destController = segue.destination as! OfferDeatil
             destController.OfferID = self.offerID
-            
             
         }
         

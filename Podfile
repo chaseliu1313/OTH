@@ -9,7 +9,6 @@ target 'On the House' do
   pod ‘Alamofire’, ‘~> 4.4’
   pod ‘SwiftyJSON’  
   pod 'BEMCheckBox'
-  pod ‘Braintree’ 
   pod 'PayPal-iOS-SDK', '~> 2.18'
  
   # Pods for On the House

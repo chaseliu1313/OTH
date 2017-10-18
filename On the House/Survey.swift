@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, PayPalPaymentDelegate {
 
     
@@ -153,28 +152,6 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
                     
                     if success
                     {
-                        let shipping = NSDecimalNumber(string: "5.99")
-                        let tax = NSDecimalNumber(string: "2.50")
-                        
-                        let subtotal : NSDecimalNumber = 15.00
-                        
-                        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
-                        let total = subtotal.adding(shipping).adding(tax)
-                        
-                        let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: "On The House", intent: .sale)
-                        payment.paymentDetails = paymentDetails
-                        
-                        if (payment.processable) {
-                            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
-                            self.present(paymentViewController!, animated: true, completion: nil)
-                        }
-                        else {
-                            // This particular payment will always be processable. If, for
-                            // example, the amount was negative or the shortDescription was
-                            // empty, this payment wouldn't be processable, and you'd want
-                            // to handle that here.
-                            print("Payment not processalbe: \(payment)")
-                        }
                         
                         
                         print(json)
@@ -186,6 +163,28 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
                                 print("paypal\(paypal)")
                                   if let name = json["item_name"].string, let p = json["item_price"].double, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
                                     
+                                    let shipping = NSDecimalNumber(string: "0.00")
+                                    let tax = NSDecimalNumber(string: "0.00")
+                                    
+                                    let subtotal = NSDecimalNumber(string : String(p))
+                                    
+                                    let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+                                    let total = subtotal.adding(shipping).adding(tax)
+                                    
+                                    let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name, intent: .sale)
+                                    payment.paymentDetails = paymentDetails
+                                    
+                                    if (payment.processable) {
+                                        let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+                                        self.present(paymentViewController!, animated: true, completion: nil)
+                                    }
+                                    else {
+                                        // This particular payment will always be processable. If, for
+                                        // example, the amount was negative or the shortDescription was
+                                        // empty, this payment wouldn't be processable, and you'd want
+                                        // to handle that here.
+                                        print("Payment not processalbe: \(payment)")
+                                    }
                                     //information for passing to the finish page
                                      print("price\(p)")
                                     self.reservation_id = String(id)
@@ -296,7 +295,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
         paymentViewController.dismiss(animated: true, completion: { () -> Void in
             // send completed confirmaion to your server
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
-            
+            self.performSegue(withIdentifier: "finish2", sender: self)
             //self.resultText = completedPayment.description
             //self.showSuccess()
         })
@@ -319,8 +318,6 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
             let vc = segue.destination as? RedirectViewController
                 
                 vc?.address = self.address
-                
-            
             
         }
         

@@ -150,8 +150,6 @@ class FilterTableViewController: UITableViewController {
         
     }
     
-    
-    
     @IBOutlet var tableview: UITableView!
 
     

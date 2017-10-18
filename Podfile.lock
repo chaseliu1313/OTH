@@ -7,28 +7,6 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - Braintree (4.9.4):
-    - Braintree/Card (= 4.9.4)
-    - Braintree/Core (= 4.9.4)
-    - Braintree/PayPal (= 4.9.4)
-    - Braintree/UI (= 4.9.4)
-  - Braintree/Card (4.9.4):
-    - Braintree/Core
-  - Braintree/Core (4.9.4)
-  - Braintree/PayPal (4.9.4):
-    - Braintree/Core
-    - Braintree/PayPalOneTouch
-  - Braintree/PayPalDataCollector (4.9.4):
-    - Braintree/Core
-    - Braintree/PayPalUtils
-  - Braintree/PayPalOneTouch (4.9.4):
-    - Braintree/Core
-    - Braintree/PayPalDataCollector
-    - Braintree/PayPalUtils
-  - Braintree/PayPalUtils (4.9.4)
-  - Braintree/UI (4.9.4):
-    - Braintree/Card
-    - Braintree/Core
   - CardIO (5.4.1)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
@@ -53,7 +31,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - BEMCheckBox
-  - Braintree
   - FacebookCore
   - FacebookLogin
   - PayPal-iOS-SDK (~> 2.18)
@@ -63,7 +40,6 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Braintree: de7e58b8df95bf6514813cbc510578e3737b1c3b
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -72,6 +48,6 @@ SPEC CHECKSUMS:
   PayPal-iOS-SDK: 3fc74982a68d54eeaf39e09f507f279dc2291860
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 90d40971b715346e8ddf6f2f009712222c175ab6
+PODFILE CHECKSUM: 50a4a3c2b4a1e029f2452a94dcf2ff3442fb966e
 
 COCOAPODS: 1.4.0.beta.1
