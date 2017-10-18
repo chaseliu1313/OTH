@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/System.swift"
-            timestampString = "529929218.401146"
+            timestampString = "529995854.059032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -448,11 +448,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/System.swift"
-            timestampString = "529929218.401546"
+            timestampString = "529995854.059178"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "getCategories(category:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -558,11 +558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "529984990.021131"
+            timestampString = "529995854.059247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "resizeImage(image:targetSize:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -637,27 +637,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "529984990.021683"
+            timestampString = "529995854.059829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "OfferingHomePage"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "529984990.022064"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "loadOffers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -669,11 +653,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "529984990.022437"
+            timestampString = "529995854.060175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "loadOffers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On the House/OfferingHomePage.swift"
+            timestampString = "529995854.060485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -685,13 +685,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "529984990.022792"
+            timestampString = "529995854.060866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "OfferingHomePage"
-            landmarkType = "3">
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -701,12 +701,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "529984990.023137"
+            timestampString = "529995854.061309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
-            landmarkName = "notifyUser(_:)"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "checkRating()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

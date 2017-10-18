@@ -11,8 +11,7 @@ import UIKit
 
 class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource, PayPalPaymentDelegate{
     
-    var braintreeClient: BTAPIClient!
-    
+  
     let tokenizationkey = "sandbox_b7kvdchs_9py4y9wtg3mjcv8g"
     
     var environment:String = PayPalEnvironmentNoNetwork {
@@ -105,7 +104,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.braintreeClient = BTAPIClient(authorization : self.tokenizationkey)
+       
         pickview.delegate = self
         pickview.dataSource = self
         answerlabel.isHidden = true

@@ -36,6 +36,51 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    
+    
+    var category: [String] = System.category {
+        
+        didSet{
+            
+            OfferingHomePage.parameter.updateValue(category, forKey: "category_id")
+            self.loadOffers()
+            tableView.reloadData()
+            
+        }
+        
+    }
+    
+    var states: [String] = System.state {
+        
+        didSet{
+            
+            OfferingHomePage.parameter.updateValue(states, forKey: "zone_id")
+            self.loadOffers()
+            tableView.reloadData()
+            
+        }
+        
+    }
+    
+    var dates : [String] = System.dates {
+        
+        
+        didSet{
+            
+            if dates.count == 2 {
+                
+                OfferingHomePage.parameter.updateValue(dates[0], forKey: "date_from")
+                OfferingHomePage.parameter.updateValue(dates[1], forKey: "data_to")
+                self.loadOffers()
+                tableView.reloadData()
+                print(OfferingHomePage.parameter)
+            }
+            
+            
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -153,7 +198,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         let filterVC = storyboard?.instantiateViewController(withIdentifier: "filter") as! FilterTableViewController
         
-        filterVC.filterPro = self
+       
         
         loadOffers()
         
@@ -197,14 +242,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
         }
         
-        else if segue.identifier == "pop"
-        {
-            let destController = segue.destination as! FilterTableViewController
-            print("pass the current \(destController.getCurrentWeekend())")
-            destController.filterPro = self
-            
-            
-        }
+       
         
         
         
@@ -514,18 +552,12 @@ extension OfferingHomePage: sendOfferIDDelegate{
     
 }
 
-extension OfferingHomePage: filterProtocol {
-    
-    func updateInfo(date: [String], state: [String], category: [String]) {
-        
-        print("received value : \(date)")
-        
-    }
+
     
     
     
     
-}
+
 
 
 

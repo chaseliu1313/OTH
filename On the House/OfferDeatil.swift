@@ -43,6 +43,8 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var loadMoreView: UIView?
     
+    
+    
     @IBOutlet weak var showStatus: UITableView!
     
     override func viewDidLoad() {
@@ -156,7 +158,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     
                     cell.uplimit = Int(max)!
                     cell.bottomlimit = cell.uplimit+1
-                    cell.limit.text = "* Reserve \(max) tickets"
+                    cell.limit.text = "* Reserve ONLY \(max) tickets"
                     
                 }
                 
@@ -183,13 +185,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.contentView.backgroundColor = UIColor.clear
         cell.backgroundColor = UIColor.clear
         
-       
-        
-       
-        
-        
-        
-        
+    
         
         return cell
     }
