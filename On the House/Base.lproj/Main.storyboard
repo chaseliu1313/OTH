@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1292,7 +1291,7 @@ and periodicals</string>
                                         <rect key="frame" x="0.0" y="120" width="375" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="295.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -2356,7 +2355,7 @@ and periodicals</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Past Offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGZ-2f-oYN">
-                                <rect key="frame" x="126.66666666666666" y="393" width="121.99999999999997" height="21"/>
+                                <rect key="frame" x="126.66666666666669" y="393" width="122" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="DcX-rt-7dm"/>
                                     <constraint firstAttribute="height" constant="21" id="MfQ-nI-Ckc"/>
@@ -2462,10 +2461,10 @@ and periodicals</string>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pastcell" rowHeight="97" id="6rP-pf-HWE" customClass="MyPastOfferTableViewCell" customModule="On_the_House" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="97"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rP-pf-HWE" id="VSF-zV-Ms2">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="96.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE9-XF-l9Y">
@@ -2518,10 +2517,10 @@ and periodicals</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="30" id="Ale-SL-816">
-                                        <rect key="frame" x="0.0" y="125" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="125" width="375" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ale-SL-816" id="4RD-3M-waO">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="29.666666666666668"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="29.666666666666668"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2602,28 +2601,6 @@ and periodicals</string>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A4u-ed-mWt" id="4IY-yD-rJU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Networking, Seminars, Workshops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUP-ui-LWS">
-                                                    <rect key="frame" x="35" y="13.666666666666664" width="208" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-TE-hKS" customClass="Checkbox" customModule="On_the_House" customModuleProvider="target">
-                                                    <rect key="frame" x="251.66666666666663" y="6" width="30" height="30"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Uzf-TE-hKS" firstAttribute="centerY" secondItem="tUP-ui-LWS" secondAttribute="centerY" id="Ad6-xg-Hef"/>
-                                                <constraint firstItem="Uzf-TE-hKS" firstAttribute="centerY" secondItem="Hgf-90-FE3" secondAttribute="centerY" id="Yfs-UN-n5N"/>
-                                                <constraint firstItem="tUP-ui-LWS" firstAttribute="leading" secondItem="Hgf-90-FE3" secondAttribute="leadingMargin" constant="27" id="f90-pV-FOx"/>
-                                                <constraint firstItem="Uzf-TE-hKS" firstAttribute="leading" secondItem="tUP-ui-LWS" secondAttribute="trailing" constant="8" id="mvA-kr-3Qh"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.73307037353515625" green="0.59956270456314087" blue="0.541587233543396" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
@@ -4309,12 +4286,11 @@ and periodicals</string>
         <image name="share" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zQV-sm-Kn7"/>
-        <segue reference="n2t-AZ-ZVb"/>
+        <segue reference="6w0-sF-xGs"/>
         <segue reference="VGj-Uv-Mqs"/>
         <segue reference="Hak-60-eMb"/>
         <segue reference="ft6-QP-OAO"/>
         <segue reference="70h-L8-55h"/>
-        <segue reference="OlO-BT-Hwe"/>
+        <segue reference="U1y-g9-LC8"/>
     </inferredMetricsTieBreakers>
 </document>
