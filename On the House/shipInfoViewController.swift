@@ -292,7 +292,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                         //information for paypal checkout
                         if let name = json["item_name"].string, let p = json["item_price"].double, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
                             
-                            print("price\(p)")
+                            
                             
                             let shipping = NSDecimalNumber(string: "5.99")
                             let tax = NSDecimalNumber(string: "2.50")

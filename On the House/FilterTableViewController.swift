@@ -18,12 +18,12 @@ class FilterTableViewController: UITableViewController {
     var datebuttonisclicked = false
     var clickeddatebutton = UIButton()
     
+    var filterPro : filterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(getCurrentDate())
-        print(getCurrentWeekend())
-        print(nextSevenDays())
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,8 +76,7 @@ class FilterTableViewController: UITableViewController {
             buttonisclicked[sender.currentTitle!] = true
             sender.backgroundColor = UIColor(rgb: 0xAF9A90)
         }
-        print(FilterTableViewController.filterarray)
-        //buttonisclicked
+       
     }
     
     @IBAction func dateaction(_ sender: UIButton) {
@@ -97,7 +96,7 @@ class FilterTableViewController: UITableViewController {
             else{
                 FilterTableViewController.filterarray.append(sender.currentTitle!)
                 clickeddatebutton.backgroundColor = UIColor(rgb: 0xDFDDE0)
-                print(clickeddatebutton.currentTitle)
+               
                 sender.backgroundColor = UIColor(rgb: 0xAF9A90)
                 clickeddatebutton = sender
             }
@@ -108,12 +107,47 @@ class FilterTableViewController: UITableViewController {
     @IBAction func applyfilter(_ sender: UIBarButtonItem) {
         System.category = System.pickcategory(array: FilterTableViewController.filterarray)
         System.state = System.pickstate(array: FilterTableViewController.filterarray)
-        print(System.category)
-        print(System.state)
+       
         OfferingHomePage.parameter["category_id"] = System.category
         OfferingHomePage.parameter["zone_id"] = System.state
+        
+        var selectedDate: [String] = []
+        
+        for value in FilterTableViewController.filterarray {
+            
+            if value == "Today" {
+                
+                selectedDate = getCurrentDate()
+                break
+                
+            }
+            else if value == "This weekend" {
+                
+                selectedDate = getCurrentWeekend()
+                break
+                
+            }
+            else if value == "Next 7 days" {
+                
+                selectedDate = nextSevenDays()
+                break
+            }
+            else {
+                
+                continue
+            }
+            
+            
+            
+        }
+     
+        
+        
+        filterPro.updateInfo(date: selectedDate, state: System.state, category: System.category)
+        
+        
         dismiss(animated: false, completion: nil)
-        print(clickedbuttons)
+        
     }
     
     
@@ -132,7 +166,9 @@ class FilterTableViewController: UITableViewController {
     
     
     
-    func getCurrentDate() -> String{
+    func getCurrentDate() -> [String]{
+        
+        var today: [String] = []
         
         let date = Date()
         formatter.dateFormat = "yyyy"
@@ -144,7 +180,9 @@ class FilterTableViewController: UITableViewController {
         
         let currentDate = "\(year)-\(month)-\(day)"
         
-        return currentDate
+        today.append(currentDate)
+        
+        return today
         
     }
     
@@ -231,4 +269,8 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
+}
+
+protocol filterProtocol {
+    func updateInfo(date: [String], state: [String], category: [String])
 }
