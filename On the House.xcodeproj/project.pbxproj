@@ -34,7 +34,12 @@
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
 		B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B35711F8491100043504B /* MHTableViewCell.swift */; };
-		B71B35741F8491180043504B /* MHUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B35731F8491180043504B /* MHUIViewController.swift */; };
+		B75DEBAD1F979D1D00A8658E /* MemHisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */; };
+		B75DEBAF1F979DA300A8658E /* PNetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */; };
+		B75DEBB11F979DE500A8658E /* MemHistTableViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBB01F979DE500A8658E /* MemHistTableViewConfig.swift */; };
+		B75DEBB41F979E0D00A8658E /* AlertDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBB21F979E0C00A8658E /* AlertDisplay.swift */; };
+		B75DEBB51F979E0D00A8658E /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBB31F979E0C00A8658E /* DateUtility.swift */; };
+		B75DEBB71F979EA500A8658E /* MemHistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBB61F979EA500A8658E /* MemHistTableViewCell.swift */; };
 		E825E6E91F61404C00277097 /* event6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E61F61404C00277097 /* event6.jpg */; };
 		E825E6EA1F61404C00277097 /* event5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E71F61404C00277097 /* event5.jpg */; };
 		E825E6EB1F61404C00277097 /* event4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E825E6E81F61404C00277097 /* event4.jpg */; };
@@ -98,7 +103,12 @@
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		B71B35711F8491100043504B /* MHTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHTableViewCell.swift; sourceTree = "<group>"; };
-		B71B35731F8491180043504B /* MHUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHUIViewController.swift; sourceTree = "<group>"; };
+		B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemHisViewController.swift; sourceTree = "<group>"; };
+		B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNetworkErrorHandler.swift; sourceTree = "<group>"; };
+		B75DEBB01F979DE500A8658E /* MemHistTableViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemHistTableViewConfig.swift; sourceTree = "<group>"; };
+		B75DEBB21F979E0C00A8658E /* AlertDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplay.swift; sourceTree = "<group>"; };
+		B75DEBB31F979E0C00A8658E /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		B75DEBB61F979EA500A8658E /* MemHistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemHistTableViewCell.swift; sourceTree = "<group>"; };
 		D1B4F5169EDF01C698E1571E /* Pods-On the House.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-On the House.debug.xcconfig"; path = "Pods/Target Support Files/Pods-On the House/Pods-On the House.debug.xcconfig"; sourceTree = "<group>"; };
 		E825E6E61F61404C00277097 /* event6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event6.jpg; sourceTree = "<group>"; };
 		E825E6E71F61404C00277097 /* event5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = event5.jpg; sourceTree = "<group>"; };
@@ -173,6 +183,9 @@
 		A2A569571F4FAC6E005EB8AE /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
+				B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */,
+				B75DEBB21F979E0C00A8658E /* AlertDisplay.swift */,
+				B75DEBB31F979E0C00A8658E /* DateUtility.swift */,
 				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
@@ -194,12 +207,12 @@
 		A2F3FD201F564D42006E23CA /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
 				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
-				B71B35731F8491180043504B /* MHUIViewController.swift */,
 				7101E4F11F4D420F00237211 /* RegisterView.swift */,
 				5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
@@ -210,6 +223,7 @@
 				E859D9961F7A257600293955 /* Survey.swift */,
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
+				B75DEBB01F979DE500A8658E /* MemHistTableViewConfig.swift */,
 				526835221F8E4B68004D6341 /* tableCell */,
 				71ACD9EE1F7B48C00070CC61 /* paymentWebViewViewController.swift */,
 				52C3926F1F83B9710020D9D6 /* RatingDetailViewController.swift */,
@@ -217,6 +231,7 @@
 				526835231F8E4C26004D6341 /* CurrentOfferViewController.swift */,
 				522FEB9C1F90B0DF00A7AA80 /* FinishReservViewController.swift */,
 				522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */,
+				B75DEBB61F979EA500A8658E /* MemHistTableViewCell.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -464,8 +479,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */,
+				B75DEBB41F979E0D00A8658E /* AlertDisplay.swift in Sources */,
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */,
+				B75DEBB11F979DE500A8658E /* MemHistTableViewConfig.swift in Sources */,
 				A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */,
 				529E0D901F8F956C00DF8D2B /* AllRatingTabTableViewCell.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
@@ -486,9 +503,12 @@
 				A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */,
 				52C392701F83B9710020D9D6 /* RatingDetailViewController.swift in Sources */,
 				E8CE62971F4AA19400D9EF76 /* AppDelegate.swift in Sources */,
-				B71B35741F8491180043504B /* MHUIViewController.swift in Sources */,
+				B75DEBAD1F979D1D00A8658E /* MemHisViewController.swift in Sources */,
+				B75DEBAF1F979DA300A8658E /* PNetworkErrorHandler.swift in Sources */,
 				E897877D1F68F6D700E0B3F9 /* OfferDeatil.swift in Sources */,
+				B75DEBB71F979EA500A8658E /* MemHistTableViewCell.swift in Sources */,
 				71E1FB981F651AC10029D3D0 /* SWRevealViewController.m in Sources */,
+				B75DEBB51F979E0D00A8658E /* DateUtility.swift in Sources */,
 				E859395A1F52EDB1009B3784 /* FacebookRegisterView.swift in Sources */,
 				E88F42971F60095B00DE142E /* OfferTableCell.swift in Sources */,
 				52BBB7E81F56AD8C00411EA0 /* System.swift in Sources */,
