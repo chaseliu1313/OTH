@@ -292,7 +292,6 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                         if let name = json["item_name"].string, let p = json["item_price"].double, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
                             
                             
-                            
                             let shipping = NSDecimalNumber(string: "0.00")
                             let tax = NSDecimalNumber(string:"0.00")
                             
