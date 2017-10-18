@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "AeuS6TRGQEaNPK6YwSMsTH_SAq_XMc255pYIvBy4yMv--sD2hVk2OtC-LgqBH8i0oAPo2Tv4KIF4kIXx",
-                                                                PayPalEnvironmentSandbox: "cugbliuboshi-facilitator@gmail.com"])
+        PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "access_token$production$ppkqf9k6pyrv68fj$862e5c7e5dc3849bce60e7484dc963b6",
+                                                                PayPalEnvironmentSandbox: "irenameister@gmail.com"])
+        /*PayPalMobile .initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "access_token$production$ppkqf9k6pyrv68fj$862e5c7e5dc3849bce60e7484dc963b6",
+                                                                PayPalEnvironmentSandbox: "irenameister@gmail.com"])*/
         
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         
@@ -37,20 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.scheme?.localizedCaseInsensitiveCompare("Boshi-Liu.paypaltest.payments") == .orderedSame {
-            return BTAppSwitch.handleOpen(url, options: options)
-        }
-        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
-    }
-    
-    // If you support iOS 7 or 8, add the following method.
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        if url.scheme?.localizedCaseInsensitiveCompare("Boshi-Liu.paypaltest.payments") == .orderedSame {
-            return BTAppSwitch.handleOpen(url, sourceApplication: sourceApplication)
-        }
-        return false
-    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
