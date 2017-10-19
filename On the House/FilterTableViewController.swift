@@ -22,8 +22,9 @@ class FilterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+        FilterTableViewController.filterarray = []
+        clickeddatebutton = UIButton()
+        clickedbuttons = []
     }
     
     override func didReceiveMemoryWarning() {
@@ -144,8 +145,8 @@ class FilterTableViewController: UITableViewController {
         System.dates = selectedDate
        
         
-        
-        dismiss(animated: false, completion: nil)
+        performSegue(withIdentifier: "apply", sender: self)
+        //dismiss(animated: false, completion: nil)
         
     }
     
