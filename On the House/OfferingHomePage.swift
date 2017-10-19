@@ -95,11 +95,14 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.loadOffers()
         self.checkRating()
         
-        
+        print("view did load")
        
-        
+        //tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
   
     
@@ -139,10 +142,10 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             if success {
                 
-                
+                print(json)
                 let status = json["status"].string!
                 
-                print(status)
+                //print(status)
                 
                 let event = json["events"].arrayValue
                 
