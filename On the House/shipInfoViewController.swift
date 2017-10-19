@@ -324,6 +324,43 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                         }
                         
                         
+                        //duplicate infor for server error
+                        if let name2 = json["item_name"].string, let p2 = json["item_price"].double, let email2 = json["paypal_email"].string, let id2 = json["reservation_id"].int, let sku2 = json["item_sku"].string {
+                            
+                            
+                            let shipping = NSDecimalNumber(string: "0.00")
+                            let tax = NSDecimalNumber(string:"0.00")
+                            
+                            let subtotal = NSDecimalNumber(string : String(p2))
+                            
+                            let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+                            let total = subtotal.adding(shipping).adding(tax)
+                            
+                            let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name2, intent: .sale)
+                            payment.paymentDetails = paymentDetails
+                            
+                            if (payment.processable) {
+                                let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+                                self.present(paymentViewController!, animated: true, completion: nil)
+                            }
+                            else {
+                                // This particular payment will always be processable. If, for
+                                // example, the amount was negative or the shortDescription was
+                                // empty, this payment wouldn't be processable, and you'd want
+                                // to handle that here.
+                                print("Payment not processalbe: \(payment)")
+                            }
+                            
+                            
+                            //information for passing to the finish page
+                            self.reservation_id = String(id2)
+                            self.price = String(p2)
+                            self.itemName = name2
+                            // end of information for passing to the finish page
+                            
+                        }
+                        
+                        
                         
                     }
                     else
