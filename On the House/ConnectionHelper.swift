@@ -270,23 +270,10 @@ struct ConnectionHelper{
 }
 
 // Added By Santosh ----///
-class DateUtility {
-    
-    public func getFormattedDate(dateToConvert: Double, format: String) -> String {
-        
-        let date = NSDate(timeIntervalSince1970: dateToConvert)
-        
-        let dateFormating = DateFormatter()
-        dateFormating.dateFormat = format
-        
-        return dateFormating.string(from: date as Date)
-        
-    }
-}
 
-class APIHandler {
+class NetworkService {
     
-    private static let baseURL = "https://ma.on-the-house.org/api/v1/"
+    private static var baseURL = "https://ma.on-the-house.org/api/v1/"
     
     private var responseData = [String:JSON]()
     
@@ -296,24 +283,21 @@ class APIHandler {
      *   https://stackoverflow.com/questions/27390656/how-to-return-value-from-alamofire
      */
     
-    private func getRequest(apiParameters: String, completionHandler: @escaping (Dictionary<String,JSON>) -> Void) {
+    public func getRequest(apiParameters: String, completionHandler: @escaping (Dictionary<String,JSON>) -> Void) {
         
-        let url = APIHandler.baseURL + apiParameters
+        let url = getCompleteAPIURL(apiParameters: apiParameters)
         
-        Alamofire.request(url, method: .get).responseJSON{ (response) in
+        Alamofire.request(url).responseJSON{ (response) in
             
             switch response.result {
                 
             case .success(let value):
-                
                 self.responseData = JSON(value).dictionaryValue
                 
             case .failure(let error):
-                
-                self.responseData = JSON(error).dictionaryValue
+                self.handleError(error: error._code)
                 
             }
-            
             completionHandler(self.responseData)
         }
         
@@ -321,19 +305,17 @@ class APIHandler {
     
     public func postRequest(apiParameters: String, postParameters: Parameters, completionHandler:@escaping (Dictionary<String,JSON>) -> Void){
         
-        let url = APIHandler.baseURL + apiParameters
+        let url = NetworkService.baseURL + apiParameters
         
         Alamofire.request(url, method: .post, parameters: postParameters).responseJSON { (response) in
             
             switch(response.result) {
                 
             case .success(let value):
-                
                 self.responseData = JSON(value).dictionaryValue
                 
             case .failure(let error):
-                
-                self.responseData = JSON(error).dictionaryValue
+                self.handleError(error: error._code)
                 
             }
             
@@ -342,25 +324,40 @@ class APIHandler {
         
     }
     //---------end of code snippet------------//
-    
-    /* Completion Handler to take data from the Async Data.
-     * The following code snippet was adapted from this source :
-     *     https://stackoverflow.com/questions/27390656/how-to-return-value-from-alamofire
-     */
-    
-    public func extractGetResponse(apiParameters: String, completionHandler: @escaping (Dictionary<String,JSON>) -> Void) {
-        
-        getRequest(apiParameters: apiParameters, completionHandler: completionHandler)
-        
+    // 15 seconds.
+    private func getCompleteAPIURL(apiParameters: String) -> URLRequest {
+        let completeAPIUrl = URL(string: NetworkService.baseURL + apiParameters)
+        var urlRequest = URLRequest(url: completeAPIUrl!)
+        urlRequest.timeoutInterval = 15
+        return urlRequest
     }
     
-    public func extractPostResponse(apiParameters: String, postParameters: Parameters, completionHandler:@escaping (Dictionary<String,JSON>) -> Void) {
+}
+
+extension NetworkService : PNetworkErrorHandler {
+    
+    func handleError(error: Int) {
         
-        postRequest(apiParameters: apiParameters, postParameters: postParameters, completionHandler: completionHandler)
+        switch(error) {
+            
+        case NSURLErrorTimedOut:
+            print("Network Timed Out, Please Try Again Later.")
+            break
+            
+        case NSURLErrorNotConnectedToInternet:
+            print("It looks like your iPhone cannot connect to the internet.")
+            break
+            
+        case badURLstatusCode:
+            print("Internal Error.")
+            break
+        default:
+            print(error)
+            break
+            
+        }
         
     }
-    
-    //---------end of code snippet------------//
     
 }
 

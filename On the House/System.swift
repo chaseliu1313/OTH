@@ -33,6 +33,7 @@ class System {
     
     static var state : [String] = []
     static var category : [String] = []
+    static var dates: [String] = []
     
     init(){
     }

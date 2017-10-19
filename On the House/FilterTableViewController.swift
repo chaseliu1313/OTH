@@ -18,7 +18,7 @@ class FilterTableViewController: UITableViewController {
     var datebuttonisclicked = false
     var clickeddatebutton = UIButton()
     
-    var filterPro : filterProtocol!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,9 +141,8 @@ class FilterTableViewController: UITableViewController {
             
         }
      
-        
-        
-        filterPro.updateInfo(date: selectedDate, state: System.state, category: System.category)
+        System.dates = selectedDate
+       
         
         
         dismiss(animated: false, completion: nil)
@@ -269,6 +268,4 @@ extension UIColor {
     }
 }
 
-protocol filterProtocol {
-    func updateInfo(date: [String], state: [String], category: [String])
-}
+
