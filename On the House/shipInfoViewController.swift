@@ -288,13 +288,13 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                     if paypal == 1 {
                         print("paypal\(paypal)")
                         //information for paypal checkout
-                        if let name = json["item_name"].string, let p = json["item_price"].double, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
+                        if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
                             
                             
                             let shipping = NSDecimalNumber(string: "0.00")
                             let tax = NSDecimalNumber(string:"0.00")
                             
-                            let subtotal = NSDecimalNumber(string : String(p))
+                            let subtotal = NSDecimalNumber(string : p)
                             
                             let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
                             let total = subtotal.adding(shipping).adding(tax)
@@ -317,7 +317,7 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
                             
                             //information for passing to the finish page
                             self.reservation_id = String(id)
-                            self.price = String(p)
+                            self.price = p
                             self.itemName = name
                             // end of information for passing to the finish page
                             
