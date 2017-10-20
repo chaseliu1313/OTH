@@ -276,6 +276,7 @@ extension MemHisViewController {
             self.showAlert(alertMessage: "Your membership has been upgraded", type: "centered")
             self.currentMembership = "Gold"
             UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
+            UserDefaults.standard.synchronize()
         }
     }
     
@@ -290,6 +291,7 @@ extension MemHisViewController {
             self.showAlert(alertMessage: "Your membership has been downgraded", type: "centered")
             self.currentMembership = "Bronze"
             UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
+            UserDefaults.standard.synchronize()
         }
     }
 }
