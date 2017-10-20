@@ -109,7 +109,6 @@ class MemHisViewController: UIViewController {
         if(self.currentMembership == "Gold" && self.bronzeOption.on == true) {
             processMembershipDowngrade()
         } else if(self.currentMembership == "Bronze" && self.goldOption.on == true) {
-            //showAlert(alertMessage: "Redirecting to Paypal", type: "centered")
 
             redirectToPayPalView()
 
