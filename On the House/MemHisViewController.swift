@@ -37,7 +37,7 @@ class MemHisViewController: UIViewController {
     var memPostParameters:[String:String] = [:]
     
     var payPalConfig = PayPalConfiguration()
-    var paypalTransactionSuccessful = true
+    var paypalTransactionSuccessful = false
     
     var environment:String = PayPalEnvironmentNoNetwork {
         willSet(newEnvironment) {
@@ -97,21 +97,22 @@ class MemHisViewController: UIViewController {
         let condition2 = (self.currentMembership == "Bronze" && self.bronzeOption.on == true)
         
         guard condition1 == false else {
+            showAlert(alertMessage: "You already have gold membership", type: "centered")
             return
         }
         
         guard condition2 == false else {
+            showAlert(alertMessage: "You already have bronze membership", type: "centered")
             return
         }
         
         if(self.currentMembership == "Gold" && self.bronzeOption.on == true) {
             processMembershipDowngrade()
         } else if(self.currentMembership == "Bronze" && self.goldOption.on == true) {
-            showAlert(alertMessage: "Redirecting to Paypal", type: "centered")
-            //After Paypal transaction finishes
-            /* Paypal integration to be done here.
-             */
+            //showAlert(alertMessage: "Redirecting to Paypal", type: "centered")
+
             redirectToPayPalView()
+
             if(paypalTransactionSuccessful) {
                 processMembershipUpgrade()
                 self.checkBoxGroup.selectedCheckBox = self.initialCheckBoxSelected
@@ -290,12 +291,13 @@ extension MemHisViewController {
         myDispatchGroup.notify(queue: DispatchQueue.main) {
             self.showAlert(alertMessage: "Your membership has been downgraded", type: "centered")
             self.currentMembership = "Bronze"
-            UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
+            UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![1]["id"].stringValue, forKey: "membership_level_id")
             UserDefaults.standard.synchronize()
         }
     }
 }
 
+//Paypal integration code.
 extension MemHisViewController : PayPalPaymentDelegate {
     
     func redirectToPayPalView() {
@@ -316,8 +318,10 @@ extension MemHisViewController : PayPalPaymentDelegate {
         payment.paymentDetails = paymentDetails
         
         if (payment.processable) {
+            print("over here")
             let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
             self.present(paymentViewController!, animated: true, completion: nil)
+            
         } else {
             print("Internal Error: Payment amount \(total) cannot be processed.")
         }
