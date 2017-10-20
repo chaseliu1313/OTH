@@ -159,6 +159,7 @@ extension MemHisViewController {
             
             guard response["status"] != "error" else {
                 self.showAlert(alertMessage: "Internal Error: \(response)", type: "centered")
+                self.checkBoxGroup.selectedCheckBox = self.bronzeOption
                 return
             }
             self.memHistResponseData = response
