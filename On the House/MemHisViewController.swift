@@ -36,6 +36,9 @@ class MemHisViewController: UIViewController {
 
     var memPostParameters:[String:String] = [:]
     
+    var payPalConfig = PayPalConfiguration()
+    var paypalTransactionSuccessful = true
+    
     var environment:String = PayPalEnvironmentNoNetwork {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
@@ -57,8 +60,9 @@ class MemHisViewController: UIViewController {
     }
     
     func initialConfiguration() {
-        loadData() //refer below
+        loadData() //refer code below, from extension onwards
         connectTableViewToService()
+        setupPaypalConfiguration()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -107,7 +111,12 @@ class MemHisViewController: UIViewController {
             //After Paypal transaction finishes
             /* Paypal integration to be done here.
              */
-            processMembershipUpgrade()
+            if(paypalTransactionSuccessful) {
+                processMembershipUpgrade()
+            } else {
+                showAlert(alertMessage: "Payment was cancelled, you membership level has not changed.", type: "normal")
+            }
+            
         }
         
     }
@@ -283,13 +292,54 @@ extension MemHisViewController {
 
 extension MemHisViewController : PayPalPaymentDelegate {
     
+    func redirectToPayPalView() {
+        let shipping = NSDecimalNumber(string:"0.00")
+        let tax = NSDecimalNumber(string:"0.00")
+        let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
+        
+        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+        let total = subtotal.adding(shipping).adding(tax)
+        
+        let payment = PayPalPayment(amount: total,
+                                    currencyCode: "AUD",
+                                    shortDescription: "Gold Membership Upgrade",
+                                    intent: .sale)
+        
+        payment.paymentDetails = paymentDetails
+        
+        if (payment.processable) {
+            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+            self.present(paymentViewController!, animated: true, completion: nil)
+        } else {
+            showAlert(alertMessage: "Internal Error: Payment amount used is not valid. ", type: "normal")
+        }
+
+    }
+    
+    func setupPaypalConfiguration() {
+        
+        payPalConfig.acceptCreditCards = false
+        payPalConfig.merchantName = "On-The-House, Inc."
+        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
+        payPalConfig.payPalShippingAddressOption = .both
+        
+    }
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        <#code#>
+        showAlert(alertMessage: "Your Payment was cancelled. You have not been upgraded. Please try again after sometime", type: "normal")
+        paypalTransactionSuccessful = false
+        paymentViewController.dismiss(animated: true, completion: nil)
+        
     }
     
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
-        <#code#>
+        paymentViewController.dismiss(animated: true, completion: { () -> Void in
+            self.showAlert(alertMessage: "\(completedPayment.confirmation) has been successfully processed", type: "normal")
+            self.performSegue(withIdentifier: "finish1", sender: self)
+        })
+        paypalTransactionSuccessful = true
     }
     
     
