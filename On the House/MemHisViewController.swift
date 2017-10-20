@@ -302,8 +302,8 @@ extension MemHisViewController : PayPalPaymentDelegate {
     func redirectToPayPalView() {
         let shipping = NSDecimalNumber(string:"0.00")
         let tax = NSDecimalNumber(string:"0.00")
-        //let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
-        let subtotal = NSDecimalNumber(string: "0.10") //test amount
+        let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
+        // let subtotal = NSDecimalNumber(string: "0.10") //test amount as current gold membership is set to 0.00 AUD
         
         
         let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
@@ -317,12 +317,11 @@ extension MemHisViewController : PayPalPaymentDelegate {
         payment.paymentDetails = paymentDetails
         
         if (payment.processable) {
-            print("over here")
             let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
             self.present(paymentViewController!, animated: true, completion: nil)
             
         } else {
-            print("Internal Error: Payment amount \(total) cannot be processed.")
+            showAlert(alertMessage: "Internal Error: Payment amount \(total) cannot be processed.", type: "centered")
         }
 
     }
@@ -339,9 +338,9 @@ extension MemHisViewController : PayPalPaymentDelegate {
     }
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        paymentViewController.present(infoAlert.normalAlert("Payment has been cancelled."), animated: true)
         paypalTransactionSuccessful = false
         paymentViewController.dismiss(animated: true, completion: nil)
+        self.present(infoAlert.normalAlert("Payment was not processed. Your membership has not been upgraded."), animated: true)
         
     }
     
