@@ -36,6 +36,14 @@ class MemHisViewController: UIViewController {
 
     var memPostParameters:[String:String] = [:]
     
+    var environment:String = PayPalEnvironmentNoNetwork {
+        willSet(newEnvironment) {
+            if (newEnvironment != environment) {
+                PayPalMobile.preconnect(withEnvironment: newEnvironment)
+            }
+        }
+    }
+    
     func connectTableViewToService() {
         memHistTableView.delegate = self
         memHistTableView.dataSource = self
@@ -55,6 +63,11 @@ class MemHisViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         initialConfiguration()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PayPalMobile.preconnect(withEnvironment: environment)
     }
     
     override func viewDidLoad() {
@@ -266,4 +279,18 @@ extension MemHisViewController {
             self.currentMembership = "Bronze"
         }
     }
+}
+
+extension MemHisViewController : PayPalPaymentDelegate {
+    
+    
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+        <#code#>
+    }
+    
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        <#code#>
+    }
+    
+    
 }
