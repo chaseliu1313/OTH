@@ -1292,7 +1292,7 @@ and periodicals</string>
                                         <rect key="frame" x="0.0" y="120" width="375" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="295.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -1948,19 +1948,19 @@ and periodicals</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OTH-logo-lightbkgd-hires" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-jt-dQ1">
                                 <rect key="frame" x="16" y="106" width="343" height="173"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for your order! Hope you enjoy the show!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inZ-zZ-SMX">
-                                <rect key="frame" x="73" y="366" width="228" height="47"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="O2D-2X-kyL">
+                                <rect key="frame" x="169" y="321" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for making your reservation with ON THE HOUSE. and remeber... if you've seen a show you loved, let others know!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inZ-zZ-SMX">
+                                <rect key="frame" x="33" y="366" width="326" height="316"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="228" id="0or-di-Ia5"/>
-                                    <constraint firstAttribute="height" constant="47" id="dfa-vj-QmW"/>
+                                    <constraint firstAttribute="width" constant="326" id="0or-di-Ia5"/>
+                                    <constraint firstAttribute="height" constant="316" id="dfa-vj-QmW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="O2D-2X-kyL">
-                                <rect key="frame" x="169" y="321" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1972,10 +1972,10 @@ and periodicals</string>
                             <constraint firstAttribute="trailing" secondItem="hVf-h0-UdQ" secondAttribute="trailing" id="Guc-Oo-zUH"/>
                             <constraint firstItem="hVf-h0-UdQ" firstAttribute="top" secondItem="CiR-cR-5v6" secondAttribute="top" id="JN7-e9-d8n"/>
                             <constraint firstItem="inZ-zZ-SMX" firstAttribute="top" secondItem="O2D-2X-kyL" secondAttribute="bottom" constant="8" symbolic="YES" id="Lxw-LM-iNb"/>
-                            <constraint firstItem="O2D-2X-kyL" firstAttribute="centerX" secondItem="inZ-zZ-SMX" secondAttribute="centerX" id="Q3G-OK-sBC"/>
-                            <constraint firstItem="Nx3-vq-CDK" firstAttribute="top" secondItem="inZ-zZ-SMX" secondAttribute="bottom" constant="365" id="Yic-6Y-UM1"/>
+                            <constraint firstItem="O2D-2X-kyL" firstAttribute="centerX" secondItem="inZ-zZ-SMX" secondAttribute="centerX" constant="-8.5" id="Q3G-OK-sBC"/>
+                            <constraint firstItem="Nx3-vq-CDK" firstAttribute="top" secondItem="inZ-zZ-SMX" secondAttribute="bottom" constant="96" id="Yic-6Y-UM1"/>
                             <constraint firstItem="Rua-jt-dQ1" firstAttribute="centerX" secondItem="CiR-cR-5v6" secondAttribute="centerX" id="aSy-KL-aOt"/>
-                            <constraint firstItem="inZ-zZ-SMX" firstAttribute="centerX" secondItem="CiR-cR-5v6" secondAttribute="centerX" id="cWa-rJ-gdX"/>
+                            <constraint firstItem="inZ-zZ-SMX" firstAttribute="centerX" secondItem="CiR-cR-5v6" secondAttribute="centerX" constant="8.5" id="cWa-rJ-gdX"/>
                             <constraint firstItem="Rua-jt-dQ1" firstAttribute="leading" secondItem="CiR-cR-5v6" secondAttribute="leading" constant="16" id="d9i-Vw-4um"/>
                             <constraint firstItem="QB5-Np-jHn" firstAttribute="leading" secondItem="CiR-cR-5v6" secondAttribute="leading" constant="33" id="r26-nm-o83"/>
                         </constraints>
