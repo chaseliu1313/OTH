@@ -111,8 +111,10 @@ class MemHisViewController: UIViewController {
             //After Paypal transaction finishes
             /* Paypal integration to be done here.
              */
+            redirectToPayPalView()
             if(paypalTransactionSuccessful) {
                 processMembershipUpgrade()
+                self.checkBoxGroup.selectedCheckBox = self.initialCheckBoxSelected
             } else {
                 showAlert(alertMessage: "Payment was cancelled, you membership level has not changed.", type: "normal")
             }
@@ -273,6 +275,7 @@ extension MemHisViewController {
         myDispatchGroup.notify(queue: DispatchQueue.main) {
             self.showAlert(alertMessage: "Your membership has been upgraded", type: "centered")
             self.currentMembership = "Gold"
+            UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
         }
     }
     
@@ -286,6 +289,7 @@ extension MemHisViewController {
         myDispatchGroup.notify(queue: DispatchQueue.main) {
             self.showAlert(alertMessage: "Your membership has been downgraded", type: "centered")
             self.currentMembership = "Bronze"
+            UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
         }
     }
 }
@@ -295,14 +299,16 @@ extension MemHisViewController : PayPalPaymentDelegate {
     func redirectToPayPalView() {
         let shipping = NSDecimalNumber(string:"0.00")
         let tax = NSDecimalNumber(string:"0.00")
-        let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
+        //let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
+        let subtotal = NSDecimalNumber(string: "0.10") //test amount
+        
         
         let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
         let total = subtotal.adding(shipping).adding(tax)
         
         let payment = PayPalPayment(amount: total,
                                     currencyCode: "AUD",
-                                    shortDescription: "Gold Membership Upgrade",
+                                    shortDescription: "On The House: Gold Membership Upgrade",
                                     intent: .sale)
         
         payment.paymentDetails = paymentDetails
@@ -311,7 +317,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
             let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
             self.present(paymentViewController!, animated: true, completion: nil)
         } else {
-            showAlert(alertMessage: "Internal Error: Payment amount used is not valid. ", type: "normal")
+            print("Internal Error: Payment amount \(total) cannot be processed.")
         }
 
     }
@@ -328,7 +334,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
     }
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        showAlert(alertMessage: "Your Payment was cancelled. You have not been upgraded. Please try again after sometime", type: "normal")
+        paymentViewController.present(infoAlert.normalAlert("Payment has been cancelled."), animated: true)
         paypalTransactionSuccessful = false
         paymentViewController.dismiss(animated: true, completion: nil)
         
@@ -337,9 +343,9 @@ extension MemHisViewController : PayPalPaymentDelegate {
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
         paymentViewController.dismiss(animated: true, completion: { () -> Void in
             self.showAlert(alertMessage: "\(completedPayment.confirmation) has been successfully processed", type: "normal")
+            self.paypalTransactionSuccessful = true
             self.performSegue(withIdentifier: "finish1", sender: self)
         })
-        paypalTransactionSuccessful = true
     }
     
     
