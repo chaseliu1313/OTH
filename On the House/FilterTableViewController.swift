@@ -67,7 +67,6 @@ class FilterTableViewController: UITableViewController {
                 sender.backgroundColor = UIColor(rgb: 0xDFDDE0)
             }
             else{
-                
                 buttonisclicked[sender.currentTitle!] = true
                 sender.backgroundColor = UIColor(rgb: 0xAF9A90)
             }

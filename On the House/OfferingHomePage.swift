@@ -83,6 +83,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Offers.offerload = []
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -142,7 +143,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             if success {
                 
-                print(json)
+                //print(json)
                 let status = json["status"].string!
                 
                 //print(status)
@@ -372,7 +373,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         
         if (loadMoreEnable && indexPath.row == Offers.offerload.count-1) {
-            refreshOffer()
+            //refreshOffer()
         }
         return cell
         
