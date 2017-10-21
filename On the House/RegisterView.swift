@@ -14,16 +14,16 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     var parameter = ["nickname": "",
                      "firstname": "",
                      "last_name": "",
-                      "zip": "",
-                      "zone_id": "",
-                      "country_id": "13",
-                      "timezone_id": "",
-                      "question_id": "",
-                      "question_text":"null",
-                      "email": "",
-                      "password":"",
-                      "password_confirm": "",
-                      "terms": "1"]
+                     "zip": "",
+                     "zone_id": "",
+                     "country_id": "13",
+                     "timezone_id": "",
+                     "question_id": "",
+                     "question_text":"null",
+                     "email": "",
+                     "password":"",
+                     "password_confirm": "",
+                     "terms": "1"]
     
     var nickname = String()
     var first_name = String()
@@ -48,8 +48,8 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     var term = ""
     
     @IBOutlet weak var signup: UIButton!
-   
-   
+    
+    
     
     @IBAction func `switch`(_ sender: UISwitch) {
         if(sender.isOn == true)
@@ -80,14 +80,13 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
             if(successed) {
                 
                 
-                 self.notifyUser(["Registration Successfull"])
-                
+                //self.notifyUser(["Registration Successfull"])
+                self.performSegue(withIdentifier: "successfullyreg", sender: self)
             }
             else{
                 
                 
-            self.notifyUser(msg)
-                
+                self.notifyUser(msg)
                 
             }
         }
@@ -109,15 +108,15 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         answerlabel.isHidden = true
         answertextfield.isHidden = false
         signup.isHidden = false
-       
+        
         if(answertextfield.text != "")
         {
             answer = answertextfield.text!
         }
         else
         {
-        
-        answer = "null"
+            
+            answer = "null"
             
         }
         
@@ -146,14 +145,14 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         answertextfield.resignFirstResponder()
     }
     
-   
+    
     
     
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-    
+        
     }
     
     
@@ -161,23 +160,23 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-        {
-            return Array.count
-        }
+    {
+        return Array.count
+    }
     
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
-        {
-            return 1
-        }
+    {
+        return 1
+    }
     
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-        {
-            return Array[row]
-        }
+    {
+        return Array[row]
+    }
     
     
     
@@ -205,7 +204,7 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
             answerlabel.isHidden = true
             answertextfield.isHidden = true
         }
-    
+        
     }
     
     func notifyUser( _ message: [String] ) -> Void

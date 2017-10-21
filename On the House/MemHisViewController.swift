@@ -11,7 +11,7 @@ import BEMCheckBox
 import SwiftyJSON
 
 class MemHisViewController: UIViewController {
-
+    
     let infoAlert = AlertDisplay()
     let myDispatchGroup = DispatchGroup()
     var apiHandler = NetworkService()
@@ -33,7 +33,7 @@ class MemHisViewController: UIViewController {
     var checkBoxGroup = BEMCheckBoxGroup()
     var initialCheckBoxSelected = BEMCheckBox()
     var currentMembership: String = ""
-
+    
     var memPostParameters:[String:String] = [:]
     
     var payPalConfig = PayPalConfiguration()
@@ -81,7 +81,7 @@ class MemHisViewController: UIViewController {
     @IBAction func `return`(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func goldMembershipInfo(_ sender: Any) {
         showAlert(alertMessage: (self.memInfoResponseData["membership_levels"]![0]["description"].stringValue), type: "justified")
     }
@@ -91,7 +91,7 @@ class MemHisViewController: UIViewController {
     }
     
     @IBAction func updateMembership(_ sender: Any) {
-       
+        
         let condition1 = (self.currentMembership == "Gold" && self.goldOption.on == true)
         
         let condition2 = (self.currentMembership == "Bronze" && self.bronzeOption.on == true)
@@ -118,20 +118,20 @@ class MemHisViewController: UIViewController {
     func showAlert(alertMessage: String, type: String) {
         
         switch(type) {
-            case "justified" :
-                self.present(infoAlert.justifiedTextAlert(alertMessage), animated: true)
-                return
-            case "centered" :
-                self.present(infoAlert.centeredTextAlert(alertMessage), animated: true)
-                return
-            case "normal" :
-                self.present(infoAlert.normalAlert(alertMessage), animated: true)
-                return
-            default:
-                return
+        case "justified" :
+            self.present(infoAlert.justifiedTextAlert(alertMessage), animated: true)
+            return
+        case "centered" :
+            self.present(infoAlert.centeredTextAlert(alertMessage), animated: true)
+            return
+        case "normal" :
+            self.present(infoAlert.normalAlert(alertMessage), animated: true)
+            return
+        default:
+            return
         }
     }
-
+    
 }
 
 //Membership Management Logic
@@ -326,7 +326,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
         } else {
             showAlert(alertMessage: "Internal Error: Payment amount \(total) cannot be processed.", type: "centered")
         }
-
+        
     }
     
     func setupPaypalConfiguration() {
@@ -354,3 +354,4 @@ extension MemHisViewController : PayPalPaymentDelegate {
     
     
 }
+
