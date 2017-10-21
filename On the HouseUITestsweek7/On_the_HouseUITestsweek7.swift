@@ -28,42 +28,48 @@ class On_the_HouseUITestsweek7: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    
+    func testOfferHome() {
+        //User tap "Proceed without Log in" offerHome show up
+        let app = XCUIApplication()
+        app.buttons["Proceed without Log in"].tap()
         
         
+    }
+    
+    func testOffReload(){
+        //User reload offer
+        
+        XCUIApplication().buttons["Proceed without Log in"].tap()
+
+    }
+    
+    func testDetail(){
+        
+        
+    }
+    
+    func testPastOffer(){
+        //User Log in, there will be no past offer and there is no history
         let app = XCUIApplication()
         let yourEmailTextField = app.textFields["Your Email"]
         yourEmailTextField.tap()
-        yourEmailTextField.typeText("778899@exampl")
+        yourEmailTextField.typeText("334455@123.com")
         
         let passwordSecureTextField = app.secureTextFields["Password"]
-        passwordSecureTextField.typeText("e.com")
         passwordSecureTextField.tap()
-        passwordSecureTextField.tap()
-        passwordSecureTextField.typeText("65")
-        app.typeText("4321")
-        
-        let window = app.children(matching: .window).element(boundBy: 0)
-        window.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 0).tables.children(matching: .cell).element(boundBy: 0).tap()
+        passwordSecureTextField.typeText("123456")
+        app.buttons["LOGIN"].tap()
+        app.navigationBars["Offers"].children(matching: .button).element(boundBy: 0).tap()
         
         let tablesQuery = app.tables
-        tablesQuery.buttons["My Membership"].tap()
-        app.buttons["icons8 chevron left filled 1"].tap()
-        tablesQuery.buttons["Change Passwrod"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["My Offers"]/*[[".cells.buttons[\"My Offers\"]",".buttons[\"My Offers\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["left arrow"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["Log out"]/*[[".cells.buttons[\"Log out\"]",".buttons[\"Log out\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
-        let element = window.children(matching: .other).element(boundBy: 1).children(matching: .other).element
-        let secureTextField = element.children(matching: .secureTextField).element(boundBy: 0)
-        secureTextField.tap()
-        secureTextField.typeText("654321098")
+
         
-        let secureTextField2 = element.children(matching: .secureTextField).element(boundBy: 1)
-        secureTextField2.tap()
-        secureTextField2.tap()
-        secureTextField2.typeText("1234")
-        element.children(matching: .secureTextField).element(boundBy: 2).typeText("56")
-        
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
     
 }
