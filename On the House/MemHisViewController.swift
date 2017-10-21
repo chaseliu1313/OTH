@@ -110,7 +110,6 @@ class MemHisViewController: UIViewController {
             processMembershipDowngrade()
         } else if(self.currentMembership == "Bronze" && self.goldOption.on == true) {
             processMembershipUpgrade()
-            //redirectToPayPalView()
             
         }
         
@@ -151,7 +150,7 @@ extension MemHisViewController {
         apiHandler.postRequest(apiParameters: "member/membership/history", postParameters: memPostParameters) { (response) in
             
             guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response)", type: "centered")
+                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
                 self.checkBoxGroup.selectedCheckBox = self.bronzeOption
                 return
             }
@@ -253,17 +252,22 @@ extension MemHisViewController {
         loadMembershipHelpInfo()
         
         myDispatchGroup.notify(queue: DispatchQueue.main, execute: {
-            print("Finished all requests.")
+            print("Finished all new membership api requests.")
             self.configureCheckBoxGroup(checkBoxSelected: self.initialCheckBoxSelected)
         })
         
     }
     
     func processMembershipUpgrade() {
+        redirectToPayPalView()
         memPostParameters["membership_level_id"] = self.memInfoResponseData["membership_levels"]![0]["id"].stringValue
         memPostParameters["nonce"] = ""
         myDispatchGroup.enter()
         apiHandler.postRequest(apiParameters: "member/membership/update", postParameters: memPostParameters) { (response) in
+            guard response["status"] != "error" else {
+                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
+                return
+            }
             self.myDispatchGroup.leave()
         }
         myDispatchGroup.notify(queue: DispatchQueue.main) {
@@ -279,6 +283,11 @@ extension MemHisViewController {
         memPostParameters["nonce"] = ""
         myDispatchGroup.enter()
         apiHandler.postRequest(apiParameters: "member/membership/update", postParameters: memPostParameters) { (response) in
+            
+            guard response["status"] != "error" else {
+                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
+                return
+            }
             self.myDispatchGroup.leave()
         }
         myDispatchGroup.notify(queue: DispatchQueue.main) {
@@ -297,7 +306,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
         let shipping = NSDecimalNumber(string:"0.00")
         let tax = NSDecimalNumber(string:"0.00")
         let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
-        // let subtotal = NSDecimalNumber(string: "0.10") //test amount as current gold membership is set to 0.00 AUD
+        //let subtotal = NSDecimalNumber(string: "0.10") //test amount as current gold membership is set to 0.00 AUD
         
         
         let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
@@ -332,17 +341,14 @@ extension MemHisViewController : PayPalPaymentDelegate {
     }
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        paypalTransactionSuccessful = false
-        paymentViewController.dismiss(animated: true, completion: nil)
-        self.present(infoAlert.normalAlert("Payment was not processed. Your membership has not been upgraded."), animated: true)
-        
+        paymentViewController.dismiss(animated: true, completion: {() -> Void in
+            self.showAlert(alertMessage: "Your payment was not processed. Your membership is unchanged.", type: "centered")
+        })
     }
     
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
         paymentViewController.dismiss(animated: true, completion: { () -> Void in
-            self.showAlert(alertMessage: "\(completedPayment.confirmation) has been successfully processed", type: "normal")
-            self.paypalTransactionSuccessful = true
-            self.performSegue(withIdentifier: "finish1", sender: self)
+            self.showAlert(alertMessage: "Your payment has been successfully processed. You are now upgraded to Gold membership", type: "normal")
         })
     }
     
