@@ -109,15 +109,8 @@ class MemHisViewController: UIViewController {
         if(self.currentMembership == "Gold" && self.bronzeOption.on == true) {
             processMembershipDowngrade()
         } else if(self.currentMembership == "Bronze" && self.goldOption.on == true) {
-
-            redirectToPayPalView()
-
-            if(paypalTransactionSuccessful) {
-                processMembershipUpgrade()
-                self.checkBoxGroup.selectedCheckBox = self.initialCheckBoxSelected
-            } else {
-                showAlert(alertMessage: "Payment was cancelled, you membership level has not changed.", type: "normal")
-            }
+            processMembershipUpgrade()
+            //redirectToPayPalView()
             
         }
         
