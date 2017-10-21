@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/MemHisViewController.swift"
-            timestampString = "530190154.57746"
+            timestampString = "530287278.005815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "redirectToPayPalView()"
-            landmarkType = "7">
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "MemHisViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
