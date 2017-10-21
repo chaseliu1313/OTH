@@ -107,20 +107,17 @@ class MemHisViewController: UIViewController {
         }
         
         if(self.currentMembership == "Gold" && self.bronzeOption.on == true) {
-            
             processMembershipDowngrade()
-            
         } else if(self.currentMembership == "Bronze" && self.goldOption.on == true) {
-            
-            processMembershipUpgrade()
 
-//            redirectToPayPalView()
+            redirectToPayPalView()
 
-//            if(paypalTransactionSuccessful) {
-//                self.checkBoxGroup.selectedCheckBox = self.initialCheckBoxSelected
-//            } else {
-//                showAlert(alertMessage: "Payment was cancelled, you membership level has not changed.", type: "normal")
-//            }
+            if(paypalTransactionSuccessful) {
+                processMembershipUpgrade()
+                self.checkBoxGroup.selectedCheckBox = self.initialCheckBoxSelected
+            } else {
+                showAlert(alertMessage: "Payment was cancelled, you membership level has not changed.", type: "normal")
+            }
             
         }
         
@@ -161,7 +158,7 @@ extension MemHisViewController {
         apiHandler.postRequest(apiParameters: "member/membership/history", postParameters: memPostParameters) { (response) in
             
             guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
+                self.showAlert(alertMessage: "Internal Error: \(response)", type: "centered")
                 self.checkBoxGroup.selectedCheckBox = self.bronzeOption
                 return
             }
@@ -175,7 +172,7 @@ extension MemHisViewController {
         myDispatchGroup.enter()
         apiHandler.postRequest(apiParameters: "member/membership", postParameters: memPostParameters) { (response) in
             guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
+                self.showAlert(alertMessage: "Internal Error: \(response)", type: "centered")
                 return
             }
             
@@ -200,7 +197,7 @@ extension MemHisViewController {
         apiHandler.getRequest(apiParameters: "membership/levels") { (response) in
             
             guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
+                self.showAlert(alertMessage: "Internal Error: \(response)", type: "centered")
                 return
             }
             
@@ -274,10 +271,6 @@ extension MemHisViewController {
         memPostParameters["nonce"] = ""
         myDispatchGroup.enter()
         apiHandler.postRequest(apiParameters: "member/membership/update", postParameters: memPostParameters) { (response) in
-            guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "justified")
-                return
-            }
             self.myDispatchGroup.leave()
         }
         myDispatchGroup.notify(queue: DispatchQueue.main) {
@@ -293,10 +286,6 @@ extension MemHisViewController {
         memPostParameters["nonce"] = ""
         myDispatchGroup.enter()
         apiHandler.postRequest(apiParameters: "member/membership/update", postParameters: memPostParameters) { (response) in
-            guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "justified")
-                return
-            }
             self.myDispatchGroup.leave()
         }
         myDispatchGroup.notify(queue: DispatchQueue.main) {
@@ -352,7 +341,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
         paypalTransactionSuccessful = false
         paymentViewController.dismiss(animated: true, completion: nil)
-        self.present(infoAlert.normalAlert("Payment was not processed. Your membership has not changed."), animated: true)
+        self.present(infoAlert.normalAlert("Payment was not processed. Your membership has not been upgraded."), animated: true)
         
     }
     
