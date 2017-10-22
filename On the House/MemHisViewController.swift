@@ -335,7 +335,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
         paypalTransactionSuccessful = true
         paymentViewController.dismiss(animated: true, completion: { () -> Void in
-            self.showAlert(alertMessage: "Your payment has been successfully processed.", type: "normal")
+            self.showAlert(alertMessage: "Your payment has been successfully processed. Please revisit this screen to reflect your current membership.", type: "normal")
 
             self.memPostParameters["membership_level_id"] = self.memInfoResponseData["membership_levels"]![0]["id"].stringValue
             self.memPostParameters["nonce"] = ""
@@ -345,9 +345,11 @@ extension MemHisViewController : PayPalPaymentDelegate {
                     self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
                     return
                 }
-                self.currentMembership = "Gold"
-                UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
-                UserDefaults.standard.synchronize()
+//                self.currentMembership = "Gold"
+//                UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
+//                UserDefaults.standard.synchronize()
+//                self.showAlert(alertMessage: "Your membership has been upgraded.", type: "centered")
+//                self.configureCheckBoxGroup(checkBoxSelected: self.goldOption)
                 self.myDispatchGroup.leave()
             }
             self.myDispatchGroup.notify(queue: DispatchQueue.main) {
@@ -355,7 +357,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
                 self.currentMembership = "Gold"
                 UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
                 UserDefaults.standard.synchronize()
-                //self.dismiss(animated: true, completion: nil)
+                self.configureCheckBoxGroup(checkBoxSelected: self.goldOption)
             }
         })
     }
