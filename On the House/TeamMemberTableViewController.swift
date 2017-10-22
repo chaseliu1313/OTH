@@ -1,0 +1,34 @@
+//
+//  TeamMemberTableViewController.swift
+//  On the House
+//
+//  Created by James zhang on 22/10/17.
+//  Copyright © 2017 Geng Xu. All rights reserved.
+//
+
+import UIKit
+
+class TeamMemberTableViewController: UITableViewController {
+
+    var Array = ["Boshi Liu", "Zhang Zhang", "Shuyang Liu", "Geng Xu", "Kalaiselvan Maruthappa Raj"]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Array.count
+    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = Array[indexPath.row]
+        return cell
+    }
+   
+}
