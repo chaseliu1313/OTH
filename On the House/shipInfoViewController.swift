@@ -132,6 +132,9 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
         
         payPalConfig.payPalShippingAddressOption = .both
         
+        
+        
+        self.loadShippingInfo()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -464,6 +467,63 @@ class shipInfoViewController: UIViewController ,UIPickerViewDelegate, UIPickerVi
             vc?.address = self.urladdress
             
         }
+        
+    }
+    
+    func loadShippingInfo() {
+        
+        let command1 = "api/v1/member/\(self.member_id)"
+        
+        ConnectionHelper.getJSON(command: command1) { (success, json) in
+            
+            if success {
+                
+                if let ad1 = json["member"]["address1"].string,
+                let ad2 = json["member"]["address2"].string,
+                let city = json["member"]["city"].string,
+                let zID = json["member"]["zone_id"].string,
+                let zip = json["member"]["zip"].string,
+                let fN = json["member"]["first_name"].string,
+                let lN = json["member"]["last_name"].string,
+                    
+                    let phone = json["member"]["phone"].string{
+                    
+                    self.firstName.placeholder = fN
+                    self.firstName.text = fN
+                    
+                    self.lastname.placeholder = lN
+                    self.lastname.text = lN
+                    self.address.placeholder = "\(ad1), \(ad2)"
+                    self.address.text = "\(ad1), \(ad2)"
+                    self.city.placeholder = city
+                    self.city.text = city
+                    let Tstate = System.getKey(id: Int(zID)!, dic: System.states)
+                    let index = self.Array2.index(of: Tstate)
+                    
+                    self.state.selectRow((index?.hashValue)!, inComponent: 0, animated: true)
+                    
+                    self.postcode.placeholder = zip
+                    self.postcode.text = zip
+                    self.phoneNumber.placeholder = phone
+                    self.phoneNumber.text = phone
+                    
+                }
+                
+                
+                
+            }
+            else {
+                
+                
+                }
+            
+            
+            
+            
+            
+        }
+        
+        
         
     }
    
