@@ -10,6 +10,8 @@ import UIKit
 import BEMCheckBox
 import SwiftyJSON
 
+var paypalTransactionSuccessful = false
+
 class MemHisViewController: UIViewController {
     
     let infoAlert = AlertDisplay()
@@ -37,7 +39,6 @@ class MemHisViewController: UIViewController {
     var memPostParameters:[String:String] = [:]
     
     var payPalConfig = PayPalConfiguration()
-    var paypalTransactionSuccessful = false
     
     var environment:String = PayPalEnvironmentNoNetwork {
         willSet(newEnvironment) {
@@ -110,7 +111,6 @@ class MemHisViewController: UIViewController {
             processMembershipDowngrade()
         } else if(self.currentMembership == "Bronze" && self.goldOption.on == true) {
             processMembershipUpgrade()
-            
         }
         
     }
@@ -173,9 +173,9 @@ extension MemHisViewController {
                 return
             }
             
-            if response["membership"]!["membership_level_name"] == "Gold" {
-                self.initialCheckBoxSelected = self.goldOption
-                self.currentMembership = response["membership"]!["membership_level_name"].stringValue
+            if response["membership"]!["membership_level_id"] == "9" {
+               self.initialCheckBoxSelected = self.goldOption
+               self.currentMembership = response["membership"]!["membership_level_name"].stringValue
             } else {
                 self.initialCheckBoxSelected = self.bronzeOption
                 self.currentMembership = response["membership"]!["membership_level_name"].stringValue
@@ -260,22 +260,7 @@ extension MemHisViewController {
     
     func processMembershipUpgrade() {
         redirectToPayPalView()
-        memPostParameters["membership_level_id"] = self.memInfoResponseData["membership_levels"]![0]["id"].stringValue
-        memPostParameters["nonce"] = ""
-        myDispatchGroup.enter()
-        apiHandler.postRequest(apiParameters: "member/membership/update", postParameters: memPostParameters) { (response) in
-            guard response["status"] != "error" else {
-                self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
-                return
-            }
-            self.myDispatchGroup.leave()
-        }
-        myDispatchGroup.notify(queue: DispatchQueue.main) {
-            self.showAlert(alertMessage: "Your membership has been upgraded", type: "centered")
-            self.currentMembership = "Gold"
-            UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
-            UserDefaults.standard.synchronize()
-        }
+
     }
     
     func processMembershipDowngrade() {
@@ -342,13 +327,36 @@ extension MemHisViewController : PayPalPaymentDelegate {
     
     func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
         paymentViewController.dismiss(animated: true, completion: {() -> Void in
+            paypalTransactionSuccessful = false
             self.showAlert(alertMessage: "Your payment was not processed. Your membership is unchanged.", type: "centered")
         })
     }
     
     func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        paypalTransactionSuccessful = true
         paymentViewController.dismiss(animated: true, completion: { () -> Void in
-            self.showAlert(alertMessage: "Your payment has been successfully processed. You are now upgraded to Gold membership", type: "normal")
+            self.showAlert(alertMessage: "Your payment has been successfully processed.", type: "normal")
+
+            self.memPostParameters["membership_level_id"] = self.memInfoResponseData["membership_levels"]![0]["id"].stringValue
+            self.memPostParameters["nonce"] = ""
+            self.myDispatchGroup.enter()
+            self.apiHandler.postRequest(apiParameters: "member/membership/update", postParameters: self.memPostParameters) { (response) in
+                guard response["status"] != "error" else {
+                    self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
+                    return
+                }
+                self.currentMembership = "Gold"
+                UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
+                UserDefaults.standard.synchronize()
+                self.myDispatchGroup.leave()
+            }
+            self.myDispatchGroup.notify(queue: DispatchQueue.main) {
+                self.showAlert(alertMessage: "Your membership has been upgraded.", type: "centered")
+                self.currentMembership = "Gold"
+                UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
+                UserDefaults.standard.synchronize()
+                //self.dismiss(animated: true, completion: nil)
+            }
         })
     }
     
