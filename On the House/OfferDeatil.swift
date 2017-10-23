@@ -311,9 +311,10 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
       
         ConnectionHelper.postJSON(command: url, parameter: parameter) { (success, json) in
             if success {
+                
                 snv = json["event"]["show_data"].arrayObject as! [[String : Any]]
                 
-                
+                print(json)
                
                 if json["event"]["is_product"].bool! {
                     

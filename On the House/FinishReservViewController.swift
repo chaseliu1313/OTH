@@ -49,7 +49,7 @@ class FinishReservViewController: UIViewController {
             if success {
                 
                 print(json)
-                
+                self.lable.text = "Thanks for making your reservation with ON THE HOUSE. and remeber... if you've seen a show you loved, let others know!"
                 
             }
             

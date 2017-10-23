@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242F10851F9C831500329252 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F10841F9C831500329252 /* AboutUsViewController.swift */; };
+		242F10871F9C8F5700329252 /* TeamMemberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242F10861F9C8F5700329252 /* TeamMemberTableViewController.swift */; };
 		260CCC4A1F7118A6006FE65E /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260CCC491F7118A6006FE65E /* ShowTime.swift */; };
 		5213A7331F7A6E1700B89A5C /* CompetitionTickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */; };
 		522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		242F10841F9C831500329252 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		242F10861F9C8F5700329252 /* TeamMemberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewController.swift; sourceTree = "<group>"; };
 		260CCC491F7118A6006FE65E /* ShowTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
 		5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionTickets.swift; sourceTree = "<group>"; };
 		522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				522FEB9C1F90B0DF00A7AA80 /* FinishReservViewController.swift */,
 				522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */,
 				B75DEBB61F979EA500A8658E /* MemHistTableViewCell.swift */,
+				242F10841F9C831500329252 /* AboutUsViewController.swift */,
+				242F10861F9C8F5700329252 /* TeamMemberTableViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -488,12 +494,14 @@
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
 				E88119F51F823DF5008F4FE0 /* MyOffers.swift in Sources */,
 				A257A1961F700593008D2DA3 /* FilterTableViewController.swift in Sources */,
+				242F10871F9C8F5700329252 /* TeamMemberTableViewController.swift in Sources */,
 				71C7DC811F78BF2A005BF028 /* shipInfoViewController.swift in Sources */,
 				E88F42931F6007B700DE142E /* OfferingHomePage.swift in Sources */,
 				522124D51F654BAC00BFE0CB /* ChangePasswordViewController.swift in Sources */,
 				260CCC4A1F7118A6006FE65E /* ShowTime.swift in Sources */,
 				7101E4F21F4D420F00237211 /* RegisterView.swift in Sources */,
 				52BBB7EA1F56ADB600411EA0 /* ConnectionHelper.swift in Sources */,
+				242F10851F9C831500329252 /* AboutUsViewController.swift in Sources */,
 				522FEB9B1F90AF3300A7AA80 /* RedirectViewController.swift in Sources */,
 				71E1FB9A1F6532D90029D3D0 /* sideMenuTableViewController.swift in Sources */,
 				A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */,
