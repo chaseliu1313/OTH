@@ -291,8 +291,6 @@ extension MemHisViewController : PayPalPaymentDelegate {
         let shipping = NSDecimalNumber(string:"0.00")
         let tax = NSDecimalNumber(string:"0.00")
         let subtotal = NSDecimalNumber(string: self.memInfoResponseData["membership_levels"]![0]["price"].stringValue)
-        //let subtotal = NSDecimalNumber(string: "0.10") //test amount as current gold membership is set to 0.00 AUD
-        
         
         let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
         let total = subtotal.adding(shipping).adding(tax)
@@ -345,11 +343,6 @@ extension MemHisViewController : PayPalPaymentDelegate {
                     self.showAlert(alertMessage: "Internal Error: \(response["messages"])", type: "centered")
                     return
                 }
-//                self.currentMembership = "Gold"
-//                UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
-//                UserDefaults.standard.synchronize()
-//                self.showAlert(alertMessage: "Your membership has been upgraded.", type: "centered")
-//                self.configureCheckBoxGroup(checkBoxSelected: self.goldOption)
                 self.myDispatchGroup.leave()
             }
             self.myDispatchGroup.notify(queue: DispatchQueue.main) {
