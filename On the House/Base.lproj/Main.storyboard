@@ -1798,8 +1798,8 @@ and periodicals</string>
                                     <outlet property="delegate" destination="LTb-vJ-Z3x" id="A7c-JF-bRb"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aswer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zF-ar-xuZ">
-                                <rect key="frame" x="165" y="623" width="48" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zF-ar-xuZ">
+                                <rect key="frame" x="159" y="623" width="57" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1868,7 +1868,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxm-FS-no9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8361" y="568"/>
+            <point key="canvasLocation" x="8360.7999999999993" y="567.48768472906409"/>
         </scene>
         <!--Redirect View Controller-->
         <scene sceneID="mI1-zy-xc6">
@@ -2013,13 +2013,6 @@ and periodicals</string>
                                     <outlet property="delegate" destination="gEj-8t-foi" id="5IT-Xj-IfH"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aswer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeK-3U-95L">
-                                <rect key="frame" x="163" y="430" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LUo-gJ-Uaw">
                                 <rect key="frame" x="34" y="485" width="309" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -2062,6 +2055,13 @@ and periodicals</string>
                                     <action selector="submit:" destination="gEj-8t-foi" eventType="touchUpInside" id="2tf-Ac-f64"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeK-3U-95L">
+                                <rect key="frame" x="160" y="432" width="61" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2081,7 +2081,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Mn-f8-TCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8361" y="1279"/>
+            <point key="canvasLocation" x="8360.7999999999993" y="1278.3251231527095"/>
         </scene>
         <!--Rating Detail View Controller-->
         <scene sceneID="RDP-9t-a0u">
@@ -3831,8 +3831,8 @@ and periodicals</string>
     <inferredMetricsTieBreakers>
         <segue reference="1MG-EK-6zz"/>
         <segue reference="HYQ-bA-cP9"/>
-        <segue reference="Hak-60-eMb"/>
-        <segue reference="iIv-cl-401"/>
+        <segue reference="9gL-vs-53k"/>
+        <segue reference="ft6-QP-OAO"/>
         <segue reference="70h-L8-55h"/>
         <segue reference="U1y-g9-LC8"/>
     </inferredMetricsTieBreakers>
