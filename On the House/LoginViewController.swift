@@ -69,7 +69,6 @@ class LoginViewController: UIViewController{
                     self.performSegue(withIdentifier: "facebookreg", sender: self)
                 }
                 else{
-                    //self.performSegue(withIdentifier: "facebooklogin", sender: self)
                     self.performSegue(withIdentifier: "login", sender: self)
                 }
             }
