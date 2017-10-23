@@ -10,7 +10,7 @@ import UIKit
 
 
 class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, PayPalPaymentDelegate {
-
+    
     
     @IBOutlet weak var pickView: UIPickerView!
     
@@ -28,12 +28,12 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
     
     var payPalConfig = PayPalConfiguration()
     
-     let command = "api/v1/reserve"
+    let command = "api/v1/reserve"
     var qty = ""
     var member_id = ""
     var show_id = ""
     var data: [String: String] = [:]
-
+    
     var address = ""
     
     var Array = ["If google search, what did you search for?","Friend","If newsettle, please type the name of it below:","Twitter","Facebook","LinkedIn","Forum","If Blog, what blog was it?","Footy Funatics","Toorak Times","Only Melbourne Website","Yelp","Good Weekend website"]
@@ -83,7 +83,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
         }
         
         var payPalConfig = PayPalConfiguration()
-
+        
         
         if(surveyAnswertextfield.text != "")
         {
@@ -102,15 +102,15 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
         self.parameter.updateValue(self.show_id, forKey: "show_id")
         self.parameter.updateValue(self.member_id, forKey: "member_id")
         self.parameter.updateValue(self.qty, forKey: "tickets")
-
-
+        
+        
         // Do any additional setup after loading the view.
     }
     func dismissKeyboard() {
         
         view.endEditing(true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,129 +139,129 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
     @IBAction func submit(_ sender: UIButton) {
         
         
-            if self.surveyAnswertextfield.text == nil
-            {
-               
-                self.notifyUser(["Please answer the question"])
+        if self.surveyAnswertextfield.text == nil
+        {
             
-            }
+            self.notifyUser(["Please answer the question"])
             
-            else{
+        }
             
-                ConnectionHelper.postJSON(command: command, parameter: parameter, compeletion: { (success, json) in
-                    
-                    if success
-                    {
-                        
-                        
-                        print(json)
-                        
-                        if let paypal  =  json["paypal"].int {
-                            print("paypal\(paypal)")
-                            if paypal == 1 {
-                                
-                                print("paypal\(paypal)")
-                                
-                                  if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
-                                    
-                                    
-                                    
-                                    let shipping = NSDecimalNumber(string: "0.00")
-                                    let tax = NSDecimalNumber(string: "0.00")
-                                    
-                                    let subtotal = NSDecimalNumber(string : p)
-                                    
-                                    let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
-                                    let total = subtotal.adding(shipping).adding(tax)
-                                    
-                                    let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name, intent: .sale)
-                                    payment.paymentDetails = paymentDetails
-                                    
-                                    if (payment.processable) {
-                                        let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
-                                        self.present(paymentViewController!, animated: true, completion: nil)
-                                    }
-                                    else {
-                                        // This particular payment will always be processable. If, for
-                                        // example, the amount was negative or the shortDescription was
-                                        // empty, this payment wouldn't be processable, and you'd want
-                                        // to handle that here.
-                                        print("Payment not processalbe: \(payment)")
-                                    }
-                                    //information for passing to the finish page
-                                     print("price\(p)")
-                                    self.reservation_id = String(id)
-                                    self.price = p
-                                    self.itemName = name
-                                    // end of information for passing to the finish page
-                                }
-                                
-                                //duplicate infor for server error
-                                if let name2 = json["item_name"].string, let p2 = json["item_price"].double, let email2 = json["paypal_email"].string, let id2 = json["reservation_id"].int, let sku2 = json["item_sku"].string {
-                                    
-                                    
-                                    let shipping = NSDecimalNumber(string: "0.00")
-                                    let tax = NSDecimalNumber(string:"0.00")
-                                    
-                                    let subtotal = NSDecimalNumber(string : String(p2))
-                                    
-                                    let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
-                                    let total = subtotal.adding(shipping).adding(tax)
-                                    
-                                    let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name2, intent: .sale)
-                                    payment.paymentDetails = paymentDetails
-                                    
-                                    if (payment.processable) {
-                                        let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
-                                        self.present(paymentViewController!, animated: true, completion: nil)
-                                    }
-                                    else {
-                                        // This particular payment will always be processable. If, for
-                                        // example, the amount was negative or the shortDescription was
-                                        // empty, this payment wouldn't be processable, and you'd want
-                                        // to handle that here.
-                                        print("Payment not processalbe: \(payment)")
-                                    }
-                                    
-                                    
-                                    //information for passing to the finish page
-                                    self.reservation_id = String(id2)
-                                    self.price = String(p2)
-                                    self.itemName = name2
-                                    // end of information for passing to the finish page
-                                    
-                                }
-                                
-                            }
-                            else
-                            {
-                                
-                                
-                            }
-                            
-                        }
-                        
-                        if let redirectLink = json["affiliate_url"].string {
-                            
-                          
-                            self.address  = redirectLink
-                            self.performSegue(withIdentifier: "redirect2", sender: self)
-                            
-                            
-                        }
-                        
-                        
-                    }
-                    else {
-                        
-                        let error = json["error"]["messages"].arrayObject as! [String]
-                        self.notifyUser(error)
-                    }
-                    
-                })
+        else{
+            
+            ConnectionHelper.postJSON(command: command, parameter: parameter, compeletion: { (success, json) in
                 
+                if success
+                {
+                    
+                    
+                    print(json)
+                    
+                    if let paypal  =  json["paypal"].int {
+                        print("paypal\(paypal)")
+                        if paypal == 1 {
+                            
+                            print("paypal\(paypal)")
+                            
+                            if let name = json["item_name"].string, let p = json["item_price"].string, let email = json["paypal_email"].string, let id = json["reservation_id"].int, let sku = json["item_sku"].string {
+                                
+                                
+                                
+                                let shipping = NSDecimalNumber(string: "0.00")
+                                let tax = NSDecimalNumber(string: "0.00")
+                                
+                                let subtotal = NSDecimalNumber(string : p)
+                                
+                                let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+                                let total = subtotal.adding(shipping).adding(tax)
+                                
+                                let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name, intent: .sale)
+                                payment.paymentDetails = paymentDetails
+                                
+                                if (payment.processable) {
+                                    let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+                                    self.present(paymentViewController!, animated: true, completion: nil)
+                                }
+                                else {
+                                    // This particular payment will always be processable. If, for
+                                    // example, the amount was negative or the shortDescription was
+                                    // empty, this payment wouldn't be processable, and you'd want
+                                    // to handle that here.
+                                    print("Payment not processalbe: \(payment)")
+                                }
+                                //information for passing to the finish page
+                                print("price\(p)")
+                                self.reservation_id = String(id)
+                                self.price = p
+                                self.itemName = name
+                                // end of information for passing to the finish page
+                            }
+                            
+                            //duplicate infor for server error
+                            if let name2 = json["item_name"].string, let p2 = json["item_price"].double, let email2 = json["paypal_email"].string, let id2 = json["reservation_id"].int, let sku2 = json["item_sku"].string {
+                                
+                                
+                                let shipping = NSDecimalNumber(string: "0.00")
+                                let tax = NSDecimalNumber(string:"0.00")
+                                
+                                let subtotal = NSDecimalNumber(string : String(p2))
+                                
+                                let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+                                let total = subtotal.adding(shipping).adding(tax)
+                                
+                                let payment = PayPalPayment(amount: total, currencyCode: "AUD", shortDescription: name2, intent: .sale)
+                                payment.paymentDetails = paymentDetails
+                                
+                                if (payment.processable) {
+                                    let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: self.payPalConfig, delegate: self)
+                                    self.present(paymentViewController!, animated: true, completion: nil)
+                                }
+                                else {
+                                    // This particular payment will always be processable. If, for
+                                    // example, the amount was negative or the shortDescription was
+                                    // empty, this payment wouldn't be processable, and you'd want
+                                    // to handle that here.
+                                    print("Payment not processalbe: \(payment)")
+                                }
+                                
+                                
+                                //information for passing to the finish page
+                                self.reservation_id = String(id2)
+                                self.price = String(p2)
+                                self.itemName = name2
+                                // end of information for passing to the finish page
+                                
+                            }
+                            
+                        }
+                        else
+                        {
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    if let redirectLink = json["affiliate_url"].string {
+                        
+                        
+                        self.address  = redirectLink
+                        self.performSegue(withIdentifier: "redirect2", sender: self)
+                        
+                        
+                    }
+                    
+                    
+                }
+                else {
+                    
+                    let error = json["error"]["messages"].arrayObject as! [String]
+                    self.notifyUser(error)
+                }
+                
+            })
             
-            }
+            
+        }
         
         self.parameter.updateValue(surveyAnswertextfield.text!, forKey: "Answer")
         
@@ -273,30 +273,30 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
         self.parameter.updateValue(questionid, forKey: "question_id")
         self.parameter.updateValue(Array[row], forKey: "question_text")
         
-         if pickView==pickerView{
-        if(placementAnswer == 0)
-        {
-            surveryAnswerLab.isHidden = false
-            surveyAnswertextfield.isHidden = false
-        }
-        else if(placementAnswer == 2)
-        {
-           surveryAnswerLab.isHidden = false
-            surveyAnswertextfield.isHidden = false
-        }
-        else if(placementAnswer == 7)
-        {
-            surveryAnswerLab.isHidden = false
-            surveyAnswertextfield.isHidden = false
-        }
-        else
-        {
-            surveryAnswerLab.isHidden = true
-            surveyAnswertextfield.isHidden = true
-        }
+        if pickView==pickerView{
+            if(placementAnswer == 0)
+            {
+                surveryAnswerLab.isHidden = false
+                surveyAnswertextfield.isHidden = false
+            }
+            else if(placementAnswer == 2)
+            {
+                surveryAnswerLab.isHidden = false
+                surveyAnswertextfield.isHidden = false
+            }
+            else if(placementAnswer == 7)
+            {
+                surveryAnswerLab.isHidden = false
+                surveyAnswertextfield.isHidden = false
+            }
+            else
+            {
+                surveryAnswerLab.isHidden = true
+                surveyAnswertextfield.isHidden = true
+            }
         }
     }
-
+    
     @IBAction func `return`(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -339,7 +339,7 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
             //self.showSuccess()
         })
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.destination is FinishReservViewController {
@@ -355,11 +355,11 @@ class Survey: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate, Pay
         else if segue.destination is RedirectViewController {
             
             let vc = segue.destination as? RedirectViewController
-                
-                vc?.address = self.address
+            
+            vc?.address = self.address
             
         }
         
     }
-   
+    
 }

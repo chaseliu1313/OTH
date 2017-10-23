@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1292,7 +1292,7 @@ and periodicals</string>
                                         <rect key="frame" x="0.0" y="120" width="375" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="295.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -1303,27 +1303,27 @@ and periodicals</string>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4cL-XK-neB">
-                                                    <rect key="frame" x="8" y="245.99999999999997" width="359" height="40.333333333333286"/>
+                                                    <rect key="frame" x="8" y="246.00000000000003" width="359" height="40.333333333333343"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="phH-SV-xq5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="40.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="40.333333333333336"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZAA-gN-sgg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="40.333333333333314"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="40.333333333333336"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gII-x7-uxi">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="40.333333333333314"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="40.333333333333336"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tuU-gd-a2F">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="40.333333333333314"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="40.333333333333336"/>
                                                                                     <subviews>
                                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="information" translatesAutoresizingMaskIntoConstraints="NO" id="bUd-S1-kz9">
-                                                                                            <rect key="frame" x="16.333333333333336" y="0.0" width="21.000000000000007" height="21"/>
+                                                                                            <rect key="frame" x="16.333333333333332" y="0.0" width="20.999999999999996" height="21"/>
                                                                                             <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                                                                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                                                         </imageView>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7Y-c8-QsF">
-                                                                                            <rect key="frame" x="0.0" y="26" width="53.666666666666664" height="14.333333333333314"/>
+                                                                                            <rect key="frame" x="0.0" y="25.999999999999996" width="53.666666666666664" height="14.333333333333332"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
@@ -1337,7 +1337,7 @@ and periodicals</string>
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKa-af-92K">
-                                                            <rect key="frame" x="119.66666666666666" y="0.0" width="119.66666666666666" height="40.333333333333314"/>
+                                                            <rect key="frame" x="119.66666666666666" y="0.0" width="119.66666666666666" height="40.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <inset key="titleEdgeInsets" minX="-35" minY="0.0" maxX="0.0" maxY="-23"/>
                                                             <inset key="imageEdgeInsets" minX="41" minY="-1" maxX="0.0" maxY="15"/>
@@ -1346,7 +1346,7 @@ and periodicals</string>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-vf-v8i">
-                                                            <rect key="frame" x="239.33333333333337" y="0.0" width="119.66666666666663" height="40.333333333333314"/>
+                                                            <rect key="frame" x="239.33333333333334" y="0.0" width="119.66666666666666" height="40.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-22"/>
                                                             <inset key="imageEdgeInsets" minX="65" minY="5" maxX="0.0" maxY="18"/>
@@ -2365,7 +2365,7 @@ and periodicals</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Past Offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGZ-2f-oYN">
-                                <rect key="frame" x="126.66666666666666" y="393" width="121.99999999999997" height="21"/>
+                                <rect key="frame" x="126.66666666666669" y="393" width="122" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="DcX-rt-7dm"/>
                                     <constraint firstAttribute="height" constant="21" id="MfQ-nI-Ckc"/>
@@ -2714,11 +2714,11 @@ and periodicals</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNa-v4-TZU">
-                                                    <rect key="frame" x="25" y="6" width="75" height="30"/>
+                                                    <rect key="frame" x="33" y="7" width="150" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="About Us">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="Gwc-ZJ-0hf" kind="show" id="oCd-Ch-Equ"/>
@@ -3851,7 +3851,7 @@ and periodicals</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-uB-3Am">
-                                <rect key="frame" x="124.66666666666666" y="263" width="125.99999999999997" height="21"/>
+                                <rect key="frame" x="124.66666666666669" y="263" width="126" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MDq-RB-EfP"/>
                                     <constraint firstAttribute="width" constant="126" id="xQ2-mo-Iro"/>
@@ -4416,9 +4416,9 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1MG-EK-6zz"/>
-        <segue reference="VGj-Uv-Mqs"/>
+        <segue reference="HYQ-bA-cP9"/>
         <segue reference="Hak-60-eMb"/>
-        <segue reference="ft6-QP-OAO"/>
+        <segue reference="iIv-cl-401"/>
         <segue reference="70h-L8-55h"/>
         <segue reference="U1y-g9-LC8"/>
     </inferredMetricsTieBreakers>
