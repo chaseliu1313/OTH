@@ -50,7 +50,14 @@ class RatingDetailViewController: UIViewController {
         self.Offerdescription.backgroundColor = UIColor.clear
         self.comments.backgroundColor = UIColor.clear
         self.hide()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
+    }
+    
+    func dismissKeyboard() {
+        
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

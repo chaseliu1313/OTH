@@ -27,7 +27,8 @@ class ChangePasswordViewController: UIViewController {
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         
         
@@ -83,6 +84,12 @@ class ChangePasswordViewController: UIViewController {
         }
         
     }
+    
+    func dismissKeyboard() {
+        
+        view.endEditing(true)
+    }
+    
     @IBAction func `return`(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
