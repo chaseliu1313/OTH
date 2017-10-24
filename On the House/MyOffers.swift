@@ -47,16 +47,16 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
         self.loadReservs()
         
-        if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
-            
-            self.notifyUser(["Please Log in to access"])
-            
-            let when = DispatchTime.now() + 3
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                self.dismiss(animated: true, completion: nil)
-            }
-            
-        }
+//        if !UserDefaults.standard.bool(forKey: "isLoggedIn") {
+//
+//            self.notifyUser(["Please Log in to access"])
+//
+//            let when = DispatchTime.now() + 3
+//            DispatchQueue.main.asyncAfter(deadline: when) {
+//                self.dismiss(animated: true, completion: nil)
+//            }
+//
+//        }
         
         
         
