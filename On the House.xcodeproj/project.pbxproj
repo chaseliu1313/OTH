@@ -190,7 +190,6 @@
 				B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */,
 				B75DEBB21F979E0C00A8658E /* AlertDisplay.swift */,
 				B75DEBB31F979E0C00A8658E /* DateUtility.swift */,
-				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 				71E1FB911F611BC80029D3D0 /* Checkbox.swift */,
 				71E1FB971F651AC10029D3D0 /* SWRevealViewController.h */,
 				71E1FB961F651AC10029D3D0 /* SWRevealViewController.m */,
@@ -237,6 +236,7 @@
 				522FEB9A1F90AF3300A7AA80 /* RedirectViewController.swift */,
 				B75DEBB61F979EA500A8658E /* MemHistTableViewCell.swift */,
 				242F10841F9C831500329252 /* AboutUsViewController.swift */,
+				71E1FB991F6532D90029D3D0 /* sideMenuTableViewController.swift */,
 				242F10861F9C8F5700329252 /* TeamMemberTableViewController.swift */,
 			);
 			name = "View Controller";
