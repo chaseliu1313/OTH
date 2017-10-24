@@ -343,7 +343,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
                         
                         self.competitionQuestion = json["event"]["competition"]["question"].string!
                     
-                         print(self.competitionQuestion)
+                        
                     }
                     
                 let fp = json["event"]["full_price_string"].string
@@ -438,6 +438,7 @@ extension OfferDeatil: sendBookingInfoProtocol {
 
     func sendInfo(qty: String, error: String, isCom: Bool, show_id: String, shipping: Bool) {
        
+        print(isCom)
         let member_id = UserDefaults.standard.string(forKey: "member_id")!
         let event_id = self.OfferID
         

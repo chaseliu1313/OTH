@@ -112,6 +112,12 @@ class ShowTime: UITableViewCell {
         
         }
         
+        if self.isCompetition {
+            
+            
+            sendInfo.sendInfo(qty: "", error: error, isCom: self.isCompetition, show_id: " ", shipping: shipping)
+        }
+        
     }
     
 
