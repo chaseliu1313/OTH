@@ -10,7 +10,7 @@ import UIKit
 
 class TeamMemberTableViewController: UITableViewController {
 
-    var Array = ["Boshi Liu", "Zhang Zhang", "Shuyang Liu", "Geng Xu", "Kalaiselvan Maruthappa Raj"]
+    var Array = ["Boshi Liu","Shuyang Liu","Kalaiselvan Maruthappa Raj","Geng Xu","Zhang Zhang" ]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
