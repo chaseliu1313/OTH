@@ -42,7 +42,7 @@ class AboutUsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0){
-            notifyUser(["This is a graduate project of Master of Information Technology program at RMIT!, Supervised under the Senior Lecture Dr. Maria Spichkova"])
+            notifyUser(["This is one of RMIT Software Engineering Postgraduate Project.\n Supervised by the Senior Lecture Dr. Maria Spichkova"])
         }
         if (indexPath.row == 1){
             self.performSegue(withIdentifier: "teampop", sender: self)
