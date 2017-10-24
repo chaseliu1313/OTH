@@ -2710,7 +2710,7 @@ and periodicals</string>
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="yRf-82-eyq" kind="show" id="1MG-EK-6zz"/>
+                                                        <action selector="mymembership:" destination="dcL-bC-IMt" eventType="touchUpInside" id="duQ-gk-Mm4"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2733,7 +2733,7 @@ and periodicals</string>
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="tm2-dI-B8O" kind="show" id="vQb-4S-Xo4"/>
+                                                        <action selector="changePass:" destination="dcL-bC-IMt" eventType="touchUpInside" id="SBt-w0-HHr"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2756,7 +2756,7 @@ and periodicals</string>
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="f2H-H2-vez" kind="show" id="ede-51-Awk"/>
+                                                        <action selector="updateProfile:" destination="dcL-bC-IMt" eventType="touchUpInside" id="kw6-df-leC"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2880,7 +2880,11 @@ and periodicals</string>
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="logoutbutton" destination="MYZ-UH-3js" id="RCi-yl-cOU"/>
                         <segue destination="e4v-lL-EH7" kind="show" identifier="myOffers" id="vj8-Qw-G13"/>
+                        <segue destination="yRf-82-eyq" kind="show" identifier="myMembership" id="1N6-qY-m5d"/>
+                        <segue destination="tm2-dI-B8O" kind="show" identifier="changePassword" id="3hc-Fe-Nqq"/>
+                        <segue destination="f2H-H2-vez" kind="show" identifier="updateProfile" id="PO4-ez-C1T"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIy-ly-1f6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3895,7 +3899,7 @@ and periodicals</string>
         <image name="share" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1MG-EK-6zz"/>
+        <segue reference="1N6-qY-m5d"/>
         <segue reference="sTr-nW-xrY"/>
         <segue reference="vj8-Qw-G13"/>
         <segue reference="9gL-vs-53k"/>
