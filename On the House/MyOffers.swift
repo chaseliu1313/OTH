@@ -9,7 +9,7 @@
 import UIKit
 
 class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     var currentoffer = ["a","b","c","d","e"]
     var pastoffer = ["a","b","c"]
     var type = true
@@ -58,34 +58,34 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
         }
         
-    
         
-           }
-
-
+        
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         if ( currentOfferTableView == tableView){
             
             print("table1 \(reservations.count)")
-               return(reservations.count)
+            return(reservations.count)
             
         }else {
             
             print("table2 \(reservations2.count)")
-                return(reservations2.count)
+            return(reservations2.count)
             
         }
-      
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         if tableView == currentOfferTableView{
-           print("table1 \(indexPath.row)")
+            print("table1 \(indexPath.row)")
             
-       let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! MyOfferTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! MyOfferTableViewCell
             cell.showShortcut.text = reservations[indexPath.row]["event_name"] as? String
             cell.dateTime.text = reservations[indexPath.row]["date"] as? String
             cell.qty.text = reservations[indexPath.row]["num_tickets"] as? String
@@ -100,9 +100,9 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             
             if let id = reservations[indexPath.row]["event_id"] as? String {
-               
+                
                 cell.eventID = id
-            
+                
             }
             
             if let cancel = reservations[indexPath.row]["can_cancel"] as? Bool {
@@ -130,7 +130,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             
             
-          
+            
             
             cell.moreInfo.addTarget(self, action: #selector(showCurrentDetail), for: .touchUpInside)
             
@@ -138,7 +138,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.moreInfo.layer.cornerRadius = 8
             
             
-        return cell
+            return cell
             
             
         }else{
@@ -155,10 +155,10 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             if let sid = reservations[indexPath.row]["show_id"] as? String, let has_rated = reservations[indexPath.row]["has_rated"] as? Int {
                 
-               
-               
+                
+                
                 cell2.showID = sid
-               
+                
                 if has_rated == 0 {
                     
                     cell2.moreInfo.setTitle("More Info", for: .normal)
@@ -170,22 +170,22 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             }
             
             if let id = reservations2[indexPath.row]["event_id"] as? String {
-            
                 
-                 cell2.eventID = id
+                
+                cell2.eventID = id
             }
             
             
             
-          cell2.moreInfo.addTarget(self, action: #selector(PastOfferDetail), for: .touchUpInside)
-        
-           cell2.sendInfo = self
+            cell2.moreInfo.addTarget(self, action: #selector(PastOfferDetail), for: .touchUpInside)
+            
+            cell2.sendInfo = self
             return cell2
-
+            
         }
         
-
-     }
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -196,8 +196,8 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             vc?.type = self.type
             vc?.event_id = self.eventID
-          
-
+            
+            
             
             
         }
@@ -223,25 +223,25 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func PastOfferDetail() {
         
-         self.performSegue(withIdentifier: "rate", sender: self)
+        self.performSegue(withIdentifier: "rate", sender: self)
     }
     
     func loadReservs(){
-    
+        
         
         ConnectionHelper.postJSON(command: command1, parameter: parameter) { (success, json) in
             
             if success {
-            
+                
                 self.reservations = json["reservations"].arrayObject as![[String: Any]]
                 print(self.reservations.count)
                 self.currentOfferTableView.reloadData()
-            
+                
             }
-            
+                
             else {
-            print(json)
-            
+                print(json)
+                
             }
         }
         
@@ -282,13 +282,13 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
                 
                 self.notifyUser(["Your reservation is canceled"])
             }
-            
+                
             else {
                 if let error = json["error"]["messages"].arrayObject as? [String]
                 {
-                       self.notifyUser(error)
+                    self.notifyUser(error)
                 }
-             
+                
                 
                 
             }
@@ -297,17 +297,17 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
-   
+    
     
     func notifyUser( _ message: [String] ) -> Void
     {
         
-         var meg = " "
+        var meg = " "
         for m in message {
             
             meg.append("\(m) \n")
         }
-       
+        
         let alert = UIAlertController(title: "ON THE HOUSE", message: meg, preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -318,14 +318,14 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
 }
 
 extension MyOffers: sendInfoDelegate {
-
+    
     func sendInfo(eventID: String, type: Bool, showID: String) {
         self.eventID = eventID
         self.type = type
         self.showID = showID
         
-       
+        
     }
-
-
+    
+    
 }

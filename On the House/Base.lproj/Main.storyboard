@@ -201,9 +201,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yy-ar-wUU">
-                                <rect key="frame" x="15" y="20" width="29" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yy-ar-wUU">
+                                <rect key="frame" x="16" y="44" width="29" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="EXK-qh-9yE"/>
+                                    <constraint firstAttribute="width" constant="29" id="tp5-oz-b9Z"/>
+                                </constraints>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="5wL-K2-LhC"/>
@@ -211,6 +214,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9yy-ar-wUU" firstAttribute="top" secondItem="9ZJ-a2-ThT" secondAttribute="bottom" id="NE1-1o-udn"/>
+                            <constraint firstItem="9yy-ar-wUU" firstAttribute="leading" secondItem="KkF-77-ViE" secondAttribute="leadingMargin" id="am4-Wc-4c0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailtextfield" destination="JCj-Vf-fxH" id="R5b-aq-s61"/>
@@ -564,6 +571,7 @@
                                     <action selector="return:" destination="8y9-Ty-LeJ" eventType="touchUpInside" id="eDV-4f-O7l"/>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="oca-oY-VVg"/>
                                     <action selector="returnN:" destination="Fjf-sY-oDL" eventType="touchUpInside" id="nhz-b3-PIW"/>
+                                    <segue destination="e4v-lL-EH7" kind="show" id="kEa-TV-kim"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld4-Uz-RbS">
@@ -2128,6 +2136,7 @@ and periodicals</string>
                                 <connections>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="0OV-lX-91t"/>
                                     <action selector="return:" destination="8y9-Ty-LeJ" eventType="touchUpInside" id="QiY-TL-U9S"/>
+                                    <segue destination="e4v-lL-EH7" kind="show" id="2kz-kf-hke"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wHa-KM-Hcj">
@@ -3829,11 +3838,13 @@ and periodicals</string>
         <image name="share" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hEt-Ha-yfc"/>
         <segue reference="1MG-EK-6zz"/>
         <segue reference="sTr-nW-xrY"/>
+        <segue reference="2kz-kf-hke"/>
         <segue reference="9gL-vs-53k"/>
         <segue reference="ft6-QP-OAO"/>
         <segue reference="70h-L8-55h"/>
-        <segue reference="U1y-g9-LC8"/>
+        <segue reference="5wL-K2-LhC"/>
     </inferredMetricsTieBreakers>
 </document>
