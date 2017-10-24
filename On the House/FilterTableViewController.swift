@@ -36,7 +36,7 @@ class FilterTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,11 +46,11 @@ class FilterTableViewController: UITableViewController {
             rowcount = 3
         }
         if section == 1 {
-            rowcount = 4
+            rowcount = 6
         }
-        if section == 2 {
+        /*if section == 2 {
             rowcount = 16
-        }
+        }*/
         return rowcount
     }
     
@@ -159,6 +159,7 @@ class FilterTableViewController: UITableViewController {
             button.backgroundColor = UIColor(rgb: 0xDFDDE0)
         }
         self.clickedbuttons = []
+        dismiss(animated: false, completion: nil)
     }
     
     

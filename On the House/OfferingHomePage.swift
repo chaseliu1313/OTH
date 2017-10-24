@@ -36,8 +36,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    
-    
     var category: [String] = System.category {
         
         didSet{
@@ -45,9 +43,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             OfferingHomePage.parameter.updateValue(category, forKey: "category_id")
             self.loadOffers()
             tableView.reloadData()
-            
         }
-        
     }
     
     var states: [String] = System.state {
@@ -57,9 +53,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             OfferingHomePage.parameter.updateValue(states, forKey: "zone_id")
             self.loadOffers()
             tableView.reloadData()
-            
         }
-        
     }
     
     var dates : [String] = System.dates {
@@ -75,8 +69,6 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
                 tableView.reloadData()
                 print(OfferingHomePage.parameter)
             }
-            
-            
         }
     }
     
