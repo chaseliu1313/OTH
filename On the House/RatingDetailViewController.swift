@@ -180,9 +180,7 @@ class RatingDetailViewController: UIViewController {
         
     }
 
-    @IBAction func `return`(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+  
     
     func notifyUser( _ message: [String] ) -> Void
     {

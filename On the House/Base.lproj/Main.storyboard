@@ -579,9 +579,8 @@
                                 </constraints>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
-                                    <action selector="return:" destination="8y9-Ty-LeJ" eventType="touchUpInside" id="eDV-4f-O7l"/>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="oca-oY-VVg"/>
-                                    <action selector="returnN:" destination="Fjf-sY-oDL" eventType="touchUpInside" id="nhz-b3-PIW"/>
+                                    <segue destination="e4v-lL-EH7" kind="show" id="6Rc-gx-TJu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld4-Uz-RbS">
@@ -689,14 +688,13 @@
                     <connections>
                         <outlet property="Name" destination="soB-aB-XCV" id="Lgn-CU-WXY"/>
                         <outlet property="ratings" destination="y4z-4q-6vB" id="EvW-Le-o0C"/>
-                        <outlet property="return" destination="Xfo-bD-FHN" id="JxO-Va-ac2"/>
                         <outlet property="tickets" destination="eDB-el-mHZ" id="xm6-90-AH0"/>
                         <outlet property="venue" destination="nBT-8h-YkM" id="YZa-Se-EkY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jy-35-jsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42.399999999999999" y="3097.536945812808"/>
+            <point key="canvasLocation" x="44" y="3157"/>
         </scene>
         <!--Preference View Controller-->
         <scene sceneID="Zuj-ST-Oq3">
@@ -1299,7 +1297,7 @@ and periodicals</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="296" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6p-f0-dID">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g8a-ND-lgv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
@@ -2157,7 +2155,6 @@ and periodicals</string>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="0OV-lX-91t"/>
-                                    <action selector="return:" destination="8y9-Ty-LeJ" eventType="touchUpInside" id="QiY-TL-U9S"/>
                                     <segue destination="e4v-lL-EH7" kind="show" id="2kz-kf-hke"/>
                                 </connections>
                             </button>
@@ -2372,7 +2369,7 @@ and periodicals</string>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="dvS-Hi-Kd5"/>
-                                    <action selector="return:" destination="e4v-lL-EH7" eventType="touchUpInside" id="tAx-Kb-IMX"/>
+                                    <segue destination="qEO-ey-Sch" kind="show" id="58L-JD-Q7D"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="135-h4-Uiz">
@@ -2641,7 +2638,7 @@ and periodicals</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki7-vc-tGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208.6956521739132" y="2404.8913043478265"/>
+            <point key="canvasLocation" x="1156" y="1816"/>
         </scene>
         <!--Side Menu Table View Controller-->
         <scene sceneID="Afz-T7-2FN">
@@ -3278,7 +3275,7 @@ and periodicals</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngD-ma-ejm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4409" y="2476"/>
+            <point key="canvasLocation" x="3559" y="2455"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="pjV-Y4-p4a">
@@ -3911,11 +3908,11 @@ and periodicals</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="b3r-wW-Hjc"/>
-        <segue reference="BYi-Db-Qc9"/>
-        <segue reference="vj8-Qw-G13"/>
+        <segue reference="58L-JD-Q7D"/>
+        <segue reference="6Rc-gx-TJu"/>
         <segue reference="9gL-vs-53k"/>
         <segue reference="ft6-QP-OAO"/>
-        <segue reference="70h-L8-55h"/>
+        <segue reference="XTB-hK-J2p"/>
         <segue reference="OlO-BT-Hwe"/>
     </inferredMetricsTieBreakers>
 </document>
