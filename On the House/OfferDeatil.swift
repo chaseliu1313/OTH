@@ -58,9 +58,15 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.showStatus.reloadData()
         self.showStatus.tableFooterView = self.loadMoreView
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterView.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
        
         
+    }
+    func dismissKeyboard() {
+        
+        view.endEditing(true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
