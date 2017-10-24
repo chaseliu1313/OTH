@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var notification: UILabel!
     let command = "api/v1/member/create"
     var parameter = ["nickname": "",
                      "firstname": "",
@@ -79,7 +80,7 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         ConnectionHelper.post(command: command, parameter: parameter) { (successed,msg) in
             if(successed) {
                 
-                
+                self.notification.text = "You are all set! Auto-login now."
                 //self.notifyUser(["Registration Successfull"])
                 self.performSegue(withIdentifier: "successfullyreg", sender: self)
             }
@@ -90,6 +91,8 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
                 
             }
         }
+        
+        self.notification.text = " "
         
     }
     

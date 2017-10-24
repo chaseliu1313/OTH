@@ -481,7 +481,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-lf-Lkm">
                                 <rect key="frame" x="152" y="753" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,6 +490,13 @@
                                     <action selector="SignUP:" destination="8lo-Ax-s2V" eventType="touchUpInside" id="zfR-7Z-ilm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svf-sU-lHO">
+                                <rect key="frame" x="47" y="533" width="283" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -500,6 +507,7 @@
                     <connections>
                         <outlet property="answerlabel" destination="OL0-ez-Gi2" id="vgB-DH-N4k"/>
                         <outlet property="answertextfield" destination="8wT-U2-zQr" id="HKz-cI-7CB"/>
+                        <outlet property="notification" destination="Svf-sU-lHO" id="bQF-LQ-neJ"/>
                         <outlet property="pickerview" destination="9Ja-2J-Z7c" id="MjN-uZ-IWw"/>
                         <outlet property="signup" destination="YLD-lf-Lkm" id="oPv-Hk-mqj"/>
                         <segue destination="qEO-ey-Sch" kind="show" identifier="successfullyreg" id="BYi-Db-Qc9"/>
@@ -507,7 +515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m66-YY-ZQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="-86"/>
+            <point key="canvasLocation" x="2952.8000000000002" y="-86.453201970443359"/>
         </scene>
         <!--Current Offer View Controller-->
         <scene sceneID="PTP-OU-f4j">
