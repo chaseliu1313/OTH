@@ -18,6 +18,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var offers : [String : Offer]!
     
+    let isloggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
     
     var loadMoreEnable = true
     var loadMoreView: UIView?
@@ -435,7 +436,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             for reserv in reservations{
                 
-                if reserv["rated"] == "0" {
+                if reserv["rated"] == "0" && self.isloggedin {
                     
                     self.reviewWarning.isHidden = false
                     
