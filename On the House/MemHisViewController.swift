@@ -346,7 +346,7 @@ extension MemHisViewController : PayPalPaymentDelegate {
                 self.myDispatchGroup.leave()
             }
             self.myDispatchGroup.notify(queue: DispatchQueue.main) {
-                self.showAlert(alertMessage: "Your membership has been upgraded.", type: "centered")
+                self.showAlert(alertMessage: "Your payment has been successfully processed. Please revisit this screen to reflect your current membership.", type: "normal")
                 self.currentMembership = "Gold"
                 UserDefaults.standard.set(self.memInfoResponseData["membership_levels"]![0]["id"].stringValue, forKey: "membership_level_id")
                 UserDefaults.standard.synchronize()
