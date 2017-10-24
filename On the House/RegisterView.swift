@@ -80,8 +80,12 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         ConnectionHelper.post(command: command, parameter: parameter) { (successed,msg) in
             if(successed) {
                 
+                
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                UserDefaults.standard.synchronize()
+                
                 self.notification.text = "You are all set! Auto-login now."
-                //self.notifyUser(["Registration Successfull"])
+                
                 self.performSegue(withIdentifier: "successfullyreg", sender: self)
             }
             else{

@@ -78,7 +78,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         Offers.offerload = []
         tableView.delegate = self
         tableView.dataSource = self
-        
+        self.reviewWarning.text = " "
         
        
         self.tableView.tableFooterView = self.loadMoreView
@@ -88,7 +88,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.loadOffers()
         self.checkRating()
         
-        print("view did load")
+    
        
         //tableView.reloadData()
     }
