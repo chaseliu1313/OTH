@@ -306,6 +306,8 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.shareEvent.tag = indexPath.row
         
         
+        let didSelectRow = indexPath.row
+        self.offerID = Offers.offerload[didSelectRow].id
      
         let size = CGSize.init(width: cell.getsize().width, height: cell.getsize().height)
         
@@ -315,7 +317,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         cell.eventImage.image = self.resizeImage(image: cellImage, targetSize: size)
         
-        
+       
         
         
         let skip = UserDefaults.standard.bool(forKey: "didSkip")
@@ -351,6 +353,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         else  {
             
             cell.checkoutButton.setTitle("Check Out", for: .normal)
+            
             
             }}
         
@@ -394,6 +397,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.performSegue(withIdentifier: "jumpUpgrade", sender: self)
     }
     
+   
     
     
     func notifyUser( _ message: [String] ) -> Void
@@ -487,9 +491,11 @@ extension UIImage {
 
 extension OfferingHomePage: sendOfferIDDelegate{
     
-    func sendID(offerID: String) {
+    func sendID(offerID: String, type: String) {
         
         let currentOffer = Offers.getOffer(offerID: offerID)
+        
+        if type == "share" {
         let image = currentOffer.image
         
         self.sharingURL = self.baseURL + offerID
@@ -544,7 +550,15 @@ extension OfferingHomePage: sendOfferIDDelegate{
         alert.addAction(actionTwo)
         //Present alert
         self.present(alert, animated: true, completion:nil)
+        }
+        
+        else {
+             self.offerID = offerID
+            performSegue(withIdentifier: "showDetail", sender: self)
+            
+        }
     }
+    
     
 }
 

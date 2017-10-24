@@ -45,7 +45,7 @@ class OfferTableCell: UITableViewCell {
     @IBAction func share(_ sender: UIButton) {
         let eventID = Offers.offerload[shareEvent.tag].id
         let sharingURL =  eventID
-        sendOfferID.sendID(offerID: sharingURL)
+        sendOfferID.sendID(offerID: sharingURL, type: "share")
         
         
     }
@@ -64,10 +64,18 @@ class OfferTableCell: UITableViewCell {
     }
     
    
+    @IBAction func checkout(_ sender: Any) {
         
+        let eventID = Offers.offerload[shareEvent.tag].id
+        let sharingURL =  eventID
+        sendOfferID.sendID(offerID: sharingURL, type: "checkout")
+        
+        
+    }
+    
     
 }
 
 protocol sendOfferIDDelegate {
-    func sendID (offerID: String)
+    func sendID (offerID: String, type: String)
 }

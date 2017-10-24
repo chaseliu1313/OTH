@@ -62,6 +62,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.addGestureRecognizer(tap)
         
        
+       
         
     }
     func dismissKeyboard() {
