@@ -321,41 +321,65 @@ class PreferenceViewController: UIViewController ,UIPickerViewDelegate, UIPicker
     //retrieve placeholders from userdefaults
     func getPlaceholder(){
     
+        
     
         if UserDefaults.standard.string(forKey: "member_id") != nil {
         
-        self.nikenameTextField.placeholder = UserDefaults.standard.string(forKey: "nickname")
-        self.firstNameTextField.placeholder = UserDefaults.standard.string(forKey: "first_name")
-        self.lastNameTextField.placeholder = UserDefaults.standard.string(forKey: "last_name")
-        self.emailTextField.placeholder = UserDefaults.standard.string(forKey: "email")
-        self.postcodeTextField.placeholder = UserDefaults.standard.string(forKey: "zip")
+            let id = UserDefaults.standard.string(forKey: "member_id")!
+            let command = "api/v1/member/\(id)"
+            
+            ConnectionHelper.getJSON(command: command, completion: { (success, json) in
+                if success {
+                    
+                    
+                    
+                    if  let firstName = json["member"]["first_name"].string,
+                         let lastName = json["member"]["last_name"].string,
+                         let nickName = json["member"]["nickname"].string,
+                         let email = json["member"]["email"].string,let zID = json["member"]["zone_id"].string{
+                        
+                       
+                        let Tstate = System.getKey(id: Int(zID)!, dic: System.states)
+                        let index = self.Array2.index(of: Tstate)
+                        
+                        self.statePickerView.selectRow((index?.hashValue)!, inComponent: 0, animated: true)
+                        
+                        self.nikenameTextField.placeholder = nickName
+                        self.emailTextField.placeholder = email
+                        self.firstNameTextField.placeholder = firstName
+                        self.lastNameTextField.placeholder = lastName
+                        
+                        
+                    }
+                    
+                    if let title = json["member"]["title"].string,
+                        let street = json["member"]["address1"].string,
+                        let city = json["member"]["city"].string,
+                        let postcode = json["member"]["zip"].string,
+                        let age = json["member"]["age"].string,
+                        let phone = json["member"]["phone"].string{
+                        
+                        self.titleTextField.placeholder = title
+                        self.StreetTextField.placeholder = street
+                        self.CityTextField.placeholder = city
+                        self.postcodeTextField.placeholder = postcode
+                        self.ageTextField.placeholder = age
+                        self.phoneTextField.placeholder = phone
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+                
+            })
+        
             
             
-            if UserDefaults.standard.string(forKey: "title") != nil{
-            
-                self.titleTextField.placeholder =  UserDefaults.standard.string(forKey: "title")
-            }
-            
-            if UserDefaults.standard.string(forKey: "address1") != nil{
-                
-                self.StreetTextField.placeholder =  UserDefaults.standard.string(forKey: "address1")
-            }
-            
-            if UserDefaults.standard.string(forKey: "city") != nil{
-                
-                self.CityTextField.placeholder =  UserDefaults.standard.string(forKey: "city")
-                
-            }
-            if UserDefaults.standard.string(forKey: "age") != nil{
-                
-                self.ageTextField.placeholder =  UserDefaults.standard.string(forKey: "age")
-                
-            }
-            if UserDefaults.standard.string(forKey: "phone") != nil{
-                
-                self.phoneTextField.placeholder =  UserDefaults.standard.string(forKey: "phone")
-                
-            }
             
       
         

@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/LoginViewController.swift"
-            timestampString = "526102583.609137"
+            timestampString = "530583506.348741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -57,13 +57,13 @@
                   symbolName = "On_the_House.LoginViewController.emailtextfield.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/LoginViewController.swift"
-                  timestampString = "528770458.021562"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/LoginViewController.swift"
+                  timestampString = "530583468.497244"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "78">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -72,43 +72,43 @@
                   symbolName = "On_the_House.LoginViewController.emailtextfield.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/LoginViewController.swift"
-                  timestampString = "528770458.027357"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/LoginViewController.swift"
+                  timestampString = "530583468.500039"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "86">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.LoginViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.LoginViewController"
+                  symbolName = "On_the_House.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.LoginViewController"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/LoginViewController.swift"
-                  timestampString = "528770458.029712"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/LoginViewController.swift"
+                  timestampString = "530583468.504917"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "83">
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.LoginViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.LoginViewController&gt;"
+                  symbolName = "On_the_House.LoginViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.LoginViewController&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/LoginViewController.swift"
-                  timestampString = "528770458.03203"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/LoginViewController.swift"
+                  timestampString = "530583468.50906"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "132">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -120,7 +120,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/LoginViewController.swift"
-            timestampString = "526746378.501715"
+            timestampString = "530583506.349273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -151,13 +151,13 @@
                   symbolName = "On_the_House.InfoCollectionViewController.statepickerview.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIPickerView&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.046737"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.521242"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "78">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -166,43 +166,43 @@
                   symbolName = "On_the_House.InfoCollectionViewController.statepickerview.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIPickerView&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.04889"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.524908"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "86">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.050826"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.526958"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "77">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.052828"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.529522"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "31">
+                  offsetFromSymbolStart = "47">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -229,13 +229,13 @@
                   symbolName = "On_the_House.InfoCollectionViewController.passwordtextfield.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.058486"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.539149"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "78">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -244,43 +244,43 @@
                   symbolName = "On_the_House.InfoCollectionViewController.passwordtextfield.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.060435"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.541866"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "86">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.061867"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.544108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "471">
+                  offsetFromSymbolStart = "861">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.063218"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.546538"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "362">
+                  offsetFromSymbolStart = "750">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -307,13 +307,13 @@
                   symbolName = "On_the_House.InfoCollectionViewController.slectedState.getter : Swift.String"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.067772"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.556084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "53">
+                  offsetFromSymbolStart = "125">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -322,43 +322,43 @@
                   symbolName = "On_the_House.InfoCollectionViewController.slectedState.setter : Swift.String"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.069543"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.558433"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "95">
+                  offsetFromSymbolStart = "162">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.076837"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.560672"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "595">
+                  offsetFromSymbolStart = "1089">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.07909"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.563039"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
                   endingLineNumber = "23"
-                  offsetFromSymbolStart = "480">
+                  offsetFromSymbolStart = "972">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -385,13 +385,13 @@
                   symbolName = "On_the_House.InfoCollectionViewController.emailtextfield.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.084264"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.57018"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "78">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -400,43 +400,43 @@
                   symbolName = "On_the_House.InfoCollectionViewController.emailtextfield.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.085901"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.572455"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "86">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_the_House.InfoCollectionViewController"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.087749"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.575154"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "412">
+                  offsetFromSymbolStart = "736">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.InfoCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
+                  symbolName = "On_the_House.InfoCollectionViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_the_House.InfoCollectionViewController&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/InfoCollectionViewController.swift"
-                  timestampString = "528770458.093164"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/InfoCollectionViewController.swift"
+                  timestampString = "530583468.578525"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "306">
+                  offsetFromSymbolStart = "629">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -495,13 +495,13 @@
                   symbolName = "On_the_House.Offer.coming_soon.getter : Swift.Bool"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.107795"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.594903"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "14">
+                  offsetFromSymbolStart = "50">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -510,43 +510,43 @@
                   symbolName = "On_the_House.Offer.coming_soon.setter : Swift.Bool"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.109227"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.5972"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "97">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.Offer.init () -&gt; On_the_House.Offer"
+                  symbolName = "On_the_House.Offer.init() -&gt; On_the_House.Offer"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.110692"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.599895"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "519">
+                  offsetFromSymbolStart = "1937">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_the_House.Offer.init (data : Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; On_the_House.Offer"
+                  symbolName = "On_the_House.Offer.init(data: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; On_the_House.Offer"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.113782"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.602913"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "571">
+                  offsetFromSymbolStart = "1880">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -558,7 +558,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "530516649.664546"
+            timestampString = "530581196.612412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "292"
@@ -589,8 +589,8 @@
                   symbolName = "globalinit_33_EFFF8CD124DBEF8C683447DE88F5B854_func1"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.12198"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.613726"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "536"
@@ -604,8 +604,8 @@
                   symbolName = "On_the_House.Offers.initializer.unsafeMutableAddressor : Swift.Dictionary&lt;Swift.String, Any&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.125757"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.621007"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "536"
@@ -619,8 +619,8 @@
                   symbolName = "static On_the_House.Offers.initializer.getter : Swift.Dictionary&lt;Swift.String, Any&gt;"
                   moduleName = "On the House"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/MacBookPro/Documents/On%20the%20House%20tbb/On%20the%20House/Offer.swift"
-                  timestampString = "528770458.128172"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/Offer.swift"
+                  timestampString = "530583468.623549"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "536"
@@ -637,13 +637,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "530516649.664672"
+            timestampString = "530581196.612507"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
             endingLineNumber = "131"
             landmarkName = "loadOffers()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_the_House.OfferingHomePage.loadOffers() -&gt; ()"
+                  moduleName = "On the House"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/OfferingHomePage.swift"
+                  timestampString = "530583468.6304"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, SwiftyJSON.JSON) -&gt; () in On_the_House.OfferingHomePage.loadOffers() -&gt; ()"
+                  moduleName = "On the House"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/OfferingHomePage.swift"
+                  timestampString = "530583468.632616"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -653,7 +685,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "530516649.664725"
+            timestampString = "530581196.612574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -669,7 +701,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "530516649.664768"
+            timestampString = "530581196.61266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "330"
@@ -685,7 +717,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "530516649.664808"
+            timestampString = "530581196.612705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "314"
@@ -701,7 +733,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/OfferingHomePage.swift"
-            timestampString = "530516649.664855"
+            timestampString = "530581196.612744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "422"
@@ -717,13 +749,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On the House/RatingDetailViewController.swift"
-            timestampString = "530107352.45736"
+            timestampString = "530581196.612783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "loadInfomation()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_the_House.RatingDetailViewController.loadInfomation() -&gt; ()"
+                  moduleName = "On the House"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/RatingDetailViewController.swift"
+                  timestampString = "530583468.650524"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, SwiftyJSON.JSON) -&gt; () in On_the_House.RatingDetailViewController.loadInfomation() -&gt; ()"
+                  moduleName = "On the House"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MacBookPro/Documents/OTH/On%20the%20House/RatingDetailViewController.swift"
+                  timestampString = "530583468.652746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

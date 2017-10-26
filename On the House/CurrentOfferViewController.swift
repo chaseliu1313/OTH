@@ -40,12 +40,7 @@ class CurrentOfferViewController: UIViewController {
     
     
 
-    @IBOutlet weak var `return`: UIButton!
-    
-    @IBAction func returnN(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
 
     func getVenue(){
         

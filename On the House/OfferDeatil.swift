@@ -51,6 +51,7 @@ class OfferDeatil: UIViewController, UITableViewDataSource, UITableViewDelegate 
         super.viewDidLoad()
         //print(OfferID)
         offerDes.backgroundColor = UIColor.clear
+        offerDes.isEditable = false
         self.getDetail()
         showStatus.delegate = self
         showStatus.dataSource = self

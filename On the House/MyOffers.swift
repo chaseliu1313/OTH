@@ -10,8 +10,7 @@ import UIKit
 
 class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    var currentoffer = ["a","b","c","d","e"]
-    var pastoffer = ["a","b","c"]
+  
     var type = true
     
     let command1 = "api/v1/member/reservations"
@@ -51,6 +50,11 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+         self.loadReservs()
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -72,7 +76,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         if tableView == currentOfferTableView{
-            print("table1 \(indexPath.row)")
+           
             
             let cell = tableView.dequeueReusableCell(withIdentifier:"currentcell", for: indexPath) as! MyOfferTableViewCell
             cell.showShortcut.text = reservations[indexPath.row]["event_name"] as? String
@@ -131,24 +135,24 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             
             
         }else{
-            print("table1 \(indexPath.row)")
+           
             
             let cell2 = tableView.dequeueReusableCell(withIdentifier:"pastcell", for: indexPath) as! MyPastOfferTableViewCell
             
             cell2.showShortcut.text = reservations2[indexPath.row]["event_name"] as? String
             cell2.dateTime.text = reservations2[indexPath.row]["date"] as? String
             cell2.qty.text = reservations2[indexPath.row]["num_tickets"] as? String
-            cell2.venue.text = reservations[indexPath.row]["venue_name"] as? String
+            cell2.venue.text = reservations2[indexPath.row]["venue_name"] as? String
             
             cell2.moreInfo.layer.cornerRadius = 8
             
-            if let sid = reservations[indexPath.row]["show_id"] as? String, let has_rated = reservations[indexPath.row]["has_rated"] as? Int {
+            if let sid = reservations2[indexPath.row]["show_id"] as? String, let has_rated = reservations2[indexPath.row]["has_rated"] as? Bool {
                 
-                
+                print("has rated:\(has_rated)")
                 
                 cell2.showID = sid
                 
-                if has_rated == 0 {
+                if has_rated {
                     
                     cell2.moreInfo.setTitle("More Info", for: .normal)
                     cell2.type = true
@@ -238,6 +242,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
             if success {
                 
                 self.reservations2 = json["reservations"].arrayObject as![[String: Any]]
+                
                 self.pastOfferTableView.reloadData()
                 
             }
@@ -253,9 +258,7 @@ class MyOffers: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    @IBAction func `return`(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+  
     
     //cancel reservation
     func cancelReservation(){

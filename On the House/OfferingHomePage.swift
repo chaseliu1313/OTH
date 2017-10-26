@@ -414,7 +414,7 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func checkRating(){
         
-          let command2 = "api/v1/member/reservations-raw/past"
+          let command2 = "api/v1/member/reservations/past"
         
          var parameter2 = ["member_id": ""]
         
@@ -431,12 +431,19 @@ class OfferingHomePage: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         if success {
         
-            let reservations = json["reservations"].arrayObject as! [[String:String]]
+            let reservations = json["reservations"].arrayObject as! [[String:Any]]
         
+          
             
             for reserv in reservations{
                 
-                if reserv["rated"] == "0" && self.isloggedin {
+                print(reserv)
+                
+               let hasrated = reserv["has_rated"] as! Bool
+                
+                
+                
+                if   !hasrated && self.isloggedin {
                     
                     self.reviewWarning.isHidden = false
                     
