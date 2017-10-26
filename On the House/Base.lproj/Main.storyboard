@@ -1309,7 +1309,7 @@ and periodicals</string>
                                         <rect key="frame" x="0.0" y="120" width="375" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfR-Iu-Ocs" id="xyG-Le-U2w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="295.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-Oz-80o">
@@ -3577,7 +3577,7 @@ and periodicals</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWK-jW-GF9">
-                                <rect key="frame" x="29" y="48" width="21" height="22"/>
+                                <rect key="frame" x="16" y="48" width="21" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="OQq-FF-kw0"/>
                                     <constraint firstAttribute="width" constant="21" id="nfy-xX-3be"/>
@@ -3624,7 +3624,7 @@ and periodicals</string>
                             <constraint firstItem="qOI-V9-Q1h" firstAttribute="top" secondItem="nNw-FB-A9L" secondAttribute="bottom" constant="35" id="8hf-w3-3gb"/>
                             <constraint firstItem="zNK-Zh-QE4" firstAttribute="centerX" secondItem="SmR-Ts-oI2" secondAttribute="centerX" id="GNK-6Z-k6k"/>
                             <constraint firstItem="iQU-5U-y5y" firstAttribute="top" secondItem="zNK-Zh-QE4" secondAttribute="bottom" constant="124" id="HOh-3N-pxf"/>
-                            <constraint firstItem="IWK-jW-GF9" firstAttribute="leading" secondItem="SmR-Ts-oI2" secondAttribute="leadingMargin" constant="13" id="KSq-3E-A8Z"/>
+                            <constraint firstItem="IWK-jW-GF9" firstAttribute="leading" secondItem="SmR-Ts-oI2" secondAttribute="leadingMargin" id="KSq-3E-A8Z"/>
                             <constraint firstItem="IWK-jW-GF9" firstAttribute="top" secondItem="nNw-FB-A9L" secondAttribute="bottom" constant="4" id="uhP-zv-lSb"/>
                             <constraint firstItem="qOI-V9-Q1h" firstAttribute="centerX" secondItem="SmR-Ts-oI2" secondAttribute="centerX" id="vZF-Q1-Hw8"/>
                         </constraints>
