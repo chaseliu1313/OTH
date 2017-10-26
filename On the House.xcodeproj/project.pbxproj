@@ -31,6 +31,8 @@
 		A26AA50F1F6143AA00296DA3 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26AA50E1F6143AA00296DA3 /* Offer.swift */; };
 		A27FBCC51F4AC1AF00330EFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */; };
 		A27FBCC71F4AC27B00330EFC /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */; };
+		A29511791FA1F6C200393849 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A29511771FA1F6C200393849 /* Model.xcdatamodeld */; };
+		A295117C1FA1F75B00393849 /* FacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295117B1FA1F75B00393849 /* FacebookUser.swift */; };
 		A2A569591F4FACBA005EB8AE /* InfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */; };
 		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
@@ -103,6 +105,8 @@
 		A26AA50E1F6143AA00296DA3 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		A29511781FA1F6C200393849 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A295117B1FA1F75B00393849 /* FacebookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookUser.swift; sourceTree = "<group>"; };
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,15 @@
 				6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A295117A1FA1F6D600393849 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				A29511771FA1F6C200393849 /* Model.xcdatamodeld */,
+				A295117B1FA1F75B00393849 /* FacebookUser.swift */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		A2A569571F4FAC6E005EB8AE /* Supporting file */ = {
@@ -286,6 +299,7 @@
 		E8CE62951F4AA19400D9EF76 /* On the House */ = {
 			isa = PBXGroup;
 			children = (
+				A295117A1FA1F6D600393849 /* Core Data */,
 				A2F3FD201F564D42006E23CA /* View Controller */,
 				A2F3FD211F564D5B006E23CA /* Module */,
 				A2A569571F4FAC6E005EB8AE /* Supporting file */,
@@ -485,6 +499,7 @@
 			files = (
 				715872BE1F5E66F800A315D8 /* TandCViewController.swift in Sources */,
 				B75DEBB41F979E0D00A8658E /* AlertDisplay.swift in Sources */,
+				A295117C1FA1F75B00393849 /* FacebookUser.swift in Sources */,
 				E8C0ABA91F57102500143885 /* MyMembership.swift in Sources */,
 				B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */,
 				B75DEBB11F979DE500A8658E /* MemHistTableViewConfig.swift in Sources */,
@@ -492,6 +507,7 @@
 				529E0D901F8F956C00DF8D2B /* AllRatingTabTableViewCell.swift in Sources */,
 				A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */,
 				E88119F51F823DF5008F4FE0 /* MyOffers.swift in Sources */,
+				A29511791FA1F6C200393849 /* Model.xcdatamodeld in Sources */,
 				A257A1961F700593008D2DA3 /* FilterTableViewController.swift in Sources */,
 				242F10871F9C8F5700329252 /* TeamMemberTableViewController.swift in Sources */,
 				71C7DC811F78BF2A005BF028 /* shipInfoViewController.swift in Sources */,
@@ -765,6 +781,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A29511771FA1F6C200393849 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A29511781FA1F6C200393849 /* Model.xcdatamodel */,
+			);
+			currentVersion = A29511781FA1F6C200393849 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E8CE628B1F4AA19400D9EF76 /* Project object */;
 }

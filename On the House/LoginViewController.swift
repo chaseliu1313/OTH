@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
@@ -14,6 +15,9 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController{
     
     static var userfbinfo : [String : AnyObject]!
+    
+    var container: NSPersistentContainer? =
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     var isauser = false
     
@@ -32,12 +36,28 @@ class LoginViewController: UIViewController{
         "password": " "
     ]
     
+    private func updateDatabase(with email: String) {
+        print("starting database load")
+        container?.performBackgroundTask { [weak self] context in
+            _ = try? FacebookUser.findorcreatuser(matching: email, in: context)
+            try? context.save()
+            print("done loading database")
+        }
+    }
     
+    private func findfbuser(with email: String) -> Bool {
+        var result = false
+        container?.performBackgroundTask { [weak self] context in
+            result = FacebookUser.checkuser(matching: email, in: context)
+        }
+        return result
+    }
     
     let command = "api/v1/member/login"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.updateDatabase(with: "cugbliuboshi@gmail.com")
         self.getfbuserinfo()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -65,7 +85,7 @@ class LoginViewController: UIViewController{
                 self.getfbuserinfo()
                 UserDefaults.standard.set(false, forKey: "didSkip")
                 UserDefaults.standard.synchronize()
-                if(!self.isauser){
+                if(!self.findfbuser(with: NewMemberData.email)){
                     self.performSegue(withIdentifier: "facebookreg", sender: self)
                 }
                 else{
@@ -195,7 +215,6 @@ class LoginViewController: UIViewController{
                 
             }
         }
-        
         
     }
     

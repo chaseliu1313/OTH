@@ -8,7 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreData
+
 class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var container: NSPersistentContainer? =
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     let command = "api/v1/member/create"
     
@@ -82,17 +87,35 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         // Do any additional setup after loading the view.
     }
     
+    private func updateDatabase(with email: String) {
+        print("starting database load")
+        container?.performBackgroundTask { [weak self] context in
+            _ = try? FacebookUser.findorcreatuser(matching: email, in: context)
+            try? context.save()
+            print("done loading database")
+        }
+    }
+    
+    private func findfbuser(with email: String) -> Bool {
+        var result = false
+        container?.performBackgroundTask { [weak self] context in
+            result = FacebookUser.checkuser(matching: email, in: context)
+        }
+        return result
+    }
+    
     @IBAction func Signup(_ sender: UIButton) {
         dataprepare()
         ConnectionHelper.post(command: command, parameter: NewMemberData.getinformation()) { (successed,msg) in
             if(successed) {
                 
                 self.notifyUser(["Registration Successfull"])
+                if !self.findfbuser(with: NewMemberData.email){
+                    self.updateDatabase(with: NewMemberData.email)
+                }
                 self.performSegue(withIdentifier: "facebooksignup", sender: self)
             }
             else{
-                
-                
                 self.notifyUser(msg)
                 
             }
