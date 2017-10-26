@@ -26,6 +26,12 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
                      "password_confirm": "",
                      "terms": "1"]
     
+    var loginParameter = [
+        "email": " ",
+        "password": " "
+    ]
+    let loginCommand =  "api/v1/member/login"
+    
     var nickname = String()
     var first_name = String()
     var last_name = String()
@@ -86,7 +92,24 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
                 
                 self.notification.text = "You are all set! Auto-login now."
                 
-                self.performSegue(withIdentifier: "successfullyreg", sender: self)
+                
+                ConnectionHelper.userLogin(command: self.loginCommand, parameter: self.loginParameter, compeletion: { (success1) in
+                    
+                    if success1 {
+                        
+                        self.performSegue(withIdentifier: "successfullyreg", sender: self)
+                        
+                    }
+                    
+                })
+        
+                
+                
+                
+                
+                
+                
+                
             }
             else{
                 
@@ -138,6 +161,10 @@ class RegisterView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         parameter.updateValue(email, forKey: "email")
         parameter.updateValue(password, forKey: "password")
         parameter.updateValue(password_confirm, forKey: "password_confirm")
+        
+        
+        loginParameter.updateValue(password, forKey: "password")
+        loginParameter.updateValue(email, forKey: "email")
         
     }
     

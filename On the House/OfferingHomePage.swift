@@ -501,6 +501,8 @@ extension OfferingHomePage: sendOfferIDDelegate{
     
     func sendID(offerID: String, type: String) {
         
+        let skip = UserDefaults.standard.bool(forKey: "didSkip")
+        
         let currentOffer = Offers.getOffer(offerID: offerID)
         
         if type == "share" {
@@ -561,9 +563,10 @@ extension OfferingHomePage: sendOfferIDDelegate{
         }
         
         else {
+            if !skip {
              self.offerID = offerID
             performSegue(withIdentifier: "showDetail", sender: self)
-            
+            }
         }
     }
     
