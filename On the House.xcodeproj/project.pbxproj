@@ -225,17 +225,17 @@
 			children = (
 				B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */,
 				A27FBCC41F4AC1AF00330EFC /* LoginViewController.swift */,
+				7101E4F11F4D420F00237211 /* RegisterView.swift */,
 				E85939591F52EDB1009B3784 /* FacebookRegisterView.swift */,
 				E88F42921F6007B700DE142E /* OfferingHomePage.swift */,
 				E897877C1F68F6D700E0B3F9 /* OfferDeatil.swift */,
 				E8C0ABA81F57102500143885 /* MyMembership.swift */,
-				7101E4F11F4D420F00237211 /* RegisterView.swift */,
+				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
 				5213A7321F7A6E1700B89A5C /* CompetitionTickets.swift */,
 				A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */,
 				A27FBCC61F4AC27B00330EFC /* ForgetPasswordViewController.swift */,
 				A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */,
 				715872BD1F5E66F800A315D8 /* TandCViewController.swift */,
-				522124D41F654BAC00BFE0CB /* ChangePasswordViewController.swift */,
 				E859D9961F7A257600293955 /* Survey.swift */,
 				71C7DC801F78BF2A005BF028 /* shipInfoViewController.swift */,
 				A257A1951F700593008D2DA3 /* FilterTableViewController.swift */,
@@ -366,6 +366,7 @@
 					};
 					E8CE62921F4AA19400D9EF76 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = KJZ8GTCP4S;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -711,7 +712,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KJZ8GTCP4S;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -734,7 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KJZ8GTCP4S;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

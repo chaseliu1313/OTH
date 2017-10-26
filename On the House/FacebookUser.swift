@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class FacebookUser: NSManagedObject {
-    class func findorcreatuser(matching user : String, in context : NSManagedObjectContext) throws -> FacebookUser{
+    class func findorcreatuser(matching user : String, matched password : String, in context : NSManagedObjectContext) throws -> FacebookUser{
         let request: NSFetchRequest<FacebookUser> = FacebookUser.fetchRequest()
         request.predicate = NSPredicate(format: "email = %@", user)
         do {
@@ -25,6 +25,7 @@ class FacebookUser: NSManagedObject {
         
         let newuser : FacebookUser = FacebookUser(context: context)
         newuser.email = user
+        newuser.password = password
         return newuser
     }
     
@@ -33,7 +34,7 @@ class FacebookUser: NSManagedObject {
         request.predicate = NSPredicate(format: "email = %@", useremail)
         do {
             let matches = try context.fetch(request)
-            if matches.count == 1{
+            if matches.count >= 0{
                 return true
             }
             else{

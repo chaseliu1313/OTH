@@ -87,10 +87,10 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
         // Do any additional setup after loading the view.
     }
     
-    private func updateDatabase(with email: String) {
+    private func updateDatabase(with email: String, match password : String) {
         print("starting database load")
         container?.performBackgroundTask { [weak self] context in
-            _ = try? FacebookUser.findorcreatuser(matching: email, in: context)
+            _ = try? FacebookUser.findorcreatuser(matching: email, matched: password, in: context)
             try? context.save()
             print("done loading database")
         }
@@ -111,7 +111,7 @@ class FacebookRegisterView: UIViewController, UIPickerViewDataSource, UIPickerVi
                 
                 self.notifyUser(["Registration Successfull"])
                 if !self.findfbuser(with: NewMemberData.email){
-                    self.updateDatabase(with: NewMemberData.email)
+                    self.updateDatabase(with: NewMemberData.email, match: NewMemberData.password)
                 }
                 self.performSegue(withIdentifier: "facebooksignup", sender: self)
             }
