@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
@@ -15,7 +16,12 @@ class LoginViewController: UIViewController{
     
     static var userfbinfo : [String : AnyObject]!
     
+    var container: NSPersistentContainer? =
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    
     var isauser = false
+    
+    var fetchedResultsController: NSFetchedResultsController<FacebookUser>?
     
     @IBOutlet weak var emailtextfield: UITextField!
     
@@ -32,12 +38,28 @@ class LoginViewController: UIViewController{
         "password": " "
     ]
     
+    private func updateDatabase(with email: String , match password : String) {
+        print("starting database load")
+        container?.performBackgroundTask { [weak self] context in
+            _ = try? FacebookUser.findorcreatuser(matching: email, matched: password, in: context)
+            try? context.save()
+            print("done loading database")
+        }
+    }
     
+    private func findfbuser(with email: String) -> Bool {
+        var result = false
+        container?.performBackgroundTask { [weak self] context in
+            result = FacebookUser.checkuser(matching: email, in: context)
+        }
+        return result
+    }
     
     let command = "api/v1/member/login"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.updateDatabase(with: "cugbliuboshi@gmail.com",match: "brad1234")
         self.getfbuserinfo()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -63,13 +85,63 @@ class LoginViewController: UIViewController{
                 print("Login cancelled")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 self.getfbuserinfo()
+                
                 UserDefaults.standard.set(false, forKey: "didSkip")
                 UserDefaults.standard.synchronize()
-                if(!self.isauser){
+                if(!self.findfbuser(with: NewMemberData.email)){
+                    print("can not find a user")
+                    
                     self.performSegue(withIdentifier: "facebookreg", sender: self)
                 }
                 else{
-                    self.performSegue(withIdentifier: "login", sender: self)
+                    print("find a user")
+                    var results : [FacebookUser] = []
+                    if let context = self.container?.viewContext {
+                        let request: NSFetchRequest<FacebookUser> = FacebookUser.fetchRequest()
+                        request.sortDescriptors = [NSSortDescriptor(
+                            key: "email",
+                            ascending: true,
+                            selector: #selector(NSString.localizedCaseInsensitiveCompare(_:))
+                            )]
+                        
+                        request.predicate = NSPredicate(format: "any email == %@", NewMemberData.email)
+                        self.fetchedResultsController = NSFetchedResultsController<FacebookUser>(
+                            fetchRequest: request,
+                            managedObjectContext: context,
+                            sectionNameKeyPath: nil,
+                            cacheName: nil
+                        )
+                        self.fetchedResultsController?.delegate = self as? NSFetchedResultsControllerDelegate
+                        try? self.fetchedResultsController?.performFetch()
+                        results = (self.fetchedResultsController?.fetchedObjects)!
+                    }
+                    let result = results[0]
+                    if let email = result.email , let password = result.password{
+                        print("success")
+                        self.parameters.updateValue(email, forKey: "email")
+                        self.parameters.updateValue(password, forKey: "password")
+                        
+                        ConnectionHelper.userLogin(command: self.command, parameter: self.parameters, compeletion: { (successed) in
+                            
+                            if successed {
+                                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                                UserDefaults.standard.set(false, forKey: "didSkip")
+                                
+                                self.performSegue(withIdentifier: "login", sender: self)
+                                
+                                UserDefaults.standard.set(false, forKey: "didSkip")
+                                
+                                UserDefaults.standard.synchronize()
+                                
+                                print("login was successful")
+                                
+                            }
+                            else {
+                                self.notifyUser("ON THE HOUSE", "Invalid Email Address/Password")
+                                
+                            }
+                        })
+                    }
                 }
             }
             
@@ -86,10 +158,6 @@ class LoginViewController: UIViewController{
                     LoginViewController.userfbinfo = dict
                     if let email = LoginViewController.userfbinfo["email"] as? String{
                         
-                    
-                    /*if(email == UserDefaults.standard.string(forKey: "email")!){
-                        self.isauser = true
-                    }*/
                     if (UserDefaults.standard.string(forKey: "email") != nil){
                         self.isauser = true
                     }
@@ -195,7 +263,6 @@ class LoginViewController: UIViewController{
                 
             }
         }
-        
         
     }
     
