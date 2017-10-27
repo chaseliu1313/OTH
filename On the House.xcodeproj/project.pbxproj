@@ -42,6 +42,7 @@
 		B70C1D921FA2C252001E2DF3 /* NewUserSignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C1D911FA2C252001E2DF3 /* NewUserSignUpUITests.swift */; };
 		B70C1D941FA2C55D001E2DF3 /* ProceedWithoutLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C1D931FA2C55D001E2DF3 /* ProceedWithoutLogin.swift */; };
 		B70C1D961FA2C608001E2DF3 /* ChangePasswordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C1D951FA2C608001E2DF3 /* ChangePasswordUITests.swift */; };
+		B70C1D981FA2C7E3001E2DF3 /* MembershipTestUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C1D971FA2C7E3001E2DF3 /* MembershipTestUI.swift */; };
 		B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B35711F8491100043504B /* MHTableViewCell.swift */; };
 		B75DEBAD1F979D1D00A8658E /* MemHisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */; };
 		B75DEBAF1F979DA300A8658E /* PNetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */; };
@@ -130,6 +131,7 @@
 		B70C1D911FA2C252001E2DF3 /* NewUserSignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserSignUpUITests.swift; sourceTree = "<group>"; };
 		B70C1D931FA2C55D001E2DF3 /* ProceedWithoutLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceedWithoutLogin.swift; sourceTree = "<group>"; };
 		B70C1D951FA2C608001E2DF3 /* ChangePasswordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUITests.swift; sourceTree = "<group>"; };
+		B70C1D971FA2C7E3001E2DF3 /* MembershipTestUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipTestUI.swift; sourceTree = "<group>"; };
 		B71B35711F8491100043504B /* MHTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHTableViewCell.swift; sourceTree = "<group>"; };
 		B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemHisViewController.swift; sourceTree = "<group>"; };
 		B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNetworkErrorHandler.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				B70C1D911FA2C252001E2DF3 /* NewUserSignUpUITests.swift */,
 				B70C1D931FA2C55D001E2DF3 /* ProceedWithoutLogin.swift */,
 				B70C1D951FA2C608001E2DF3 /* ChangePasswordUITests.swift */,
+				B70C1D971FA2C7E3001E2DF3 /* MembershipTestUI.swift */,
 			);
 			path = "On the HouseUITestsweek7";
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				B70C1D921FA2C252001E2DF3 /* NewUserSignUpUITests.swift in Sources */,
 				B70C1D961FA2C608001E2DF3 /* ChangePasswordUITests.swift in Sources */,
 				B70C1D941FA2C55D001E2DF3 /* ProceedWithoutLogin.swift in Sources */,
+				B70C1D981FA2C7E3001E2DF3 /* MembershipTestUI.swift in Sources */,
 				B70C1D8C1FA2BD48001E2DF3 /* ResetPasswordUITests.swift in Sources */,
 				B7A549C31FA2B1FB00FB4AF8 /* LoginViewControllerTests.swift in Sources */,
 				526164021F66222E0028A63F /* On_the_HouseUITestsweek7.swift in Sources */,
