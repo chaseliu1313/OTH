@@ -543,7 +543,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-Dv-WME">
-                                <rect key="frame" x="159.66666666666666" y="259" width="56" height="21"/>
+                                <rect key="frame" x="160" y="259" width="56" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="r63-ZX-4pa"/>
                                     <constraint firstAttribute="height" constant="21" id="td9-hz-4XP"/>
@@ -559,11 +559,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfo-bD-FHN">
-                                <rect key="frame" x="21" y="28" width="29" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="29" id="NmP-JB-qOQ"/>
-                                    <constraint firstAttribute="height" constant="22" id="mWA-Z9-uOe"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="43" width="29" height="22"/>
                                 <state key="normal" image="left-arrow"/>
                                 <connections>
                                     <action selector="return:" destination="f2H-H2-vez" eventType="touchUpInside" id="oca-oY-VVg"/>
@@ -571,20 +567,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld4-Uz-RbS">
-                                <rect key="frame" x="163.66666666666666" y="111" width="48" height="21"/>
+                                <rect key="frame" x="164" y="111" width="48" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="A0E-Sx-b0b"/>
                                     <constraint firstAttribute="width" constant="48" id="E9C-YU-ROt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soB-aB-XCV">
-                                <rect key="frame" x="84.666666666666686" y="28" width="206" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="13C-2t-Fmd"/>
-                                    <constraint firstAttribute="width" constant="206" id="Gsr-WS-659"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -654,10 +640,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soB-aB-XCV">
+                                <rect key="frame" x="84" y="43" width="206" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="13C-2t-Fmd"/>
+                                    <constraint firstAttribute="width" constant="206" id="Gsr-WS-659"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FT5-Dv-WME" firstAttribute="centerX" secondItem="b7R-ko-BCm" secondAttribute="centerX" id="0Cr-Ou-bDR"/>
+                            <constraint firstItem="soB-aB-XCV" firstAttribute="leading" secondItem="Xfo-bD-FHN" secondAttribute="trailing" constant="39" id="0zd-qX-YAn"/>
                             <constraint firstItem="y4z-4q-6vB" firstAttribute="leading" secondItem="b7R-ko-BCm" secondAttribute="leading" id="1Bh-9K-oiQ"/>
                             <constraint firstItem="eDB-el-mHZ" firstAttribute="centerX" secondItem="y4z-4q-6vB" secondAttribute="centerX" id="1KR-EQ-Mh4"/>
                             <constraint firstItem="rWO-Ac-57G" firstAttribute="top" secondItem="eDB-el-mHZ" secondAttribute="bottom" constant="13" id="4Ct-AH-Mgy"/>
@@ -668,19 +665,19 @@
                             <constraint firstAttribute="trailing" secondItem="nBT-8h-YkM" secondAttribute="trailing" id="ECz-Hf-SyU"/>
                             <constraint firstItem="SFn-QC-y13" firstAttribute="top" secondItem="b7R-ko-BCm" secondAttribute="top" id="Ivz-9K-qGH"/>
                             <constraint firstItem="YCh-Y7-ujw" firstAttribute="top" secondItem="y4z-4q-6vB" secondAttribute="bottom" constant="42" id="Nfg-uy-8eh"/>
+                            <constraint firstItem="Xfo-bD-FHN" firstAttribute="top" secondItem="soB-aB-XCV" secondAttribute="top" id="QP8-oN-Rem"/>
                             <constraint firstAttribute="trailing" secondItem="SFn-QC-y13" secondAttribute="trailing" id="QS5-BX-ndu"/>
-                            <constraint firstItem="Xfo-bD-FHN" firstAttribute="leading" secondItem="b7R-ko-BCm" secondAttribute="leading" constant="21" id="ZYO-bO-Oxz"/>
                             <constraint firstItem="YCh-Y7-ujw" firstAttribute="top" secondItem="SFn-QC-y13" secondAttribute="bottom" id="aWx-Mo-bf9"/>
-                            <constraint firstItem="Xfo-bD-FHN" firstAttribute="top" secondItem="b7R-ko-BCm" secondAttribute="top" constant="28" id="c10-pl-VAb"/>
                             <constraint firstItem="rWO-Ac-57G" firstAttribute="centerX" secondItem="b7R-ko-BCm" secondAttribute="centerX" constant="8" id="e2B-tv-qn9"/>
                             <constraint firstItem="rWO-Ac-57G" firstAttribute="top" secondItem="FT5-Dv-WME" secondAttribute="bottom" constant="99" id="eRs-og-c4s"/>
+                            <constraint firstItem="Xfo-bD-FHN" firstAttribute="leading" secondItem="nBT-8h-YkM" secondAttribute="leading" id="mQU-g6-f6X"/>
                             <constraint firstItem="SFn-QC-y13" firstAttribute="leading" secondItem="b7R-ko-BCm" secondAttribute="leading" id="nD1-xx-cNx"/>
                             <constraint firstItem="rWO-Ac-57G" firstAttribute="top" secondItem="b7R-ko-BCm" secondAttribute="top" constant="379" id="pgV-X4-f1v"/>
-                            <constraint firstItem="soB-aB-XCV" firstAttribute="top" secondItem="b7R-ko-BCm" secondAttribute="top" constant="28" id="tNp-un-vP0"/>
+                            <constraint firstItem="soB-aB-XCV" firstAttribute="top" secondItem="b7R-ko-BCm" secondAttribute="top" constant="43" id="tNp-un-vP0"/>
                             <constraint firstItem="eDB-el-mHZ" firstAttribute="leading" secondItem="b7R-ko-BCm" secondAttribute="leadingMargin" constant="11" id="u5m-bn-vu8"/>
                             <constraint firstItem="nBT-8h-YkM" firstAttribute="leading" secondItem="b7R-ko-BCm" secondAttribute="leading" constant="16" id="xg3-JW-KvP"/>
                             <constraint firstItem="eDB-el-mHZ" firstAttribute="top" secondItem="FT5-Dv-WME" secondAttribute="bottom" constant="8" symbolic="YES" id="yb6-H2-XxN"/>
-                            <constraint firstItem="ld4-Uz-RbS" firstAttribute="top" secondItem="soB-aB-XCV" secondAttribute="bottom" constant="62" id="zlu-fd-oBS"/>
+                            <constraint firstItem="ld4-Uz-RbS" firstAttribute="top" secondItem="soB-aB-XCV" secondAttribute="bottom" constant="47" id="zlu-fd-oBS"/>
                         </constraints>
                     </view>
                     <connections>
@@ -3882,7 +3879,7 @@ and periodicals</string>
     <inferredMetricsTieBreakers>
         <segue reference="b3r-wW-Hjc"/>
         <segue reference="Jgs-rE-Wa0"/>
-        <segue reference="vj8-Qw-G13"/>
+        <segue reference="6Rc-gx-TJu"/>
         <segue reference="Hak-60-eMb"/>
         <segue reference="iIv-cl-401"/>
         <segue reference="70h-L8-55h"/>
