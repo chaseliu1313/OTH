@@ -566,6 +566,7 @@ extension OfferingHomePage: sendOfferIDDelegate{
             if !skip {
              self.offerID = offerID
             performSegue(withIdentifier: "showDetail", sender: self)
+                
             }
         }
     }
