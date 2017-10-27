@@ -70,4 +70,13 @@ class ResetPasswordUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Reset Password"].exists)
     }
     
+    func testReturnSegue_ShouldReturnTrue() {
+        
+        let app = XCUIApplication()
+        app.buttons["Forgot Password?"].tap()
+        app.buttons["left arrow"].tap()
+        XCTAssertTrue(app.buttons["LOGIN"].exists)
+
+    }
+    
 }
