@@ -59,4 +59,15 @@ class ResetPasswordUITests: XCTestCase {
         XCTAssertFalse(app.buttons["LOGIN"].exists)
     }
     
+    func testBlankEmail_ShouldReturnTrue() {
+        app.buttons["Forgot Password?"].tap()
+        let emailAddressTextField = app.textFields["Email address"]
+        emailAddressTextField.tap()
+        emailAddressTextField.typeText("778899111@example.com")
+        app.buttons["Reset Password"].tap()
+        
+        XCTAssertFalse(app.buttons["LOGIN"].exists)
+        XCTAssertTrue(app.buttons["Reset Password"].exists)
+    }
+    
 }

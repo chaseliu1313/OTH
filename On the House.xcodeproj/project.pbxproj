@@ -37,6 +37,7 @@
 		A2F3FD231F564D73006E23CA /* NewMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD221F564D73006E23CA /* NewMemberData.swift */; };
 		A2F3FD251F56A4A9006E23CA /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */; };
 		A7F0984A529C4AB8F046E3A3 /* Pods_On_the_House.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62B720196816BDE144A23 /* Pods_On_the_House.framework */; };
+		B70C1D8C1FA2BD48001E2DF3 /* ResetPasswordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C1D8B1FA2BD47001E2DF3 /* ResetPasswordUITests.swift */; };
 		B71B35721F8491100043504B /* MHTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71B35711F8491100043504B /* MHTableViewCell.swift */; };
 		B75DEBAD1F979D1D00A8658E /* MemHisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */; };
 		B75DEBAF1F979DA300A8658E /* PNetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */; };
@@ -120,6 +121,7 @@
 		A2A569581F4FACBA005EB8AE /* InfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewController.swift; sourceTree = "<group>"; };
 		A2F3FD221F564D73006E23CA /* NewMemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemberData.swift; sourceTree = "<group>"; };
 		A2F3FD241F56A4A9006E23CA /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
+		B70C1D8B1FA2BD47001E2DF3 /* ResetPasswordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordUITests.swift; sourceTree = "<group>"; };
 		B71B35711F8491100043504B /* MHTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHTableViewCell.swift; sourceTree = "<group>"; };
 		B75DEBAC1F979D1D00A8658E /* MemHisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemHisViewController.swift; sourceTree = "<group>"; };
 		B75DEBAE1F979DA300A8658E /* PNetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNetworkErrorHandler.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				526164011F66222E0028A63F /* On_the_HouseUITestsweek7.swift */,
 				B7A549C11FA2B1FB00FB4AF8 /* LoginViewControllerTests.swift */,
+				B70C1D8B1FA2BD47001E2DF3 /* ResetPasswordUITests.swift */,
 				526164031F66222E0028A63F /* Info.plist */,
 			);
 			path = "On the HouseUITestsweek7";
@@ -557,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70C1D8C1FA2BD48001E2DF3 /* ResetPasswordUITests.swift in Sources */,
 				B7A549C31FA2B1FB00FB4AF8 /* LoginViewControllerTests.swift in Sources */,
 				526164021F66222E0028A63F /* On_the_HouseUITestsweek7.swift in Sources */,
 			);
