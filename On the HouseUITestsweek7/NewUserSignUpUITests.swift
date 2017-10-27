@@ -45,7 +45,7 @@ class NewUserSignUpUITests: XCTestCase {
         let element = window.children(matching: .other).element.children(matching: .other).element
         let textField = element.children(matching: .textField).element(boundBy: 0)
         textField.tap()
-        textField.typeText("Nickname111")
+        textField.typeText("Nickname11199")
         
         let textField2 = element.children(matching: .textField).element(boundBy: 1)
         textField2.tap()
@@ -66,7 +66,7 @@ class NewUserSignUpUITests: XCTestCase {
         
         let textField5 = element.children(matching: .textField).element(boundBy: 4)
         textField5.tap()
-        textField5.typeText("myEmailIsNew@gmail.com")
+        textField5.typeText("myEmailIsNew2@gmail.com")
         
         let secureTextField = element.children(matching: .secureTextField).element(boundBy: 0)
         secureTextField.tap()
@@ -94,7 +94,7 @@ class NewUserSignUpUITests: XCTestCase {
         
         let yourEmailTextField = app.textFields["Your Email"]
         yourEmailTextField.tap()
-        yourEmailTextField.typeText("myEmailIsNew@gmail.com")
+        yourEmailTextField.typeText("myEmailIsNew2@gmail.com")
         
         let passwordSecureTextField = app.secureTextFields["Password"]
         passwordSecureTextField.tap()
@@ -102,31 +102,6 @@ class NewUserSignUpUITests: XCTestCase {
         app.buttons["LOGIN"].tap()
         button.tap()
         
-        let myMembershipButton = tablesQuery2/*@START_MENU_TOKEN@*/.buttons["My Membership"]/*[[".cells.buttons[\"My Membership\"]",".buttons[\"My Membership\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        myMembershipButton.tap()
-        window.children(matching: .other).element(boundBy: 5).tap()
-        app.buttons["SELECT"].tap()
-        
-        let tablesQuery = app.scrollViews.otherElements.tables
-        tablesQuery/*@START_MENU_TOKEN@*/.secureTextFields["Password"]/*[[".cells.secureTextFields[\"Password\"]",".secureTextFields[\"Password\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.secureTextFields.containing(.button, identifier:"Clear text").element/*[[".cells.secureTextFields.containing(.button, identifier:\"Clear text\").element",".secureTextFields.containing(.button, identifier:\"Clear text\").element"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.typeText("1234")
-        app.typeText("\r")
-        tablesQuery2/*@START_MENU_TOKEN@*/.staticTexts["Pay"]/*[[".cells.staticTexts[\"Pay\"]",".staticTexts[\"Pay\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        let onTheHouseAlert = app.alerts["ON THE HOUSE"]
-        onTheHouseAlert.buttons["OK"].tap()
-        
-        let leftArrowButton = app.buttons["left arrow"]
-        leftArrowButton.tap()
-        myMembershipButton.tap()
-        onTheHouseAlert.buttons["Dismiss"].tap()
-        leftArrowButton.tap()
-        logOutButton.tap()
-        
-    }
-    
-    func testUser_ShouldReturnTrue(){
-
     }
     
 }
